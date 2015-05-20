@@ -1,0 +1,591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>UI 1.0 Toolkit</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="[2014-09-18 Thursday]"/>
+<meta name="author" content="VLEAD Team, IIITH"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color:lightblue; font-weight:normal }
+  .target { }
+  .timestamp { color: grey }
+  .timestamp-kwd { color: CadetBlue }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="style/css/worg-style.css" />
+<link rel="stylesheet" type="text/css" href="style/css/override.css" />
+<script type="text/javascript" src="style/js/org-info.js"></script>
+<script type="text/javascript" >
+<!--/*--><![CDATA[/*><!--*/
+org_html_manager.set("TOC_DEPTH", "1");
+org_html_manager.set("LINK_HOME", "./index.html");
+org_html_manager.set("LINK_UP", "./index.html");
+org_html_manager.set("LOCAL_TOC", "1");
+org_html_manager.set("VIEW_BUTTONS", "0");
+org_html_manager.set("MOUSE_HINT", "underline");
+org_html_manager.set("FIXED_TOC", "0");
+org_html_manager.set("TOC", "1");
+org_html_manager.set("VIEW", "info");
+org_html_manager.setup();  // activate after the parameters are set
+/*]]>*/-->
+</script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*/-->
+</script>
+</head><body>
+<h1 class="title">UI 1.0 Toolkit</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Using UI 1.0 Toolkit </a></li>
+<li><a href="#sec-2">2 How to Identify the Template of your Lab </a></li>
+<li><a href="#sec-3">3 How to Convert your Lab to the UI 1.0 Template </a>
+<ul>
+<li><a href="#sec-3.1">3.1 How to Convert Unstructured Labs to UI 1.0 Template and Validate the Conversion </a>
+<ul>
+<li><a href="#sec-3.1.1">3.1.1 How to Convert Unstructured Labs to UI 1.0 Template </a></li>
+<li><a href="#sec-3.1.2">3.1.2 How to Validate the Conversion to UI 1.0 Template </a></li>
+</ul>
+</li>
+<li><a href="#sec-3.2">3.2 How to Convert Labs in Collaborative Framework (Amrita Format) to UI 1.0 Template </a>
+<ul>
+<li><a href="#sec-3.2.1">3.2.1 Instructions for using scripts </a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Conclusion </a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">1 Using UI 1.0 Toolkit </h2>
+<div id="text-1">
+
+
+<p>
+The UI Toolkit consists of the Virtual Labs User Interface Template
+version 1.0. The toolkit also contains helper scripts that extract the
+content of labs hosted in Collaborative Framework (Amrita format) to
+UI 1.0 Template. The objective of using UI 1.0 Toolkit is to
+standardize the formats of all labs according to the UI 1.0
+Template. The UI 1.0 Toolkit helps you achieve the following:
+</p>
+<ul>
+<li>
+<b>Unified look and feel:</b> The UI 1.0 Toolkit offers a uniform user
+interface for authoring and interacting with the virtual labs. It
+also provides labs a simple and uniform web interface and a
+homogeneous hosting framework.
+</li>
+<li>
+<b>Coding standards:</b> The Toolkit ensures that lab developers follow
+good programming practices to make the code of the labs efficient
+and readable.
+</li>
+<li>
+<b>Upgrading widgets and components:</b> The UI 1.0 template makes it
+easy for lab developers to modify and update widgets and/or
+components.
+</li>
+<li>
+<b>Provision for better versions of template:</b> In future, if advanced
+versions of the UI template are created, the lab developers can
+transfer the lab content automatically as per the new versions.
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">2 How to Identify the Template of your Lab </h2>
+<div id="text-2">
+
+<p>Before you start using the UI 1.0 Toolkit, you need to understand the
+structure of your lab. Your lab may be structured either in the
+Collaborative Framework (Amrita Format) or may be unstructured (does
+not follow the UI 1.0 Template).
+</p>
+<p>
+If your lab is structured in Collaborative Framework, your lab URL should
+contain the following fields sub, brch, sim and cnt. For example, the
+URL of the lab <a href="http://iitkgp.vlab.co.in/?sub=39&amp;brch=124&amp;sim=922&amp;cnt=1">http://iitkgp.vlab.co.in/?sub=39&brch=124&sim=922&cnt=1</a>
+is described as below:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<col align="left"></col><col align="left"></col>
+<thead>
+<tr><th>url format</th><th>example</th></tr>
+</thead>
+<tbody>
+<tr><td>sub=39(subjects or domains)</td><td>Electrical Engineering</td></tr>
+</tbody>
+<tbody>
+<tr><td>brch=124(branch or lab)</td><td>Analog Signals, Network and Measurement Laboratory</td></tr>
+</tbody>
+<tbody>
+<tr><td>sim=922(experiment)</td><td>Verification of Superposition Theorem</td></tr>
+</tbody>
+<tbody>
+<tr><td>cnt=1(the breakup of pages under each experiment)</td><td>Introduction, Aim, Theory etc</td></tr>
+</tbody>
+</table>
+
+
+<p>
+If your lab does not follow this format, you can assume that your lab has an unstructured format.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">3 How to Convert your Lab to the UI 1.0 Template </h2>
+<div id="text-3">
+
+
+<p>
+As discussed above, the structure of your lab may be either in the
+Collaborative Framework (Amrita Format) or it may be
+unstructured. Depending on the current structure of your lab, you need
+to follow the steps below to convert your lab to UI 1.0 Template.
+</p>
+
+</div>
+
+<div id="outline-container-3.1" class="outline-3">
+<h3 id="sec-3.1">3.1 How to Convert Unstructured Labs to UI 1.0 Template and Validate the Conversion </h3>
+<div id="text-3.1">
+
+
+
+</div>
+
+<div id="outline-container-3.1.1" class="outline-4">
+<h4 id="sec-3.1.1">3.1.1 How to Convert Unstructured Labs to UI 1.0 Template </h4>
+<div id="text-3.1.1">
+
+
+<p>
+Go to the directory ui-1.0-toolkit
+</p>
+
+
+<pre class="example">
+cd ui-1.0-toolkit
+</pre>
+
+
+
+
+<p>
+Edit the file <code>./src/template/src/lab/exp1/content.html</code>. This
+file <code>content.html</code> contains the simple pendulum experiment by default.
+Follow the instructions below to convert one of your experiments to UI
+1.0 Template.
+</p>
+
+
+
+<pre class="example">
+vim ./src/template/src/lab/exp1/content.html
+</pre>
+
+
+
+
+
+<p>
+<b>Step 1:</b> Mention the lab name under <code>header</code> and place your
+experiment name under <code>article</code> and replace the content accordingly in
+each <code>section</code> for Aim, Theory and Procedure. Add licensing details
+and acknowledgements in the footer section.
+</p>
+<p>
+Follow this step for all the experiments of your lab. 
+</p>
+<p>
+<b>Step 2:</b> Edit the file <code>./src/template/src/lab/content.html</code> to list
+all the experiment names. Give links to the listed experiment names.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3.1.2" class="outline-4">
+<h4 id="sec-3.1.2">3.1.2 How to Validate the Conversion to UI 1.0 Template </h4>
+<div id="text-3.1.2">
+
+
+<p>
+<b>Step 1:</b> Based on the operating system, the scripts will
+differ. Therefore, check the scripts being used. If the operating
+system used is "CentOS", use
+<code>./scripts/centos-scripts</code>. If the OS is Ubuntu, use
+<code>./scripts/ubuntu-scripts</code> scripts.
+</p>
+<p>
+<b>Step 2:</b> Copy all the contents of the <code>scripts</code> folder from the path
+above and paste inside <code>./src/template</code>.
+</p>
+
+
+<pre class="example">
+rsync -ravz ./scripts ./src/template/
+</pre>
+
+
+
+
+<p>
+<b>Step 3:</b> Edit the file <code>./src/template/scripts/dependencies.txt</code> and
+list out all the dependencies of the lab. You will need these
+dependencies later during the auto-deployment of the lab.
+</p>
+<p>
+<b>Step 4:</b> Change to scripts directory
+</p>
+
+
+
+<pre class="example">
+cd ./src/template/scripts
+</pre>
+
+
+
+
+
+<p>
+<b>Step 5:</b> Give execute permissions to the <code>initialize.sh</code> script
+</p>
+<p>
+#+BEGIN_EXAMPLE :
+chmod +x initialize.sh
+</p>
+
+<p>
+<b>Step 6:</b> Execute <code>initialize.sh</code> script
+</p>
+
+
+
+<pre class="example">
+./initialize.sh
+</pre>
+
+
+
+
+<p>
+This will automatically install the dependencies and run the <code>make</code>
+file and generate the <code>build</code> folder and place <code>build</code> inside
+the Apache server.  It will automatically run and display the default
+experiment in the browser. If you get permissions denied error,
+try to run the same with sudo su (as a root). In case of proxy error,
+set proxy value in <code>ui-1.0-toolkit/src/template/scripts/config.sh</code>
+accordingly. Also, everytime you make change in <code>content.html</code>, you
+need to run <code>initialize.sh</code>.
+</p>
+<p>
+<b>Step 7:</b> Finally, click on the <code>simple pendulum</code> link to display your
+lab.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3.2" class="outline-3">
+<h3 id="sec-3.2">3.2 How to Convert Labs in Collaborative Framework (Amrita Format) to UI 1.0 Template </h3>
+<div id="text-3.2">
+
+<p>To convert labs from the Collaborative Framework (Amrita Format) to UI
+1.0 Template, you can use the helper scripts in the UI toolkit. The helper
+scripts automate the process to a large extent and you can change the
+rest manually.
+</p>
+
+</div>
+
+<div id="outline-container-3.2.1" class="outline-4">
+<h4 id="sec-3.2.1">3.2.1 Instructions for using scripts </h4>
+<div id="text-3.2.1">
+
+<p>The following instructions will help port the content from the
+Collaborative Framework (Amrita Format) to the Blue-icon theme.
+</p>
+<p>
+<b>Step 1:</b> Change to the ui-kit directory
+</p>
+
+
+
+<pre class="example">
+cd ui-1.0-toolkit/
+</pre>
+
+
+
+
+
+<p>
+<b>Step 2:</b> Create directory called <code>map</code>
+</p>
+
+
+
+<pre class="example">
+&gt; mkdir map
+</pre>
+
+
+
+
+
+<p>
+<b>Step 3:</b> Change to map directory
+</p>
+
+
+
+<pre class="example">
+cd map
+</pre>
+
+
+
+
+
+<p>
+<b>Step 4:</b> To get the sources of your institute, run the wget command
+inside the same directory.
+</p>
+<p>
+Provide the url of your lab that you want to convert to UI 1.0 template from the Amrita format. 
+</p>
+
+
+
+<pre class="example">
+wget -r -e robots=off http://&lt;url of your lab linked to vlab.co.in&gt;
+</pre>
+
+
+
+
+
+<p>
+<b>Step 5:</b> Copy <code>organise.sh</code> from
+<code>../scripts/automated-scripts</code> and place
+it inside <code>map</code> directory.
+</p>
+
+
+
+<pre class="example">
+cp ../scripts/automated-scripts/organise.sh .
+</pre>
+
+
+
+
+<p>
+<b>Step 6:</b> Give execute permissions to organise.sh and run it
+</p>
+
+
+
+<pre class="example">
+chmod +x organise.sh
+./organise.sh
+</pre>
+
+
+
+
+<p>
+After execution, the directories are organized into folders with three
+hierarchies and random numbers as names of these folders. Usually
+first, second and third hierarchy levels represent disciplines, labs
+and experiments respectively of that particular institute.
+</p>
+<p>
+If you get an error that resembles <code>index*\?sub*</code>, then open
+<code>organise.sh</code> and replace the line 
+</p>
+
+
+
+<pre class="example">
+sublist=$(ls -1 index*\?sub* | cut -d'&amp;' -f1 | cut -d'=' -f2 | sort -u)
+</pre>
+
+
+
+
+<p>
+with 
+</p>
+
+
+<pre class="example">
+sublist=$(ls -1 index*\_sub* | cut -d'&amp;' -f1 | cut -d'=' -f2 | sort -u)
+</pre>
+
+
+
+
+<p>
+<b>Step 7:</b> Copy the <code>kit</code> folder from <code>../scripts/automated-scripts</code>
+and place inside each experiment folder.
+</p>
+
+
+
+
+<pre class="example">
+rsync -avzr ../scripts/automated-scripts/kit ./&lt;discipline&gt;/&lt;lab&gt;/&lt;experiment&gt;/
+</pre>
+
+
+
+
+<p>
+<b>Step 8:</b> After copying, change to <code>kit</code> in each experiment.
+</p>
+
+
+<pre class="example">
+cd ./&lt;discipline&gt;/&lt;lab&gt;/&lt;experiment&gt;/
+</pre>
+
+
+
+
+<p>
+<b>Step 9:</b> Execute <code>all.sh</code>
+</p>
+
+
+
+<pre class="example">
+./all.sh
+</pre>
+
+
+
+<p>
+This will open the experiment in the browser.
+</p>
+<p>
+<b>Step 10:</b> Click on the <code>simple pendulum</code> link to display your lab. 
+</p>
+
+<p>
+<b>Step 11:</b> Follow the same procedure for every experiment. After
+converting all the experiments, rename the folders experiment-wise
+such as: exp1, exp2, exp3 so on and place them inside the <code>lab</code>
+folder. Content will open in the browser with the simple pendulum
+sample experiment.  You need to change the experiment name and add
+acknowledgements in the footer section.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">4 Conclusion </h2>
+<div id="text-4">
+
+<p>After conversion, your lab:
+</p>
+<ul>
+<li>
+should match the directory structure as below.
+
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/labs-structure.png"  alt="./images/labs-structure.png" /></p>
+</div>
+
+<ul>
+<li>
+should have all the content and should resemble the page below.
+
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="images/screenshot2.jpg"  alt="images/screenshot2.jpg" /></p>
+</div>
+
+
+</div>
+</div>
+<div id="postamble"><p class="author"> Author: VLEAD Team, IIITH
+<a href="mailto:engg@virtual-labs.ac.in">&lt;engg@virtual-labs.ac.in&gt;</a>
+</p>
+<p class="date"> Date: [2014-09-18 Thursday]</p>
+<p>HTML generated by org-mode 6.21b in emacs 23</p>
+</div></body>
+</html>
