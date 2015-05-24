@@ -21,73 +21,30 @@
                 {
                     "contact": {
                         "alternate_email": "", 
-                        "email": "jawahar@iiit.ac.in", 
+                        "email": "tahiliani.nitk@gmail.com ", 
                         "mobile_number": "", 
                         "office_number": ""
                     }, 
                     "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Jawahar C.V", 
+                    "institute": "NITK Surathkal", 
+                    "name": "Mohit tahiliani", 
                     "organization": "", 
                     "role": "Lab Developer", 
                     "title": "", 
                     "web": ""
                 }, 
+              
+              
                 {
                     "contact": {
                         "alternate_email": "", 
-                        "email": "phani@iiit.ac.in", 
+                        "email": "tahiliani@nitk.edu.in", 
                         "mobile_number": "", 
                         "office_number": ""
                     }, 
                     "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Phani Phani", 
-                    "organization": "", 
-                    "role": "Lab RA", 
-                    "title": "", 
-                    "web": ""
-                }, 
-                {
-                    "contact": {
-                        "alternate_email": "", 
-                        "email": "kumarsrijan@students.iiit.ac.in", 
-                        "mobile_number": "", 
-                        "office_number": ""
-                    }, 
-                    "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Kumar Srijan", 
-                    "organization": "", 
-                    "role": "Lab RA", 
-                    "title": "", 
-                    "web": ""
-                }, 
-                {
-                    "contact": {
-                        "alternate_email": "", 
-                        "email": "jayaguru.pandaug08@students.iiit.ac.in", 
-                        "mobile_number": "", 
-                        "office_number": ""
-                    }, 
-                    "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Jay Panda", 
-                    "organization": "", 
-                    "role": "Lab RA", 
-                    "title": "", 
-                    "web": ""
-                }, 
-                {
-                    "contact": {
-                        "alternate_email": "", 
-                        "email": "shashank.sharmaug08@students.iiit.ac.in", 
-                        "mobile_number": "", 
-                        "office_number": ""
-                    }, 
-                    "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Shashank Sharma", 
+                    "institute": "NITK Surathkal", 
+                    "name": "Mohit tahiliani", 
                     "organization": "", 
                     "role": "Lab RA", 
                     "title": "", 
@@ -95,11 +52,11 @@
                 }
             ], 
             "discipline": [
-                "Computer Science & Engineering"
+                "Strength-of-Materials"
             ], 
-            "id": "cse02", 
+            "id": "civ02", 
             "integration_level": 5, 
-            "name": "Computer Programming", 
+            "name": "Civil", 
             "server-side": true, 
             "status": "Released", 
             "type": ""
