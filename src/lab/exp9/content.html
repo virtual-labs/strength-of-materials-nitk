@@ -20,9 +20,7 @@ edit -->
 
 <body>
     <div id="experiment">
-        <!-- The Experiment Document Container-->
-        <!-- The lab Header contains the logo and the name of the lab,
-  usually displayed on the top of the page-->
+        
 
         <header class="default" id="experiment-header">
             <div class="logo" id="experiment-header-logo">
@@ -31,332 +29,274 @@ edit -->
             <img src="../images/logo.jpg"></div>
 
             <div class="heading" id="experiment-header-heading">
-                <!-- Write the name of your lab and link it to the home 
-      page of your lab (h1 tag is preferred while writing your 
-      lab name)-->
+                
                 <a href="../index.html">Strength-of-Materials Lab</a>
-            </div><!-- Add any additional element you want to add to the lab 
-    header, For example : Help (Enclosing them with suitable 
-    div is recommended)-->
-        </header><!-- The lab article is the main content area where all the 
-  experiment content sits-->
+            </div>
+        </header>
 
         <article id="experiment-article">
-            <!-- The lab article has an header, optional navigational 
-    menu, number of sections, an optional sidebar and a closing 
-    footer-->
-
+            
             <div class="breadcrumb" id="experiment-article-breadcrumb"></div>
 
             <header class="heading" id="experiment-article-heading">
                 Mohr's circle
-            </header><!-- Navigation menu is useful to organize the view of 
-      multiple sections inside the article-->
+            </header>
 
             <nav class="default" id="experiment-article-navigation">
                 <ul id="experiment-article-navigation-menu">
                     
                 </ul>
-            </nav><!-- All the sections of your lab or experiment can be 
-      enclosed together with a div element as shown below-->
+            </nav>
 
             <div id="experiment-article-sections">
                 <!-- First section of the article-->
 
-   <section id="experiment-article-section-1">
-                    <div class="icon" id="experiment-article-section-1-icon">
-                    <!-- Enclose the icon image of your lab. -->
-                    <img src="../images/theory.jpg"></div>
+		<section id="experiment-article-section-1">
+			<div class="icon" id="experiment-article-section-1-icon">
+			<!-- Enclose the icon image of your lab. -->
+			<img src="../images/theory.jpg"></div>
 
-                    <div class="heading" id=
-                    "experiment-article-section-1-heading">
-                        Theory
-                    </div>
+			<div class="heading" id="experiment-article-section-1-heading">
+									Theory
+			</div>
 
-                    <div class="content" id=
-                    "experiment-article-section-1-content">
-                        <div class="divContent" id="wrap">
-                           
-                            <p class="MsoNormal" style="line-height: 150%;">
+			<div class="content" id="experiment-article-section-1-content">
+			<div class="divContent" id="wrap">
+									   
+			<p class="MsoNormal" style="line-height: 150%;">
 
-Mohr’s Circle is used to derive some basic formulas relating to the transformation of plane stress and
-was first introduced by the German engineer Otto Mohar (1835-1918) and hence is known as Mohr’s
-circle for plane stress. This method is based on simple geometric consideration and does not require
-the use of specialized formulas. While it was originally designed for graphical solutions, it lends itself
-well to the use of a calculator.<br><br>
-Consider a square element of a material subjected to plane stress (figure.1.) and let $\sigma x$, $\sigma y$, and $\tau xy$
-be the component of stress exerted on the element. We plot a point X of coordinates x and -xy, and
-a point Y of coordinates $\sigma y$ and +$\tau xy$. If $\tau xy$ is positive, as assumed in (figure.1.), point X is located
-below the σ axis and point Y above, as shown in (Figure.2.). If τxy is negative, X is located above the σ
-axis and Y below. Joining X and Y by a straight line, we define the point C of intersection of line XY with
-the σ axis and draw the circle of the centre C and the diameter XY. Noting that the abscissa of C and
-radius of the circle are respectively equal to the quantities σave and R defined by equation
-<br><br>
-$\sigma ave=\frac{\sigma x+\sigma y}2$   and    $R=\sqrt{(\frac{\sigma x-\sigma y}2)^2+\tau^2xy}$<br>
-We conclude that the circle obtained is Mohr’s circle for plane stress. Thus the abscissa of points A and
-B where the circles intersect the σ axis represent respectively the principal stresses σmax and σmin at
-the point considered.
+			Mohr’s Circle is used to derive some basic formulas relating to the transformation of plane stress and
+			was first introduced by the German engineer Otto Mohar (1835-1918) and hence is known as Mohr’s
+			circle for plane stress. This method is based on simple geometric consideration and does not require
+			the use of specialized formulas. While it was originally designed for graphical solutions, it lends itself
+			well to the use of a calculator.<br><br>
+			Consider a square element of a material subjected to plane stress (figure.1.) and let $\sigma x$, $\sigma y$, and $\tau xy$
+			be the component of stress exerted on the element. We plot a point X of coordinates x and -xy, and
+			a point Y of coordinates $\sigma y$ and +$\tau xy$. If $\tau xy$ is positive, as assumed in (figure.1.), point X is located
+			below the σ axis and point Y above, as shown in (Figure.2.). If τxy is negative, X is located above the σ
+			axis and Y below. Joining X and Y by a straight line, we define the point C of intersection of line XY with
+			the σ axis and draw the circle of the centre C and the diameter XY. Noting that the abscissa of C and
+			radius of the circle are respectively equal to the quantities σave and R defined by equation
+			<br><br>
+			$\sigma ave=\frac{\sigma x+\sigma y}2$   and    $R=\sqrt{(\frac{\sigma x-\sigma y}2)^2+\tau^2xy}$<br>
+			We conclude that the circle obtained is Mohr’s circle for plane stress. Thus the abscissa of points A and
+			B where the circles intersect the σ axis represent respectively the principal stresses σmax and σmin at
+			the point considered.
 
-<img  src= "../images/mc1.png" style="width:557px;height:599px"><br>
-We also note that, since $\tan\left(XCA\right)=\frac{2tauxy}{\sigma x-\sigma y}$ (the angle XCA is eqal in magnitude to one of the
+			<img  src= "../images/mc1.png" style="width:557px;height:599px"><br>
+			We also note that, since $\tan\left(XCA\right)=\frac{2tauxy}{\sigma x-\sigma y}$ (the angle XCA is eqal in magnitude to one of the
 
-angles 2 that satisfies equation
-$$\tan\left(2\theta p\right)=\frac{2tauxy}{\sigma x-\sigma y}$$
-Thus, the angle
-that defines in (figure.1.) the orientation of principle plane corresponds to point A in
-(figure.2.) can be obtained by dividing in half the angle XCA measured on Mohr’s Circle. We further
-observe that if > and > 0, as in the case considered here, the rotation which brings CX into
-CA is counterclockwise. But, in that case, the angle
-p obtained from equation
-$$\tan\left(2\theta p\right)=\frac{2tauxy}{\sigma x-\sigma y}$$
-And defining the direction of the normal Oa to the principal plane is positive; thus the rotation bringing
-Ox into Oa is also counter clockwise . we conclude that the senses of rotation in both parts of (figure.1
-and 2.) are the same; if a counterclockwise rotation through 2 p is required to bring CX into CA on
-Mohr’s circle, a counterclockwise rotation through p will bring Ox into Oa in (figure1.).<br><br>
-The construction of Mohr’s circle is greatly simplified if we consider separately each faces of the
-element used to define the stress components. From (figure.3 and figure.4) its observed that, when
-the shear stress extend on a given face tends to rotate the element clockwise, the point on Mohr’s
-circle corresponding to that face is located above the S axis. When the shearing stress on a given face
-tends to rotate the element counterclockwise, the point corresponds to that face tends to rotate the
-element counterclockwise, the point corresponding to that face is located below the S axis. As far as
-normal stresses are concerned, the usual convention holds, i.e., a tensile stress is considered as
-positive and is plotted to the right, while a compressive stress is considered as negative and is plotted
-to the left.
+			angles 2 that satisfies equation
+			$$\tan\left(2\theta p\right)=\frac{2tauxy}{\sigma x-\sigma y}$$
+			Thus, the angle
+			that defines in (figure.1.) the orientation of principle plane corresponds to point A in
+			(figure.2.) can be obtained by dividing in half the angle XCA measured on Mohr’s Circle. We further
+			observe that if > and > 0, as in the case considered here, the rotation which brings CX into
+			CA is counterclockwise. But, in that case, the angle
+			p obtained from equation
+			$$\tan\left(2\theta p\right)=\frac{2tauxy}{\sigma x-\sigma y}$$
+			And defining the direction of the normal Oa to the principal plane is positive; thus the rotation bringing
+			Ox into Oa is also counter clockwise . we conclude that the senses of rotation in both parts of (figure.1
+			and 2.) are the same; if a counterclockwise rotation through 2 p is required to bring CX into CA on
+			Mohr’s circle, a counterclockwise rotation through p will bring Ox into Oa in (figure1.).<br><br>
+			The construction of Mohr’s circle is greatly simplified if we consider separately each faces of the
+			element used to define the stress components. From (figure.3 and figure.4) its observed that, when
+			the shear stress extend on a given face tends to rotate the element clockwise, the point on Mohr’s
+			circle corresponding to that face is located above the S axis. When the shearing stress on a given face
+			tends to rotate the element counterclockwise, the point corresponds to that face tends to rotate the
+			element counterclockwise, the point corresponding to that face is located below the S axis. As far as
+			normal stresses are concerned, the usual convention holds, i.e., a tensile stress is considered as
+			positive and is plotted to the right, while a compressive stress is considered as negative and is plotted
+			to the left.
 
-<img  src= "../images/mc3.png" style="width:764px;height:250px">
+			<img  src= "../images/mc3.png" style="width:764px;height:250px">
 
-</p>
+			</p>
 
-    </section>                        
-   <section id="experiment-article-section-2">
-                    <div class="icon" id="experiment-article-section-2-icon">
-                    <!-- Enclose the icon image of your lab.-->
-                     <img src="../images/procedure.jpg" style="padding-left: 20px;"></div>
-
-                    <div class="heading" id=
-                    "experiment-article-section-2-heading">
-                        Procedure
-                    </div>
-
-                    <div class="content" id=
-                    "experiment-article-section-2-content">
-                        <div class="divContent" id="wrap">
-                 
-                            <p class="MsoNormal" style="line-height: 150%;">
-                            <span lang="EN-IN" style=
-                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
-                            &nbsp;<b></b></span></p>
-
-                            <p class="MsoNormal" style=
-                            "font-weight: bold; line-height: 150%"><span lang=
-                            "EN-IN" style=
-                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
-                            &nbsp;</span></p>
+		</section> 
 
 
-                </section>
+                       
+		<section id="experiment-article-section-2">
+			<div class="icon" id="experiment-article-section-2-icon">
+			<!-- Enclose the icon image of your lab.-->
+			<img src="../images/procedure.jpg" style="padding-left: 20px;"></div>
+
+			<div class="heading" id="experiment-article-section-2-heading">
+									Procedure
+			</div>
+
+			<div class="content" id="experiment-article-section-2-content">
+			<div class="divContent" id="wrap">
+							 
+			<p class="MsoNormal" style="line-height: 150%;">
+			<span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+			&nbsp;<b></b></span></p>
+
+			<p class="MsoNormal" style="font-weight: bold; line-height: 150%"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+			&nbsp;</span></p>
+
+		</section>
 
 
-                <section id="experiment-article-section-3">
-                    <div class="icon" id="experiment-article-section-3-icon">
-                    <!-- Enclose the icon image of your lab. -->
-                  <img src="../images/selfevaluation.jpg" style="padding-left:50px;"></div>
-                    <!-- The heading for the section can be enclosed in a 
-        div tag. -->
+		<section id="experiment-article-section-3">
+			<div class="icon" id="experiment-article-section-3-icon">
+			 <!-- Enclose the icon image of your lab. -->
+			<img src="../images/selfevaluation.jpg" style="padding-left:50px;"></div>
+								<!-- The heading for the section can be enclosed in a 
+					div tag. -->
+			<div class="heading" id="experiment-article-section-3-heading">
+			 Self Evaluation
+			</div><!-- Write the section content inside a paragraph 
+					element, we can also include images with &lt;img&gt; tag -->
+			<div class="content" id="experiment-article-section-3-content">
+			<div class="divQuiz">
+			<div id="displayQuiz">
+			<form id="form11" method="post" name="form11">
+			  
+			</form><br>
+			</div><br>
+			</div>
+			</div>
+		</section>
 
-                    <div class="heading" id=
-                    "experiment-article-section-3-heading">
-                        Self Evaluation
-                    </div><!-- Write the section content inside a paragraph 
-        element, we can also include images with &lt;img&gt; tag -->
+		<section id="experiment-article-section-4">
+			<div class="icon" id="experiment-article-section-4-icon">
+			<!-- Enclose the icon image of your lab.-->
+			<img src="../images/simulation.jpg" style="padding-left: 20px;"></div>
 
-                    <div class="content" id=
-                    "experiment-article-section-3-content">
-                        <div class="divQuiz">
-                            <div id="displayQuiz">
-                                <form id="form11" method="post" name="form11">
-                                   
-                                </form><br>
-                            </div><br>
-                        </div>
-                    </div>
-                </section>
+			<div class="heading" id="experiment-article-section-4-heading">
+									Simulator
+			</div>
 
-                <section id="experiment-article-section-4">
-                    <div class="icon" id="experiment-article-section-4-icon">
-                    <!-- Enclose the icon image of your lab.-->
-                    <img src="../images/simulation.jpg" style="padding-left: 20px;"></div>
+			<div class="content" id="experiment-article-section-4-content">
+			<div class="divContent">
+			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" height="600" width="1300"><param name="quality" value="high" /><param name="movie" value="../images/swf/mohrscircle.swf" /><embed height="700" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="../images/swf/mohrscircle.swf" type="application/x-shockwave-flash" width="1000"></embed></object></p>
 
-                    <div class="heading" id=
-                    "experiment-article-section-4-heading">
-                        Simulator
-                    </div>
+			</div>
+			</div>
+		</section>
 
-                    <div class="content" id=
-                    "experiment-article-section-4-content">
-                        <div class="divContent">
-                          <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" height="600" width="1300"><param name="quality" value="high" /><param name="movie" value="../images/swf/mohrscircle.swf" /><embed height="700" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="../images/swf/mohrscircle.swf" type="application/x-shockwave-flash" width="1000"></embed></object></p>
+		<section id="experiment-article-section-5">
+			<div class="icon" id="experiment-article-section-5-icon">
+			<!-- Enclose the icon image of your lab -->
+			<img src="../images/assignment.jpg" style="padding-left: 20px;"></div>
+			<!-- The heading for the section can be enclosed in a 
+					  div tag. -->
 
-                        </div>
-                    </div>
+			<div class="heading" id="experiment-article-section-5-heading">
+									Assignment
+			</div><!-- Write the section content inside a paragraph 
+					  element, You can also include images with &lt;img&gt; tag -->
+			<div class="content" id="experiment-article-section-5-content">
+			<div class="divContent">
+									  
+			<p><!-- p { margin-bottom: 0.21cm; } --></p>
+			<p style="margin-bottom: 0cm;">&nbsp;</p>
+			<p style="margin-bottom: 0cm;">&nbsp;</p>
 
-			
-
-
-                </section>
-
-                <section id="experiment-article-section-5">
-                    <div class="icon" id="experiment-article-section-5-icon">
-                    <!-- Enclose the icon image of your lab -->
-                    <img src="../images/assignment.jpg" style="padding-left: 20px;"></div>
-                    <!-- The heading for the section can be enclosed in a 
-          div tag. -->
-
-                    <div class="heading" id=
-                    "experiment-article-section-5-heading">
-                        Assignment
-                    </div><!-- Write the section content inside a paragraph 
-          element, You can also include images with &lt;img&gt; tag -->
-
-                    <div class="content" id=
-                    "experiment-article-section-5-content">
-                        <div class="divContent">
-                          
-
-                          
-
-                            <p><!-- p { margin-bottom: 0.21cm; } --></p>
-
-                           
-
-                           
-                            <p style="margin-bottom: 0cm;">&nbsp;</p>
-
-                            <p style="margin-bottom: 0cm;">&nbsp;</p>
-
-                            <p><span style=
-                            "font-family: arial,helvetica,sans-serif; font-size: medium; color: rgb(0, 0, 0);">
-                            <br></span></p>
-                        </div>
-                    </div>
-                </section><!-- Second section of the article-->
+			<p><span style="font-family: arial,helvetica,sans-serif; font-size: medium; color: rgb(0, 0, 0);">
+			<br></span></p>
+			</div>
+			</div>
+		</section>
 
 
-               <section id="experiment-article-section-6">
-                    <div class="icon" id="experiment-article-section-6-icon">
-                    <!-- Enclose the icon image of your lab.-->
-                     <img src="../images/reference.jpg" style="padding-left: 15px;"></div>
+		<section id="experiment-article-section-6">
+			<div class="icon" id="experiment-article-section-6-icon">
+								<!-- Enclose the icon image of your lab.-->
+			<img src="../images/reference.jpg" style="padding-left: 15px;"></div>
 
-                    <div class="heading" id=
-                    "experiment-article-section-6-heading">
-                        Reference
-                    </div>
+			<div class="heading" id="experiment-article-section-6-heading">
+									Reference
+			</div>
 
-                    <div class="content" id=
-                    "experiment-article-section-6-content">
-                        <div class="divContent">
-                           
+			<div class="content" id="experiment-article-section-6-content">
+			<div class="divContent">
+									   
+			<p class="MsoNormal" style="line-height: normal;">
+			<span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+			&nbsp;</span> 
+			F.P. Beer and E.R. Johnston, Mechanics of Materials, Tata McGraw – Hill.<br>
+			F.L. Singer. Strength of Materials, Harper and Row Publishers.<br>
+			Hearns E.J., Mechanics of Materials, Pergaman Press.<br>
+			Gere and Timoshenko, Mechanics of Materials, CBS Publishers & Distributors.<br>
+			F.P. Beer and E.R. Johnston, Mechanics for Engineers – Statics & Dynamics, Tata McGraw – Hill.<br>
+			F.L. Singer. Engineering Mechanics – Statics and Dynamics, Harper and Row Publishers.<br>
+			J.L. Marium and L.G. Kraige, Engineering Mechanics – Vol I & II, John Wiley & Sons.<br>
+			S.P. Timoshenko and D.H. Young, Engineering Mechanics, McGraw – Hill.<br>
+			I.H. Shames, Engineering Mechanics – Statics and Dynamics,  Prentice Hall of India.<br>
+			S.S. Bhavikatti and K.G. Rajashekarappa, Engineering Mechanics, Wiley Eastern Ltd.<br>
+			S.S. Bhavikatti and A.V. Hegde, Engineering Mechanics - Problems and Solutions.<br>
+			Material Testing by Davis<br>
+			Mechanical Metallurgy by Diater</p>
 
-                          
-                            
+			<h2><span style="color: rgb(51, 102, 255);">&nbsp;</span></h2>
+			<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+			<meta content="Word.Document" name="ProgId">
+			<meta content="Microsoft Word 12" name="Generator">
+			<meta content="Microsoft Word 12" name="Originator">
+									   
+			</span><style type="text/css">
+			</style><span style="color: rgb(51, 102, 255);"></span> <span style="background: none repeat scroll 0% 0% yellow;">
+			<span style="color: rgb(51, 102, 255);">
+			<br></span></span>
 
-                           
+			<h2><span style="color: rgb(51, 102, 255);">
+			<!--[if !supportLists]--></span></h2>
 
-                            <p class="MsoNormal" style="line-height: normal;">
-                            <span style=
-                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
-                            &nbsp;</span> F.P. Beer and E.R. Johnston, Mechanics of Materials, Tata McGraw – Hill.<br>
-F.L. Singer. Strength of Materials, Harper and Row Publishers.<br>
-Hearns E.J., Mechanics of Materials, Pergaman Press.<br>
-Gere and Timoshenko, Mechanics of Materials, CBS Publishers & Distributors.<br>
-F.P. Beer and E.R. Johnston, Mechanics for Engineers – Statics & Dynamics, Tata McGraw – Hill.<br>
-F.L. Singer. Engineering Mechanics – Statics and Dynamics, Harper and Row Publishers.<br>
-J.L. Marium and L.G. Kraige, Engineering Mechanics – Vol I & II, John Wiley & Sons.<br>
-S.P. Timoshenko and D.H. Young, Engineering Mechanics, McGraw – Hill.<br>
-I.H. Shames, Engineering Mechanics – Statics and Dynamics,  Prentice Hall of India.<br>
-S.S. Bhavikatti and K.G. Rajashekarappa, Engineering Mechanics, Wiley Eastern Ltd.<br>
-S.S. Bhavikatti and A.V. Hegde, Engineering Mechanics - Problems and Solutions.<br>
-Material Testing by Davis<br>
-Mechanical Metallurgy by Diater</p>
+			<p>&nbsp;</p>
 
-                            <h2><span style=
-                            "color: rgb(51, 102, 255);">&nbsp;</span></h2>
-                            <meta content="text/html; charset=utf-8"
-                            http-equiv="Content-Type">
-                            <meta content="Word.Document" name="ProgId">
-                            <meta content="Microsoft Word 12" name="Generator">
-                            <meta content="Microsoft Word 12" name=
-                            "Originator">
-                           
-                            </span><style type="text/css">
-</style><span style="color: rgb(51, 102, 255);"></span> <span style=
-"background: none repeat scroll 0% 0% yellow;"><span style="color: rgb(51, 102, 255);">
-                            <br></span></span>
+									  
+			<h2 style="margin-left: 0.5in; text-indent: -0.25in; line-height: 150%;">
+			<span style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: windowtext;'>
 
-                            <h2><span style="color: rgb(51, 102, 255);">
-                            <!--[if !supportLists]--></span></h2>
+			<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
+			</h2>
+			<p>&nbsp;</p>
 
-                            <p>&nbsp;</p>
+			<p>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 
-                          
-                            <h2 style=
-                            "margin-left: 0.5in; text-indent: -0.25in; line-height: 150%;">
-                            <span style=
-                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: windowtext;'>
-                            <span style=
-                            "">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
-                            </h2>
+			<p class="MsoNormal" style="line-height: 150%;">
+			<span style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+			&nbsp;</span></p>
 
-                            <p>&nbsp;</p>
+			<h2 style=
+			"margin: 10pt 0in 0.25in 0.5in; text-indent: -0.25in; line-height: 150%;">
+			<a href="%C2%A0%20http:/en.wikipedia.org/wiki/Temperature_measurement">
+			</a></h2>
 
-                            <p>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+			<p>&nbsp;</p>
+			</div>
+			</div>
+		</section>
 
-                            <p class="MsoNormal" style="line-height: 150%;">
-                            <span style=
-                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
-                            &nbsp;</span></p>
+		<section id="experiment-article-section-7">
+			<div class="icon" id="experiment-article-section-7-icon">
+			<!-- Enclose the icon image of your lab.-->
+			<img src="../images/video.jpg"></div>
 
-                            <h2 style=
-                            "margin: 10pt 0in 0.25in 0.5in; text-indent: -0.25in; line-height: 150%;">
-                            <a href=
-                            "%C2%A0%20http:/en.wikipedia.org/wiki/Temperature_measurement">
-                            </a></h2>
+			<div class="heading" id="experiment-article-section-7-heading">
+									Video 
+			</div>
 
-                            <p>&nbsp;</p>
-                        </div>
-                    </div>
-                </section>
-
-              <section id="experiment-article-section-7">
-                    <div class="icon" id="experiment-article-section-7-icon">
-                    <!-- Enclose the icon image of your lab.-->
-                    <img src="../images/video.jpg"></div>
-
-                    <div class="heading" id=
-                    "experiment-article-section-7-heading">
-                        Video 
-                    </div>
-
-                    <div class="content" id=
-                    "experiment-article-section-7-content">
-                        
-                    </div>
-                </section>
+			<div class="content" id="experiment-article-section-7-content">
+									
+			</div>
+		</section>
 
                
-                <section id="experiment-article-section-8">
-                    <div class="icon" id="experiment-article-section-8-icon">
-                    <!-- Enclose the icon image of your lab.-->
-                    <img src="../images/quiz.jpg"></div>
-                    
+		<section id="experiment-article-section-8">
+			<div class="icon" id="experiment-article-section-8-icon">
+			<!-- Enclose the icon image of your lab.-->
+			<img src="../images/quiz.jpg"></div>
+								
 
-                    <div class="heading" id= "experiment-article-section-8-heading">
-                        &nbsp;Quiz 
-                    </div>
-
-                    
-                </section>
+			<div class="heading" id= "experiment-article-section-8-heading">
+			&nbsp;Quiz 
+			</div>
+		</section>
 
               
             </div>
