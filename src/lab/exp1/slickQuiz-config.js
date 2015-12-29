@@ -38,16 +38,28 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,Ans:-2.598MPa</p>" // no comma here
         },
         { // Question 3 - Multiple Choice, Multiple True Answers, Select All
-            "q": "The Grain of a wooden member forms an angle of 15 degree with the vertical. For the state of stress shown determine in plane shearing stress parallel to the grain<br><img src=\"../images/mohr03.png\"\/>",
+            "q": "The extremities of any diameter on Mohr's circle represent",
  
             "a": [
-                {"option": "-1.5MPa",           "correct": true},
-                {"option": "2.5MPa",              "correct": false},
-                {"option": "-3.6MPa",  "correct": false},
-                {"option": "7.8MPa",          "correct": false} // no comma here
+                {"option": "Principal stresses",           "correct": false},
+                {"option": "Normal stresses on planes at 45 degree",              "correct": true},
+                {"option": "Shear stresses on planes at 45 degree",  "correct": false},
+                {"option": "Normal and shear stresses on a plane",          "correct": false} // no comma here
             ],
-             "correct": "<p><span>Right answer</span> Ans:-1.5MPa</p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,Ans:-1.5MPa</p>" // no comma here
+            "correct": "<p><span>Right answer</span></p>",
+            "incorrect": "<p><span>wrong</span> It's wrong, Ans: Normal stresses on planes at 45 degree</p>" // no comma here
+        },
+		{ // Question 4 - Multiple Choice, Multiple True Answers, Select All
+            "q": "Mohr's theorem I gives _____ between two tangents on the elastic line of beams",
+ 
+            "a": [
+                {"option": "Slope",           "correct": false},
+                {"option": "Deflection",              "correct": false},
+                {"option": "S.F.",  "correct": false},
+                {"option": "B.M.",          "correct": true} // no comma here
+            ],
+            "correct": "<p><span>Right answer</span></p>",
+            "incorrect": "<p><span>wrong</span> It's wrong, Ans: B.M.</p>" // no comma here
         }
    // no comma here
     ]
