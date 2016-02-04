@@ -1,0 +1,40 @@
+* Author: santhosh	
+* Date created: 04 feb 2016
+* Environment
+
+    - OS: Windows 7,Ubuntu-16.04,CentOS-6
+    - Browsers: Firefox-42.0,Chrome-47.0,Chromium-45.0
+    - Bandwidth : 100Mbps
+    - Hardware Configuration:8GB RAM ,
+    - Processor:i5,
+
+
+* Objectives
+	- Experiment should be easily usable.
+
+* Pre conditions 
+	
+	1 Open the url landingpage.base1.vlabs.ac.in and vlabs home page will be displayed.
+    2 Click on  NIT KARNATAKA list of labs will be displayed on the screen.
+    3 Select Problem Strenght of Material Lab, a home page will be displayed and click on List of experiments link, where a list of experiments will be displayed on the screen.
+    4 Select "Mohr's circle" experiment.
+
+* Post conditions
+	- Nil
+	
+* Test Steps
+
+    - While testing observe for easiness to use the features of the experiment
+
+    1 Click on to the Reference tab it should display the contents.
+	2 Verify wether content id present.
+	
+	
+
+* Expected result
+	
+    1 Reference page should be open. 
+	2 Reference page should give valid references.
+
+* Review comments 
+
