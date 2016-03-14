@@ -28,14 +28,14 @@ var quizJSON = {
         { // Question 2 - Multiple Choice, Multiple True Answers, Select Any
             "q": "Which is incorrect?",
             "a": [
-                {"option": "In charpy test notch is u shaped and is placed so that it lies on compression side",   "correct": true},
+                {"option": "In charpy test notch is U shaped and is placed so that it lies on compression side",   "correct": true},
                 {"option": "Striking energy for Izod is 164J",   "correct": false},
                 {"option": "In charpy test, specimen supported horizontally in simply supported manner.",    "correct": false},
                 {"option": "All the above", "correct": false} // no comma here
             ],
             "select_any": true,
             "correct": "<p><span>Right answer</span> </p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: In charpy test notch is u shaped and is placed so that it lies on compression side</p>" // no comma here
+            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: In charpy test notch is U shaped and is placed so that it lies on compression side</p>" // no comma here
         },
         { // Question 3 - Multiple Choice, Multiple True Answers, Select All
             "q": "What is the striking velocity of pendulum in charpy test?",
@@ -62,7 +62,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: 40 mm </p>" // no comma here
         },
 		{ // Question 5 Multiple Choice, Multiple True Answers, Select All
-            "q": "Initially, the energy of the hammer is",
+            "q": "The initial energy of the hammer is",
  
             "a": [
                 {"option": "300 joules",           "correct": true},

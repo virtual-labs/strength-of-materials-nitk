@@ -37,18 +37,18 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: False</p>" // no comma here
         },
 		{  // Question 3 - Multiple Choice, Single True Answer
-            "q": "During test if the piece is not broken, the impact value is",
+            "q": "Match the following for charpy test<br><img src=\"../images/table_charpyse.png\"\/>",
             "a": [
-                {"option": "Indefinite",      "correct": false},
-                {"option": "Unspecified",      "correct": false},
-                {"option": "Imprecise",      "correct": false},		// no comma here
-				{"option": "All the above",      "correct": true}        
+                {"option": "1-d; 2-e; 3-b; 4-a; 5-c",      "correct": true},
+                {"option": "1-c; 2-d; 3-a; 4-e; 5-b",      "correct": false},
+                {"option": "1-a; 2-b; 3-c; 4-d; 5-e",      "correct": false},		// no comma here
+				{"option": "1-d; 2-e; 3-a; 4-b; 5-c",      "correct": false}        
 			],
             "correct": "<p><span>Right answer</span></p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: All the above</p>" // no comma here
+            "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: 1-d; 2-e; 3-b; 4-a; 5-c</p>" // no comma here
         },
 		{  // Question 4 - Multiple Choice, Single True Answer
-            "q": "During test if the piece is not broken, the impact value is",
+            "q": "Stress induced in a body due to suddenly applied load compared to when it is applied gradually is",
             "a": [
                 {"option": "Same",      "correct": false},
                 {"option": "Half",      "correct": false},

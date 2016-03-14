@@ -49,7 +49,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: Toughness</p>" // no comma here
         },
          { // Question 4 - Multiple Choice, Multiple True Answers, Select Any
-            "q": "Initially, the energy of the hammer is ",
+            "q": "The initial energy of the hammer is ",
             "a": [
                 {"option": "186 Joules",               "correct": false},
                 {"option": "192 Joules",   "correct": false},

@@ -26,7 +26,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,</br>Ans: V-notch </p>" // no comma here
         },
         { // Question 2 - Multiple Choice, Multiple True Answers, Select Any
-            "q": "The test piece is placed in such a way that the Notch is facing<br>",
+            "q": "The test piece is placed in such a way that the notch is facing<br>",
             "a": [
                 {"option": "Up",   "correct": false},
                 {"option": "Away from striking edge",   "correct": true},
@@ -62,7 +62,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,</br>Ans: 45 degree</p>" // no comma here
         },
 		{ // Question 5 - Multiple Choice, Multiple True Answers, Select All
-            "q": "In Izod test specimen, the angle of v-notch section is",
+            "q": "In Izod test specimen, the angle of V-notch section is",
  
             "a": [
                 {"option": "30 degree ",           "correct": false},

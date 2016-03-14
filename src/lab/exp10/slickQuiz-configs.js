@@ -28,9 +28,9 @@ var quizJSON = {
          { // Question 2 - Multiple Choice, Multiple True Answers, Select Any
             "q": "During hardness test the indenter is usually a",
             "a": [
-                {"option": "Ball",               "correct": false},
-                {"option": "Pyramid",   "correct": false},
-				{"option": "Cone",               "correct": false},
+                {"option": "Ball indenter",               "correct": false},
+                {"option": "Pyramid indenter",   "correct": false},
+				{"option": "Cone indenter",               "correct": false},
 				{"option": "All of the above", "correct": true} // no comma here
             ],
            
@@ -53,7 +53,7 @@ var quizJSON = {
             "a": [
                 {"option": "Scratching",               "correct": false},
                 {"option": "Wear",   "correct": false},
-				{"option": "Indentation",               "correct": true},
+				{"option": "Indentation",               "correct": false},
 				{"option": "All the above", "correct": true} // no comma here
             ],
            

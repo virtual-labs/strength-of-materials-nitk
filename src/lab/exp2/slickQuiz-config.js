@@ -22,7 +22,7 @@ var quizJSON = {
                  // no comma here
             ],
             "correct": "<p><span>Right answer</span></p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,Ans:False</p>" // no comma here
+            "incorrect": "<p><span>wrong</span> It's wrong,</br>Ans:False</p>" // no comma here
         },
         { // Question 2 - Multiple Choice, Multiple True Answers, Select Any
             "q": "Bending stress is a combination of <br>",
@@ -61,12 +61,12 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,</br>Ans:Elastic constants are same in all the directions</p>" // no comma here
         },
 		{ // Question 5 - Multiple Choice, Multiple True Answers, Select All
-            "q": "Which of the following statement is wrong? </br>",
+            "q": "According to bending theory which of the following statement is wrong? </br>",
  
             "a": [
-                {"option": "In a beam subjected to bending moment, the strain is directly proportional to the distance from the neutral axis.",           "correct": false},
+                {"option": "Strain is directly proportional to the distance from the neutral axis.",           "correct": false},
                 {"option": "At the neutral axis of a beam, the bending stress is maximum.",              "correct": true},
-                {"option": "In the theory of simple bending, the assumption is that the plane sections before bending remains plane after bending",  "correct": false},
+                {"option": "The plane sections before bending remains plane after bending",  "correct": false},
                 {"option": "The bending stress in a beam is inversely proportional to the section modulus",          "correct": false} // no comma here
             ],
              "correct": "<p><span>Right answer</span></p>",

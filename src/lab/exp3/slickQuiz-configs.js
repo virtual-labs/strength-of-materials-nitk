@@ -19,7 +19,7 @@ var quizJSON = {
             "a": [
                 {"option": "Parabola",      "correct": true},
                 {"option": "Rectangle",      "correct": false},
-                {"option": "Cubic parabola.",      "correct": false},		// no comma here
+                {"option": "Cubic parabola",      "correct": false},		// no comma here
 				{"option": "Triangle",      "correct": false}   
 			],
             "correct": "<p><span>Right answer</span></p>",
@@ -47,6 +47,17 @@ var quizJSON = {
             ],
              "correct": "<p><span>Right answer</span></p>",
             "incorrect": "<p><span>wrong</span> It's wrong,</br>Ans: Rectangle</p>" // no comma here
+        },
+		{ // Question 4 - Multiple Choice, Multiple True Answers, Select All
+            "q": "The deflection at the free end of cantilever of length L carrying a point load F at its free end is given as",
+            "a": [
+                {"option": "(FL^3)/(3EI)",           "correct": true},
+                {"option": "(FL^2)/(3EI)",                  "correct": false},
+                {"option": "(FL^3)/(2EI)",  "correct": false},		
+                {"option": "(FL^2)/(6EI)",          "correct": false} // no comma here
+            ],
+             "correct": "<p><span>Right answer</span></p>",
+            "incorrect": "<p><span>wrong</span> It's wrong,</br>Ans: (FL^3)/(3EI)</p>" // no comma here
         }
 		
         
