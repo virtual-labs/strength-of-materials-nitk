@@ -1,0 +1,12 @@
+S.no		Test case link
+1. 	[[https://github.com/Virtual-Labs/strength-of-materials-nitk/blob/master/test-cases/integration_test-cases/Deflection in Beam/Deflection%20in%20Beam_01_Usability_smk.org][Deflection in Beam_01_Usability_smk.org]]
+2. 	[[https://github.com/Virtual-Labs/strength-of-materials-nitk/blob/master/test-cases/integration_test-cases/Deflection in Beam/Deflection%20in%20Beam_02_Theory_smk.org][Deflection in Beam_02_Theory_smk.org]]
+3. 	[[https://github.com/Virtual-Labs/strength-of-materials-nitk/blob/master/test-cases/integration_test-cases/Deflection in Beam/Deflection%20in%20Beam_03_Procedure_smk.org][Deflection in Beam_03_Procedure_smk.org]]
+4. 	[[https://github.com/Virtual-Labs/strength-of-materials-nitk/blob/master/test-cases/integration_test-cases/Deflection in Beam/Deflection%20in%20Beam_04_Self%20Evaluation_smk.org][Deflection in Beam_04_Self Evaluation_smk.org]]
+5. 	[[https://github.com/Virtual-Labs/strength-of-materials-nitk/blob/master/test-cases/integration_test-cases/Deflection in Beam/Deflection%20in%20Beam_05_Simulation_smk.org][Deflection in Beam_05_Simulation_smk.org]]
+6. 	[[https://github.com/Virtual-Labs/strength-of-materials-nitk/blob/master/test-cases/integration_test-cases/Deflection in Beam/Deflection%20in%20Beam_06_Simulation_p1.org][Deflection in Beam_06_Simulation_p1.org]]
+7. 	[[https://github.com/Virtual-Labs/strength-of-materials-nitk/blob/master/test-cases/integration_test-cases/Deflection in Beam/Deflection%20in%20Beam_07_Assignments_smk.org][Deflection in Beam_07_Assignments_smk.org]]
+8. 	[[https://github.com/Virtual-Labs/strength-of-materials-nitk/blob/master/test-cases/integration_test-cases/Deflection in Beam/Deflection%20in%20Beam_08_Reference_smk.org][Deflection in Beam_08_Reference_smk.org]]
+9. 	[[https://github.com/Virtual-Labs/strength-of-materials-nitk/blob/master/test-cases/integration_test-cases/Deflection in Beam/Deflection%20in%20Beam_09_Quiz_smk.org][Deflection in Beam_09_Quiz_smk.org]]
+10. 	[[https://github.com/Virtual-Labs/strength-of-materials-nitk/blob/master/test-cases/integration_test-cases/Deflection in Beam/Deflection%20in%20Beam_10_Prerequisites_p1.org][Deflection in Beam_10_Prerequisites_p1.org]]
+11. 	[[https://github.com/Virtual-Labs/strength-of-materials-nitk/blob/master/test-cases/integration_test-cases/Deflection in Beam/Deflection%20in%20Beam_11_Alternate%20links_p2.org][Deflection in Beam_11_Alternate links_p2.org]]
