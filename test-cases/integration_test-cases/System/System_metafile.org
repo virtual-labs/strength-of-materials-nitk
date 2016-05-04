@@ -1,0 +1,8 @@
+S.no		Test case link
+1. 	[[https://github.com/Virtual-Labs/industrial-electrical-drives-nitk/blob/master/test-cases/integration_test-cases/System/Industrial%20Electric%20Drives_01_Usability_smk.org][Industrial Electric Drives_01_Usability_smk.org]]
+2. 	[[https://github.com/Virtual-Labs/industrial-electrical-drives-nitk/blob/master/test-cases/integration_test-cases/System/Industrial%20Electric%20Drives_02_Virtual%20Lab_smk.org][Industrial Electric Drives_02_Virtual Lab_smk.org]]
+3. 	[[https://github.com/Virtual-Labs/industrial-electrical-drives-nitk/blob/master/test-cases/integration_test-cases/System/Industrial%20Electric%20Drives_03_Video%20Tutorials_smk.org][Industrial Electric Drives_03_Video Tutorials_smk.org]]
+4. 	[[https://github.com/Virtual-Labs/industrial-electrical-drives-nitk/blob/master/test-cases/integration_test-cases/System/Industrial%20Electric%20Drives_04_Fourm_smk.org][Industrial Electric Drives_04_Fourm_smk.org]]
+5. 	[[https://github.com/Virtual-Labs/industrial-electrical-drives-nitk/blob/master/test-cases/integration_test-cases/System/Industrial%20Electric%20Drives_05_Downloads_smk.org][Industrial Electric Drives_05_Downloads_smk.org]]
+6. 	[[https://github.com/Virtual-Labs/industrial-electrical-drives-nitk/blob/master/test-cases/integration_test-cases/System/Industrial%20Electric%20Drives_06_Photo%20Gallery_smk.org][Industrial Electric Drives_06_Photo Gallery_smk.org]]
+7. 	[[https://github.com/Virtual-Labs/industrial-electrical-drives-nitk/blob/master/test-cases/integration_test-cases/System/Industrial%20Electric%20Drives_07_Contacts_smk.org][Industrial Electric Drives_07_Contacts_smk.org]]
