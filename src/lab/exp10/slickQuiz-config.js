@@ -38,7 +38,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: Hardened steel ball</p>" // no comma here
         },
         { // Question 3 - Multiple Choice, Multiple True Answers, Select All
-            "q": "Time up to which load has to be maintained in experiment is",
+            "q": "Time up to which load has to be maintained in experiment for mild steel is",
  
             "a": [
                 {"option": "10 to 15 seconds",           "correct": true},

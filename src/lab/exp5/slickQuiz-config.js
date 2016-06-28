@@ -50,24 +50,24 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,</br>Ans: All the above</p>" // no comma here
         },
 		{ // Question 4 - Multiple Choice, Multiple True Answers, Select All
-            "q": "What is the angle at the tip of the hammer?",
+            "q": "IS Code for Izod impact test is ",
  
             "a": [
-                {"option": "90 degree ",           "correct": false},
-                {"option": "45 degree",              "correct": true},
-                {"option": "30 degree",  "correct": false},
-                {"option": "60 degree",          "correct": false} // no comma here
+                {"option": "3766-1977",           "correct": false},
+                {"option": "1598-1977",              "correct": true},
+                {"option": "1499-1977",  "correct": false},
+                {"option": "5242-1979",          "correct": false} // no comma here
             ],
              "correct": "<p><span>Right answer</span></p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,</br>Ans: 45 degree</p>" // no comma here
+            "incorrect": "<p><span>wrong</span> It's wrong,</br>Ans: 1598-1977</p>" // no comma here
         },
 		{ // Question 5 - Multiple Choice, Multiple True Answers, Select All
             "q": "In Izod test specimen, the angle of V-notch section is",
  
             "a": [
                 {"option": "30 degree ",           "correct": false},
-                {"option": "45 degree",              "correct": false},
-                {"option": "60 degree",  "correct": true},
+                {"option": "45 degree",              "correct": true},
+                {"option": "60 degree",  "correct": false},
                 {"option": "90 degree",          "correct": false} // no comma here
             ],
              "correct": "<p><span>Right answer</span></p>",

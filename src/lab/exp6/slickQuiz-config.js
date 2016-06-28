@@ -38,16 +38,16 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: In charpy test notch is U shaped and is placed so that it lies on compression side</p>" // no comma here
         },
         { // Question 3 - Multiple Choice, Multiple True Answers, Select All
-            "q": "What is the striking velocity of pendulum in charpy test?",
+            "q": "The speed of the hammer at the instant of striking shall be ",
  
             "a": [
-                {"option": "9.81 m/sec",           "correct": false},
-                {"option": "6.227 m/sec",              "correct": false},
-                {"option": "7.28 m/sec",  "correct": false},
-                {"option": "5.3466 m/sec",          "correct": true} // no comma here
+                {"option": "9.8 - 10 m/sec",           "correct": false},
+                {"option": "6.2 - 9 m/sec",              "correct": false},
+                {"option": "2 - 4.8 m/sec",  "correct": false},
+                {"option": "4.5 - 7 m/sec",          "correct": true} // no comma here
             ],
              "correct": "<p><span>Right answer</span></p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: 5.3466 m/sec </p>" // no comma here
+            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: 4.5 - 7 m/sec </p>" // no comma here
         },
 		{ // Question 4- Multiple Choice, Multiple True Answers, Select All
             "q": "What is the distance between the supports in charpy test?",

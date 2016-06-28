@@ -37,7 +37,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong, Ans: True</p>" // no comma here
         },
         { // Question 3 - Multiple Choice, Multiple True Answers, Select All
-            "q": "When a body is subjected to a direct tensile stress (σ) in one plane, the maximum shear stress is __________ the maximum normal stress.",
+            "q": "When a body is subjected to a direct tensile stress in one plane, the maximum shear stress is __________ the maximum normal stress.",
  
             "a": [
                 {"option": "Twice",           "correct": false},

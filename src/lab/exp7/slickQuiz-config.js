@@ -37,7 +37,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: False </p>" // no comma here
         },
         { // Question 3 - Multiple Choice, Multiple True Answers, Select All
-            "q": "Which statement is correct </br></br> i) Shear stress is caused by forces which act perpendicular to area of c/s.</br> ii) If there is one c/s which resist failure, the material s said to be in single shear.</br> iii) Ultimate strength in double shear will be equal to minimum load divided by twice area of c/s.",
+            "q": "Which statement is correct </br></br> i) Shear stress is caused by forces which act perpendicular to area of c/s.</br> ii) If there is one c/s which resist failure, the material is said to be in single shear.</br> iii) Ultimate strength in double shear will be equal to minimum load divided by twice area of c/s.",
  
             "a": [
                 {"option": "(i) is correct",           "correct": false},

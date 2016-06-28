@@ -30,12 +30,12 @@ var quizJSON = {
             "a": [
                 {"option": "Shearing force is maximum",               "correct": false},
                 {"option": "Bending moment is maximum",   "correct": false},
-				{"option": "Bending moment is zero or changes sign",               "correct": true},
+				{"option": "Bending moment changes its sign",               "correct": true},
 				{"option": "Bending moment is minimum", "correct": false} // no comma here
             ],
             
             "correct": "<p><span>Right answer</span></p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: Bending moment is zero or changes sign</p>" // no comma here
+            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: Bending moment changes its sign</p>" // no comma here
         },
         { // Question 3 - Multiple Choice, Multiple True Answers, Select All
             "q": "Shear force for a cantilever carrying a uniformly distributed load over its length, is",
