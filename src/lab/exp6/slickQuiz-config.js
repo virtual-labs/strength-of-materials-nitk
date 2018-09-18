@@ -17,8 +17,8 @@ var quizJSON = {
         { // Question 1 - Multiple Choice, Single True Answer
             "q": "In charpy impact test KU 300/5; where 300/5 indicates",
             "a": [
-                {"option": "Test was conducted with 300 Joules striking energy with 5 mm deep notch",      "correct": false},
-                {"option": "Test was conducted with 300 Newton force with 5 mm deep notch",     "correct": true},
+                {"option": "Test was conducted with 300 Joules striking energy with 5 mm deep notch",      "correct": true},
+                {"option": "Test was conducted with 300 Newton force with 5 mm deep notch",     "correct": false},
                 {"option": "Both a and b are correct",      "correct": false },
                 {"option": "Both a and b are incorrect",     "correct": false} // no comma here
             ],
@@ -65,13 +65,13 @@ var quizJSON = {
             "q": "The initial energy of the hammer is",
  
             "a": [
-                {"option": "300 joules",           "correct": true},
+                {"option": "300 Joules",           "correct": true},
                 {"option": "290 Joules",              "correct": false},
                 {"option": "164 Joules",  "correct": false},
                 {"option": "200 Joules",          "correct": false} // no comma here
             ],
              "correct": "<p><span>Right answer</span></p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: 300 joules </p>" // no comma here
+            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: 300 Joules </p>" // no comma here
         }
    // no comma here
     ]

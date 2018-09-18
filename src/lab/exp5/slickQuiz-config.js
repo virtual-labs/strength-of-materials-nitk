@@ -29,13 +29,13 @@ var quizJSON = {
             "q": "The test piece is placed in such a way that the notch is facing<br>",
             "a": [
                 {"option": "Up",   "correct": false},
-                {"option": "Away from striking edge",   "correct": true},
-                {"option": "Towards the striking edge",    "correct": false},
+                {"option": "Away from striking edge",   "correct": false},
+                {"option": "Towards the striking edge",    "correct": true},
                 {"option": "Down", "correct": false} // no comma here
             ],
             
             "correct": "<p><span>Right answer</span></p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,</br>Ans: Away from the striking edge</p>" // no comma here
+            "incorrect": "<p><span>wrong</span> It's wrong,</br>Ans: Towards the striking edge</p>" // no comma here
         },
         { // Question 3 - Multiple Choice, Multiple True Answers, Select All
             "q": "Notches are used _____.</br>",
@@ -74,7 +74,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,</br>Ans: 45 degree</p>" // no comma here
         },
 		{ // Question 6 - Multiple Choice, Multiple True Answers, Select All
-            "q": "Which property of metals is essential for application such as gears and crankshaft which are subjected to impact loading?",
+            "q": "Which property of metals is essential for application in gears and crankshaft which are subjected to impact loading?",
  
             "a": [
                 {"option": "Toughness ",           "correct": true},

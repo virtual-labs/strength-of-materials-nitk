@@ -29,8 +29,8 @@ var quizJSON = {
             "q": "How is the test piece supported? ",
             "a": [
                 {"option": "At its two ends",               "correct": false},
-                {"option": "Vertically",   "correct": true},
-				{"option": "At an angle",               "correct": false},
+                {"option": "Vertical cantilever",   "correct": true},
+				{"option": "At an angle og 45&deg;",               "correct": false},
 				{"option": "Any position", "correct": false} // no comma here
             ],
            
@@ -38,7 +38,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: Vertically</p>" // no comma here
         },
         { // Question 3 - Multiple Choice, Multiple True Answers, Select All
-            "q": "What property of the metal is used to check in this test?",
+            "q": "Which property of the metal is used to check in this test?",
             "a": [
                 {"option": "Ductility",           "correct": false},
                 {"option": "Toughness",                  "correct": true},
@@ -73,7 +73,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: 75mm</p>" // no comma here
         },
 		{ // Question 6 - Multiple Choice, Multiple True Answers, Select Any
-            "q": "What is the depth of the notch?",
+            "q": "What is the depth of the notch of izod test specimen?",
             "a": [
                 {"option": "2 mm",               "correct": true},
                 {"option": "4 mm",   "correct": false},
@@ -85,7 +85,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: 2 mm</p>" // no comma here
         },
 		{ // Question 7 - Multiple Choice, Multiple True Answers, Select Any
-            "q": "The toughness value of material A and material B are 60J and 5j respectively. Which of the following statements is true?",
+            "q": "The toughness value of material A and material B are 60J and 5J respectively. Which of the following statements is more suitable?",
             "a": [
                 {"option": "Material A is harder than material B",               "correct": false},
                 {"option": "Material B is more brittle than material A",   "correct": true},

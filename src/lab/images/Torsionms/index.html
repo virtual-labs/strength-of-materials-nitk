@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>SOLVE</title>
+<link rel="stylesheet" href="ttms.css" />
+<link rel="stylesheet" type="text/css" href="tipped.css" />
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  -->
+<script type="text/javascript" src= "jquery-2.1.4.js"></script>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="jquery.ui.touch-punch.js"></script>
+<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src= "plotly-latest.min.js"></script>
+<script type="text/javascript" src= "ttms.js"></script>
+<script type="text/javascript" src= "tipped.js"></script>
+<script type="text/javascript" src= "ej.web.all.min.js"></script>
+
+
+<script>
+    var simsubscreennum=0;
+	var temp=0;
+	var lnt=0;
+	var values=[];
+	var vals0=[];
+	var vals=[];
+	var data=[]; 
+	var x1=0;
+	var y1=0;
+	var gr=0;
+<!-- Experimental Results -->
+var slope=[[2.3,1.8,5.80],
+			[3.6,2.6,5.80],
+			[4.0,3.0,6.1],
+			[4.7,3.8,6.2],
+			[3.3,2.8,6.0],
+			[4.2,3.0,6.2],
+			[4.2,3.0,5.8],
+			[4.2,3.2,5.75],
+			[3.6,2.8,5.80],
+			[3.6,2.6,6.1]];
+			
+var vals=[[11.1,190.0,1489.61,211.99,566.53,440.33,56.16],
+         [11.12,190.0,1500.37,210.85,570.75,406.02,51.42],
+         [11.06,190.0,1468.25,225.38,550.53,421.77,54.58],
+         [11.29,190.0,1594.25,215.36,524.51,454.95,54.22],
+		 [11.5,190.0,1716.21,197.2,493.01,476.88,52.79],
+		 [11.05,190.0,1462.95,229.7,563.14,401.52,52.15],
+		 [11.15,195.0,1516.63,209.15,551.73,401.52,51.63],
+		 [11.02,190.0,1447.13,214.77,567.75,428.46,56.25],
+		 [11.4,195.0,1657.29,195.69,536.47,437.51,51.48],
+		 [11.09,195.0,1484.25,223.56,557.07,406.02,53.34]];
+var trace1 = {
+				y: [0,0.4,0.9,1.4,2,2.6,3.25,4,4.75,5.4,5.9,6.1,6.1,6.1,6.1,6.1,6.2,6.3,6.3,6.3,6.3,6.3,6.4,6.5,6.5,6.6,6.7,6.7,6.7,6.7,6.7,6.9,7.1,7.3,7.5,7.78,8.3,8.6,8.9,9.3,9.6,9.8,10,10.2,10.4,10.7,10.9,11.2,11.5,11.7,11.9,12,12.1,12.3,12.4,12.5,12.6,12.7,12.9,13,13.1,13.2,13.3,13.4,13.5,13.6,13.7,13.8,13.9,14,14,14.1,14.2,14.3,14.5,14.6,14.7,14.9,15,15.1,15.1,15.2], 
+				x: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,60,90,120,150,180,210,240,270,300,330,360,390,420,450,480,510,540,570,600,630,660,690,720,750,780,810,840,870,900,930,960,990,1020,1050,1080,1110,1140,1170,1200,1230,1260,1290,1320,1350,1380,1410,1440,1470,1500,1530,1560,1590], 
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace2 = {
+				y: [0.0, 0.35, 0.75, 1.2, 1.8, 2.5, 3.2, 3.95, 4.65, 5.4, 5.9, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.7, 6.8, 7.0, 7.5, 7.9, 8.0, 8.2, 8.4, 8.6, 8.8, 9.1, 9.3, 9.5, 9.8, 10.1, 10.4, 10.7, 10.9, 11.1, 11.3, 11.4, 11.6, 11.7, 11.9, 12.0, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13.0, 13.1, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 13.7, 13.8, 13.9, 14.0, 14.0, 14.1, 14.2, 14.3, 14.4, 14.5, 14.6, 14.8, 14.9, 15.0, 15.1, 15.2, 15.3, 15.4, 15.5, 15.6, 15.7],
+				x: [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0, 29.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0, 360.0, 390.0, 420.0, 450.0, 480.0, 510.0, 540.0, 570.0, 600.0, 630.0, 660.0, 690.0, 720.0, 750.0, 780.0, 810.0, 840.0, 870.0, 900.0, 930.0, 960.0, 990.0, 1020.0, 1050.0, 1080.0, 1110.0, 1140.0, 1170.0, 1200.0, 1230.0, 1260.0, 1290.0, 1320.0, 1350.0, 1380.0, 1410.0, 1440.0, 1470.0, 1500.0, 1530.0, 1560.0, 1590.0, 1620.0, 1650.0, 1680.0, 1710.0, 1740.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace3 = {
+				y:[0.0, 0.45, 0.8, 1.25, 1.8, 2.4, 3.15, 3.9, 4.7, 5.5, 6.1, 6.3, 6.4, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.6, 6.9, 7.3, 8.0, 8.5, 8.9, 9.4, 9.8, 10.1, 10.4, 10.6, 10.9, 11.2, 11.4, 11.6, 11.7, 11.9, 12.0, 12.2, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13.0, 13.1, 13.2, 13.3, 13.4, 13.5, 13.6, 13.6, 13.7, 13.8, 13.8, 13.9, 14.0, 14.0, 14.0, 14.0, 14.1, 14.2, 14.3, 14.4, 14.5, 14.5, 14.5, 14.6, 14.7, 14.7, 14.8, 14.8, 14.8, 14.9, 14.9, 14.9],
+				x:[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0, 29.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0, 360.0, 390.0, 420.0, 450.0, 480.0, 510.0, 540.0, 570.0, 600.0, 630.0, 660.0, 690.0, 720.0, 750.0, 780.0, 810.0, 840.0, 870.0, 900.0, 930.0, 960.0, 990.0, 1020.0, 1050.0, 1080.0, 1110.0, 1140.0, 1170.0, 1200.0, 1230.0, 1260.0, 1290.0, 1320.0, 1350.0, 1380.0, 1410.0, 1440.0, 1470.0, 1500.0, 1530.0, 1560.0, 1590.0, 1620.0, 1650.0, 1680.0, 1710.0, 1740.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+
+var trace4 = {
+				y:[0.0, 0.35, 0.7, 1.15, 1.65, 2.2, 2.9, 3.7, 4.65, 5.55, 6.2, 6.5, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.7, 7.0, 7.4, 8.1, 8.6, 9.0, 9.5, 9.9, 10.2, 10.5, 10.7, 11.0, 11.2, 11.4, 11.7, 11.8, 12.0, 12.1, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13.0, 13.1, 13.2, 13.2, 13.3, 13.4, 13.5, 13.5, 13.6, 13.7, 13.8, 13.9, 13.9, 14.0, 14.1, 14.2, 14.3, 14.4, 14.5, 14.5, 14.5, 14.6, 14.7, 14.7, 14.8, 14.8, 14.8, 14.9, 15.0, 15.0, 15.1, 15.1, 15.1],
+				x:[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0, 29.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0, 360.0, 390.0, 420.0, 450.0, 480.0, 510.0, 540.0, 570.0, 600.0, 630.0, 660.0, 690.0, 720.0, 750.0, 780.0, 810.0, 840.0, 870.0, 900.0, 930.0, 960.0, 990.0, 1020.0, 1050.0, 1080.0, 1110.0, 1140.0, 1170.0, 1200.0, 1230.0, 1260.0, 1290.0, 1320.0, 1350.0, 1380.0, 1410.0, 1440.0, 1470.0, 1500.0, 1530.0, 1560.0, 1590.0, 1620.0, 1650.0, 1680.0, 1710.0, 1740.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace5 = {
+				y:[0.0, 0.35, 0.7, 1.05, 1.5, 2.0, 2.6, 3.45, 4.3, 5.2, 6.0, 6.2, 6.3, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.6, 6.8, 7.2, 7.8, 8.5, 8.9, 9.4, 9.7, 10.0, 10.4, 10.8, 11.0, 11.3, 11.5, 11.7, 11.9, 12.0, 12.2, 12.3, 12.4, 12.5, 12.5, 12.7, 12.8, 12.9, 13.0, 13.2, 13.3, 13.3, 13.4, 13.4, 13.5, 13.6, 13.6, 13.7, 13.8, 13.9, 13.9, 14.0, 14.1, 14.2, 14.3, 14.4, 14.4, 14.4, 14.5, 14.6, 14.7, 14.8, 14.8, 14.8, 14.9, 14.9, 14.9, 15.0, 15.0, 15.0],
+				x:[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0, 29.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0, 360.0, 390.0, 420.0, 450.0, 480.0, 510.0, 540.0, 570.0, 600.0, 630.0, 660.0, 690.0, 720.0, 750.0, 780.0, 810.0, 840.0, 870.0, 900.0, 930.0, 960.0, 990.0, 1020.0, 1050.0, 1080.0, 1110.0, 1140.0, 1170.0, 1200.0, 1230.0, 1260.0, 1290.0, 1320.0, 1350.0, 1380.0, 1410.0, 1440.0, 1470.0, 1500.0, 1530.0, 1560.0, 1590.0, 1620.0, 1650.0, 1680.0, 1710.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+
+var trace6 = {
+				y:[0.0, 0.5, 0.95, 1.4, 1.9, 2.5, 3.15, 3.85, 4.65, 5.35, 6.0, 6.5, 6.7, 6.7, 6.7, 6.7, 6.7, 6.7, 6.7, 6.7, 6.7, 6.7, 6.7, 6.7, 6.7, 6.7, 6.7, 6.8, 6.9, 7.0, 7.2, 7.4, 7.8, 8.0, 8.2, 8.5, 8.8, 8.9, 9.3, 9.6, 9.9, 10.2, 10.5, 10.8, 11.2, 11.4, 11.7, 11.9, 12.1, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13.0, 13.1, 13.2, 13.2, 13.3, 13.4, 13.5, 13.6, 13.6, 13.7, 13.8, 13.9, 14.0, 14.0, 14.1, 14.2, 14.3, 14.4, 14.5, 14.5, 14.5, 14.6, 14.7, 14.7, 14.8, 14.9, 14.9, 14.9, 14.9, 15.0, 15.1, 15.2, 15.2, 15.2],
+				x:[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0, 29.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0, 360.0, 390.0, 420.0, 450.0, 480.0, 510.0, 540.0, 570.0, 600.0, 630.0, 660.0, 690.0, 720.0, 750.0, 780.0, 810.0, 840.0, 870.0, 900.0, 930.0, 960.0, 990.0, 1020.0, 1050.0, 1080.0, 1110.0, 1140.0, 1170.0, 1200.0, 1230.0, 1260.0, 1290.0, 1320.0, 1350.0, 1380.0, 1410.0, 1440.0, 1470.0, 1500.0, 1530.0, 1560.0, 1590.0, 1620.0, 1650.0, 1680.0, 1710.0, 1740.0, 1770.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+
+var trace7 = {
+				y:[0.0, 0.6, 1.2, 1.8, 2.4, 3.1, 3.8, 4.55, 5.3, 5.8, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.2, 6.3, 6.4, 6.4, 6.4, 6.4, 6.5, 6.5, 6.5, 6.5, 6.7, 6.7, 6.9, 7.0, 7.1, 7.4, 7.7, 8.1, 8.4, 8.7, 8.9, 9.2, 9.4, 9.6, 9.9, 10.2, 10.6, 10.9, 11.2, 11.4, 11.8, 12.0, 12.2, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13.1, 13.2, 13.2, 13.3, 13.3, 13.4, 13.5, 13.6, 13.7, 13.8, 13.9, 14.0, 14.1, 14.2, 14.3, 14.4, 14.5, 14.6, 14.6, 14.6, 14.7, 14.7, 14.7, 14.8, 14.8, 14.8, 14.9, 14.9, 14.9, 15.0, 15.1, 15.2, 15.2, 15.3, 15.3],
+				x:[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0, 29.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0, 360.0, 390.0, 420.0, 450.0, 480.0, 510.0, 540.0, 570.0, 600.0, 630.0, 660.0, 690.0, 720.0, 750.0, 780.0, 810.0, 840.0, 870.0, 900.0, 930.0, 960.0, 990.0, 1020.0, 1050.0, 1080.0, 1110.0, 1140.0, 1170.0, 1200.0, 1230.0, 1260.0, 1290.0, 1320.0, 1350.0, 1380.0, 1410.0, 1440.0, 1470.0, 1500.0, 1530.0, 1560.0, 1590.0, 1620.0, 1650.0, 1680.0, 1710.0, 1740.0, 1770.0, 1800.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+
+var trace8 = {
+				y:[0.0, 0.45, 0.95, 1.5, 2.15, 2.9, 3.65, 4.4, 5.2, 5.8, 6.0, 6.05, 6.1, 6.1, 6.1, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.6, 6.6, 6.6, 6.6, 6.8, 7.0, 7.3, 7.4, 7.4, 7.4, 7.8, 8.0, 8.2, 8.4, 8.6, 8.8, 9.0, 9.1, 9.2, 9.4, 9.6, 9.8, 9.9, 10.2, 10.4, 10.6, 10.8, 11.0, 11.2, 11.4, 11.6, 11.9, 12.2, 12.4, 12.6, 12.8, 13.0, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 13.9, 14.0, 14.1, 14.2, 14.3, 14.3, 14.4, 14.5, 14.6, 14.7, 14.8, 14.9, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.1, 15.1, 15.1, 15.2, 15.2, 15.2],
+				x:[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0, 29.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0, 360.0, 390.0, 420.0, 450.0, 480.0, 510.0, 540.0, 570.0, 600.0, 630.0, 660.0, 690.0, 720.0, 750.0, 780.0, 810.0, 840.0, 870.0, 900.0, 930.0, 960.0, 990.0, 1020.0, 1050.0, 1080.0, 1110.0, 1140.0, 1170.0, 1200.0, 1230.0, 1260.0, 1290.0, 1320.0, 1350.0, 1380.0, 1410.0, 1440.0, 1470.0, 1500.0, 1530.0, 1560.0, 1590.0, 1620.0, 1650.0, 1680.0, 1710.0, 1740.0, 1770.0, 1800.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace9 = {
+				y:[0.0, 0.35, 0.8, 1.3, 1.85, 2.55, 3.25, 4.0, 4.9, 5.6, 6.0, 6.2, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.8, 6.8, 6.8, 6.8, 6.8, 6.8, 6.9, 7.1, 7.3, 7.4, 7.4, 7.9, 8.1, 8.4, 8.8, 9.1, 9.4, 9.8, 10.1, 10.4, 10.6, 10.9, 11.1, 11.3, 11.5, 11.7, 11.9, 12.0, 12.2, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13.0, 13.1, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 13.8, 13.9, 14.0, 14.1, 14.2, 14.3, 14.4, 14.5, 14.6, 14.7, 14.8, 14.9, 15.0, 15.0, 15.1, 15.2, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9, 15.9],
+				x:[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0, 29.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0, 360.0, 390.0, 420.0, 450.0, 480.0, 510.0, 540.0, 570.0, 600.0, 630.0, 660.0, 690.0, 720.0, 750.0, 780.0, 810.0, 840.0, 870.0, 900.0, 930.0, 960.0, 990.0, 1020.0, 1050.0, 1080.0, 1110.0, 1140.0, 1170.0, 1200.0, 1230.0, 1260.0, 1290.0, 1320.0, 1350.0, 1380.0, 1410.0, 1440.0, 1470.0, 1500.0, 1530.0, 1560.0, 1590.0, 1620.0, 1650.0, 1680.0, 1710.0, 1740.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace10 = {
+				y:[0.0, 0.5, 1.0, 1.6, 2.2, 2.9, 3.55, 4.25, 5.0, 5.7, 6.2, 6.4, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.6, 6.8, 7.3, 8.0, 8.5, 8.9, 9.4, 9.8, 10.1, 10.4, 10.6, 10.9, 11.1, 11.3, 11.5, 11.7, 11.9, 12.0, 12.2, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13.0, 13.1, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 13.7, 13.7, 13.8, 13.8, 13.9, 14.0, 14.0, 14.0, 14.1, 14.2, 14.2, 14.3, 14.3, 14.4, 14.4, 14.4, 14.5, 14.6, 14.7, 14.8, 14.8, 14.8, 14.8, 14.9, 14.9, 15.0, 15.0, 15.0, 15.1, 15.2, 15.2],
+				x:[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0, 29.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0, 360.0, 390.0, 420.0, 450.0, 480.0, 510.0, 540.0, 570.0, 600.0, 630.0, 660.0, 690.0, 720.0, 750.0, 780.0, 810.0, 840.0, 870.0, 900.0, 930.0, 960.0, 990.0, 1020.0, 1050.0, 1080.0, 1110.0, 1140.0, 1170.0, 1200.0, 1230.0, 1260.0, 1290.0, 1320.0, 1350.0, 1380.0, 1410.0, 1440.0, 1470.0, 1500.0, 1530.0, 1560.0, 1590.0, 1620.0, 1650.0, 1680.0, 1710.0, 1740.0, 1770.0, 1800.0, 1830.0, 1860.0, 1890.0, 1920.0, 1950.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+		    
+min=1;
+max=10;
+p=Math.floor(Math.random() * (max - min + 1) ) + min;
+if(p==1)
+{
+	data=[trace1];
+	x1=slope[0][0];
+	y1=slope[0][1];
+	gr=1;
+	vals0=vals[0];
+}
+else if(p==2)
+{
+	data=[trace2];
+	x1=slope[1][0];
+	y1=slope[1][1];
+	gr=2;
+	vals0=vals[1];
+}
+else if(p==3)
+{
+	data=[trace3];
+	x1=slope[2][0];
+	y1=slope[2][1];
+	gr=3;
+	vals0=vals[2];
+}
+else if(p==4)
+{
+	data=[trace4];
+	x1=slope[3][0];
+	y1=slope[3][1];
+	gr=4;
+	vals0=vals[3];
+}
+else if(p==5)
+{
+	data=[trace5];
+	x1=slope[4][0];
+	y1=slope[4][1];
+	gr=5;
+	vals0=vals[4];
+}
+else if(p==6)
+{
+	data=[trace6];
+	x1=slope[5][0];
+	y1=slope[5][1];
+	gr=6;
+	vals0=vals[5];
+}
+else if(p==7)
+{
+	data=[trace7];
+	x1=slope[6][0];
+	y1=slope[6][1];
+	gr=7;
+	vals0=vals[6];
+}
+else if(p==8)
+{
+	data=[trace8];
+	x1=slope[7][0];
+	y1=slope[7][1];
+	gr=8;
+	vals0=vals[7];
+}
+else if(p==9)
+{
+	data=[trace9];
+	x1=slope[8][0];
+	y1=slope[8][1];
+	gr=8;
+	vals0=vals[8];
+}
+else if(p==10)
+{
+	data=[trace10];
+	x1=slope[9][0];
+	y1=slope[9][1];
+	gr=10;
+	vals0=vals[9];
+}
+	
+var layout = {
+    title:'Torque Vs Angle of Twist',
+	showlegend: false,
+	xaxis: {
+    title:'Angle of Twist(ϴ) in degrees',
+    fixedrange: true
+  },
+  yaxis: {
+    title:'Torque in Kg.m',
+    fixedrange: true
+  }
+};    
+var layout1 = {
+    title:'Torque Vs Angle of Twist',
+	showlegend: false,
+	xaxis: {
+    title:'Angle of Twist(ϴ) in degrees',
+    fixedrange: false
+  },
+  yaxis: {
+    title:'Torque in Kg.m',
+    fixedrange: false
+  }
+};                     
+
+var options = {
+	scrollZoom: false, // lets us scroll to zoom in and out - works
+	showLink: false, // removes the link to edit on plotly - works
+	modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan', 'pan2d', 'autoScale2d'],
+	//modeBarButtonsToAdd: ['lasso2d'],
+	displayLogo: false, // this one also seems to not work
+	displayModeBar: false, //this one does work
+	isResponsive:true,
+	animationEnabled:true,
+	animationDuration:"2000"
+};
+var op = {
+	scrollZoom: false, // lets us scroll to zoom in and out - works
+	showLink: false, // removes the link to edit on plotly - works
+	modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan', 'pan2d', 'autoScale2d'],
+	//modeBarButtonsToAdd: ['lasso2d'],
+	displayLogo: false, // this one also seems to not work
+	displayModeBar: false, //this one does work
+	isResponsive:true
+	
+};
+
+
+</script>
+</head>
+
+
+
+<body style="margin:0" onload="calc.reset();slopefm.reset();">
+<!--Simulation Screen start		-->
+<div id="simscreen">
+
+<!--Title of Simulation		-->
+<div id="title"><h3>TORSION TEST ON MILD STEEL</h3></div>
+
+<img id="white1" style="position:absolute;left:5px; top:100px;height: 500px;width:700px;visibility:hidden;" src="images/white1.png"/>
+<!--SubScreen Home	-->	
+<div class="simsubscreen" id="canvas0"; >
+	<h4 class="incanvas" style="font-family:verdana;" >Objective</h4>
+	<p class="incanvas" style="font-family:verdana; font-size:14px;">To study the mechanical properties of mild steel under torsion.</p>
+	<h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
+	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Torsion testing machine,Troptometer,Micrometer,Scale.
+</p>
+	<img id="" style="position: absolute; left: 200px; top: 100px;width:30%" src="images/maina.png"/>
+</div>
+
+<!--Step1	-->	
+<div class="simsubscreen" id="canvas1" style="visibility:hidden">
+	<strong id="titlestep" class="incanvas">STEP </strong>
+	<span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
+	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Measure the Initial Diameter of the torsion test sample at two or three places and the average value is obtained.</p>
+	<img id="can11" style="position: absolute; left:145px; top: 86px;cursor:pointer;" src="images/can11b.png"/>
+	<p id="v1-0" style="position:absolute; left:20px; top: 136px;font-family:verdana; font-size:14px;">Torsion Test Sample</p>
+	<!-- Initial diameter-->
+	<img id="cal1" style="position: absolute; left:52px; top: 290px;" src="images/cal1.png"/>
+	<img id="mov" style="position: absolute; left:240px; top: 290px;" src="images/mov.png"/>
+
+</div>
+
+
+<!--Step2	-->	
+<div class="simsubscreen" id="canvas2" style="visibility:hidden"> 
+	<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+	<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
+	<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;The gauge length of the beam is restricted at 180mm. 
+	</p>  
+
+	<!-- <img id="can22" style="position: absolute; left:258px; top: 245px;" src="images/scale.png"/>  -->
+	<!-- <img id="can21" style="position: absolute; left:520px; top: 180px;" src="images/can22.png"/> -->
+	<img id="can23" style="position: absolute; left:150px; top: 328px;" src="images/can23.png"/> 
+	<img id="can24" style="position: absolute; left:250px; top: 128px;cursor:pointer;" src="images/can24.png"/> 
+	<p id="v2-0" style="position:absolute; left:250px; top: 380px;font-family:verdana; font-size:14px;"></p>
+
+</div>
+
+
+<!-- step3 -->
+<div class="simsubscreen" id="canvas3" style="visibility:hidden"> 
+	<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+	<span class="circlebg" id="stepnumber">&nbsp;3&nbsp;</span>
+	<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Now the specimen is chalked out on the gauge length for understanding the effect of torsion.</p>  
+	<img id="can31" style="position: absolute; left:150px; top: 328px;" src="images/can23.png"/> 
+	<img id="can32" style="position: absolute; left:249.75px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32a" style="position: absolute; left:280px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32b" style="position: absolute; left:310px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32c" style="position: absolute; left:340px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32d" style="position: absolute; left:370px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32e" style="position: absolute; left:400px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32f" style="position: absolute; left:430px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32g" style="position: absolute; left:460px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32h" style="position: absolute; left:490px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32i" style="position: absolute; left:510px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can33" style="position: absolute; left:224px; top: 200px;cursor:pointer;" src="images/can33.png"/> 
+</div>	
+
+	
+<!--Step4	-->	
+<div class="simsubscreen" id="canvas4" style="visibility:hidden">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Insert the specimen into its position within the torsional experimental setup. </p>
+	<img id="can4n3" style="position: absolute; left:260px; top: 240px;" src="images/can4n3.png"/>
+	<img id="can4n3a" style="position: absolute; left:256px; top: 125px;visibility:hidden" src="images/can4n3a.png"/>
+	<img id="can4n3b" style="position: absolute; left:256px; top: 100px;visibility:hidden" src="images/can4n3a.png"/>
+	<img id="can4n2" style="position: absolute; left:200px; top: 50px;" src="images/can4n2.png"/>
+	<img id="can4n4" style="position: absolute; left:235px; top: 438px;cursor:pointer;" src="images/can4n4.png"/>
+	<img id="can4n5" style="position: absolute; left:285px; top: 430px;" src="images/can4n5.png"/>
+	<img id="can45d" style="position: absolute; left:295px; top: 240px;z-index:10;height:30px;visibility:hidden" src="images/arrow1.png"/> 
+	<img id="can45" style="position: absolute; left: 550px; top: 120px;cursor:drag;visibility:hidden;" src="images/can45.png"/>
+	<p id="drg" style="position: absolute; left: 580px; top: 130px;font-family:verdana; font-size:14px;visibility:hidden;">Drag the Specimen</p>
+</div>
+ 
+ 
+ <!--Step5	-->	
+<div class="simsubscreen" id="canvas5" style="visibility:hidden">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;5&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Start the motor and slowly apply the twisting load on the specimen. </p>
+	<img id="mac1" style="position: absolute; left: 0px; top: 40px;" src="images/mac1.png"/>
+	<img id="mac2" style="position: absolute; left: 0px; top: 40px;visibility:hidden" src="images/mac2.png"/>
+	<img id="red" style="position: absolute; left: 75px; top: 210px;cursor:pointer;" src="images/red.png"/>
+	<img id="green" style="position: absolute; left: 75px; top: 230px;cursor:pointer;" src="images/green.png"/>
+	<img id="can50" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn50.png"/>
+	<img id="can51" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn51.png"/>
+	<img id="can52" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn52.png"/>
+	<img id="can53" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn53.png"/>
+	<img id="can54" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn54.png"/>
+	<img id="can55" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn55.png"/>
+	<img id="can56" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn56.png"/>
+	<img id="can57" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn57.png"/>
+	<div id="chartContainer" style="position:absolute;left:257.20px; top:30px;height: 500px;width:500px;"></div>
+
+</div>
+	
+	
+ <!--Step6	-->	
+<div class="simsubscreen" id="canvas6" style="visibility:hidden">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;6&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Graph. </p>
+	<div id="mydiv" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;visibility:hidden;"></div>
+	<img id="can61" style="position: absolute; left: 90px; top: 295px;cursor:zoom-in;visibility:hidden;" src="images/zm.png"/>
+	<img id="gz1" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g1zoom.png"/>
+	<img id="gz2" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g2zoom.png"/>
+	<img id="gz3" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g3zoom.png"/>
+	<img id="gz4" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g4zoom.png"/>
+	<img id="gz5" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g5zoom.png"/>
+	<img id="gz6" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g6zoom.png"/>
+	<img id="gz7" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g7zoom.png"/>
+	<img id="gz8" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g8zoom.png"/>
+	<img id="gz9" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g9zoom.png"/>
+	<img id="gz10" style="position:absolute;left:5px;top:40px;visibility:hidden;" src="images/g10zoom.png"/>
+	<form id="slopefm" style="visibility:hidden">	
+	<p id="x" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 80px;">&Delta;X</td>
+	<p id="y" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 120px;">&Delta;Y</td>
+	<p id="slp" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 160px;">Slope:</td>
+	</form>
+</div>
+
+<!--back graph step-->
+<div class="simsubscreen" id="canvas8" style="visibility:hidden">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;6&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Graph. </p>
+	<div id="mydiv1" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;visibility:hidden;"></div>
+</div>	
+	
+
+
+<!--Step7-->	
+<div class="simsubscreen" id="canvas7" style="visibility:hidden">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;7&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Calculations. </p>
+	<form id="calc" >
+	<table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:50px;top:50px;cellpadding:10px;cellspacing:10px">
+	<tr>
+	<th>Initial Diameter(mm)</th>
+	<td id="t1"></td>
+	</tr>
+	<tr>
+	<th>Gauge Length(mm)</th>
+	<td id="t2"></td>
+	</tr>
+	<tr>
+	<th>Polar Moment of Inertia(mm<sup>4</sup>)</th>
+	<td id="t33"><input type="text" id="i33"  style="font-family:verdana; font-size:14px;" autocomplete="off" title="Polar moment of Inertia J=(∏*d4)/32" /></td>
+	</tr>
+	<tr>
+	<th >Yield Stress(N/mm<sup>2</sup>)</th>
+	<td id="t44"><input type="text" id="i44"  style="font-family:verdana; font-size:14px;" autocomplete="off" title="Yield stress=(((yield point torque*9.81*(d/2))/J)" /></td>
+	</tr>
+	<tr>
+	<th >Modulus of Rupture(N/mm<sup>2</sup>)</th>
+	<td id="t55"><input type="text" id="i55"   style="font-family:verdana; font-size:14px;" autocomplete="off" title="Modulus of Rupture (torsion)=(((Failure torque*9.81*(d/2))/J) " /></td>
+	</tr>
+	<tr>
+	<th >Modulus of Rigidity(GPa)</th>
+	<td id="t66"><input type="text" id="i66"   style="font-family:verdana; font-size:14px;" autocomplete="off" title="Modulus of Rigidity C= (T/ϴ)*(l/J) " /></td>
+	</tr>
+	</table>
+	<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:475px;top:430px;cursor:pointer;">
+	</form>
+	<form id="final" style="visibility:hidden">
+	<p id="l1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:50px;"></td>
+	<p id="l2" style="position:absolute;font-family:verdana; font-size:14px;left:380px;top:50px;"></td>
+	<table border="border" id="last1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellpadding:10px;cellspacing:10px">
+	<tr>
+	<th>Result</th>
+	<th>Actual Value</th>
+	<th>Entered Value</th>
+	<th>Percentage Error</th>
+	</tr>
+	<th>Polar Moment of Inertia(mm<sup>4</sup>)</th>
+	<td id="t3" style="text-align:center"></td>
+	<td id="e3" style="text-align:center"></td>
+	<td id="p3"style="text-align:center"></td>
+	</tr>
+	<th>Yield Stress(N/mm<sup>2</sup>)</th>
+	<td id="t4" style="text-align:center"></td>
+	<td id="e4" style="text-align:center"></td>
+	<td id="p4" style="text-align:center"></td>
+	</tr>
+	<th>Modulus of Rupture(N/mm<sup>2</sup>)</th>
+	<td id="t5" style="text-align:center"></td>
+	<td id="e5" style="text-align:center"></td>
+	<td id="p5" style="text-align:center"></td>
+	</tr>
+	<th>Modulus of Rigidity(GPa)</th>
+	<td id="t6" style="text-align:center"></td>
+	<td id="e6" style="text-align:center"></td>
+	<td id="p6" style="text-align:center"></td>
+	</tr>
+	</table>
+	</form>
+</div>	
+<!--next  Arrow	-->	
+<div id="nav">
+	<img id="nextButton" onclick="navNext(); " src="images/Next.png" />
+	<img id="prevButton" onclick="navNext();" style="visibility:hidden;"src="images/prev.png" />
+</div>
+
+
+
+
+<!--Blinking Arrow	-->	
+<img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
+<img class ="" id="arrow2" style="visibility:hidden;" src="images/arrow1.png"/>
+
+<div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+</body>
+</html>

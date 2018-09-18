@@ -1,0 +1,301 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vickers Hardness Test</title>
+
+	<style type="text/css">
+#wrap {
+    width:85%;
+}
+
+
+</style>
+</head>
+
+<body>
+    <div id="experiment">
+        
+
+        <header class="default" id="experiment-header">
+            <div class="logo" id="experiment-header-logo">
+            <!-- Enclose the logo image of your lab or write it in 
+      text-->
+            <img src="../images/logo.jpg"></div>
+
+            <div class="heading" id="experiment-header-heading">
+                
+                <a href="../index.html">Strength-of-Materials Lab</a>
+            </div>
+        </header>
+
+        <article id="experiment-article">
+            
+            <div class="breadcrumb" id="experiment-article-breadcrumb"></div>
+
+            <header class="heading" id="experiment-article-heading">
+             Vickers Hardness Test
+            </header>
+
+            <nav class="default" id="experiment-article-navigation">
+                <ul id="experiment-article-navigation-menu">
+                    
+                </ul>
+            </nav>
+
+            <div id="experiment-article-sections">
+                <!-- First section of the article-->
+
+		<section id="experiment-article-section-1">
+			<div class="icon" id="experiment-article-section-1-icon">
+			<!-- Enclose the icon image of your lab. -->
+			<img src="../images/theory.jpg"></div>
+
+			<div class="heading" id="experiment-article-section-1-heading">
+									Theory
+			</div>
+
+			<div class="content" id="experiment-article-section-1-content">
+			<div class="divContent" id="wrap">
+									   
+			<p class="MsoNormal" style="line-height: 150%;">
+
+			<p><strong>Introduction</strong></p></br>
+			<p style="text-indent:50px;">The Vickers hardness test was developed by RL. Smith and Sandland in 1921 at Vickers Ltd as an alternative to brinell hardness test method to measure the hardness of the material. The Vickers hardness test follows the brinell principle, in that an indenter of definite shape is pressed into the material to be tested, then the load is removed and the diagonals of the resulting indentation are measured from these the hardness number is calculated by dividing the load by the surface area of indentation.<p/></br>
+			<center><img  src= "../images/vks1.png" style="width:129px;height:322px ; position:relative; bottom: -15px"></center></br>
+			<center><p>Vickers hardness testing machine</p></center></br>
+			<p style="text-indent:50px;">The Vickers test is easier than other hardness tests since the required calculations are independent of the size of the indenter and the indenter can be used for all materials irrespective of hardness.</p></br>
+			<p><strong>Principle</strong></p>
+			<p style="text-indent:50px;">The indenter is made of diamond and is in the form of a square-based pyramid with an angle of 1360 between faces. The faces of diamond indenter are highly polished, and the point is sharp. The loads applied vary from 1 to 120 kg; the standard loads are 5, 10, 20, 30, 50, 100, and 120 kg. For most hardness testing, 50 kg is maximum.<p/></br>
+			<p style="text-indent:50px;">The Vickers test can be used for all metals and is one of the widely used test among hardness tests. The unit of hardness is known as the VICKERS PYRAMID NUMBER (HV) or DIAMOND PYRAMID HARDNESS (DPH). The hardness number can be calculated by the load over the surface area of the indentation.</p></br>
+			
+			<p><strong>Implementation</strong></p>
+			<center><img  src= "../images/vks2.png" style="width:274px;height:340px ; position:relative; bottom: -15px"></center></br>
+			<p style="text-indent:50px;">The angle between the two faces of diamond indenter used in Vickers hardness test is 136o and the faces makes an angle 22o with the horizontal. The HV number is then determined by the ratio F/A, where F is the force applied to the diamond in kilograms-force and A is the surface area of the indentation in square millimeters. A can be determined by the formula.<p/></br>
+			<center>A=d<sup>2</sup>/2sin(136&deg;/2)&#884;</center></br>
+			<p style="text-indent:50px;"> by eliminating the sine term we get,</p><br/>
+			<center>A=d<sup>2</sup>/1.8544&#884;</center></br>
+			<p style="text-indent:50px;">Where d is the average length of the diagonal in millimeters. Hence,</p><br/>
+			<center>HV=F/A=(1.8544F/d<sup>2</sup>)kgf/mm<sup>2</sup></center></br>
+			<p style="text-indent:50px;">Where F is in kgf and d is in millimeters.</p><br/>
+			<p style="text-indent:50px;">The corresponding units of HV are then kilograms-force per square millimeter (kgf/mm). To calculate Vickers hardness number using SI units we must convert the force applied from kilogram-force to Newtons by multiplying by 9.80665 (standard gravity) and then dividing by 1000 to get the answer in GPa. This will leads to the following equation that can be used to do any calculation directly.</p><br/>
+			<center>HV=0.1891(F/d<sup>2</sup>)GPa</center></br>
+			<p style="text-indent:50px;">Where F is in N and d is in millimeters.</p><br/>
+			<p style="text-indent:50px;">Vickers hardness numbers are expressed as xxxHVyy, e.g.440HV30, or xxxHVyy/zz if duration of force differs from 10 s to 15 s, e.g.440HV30/20,Where:</p><br/>
+			<p style="text-indent:50px;">440 is the hardness number,</p></br>
+			<p style="text-indent:50px;">HV gives the hardness scale (Vickers),</p></br>
+			<p style="text-indent:50px;">30 is the load used in kgf.</p></br>
+			<p style="text-indent:50px;">20 is loading time if it differs from 10s to 15s</p></br>
+			<p style="text-indent:50px;">Vickers values are not dependent of the test force: they will be same for 500gf and 50kgf, as long as the force is at least 200 gf.<p/>
+			<p style="text-indent:50px;">For thin samples indentation depth can be an issue due to substrate effects. In other waysindent depth can be calculated according to:</p></br>
+			<center>h=d/2&radic;2 tan(136&deg;/2 )=d/7.0006&#884;</center></br>
+			<center><p>Examples of HV values for various materials </p></center>
+			<center><img  src= "../images/vks4.png" style="width:282px;height:200px ; position:relative; bottom: -15px"></center></br>
+			<b>Test specimen</b></br>
+			<p style="text-indent:50px;">The test should be carried out on a surface which is smooth, even, free from oxide, foreign matter and lubricants.The thickness of the test piece or of the layer under test shall be at least 1.5 times the diagonal length of the indentation.For test piece of small cross section or of irregular shape, it may be necessary to provide some form of additional support.</p></br>
+			<b>Precautions:</b></br>
+			<p style="text-indent:50px;">When doing the hardness tests the distance between indentations and the distance from the indentation to the edge of the specimen must be taken into account. These minimum distances are different for ISO 6507-1 and ASTM E384 standards.</p></br>
+			<center><img  src= "../images/vks5.png" style="width:575px;height:195px ; position:relative; bottom: -15px"></center></br>
+			<b>Relevant Indian standard for Vickers hardness</b></br>
+			<p style="text-indent:50px;">IS 1501:2002, method for Vickers hardness test for metallic materials.</p></br>
+			
+		</section> 
+
+
+                       
+		<section id="experiment-article-section-2">
+			<div class="icon" id="experiment-article-section-2-icon">
+			<!-- Enclose the icon image of your lab.-->
+			<img src="../images/procedure.jpg" style="padding-left: 20px;"></div>
+
+			<div class="heading" id="experiment-article-section-2-heading">
+									Procedure
+			</div>
+
+			<div class="content" id="experiment-article-section-2-content">
+			<div class="divContent" id="wrap">
+							 
+			<p class="MsoNormal" style="line-height: 150%;">
+				
+				OBJECTIVE:</br> </br>To determine the indentation hardness of mild steel, brass, aluminium etc. using Vickers hardness testing machine.</br></br>
+				
+				STEPS: </br></br>
+				<ol type="1">
+					<li>When you click on a Vicker’s Hardness test file, a new window will open as shown below.</br>
+					<p><img src="../images/vickers2.PNG"style = "width:740px; height:600px;"></img></p></br>
+					</li>
+					
+					<li>Click on the NEXT button to move to the next step.</br>
+					<p><img src="../images/vickers1.PNG"style = "width:740px; height:600px;"></img></p></br>
+					</li>
+		
+					<li>Click on the specimen to select the material for testing.</br>
+					<p><img src="../images/vickers3.PNG"style = "width:740px; height:600px;"></img></p></br>
+					</li>
+					
+					<li>Move mouse over the rotating wheel  to adjust the height of the specimen. </br>
+					<p><img src="../images/vickers4.PNG"style = "width:740px; height:600px;"></img></p></br>
+					</li>
+				
+					<li>Standard load is applied on the specimen by clicking on the Knob.</br>
+					<p><img src="../images/vickers5.PNG"style = "width:740px; height:600px;"></img></p></br>
+					</li>
+					
+					<li>Click on the time setting knob to adjust the time to apply load.</br>
+					<p><img src="../images/vickers6.png"style = "width:740px; height:600px;"></img></p></br>
+					</li>
+					
+					<li>Loading on the specimen is done by pressing the green button for 2 to 3 seconds until the red light glows.</br>
+					<p><img src="../images/vickers7.PNG"style = "width:740px; height:600px;"></img></p></br>
+					</li>
+					
+					<li>Impression of the specimen is available on the screen rotate the adjusting screw to adjust the corner of diagonal to zero.</br>
+					<p><img src="../images/vickers8.PNG"style = "width:740px; height:600px;"></img></p></br>
+					</li>
+					
+					<li>Results of all the trial</br>
+					<p><img src="../images/vickers9.PNG"style = "width:740px; height:600px;"></img></p></br>
+					</li>
+				</ol>
+			</p>
+			</br></br>
+		</section>
+
+
+		<section id="experiment-article-section-3">
+			<div class="icon" id="experiment-article-section-3-icon">
+			 <!-- Enclose the icon image of your lab. -->
+			<img src="../images/selfevaluation.jpg" style="padding-left:50px;"></div>
+								<!-- The heading for the section can be enclosed in a 
+					div tag. -->
+			<div class="heading" id="experiment-article-section-3-heading">
+			 Self Evaluation
+			</div><!-- Write the section content inside a paragraph 
+					element, we can also include images with &lt;img&gt; tag -->
+			<div class="content" id="experiment-article-section-3-content">
+			<div class="divQuiz">
+			<div id="displayQuiz">
+			<form id="form11" method="post" name="form11">
+				<p> Check your understanding after you have gone through the basic theory and the procedure to use the simulator.</p>			  
+			</form><br>
+			
+			<a style="margin-top: 40px;float: left;
+			width: auto;
+			padding: 5px 15px;
+			color: #FFF;
+			background-color: #008B8B;
+			border: 1px solid #FFF;
+			border-radius: 5px;
+			text-decoration: none;" href="indexs.html">Self Evaluation</a>
+			
+			</div><br>
+			</div>
+			</div>
+		</section>
+
+		<section id="experiment-article-section-4">
+			<div class="icon" id="experiment-article-section-4-icon">
+			<!-- Enclose the icon image of your lab.-->
+			<img src="../images/simulation.jpg" style="padding-left: 20px;"></div>
+
+			<div class="heading" id="experiment-article-section-4-heading">
+									Simulator
+			</div>
+
+			<div class="content" id= "experiment-article-section-4-content"><center>
+					<iframe noscroll="" scrolling="no" src="../images/Vickers/vickers.html" height="610px" width="810px"></iframe></center>
+					</div> 
+	
+		</section>
+
+		<section id="experiment-article-section-5">
+			<div class="icon" id="experiment-article-section-5-icon">
+			<!-- Enclose the icon image of your lab -->
+			<img src="../images/assignment.jpg" style="padding-left: 20px;"></div>
+
+
+			<div class="heading" id="experiment-article-section-5-heading">
+									Assignment
+			</div><!-- Write the section content inside a paragraph 
+					  element, You can also include images with &lt;img&gt; tag -->
+
+			<div class="content" id="experiment-article-section-5-content">
+			<div class="divContent">
+			<ol>
+			<li>Which principle does Vickers hardness test follows?</li>
+			<li>How Vickers hardness test is different from other hardness tests?</li>
+			</ol>
+			</div>
+			</div>
+		</section>
+
+		<section id="experiment-article-section-8">
+			<div class="icon" id="experiment-article-section-8-icon">
+			<!-- Enclose the icon image of your lab.-->
+			<img src="../images/quiz.jpg"></div>
+								
+
+			<div class="heading" id= "experiment-article-section-8-heading">
+			&nbsp;Quiz 
+			</div>
+			<div class="content" id="experiment-article-section-8-content">
+			<p> Check your ability to answer some of the questions relevant to the simulation that you used.</p> 
+			<a style="margin-top: 40px;float: left;
+			width: auto;
+			padding: 5px 15px;
+			color: #FFF;
+			background-color: #008B8B;
+			border: 1px solid #FFF;
+			border-radius: 5px;
+			text-decoration: none;" href="index1.html">Get Started</a>
+		 </div>
+		</section>
+
+		
+		<section id="experiment-article-section-7">
+			<div class="icon" id="experiment-article-section-7-icon">
+			<!-- Enclose the icon image of your lab.-->
+			<img src="../images/video.jpg"></div>
+
+			<div class="heading" id="experiment-article-section-7-heading">
+									Video 
+			</div>
+
+			<div class="content" id="experiment-article-section-7-content">
+									
+			</div>
+		</section>
+
+		<section id="experiment-article-section-6">
+			<div class="icon" id="experiment-article-section-6-icon">
+								<!-- Enclose the icon image of your lab.-->
+			<img src="../images/reference.jpg" style="padding-left: 15px;"></div>
+
+			<div class="heading" id="experiment-article-section-6-heading">
+									Reference
+			</div>
+
+			<div class="content" id="experiment-article-section-6-content">
+			<div class="divContent">
+			<ul>
+			<li style="font-family:courier new,courier,monospace; font-size:18px;">IS 1501:2002, method for Vickers hardness test for metallic materials. </li>
+			<li style="font-family:courier new,courier,monospace; font-size:18px;">Hearn E,J., mechanics of material, Pergaman Press, England, 1972.</li>
+			<li style="font-family:courier new,courier,monospace; font-size:18px;">Beer and Johnston E.R., mechanics of materials, 3rd edition, tata McGraw Hill, New-Dehli, 2007.</li>
+			<li style="font-family:courier new,courier,monospace; font-size:18px;">R.L. Smith and G.E. Sandland, “An accurate method of determining the hardness of metals with particular reference to those of a high degree of hardness” proceedings of the institution of mechanical engineers, vol. 1, 1922, p623-641.</li>
+			<li style="font-family:courier new,courier,monospace; font-size:18px;">Smithells metals reference book, 8th edition, ch. 22</li>
+			<li style="font-family:courier new,courier,monospace; font-size:18px;">Konrad Herrmann, Hardness Testing: Principles and Applications, ASM, 1995.</li>
+			<li style="font-family:courier new,courier,monospace; font-size:18px;">S.S. Bhavikatti and K.G. Rajashekarappa, Engineering Mechanics, Wiley Eastern Ltd.</li>
+			</ul>
+			</div>
+			</div>
+		</section>
+		</div>
+        </article>
+    </div>
+</body>
+</html>

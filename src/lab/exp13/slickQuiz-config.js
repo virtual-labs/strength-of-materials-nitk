@@ -14,18 +14,7 @@ var quizJSON = {
         "level5":  "Stay in school, kid..." // no comma here
     },
     "questions": [
-        { // Question 1 - Multiple Choice, Single True Answer
-            "q": "What is the maximum value of gauge length of the extensometer used.",
-            "a": [
-                {"option": "90 mm",       "correct": false},
-                {"option": "60 mm",  "correct": false},
-                {"option": "120 mm" ,    "correct": true },
-                {"option": "40 mm",		 "correct": false} // no comma here
-            ],
-            "correct": "<p><span>Right answer</span></p>",
-            "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: 120 mm</p>" // no comma here
-        },
-        { // Question 2 - Multiple Choice, Multiple True Answers, Select Any
+        { // Question 1 - Multiple Choice, Multiple True Answers, Select Any
             "q": "Choose the correct answer</br>i)	All work done on the specimen is stored in form of strain energy</br>ii)	Part of energy is wasted in form of heat and sound",
             "a": [
                 
@@ -35,10 +24,10 @@ var quizJSON = {
                 {"option": "i) elastic stage ii) plastic stage", "correct": true} // no comma here
             ],
             
-            "correct": "<p><span>Right answer</span> i) plastic stage ii) elastic stage</p>",
+            "correct": "<p><span>Right answer</span></p>",
             "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: i) elastic stage ii) plastic stage</p>" // no comma here
         },
-		{ // Question 3 - Multiple Choice, Multiple True Answers, Select All
+		{ // Question 2 - Multiple Choice, Multiple True Answers, Select All
             "q": "Tensile stress measured in ",
  
             "a": [
@@ -50,7 +39,7 @@ var quizJSON = {
              "correct": "<p><span>Right answer</span></p>",
             "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: Pascal</p>" // no comma here
         },
-        { // Question 4 - Multiple Choice, Multiple True Answers, Select All
+        { // Question 3 - Multiple Choice, Multiple True Answers, Select All
             "q": "Significant necking was found to occur in a tensile test piece. Examine the areas indicated on stress/strain curve and indicate where necking of specimen has occurred.</br><img src=\"../images/q13-q.png\"\/>",
  
             "a": [
@@ -62,7 +51,7 @@ var quizJSON = {
              "correct": "<p><span>Right answer</span></p>",
             "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: D to E</p>" // no comma here
         },
-		{ // Question 5 - Multiple Choice, Multiple True Answers, Select All
+		{ // Question 4 - Multiple Choice, Multiple True Answers, Select All
             "q": "Following statement in relation to young's modulus are correct with exception of ",
  
             "a": [
@@ -73,8 +62,8 @@ var quizJSON = {
             ],
              "correct": "<p><span>Right answer</span></p>",
             "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: It is the measure of resistance to plastic deformation</p>" // no comma here
-        },
-		{ // Question 6 - Multiple Choice, Multiple True Answers, Select All
+        }, 
+		{ // Question 5- Multiple Choice, Multiple True Answers, Select All
             "q": "Which mechanical property of the material is indicated by the total area under a stress strain curve",
  
             "a": [

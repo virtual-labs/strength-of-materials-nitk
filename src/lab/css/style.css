@@ -208,6 +208,8 @@ nav#lab-article-navigation ul li a:focus, nav#experiment-article-navigation ul l
 	padding-left:40px;
 	width:90%;
 	padding-bottom:10px;
+	margin-left: 10px;
+	text-align: justify;
 }
 
 .content p a:link, .content p a:visited

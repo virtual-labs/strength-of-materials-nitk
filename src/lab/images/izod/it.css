@@ -1,0 +1,221 @@
+/* #tab{ 
+     padding: 10px; 
+     margin: 8px 0; 
+}	 */
+html
+{
+    -moz-user-select     : none;
+    -khtml-user-select   : none;
+    -webkit-user-select  : none;
+    -o-user-select       : none;
+    user-select          : none;
+}
+
+
+input[type=text]:focus {
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align:center;
+    background-color:#D3D3D3
+}
+
+#simscreen
+{
+position: relative;
+left:0px;
+top:0px;
+height: 600px; 
+width:800px;
+border:solid 1px;
+}
+
+#copyright{
+position: absolute;
+left:50px;
+top: 580px;
+font-family: verdana; 
+font-size:12px
+}
+
+#title{
+position:relative;
+left: 0px;
+top: 0px;
+height:40px;
+font-size: 24px;
+text-align:center;
+background-color: black;
+font-family: verdana;
+color: White;
+text-transform: uppercase; 
+}
+
+#title h3{
+padding-top:2px;
+margin:0px;}
+
+
+.stepfont
+{
+	font-family: verdana;
+	font-size: 14px;
+}
+
+
+.simsubscreen
+{
+position:absolute;
+left: 50px;
+top: 50px;
+height:530px;
+width:745px;
+
+}
+
+.incanvas
+{
+margin:5px 0 0 5px;
+padding:0;
+}
+#nextButton{
+    position: absolute;
+    left: 750px;
+    top: 530px;
+cursor:pointer;
+}
+#nextButton1{
+    position: absolute;
+    left: 750px;
+    top: 530px;
+cursor:pointer;
+}
+
+#prevButton{
+    position: absolute;
+    left: 0px;
+    top: 532px;
+cursor:pointer;
+}
+
+
+.steptext
+{
+display:inline;
+font-size:14px;
+font-family: verdana;
+}
+
+.steptext-6
+{
+display:inline;
+font-family: verdana;
+font-size:14px;
+}
+
+.steptext-2
+{
+	display:inline;
+	font-family: verdana;
+	font-size:14px;
+
+}
+
+.circlebg
+{
+border-radius:100%;
+font-size:25px;
+color:#fff;
+text-align:center;
+background:#000
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hammerturn-1 {/*hammer rotation*/
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(100deg);}
+}
+
+/* Standard syntax */
+@keyframes hammerturn-1 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(100deg);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hammerturn-2 {/*needle rotation*/
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(69deg);}
+}
+
+/* Standard syntax */
+@keyframes hammerturn-2 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(69deg);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hammerturn-3 {/*needle rotation*/
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(49deg);}
+}
+
+/* Standard syntax */
+@keyframes hammerturn-3 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(49deg);}
+}
+
+
+
+
+/* CSS to swing hammer */
+@-moz-keyframes swing{
+0%  { transform: rotate(0deg);}
+20% { transform: rotate(130deg);}
+40% {transform: rotate(40deg);}  
+55% { transform: rotate(110deg);}
+70% {transform: rotate(60deg);}
+80% {transform: rotate(100deg);} 
+100% {transform: rotate(80deg);} 
+}
+
+@-webkit-keyframes swing{
+0%  { transform: rotate(0deg);}
+20% { transform: rotate(130deg);}
+40% {transform: rotate(40deg);}  
+55% { transform: rotate(110deg);}
+70% {transform: rotate(60deg);}
+80% {transform: rotate(100deg);} 
+100% {transform: rotate(80deg);}  
+}
+
+
+@keyframes swing{
+0%  { transform: rotate(0deg);}
+20% { transform: rotate(130deg);}
+40% {transform: rotate(40deg);}  
+55% { transform: rotate(110deg);}
+70% {transform: rotate(60deg);}
+80% {transform: rotate(100deg);} 
+100% {transform: rotate(80deg);}  
+}
+
+
+
+
+@-webkit-keyframes mymove2 {
+    from   {left: 200px; top: 290px;}
+    to  {left:-290px; top:290px;}
+    }
+
+@keyframes mymove2 {
+   from   {left: 200px; top: 290px;}
+    to  {left:-290px; top:290px;}
+     
+}
+
+

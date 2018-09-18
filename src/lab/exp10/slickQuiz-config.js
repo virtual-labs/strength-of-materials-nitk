@@ -26,7 +26,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,</br> Ans: Hardness</p>" // no comma here
         },
         { // Question 2 - Multiple Choice, Multiple True Answers, Select Any
-            "q": "In Brinell test indentor used is",
+            "q": "The indentor used in the test is usually a",
             "a": [
                 {"option": "Hardened steel ball",   "correct": true},
                 {"option": "Copper ball",   "correct": false},

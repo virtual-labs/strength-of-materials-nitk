@@ -1,0 +1,87 @@
+/* modified  */
+
+html
+{
+    -moz-user-select     : none;
+    -khtml-user-select   : none;
+    -webkit-user-select  : none;
+    -o-user-select       : none;
+    user-select          : none;
+}
+#simscreen
+{
+	position:absolute;
+	left:0px;
+	top:0px;
+	height:600px;
+	width:800px;
+    border:solid 1px;	
+}
+
+#title
+{
+	position:relative;
+	left:0px;
+	top:0px;
+	height:40px;
+	font-size:24px;
+	text-align:center;
+	background-color:black;
+	font-family:verdana;
+	color:white;
+	text-transform:uppercase;
+}
+
+#title h3
+{
+	padding-top:2px;
+	margin:0px;
+}
+
+.simsubscreen
+{
+    position:absolute;
+    left: 50px;
+    top: 50px;
+    height:530px;
+    width:745px;
+}
+
+.incanvas
+{
+    margin:6px 0 0 6px;
+    padding:0;
+}
+
+#copyright
+{
+	position:absolute;
+	left:50px;
+	top:580px;
+	font-family:verdana;
+	font-size:12px;
+}
+
+#nextButton
+{
+	position:absolute;
+	left:750px;
+	top:530px;
+	cursor:pointer;
+}
+
+.circlebg
+{
+	border-radius:100%;
+	font-size:24px;
+	color:#fff;
+	text-align:center;
+	background-color:#000;
+}
+
+.steptext
+{
+	display:inline;
+	font-family:verdana;
+	font-size:14px;
+}

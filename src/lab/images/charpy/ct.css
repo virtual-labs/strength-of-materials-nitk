@@ -1,0 +1,312 @@
+/* #tab{ 
+     padding: 10px; 
+     margin: 8px 0; 
+}	 */
+html
+{
+    -moz-user-select     : none;
+    -khtml-user-select   : none;
+    -webkit-user-select  : none;
+    -o-user-select       : none;
+    user-select          : none;
+}
+
+input[type=text]:focus {
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align:center;
+    background-color:#D3D3D3
+}
+
+#simscreen
+{
+position: relative;
+left:0px;
+top:0px;
+height: 600px; 
+width:800px;
+border:solid 1px;
+}
+
+#copyright{
+position: absolute;
+left:50px;
+top: 580px;
+font-family: verdana; 
+font-size:12px
+}
+
+#title{
+position:relative;
+left: 0px;
+top: 0px;
+height:40px;
+font-size: 24px;
+text-align:center;
+background-color: black;
+font-family: verdana;
+color: White;
+text-transform: uppercase; 
+}
+
+#title h3
+{
+padding-top:2px;
+margin:0px;
+}
+
+
+.stepfont
+{
+	font-family: verdana;
+	font-size: 14px;
+}
+
+
+.simsubscreen
+{
+position:absolute;
+left: 50px;
+top: 50px;
+height:530px;
+width:745px;
+
+}
+
+.incanvas
+{
+margin:5px 0 0 5px;
+padding:0;
+}
+#nextButton{
+    position: absolute;
+    left: 750px;
+    top: 530px;
+cursor:pointer;
+}
+#nextButton1{
+    position: absolute;
+    left: 750px;
+    top: 530px;
+cursor:pointer;
+}
+
+#prevButton{
+    position: absolute;
+    left: 0px;
+    top: 532px;
+cursor:pointer;
+}
+
+
+.steptext
+{
+display:inline;
+font-size:14px;
+font-family: verdana;
+}
+
+.steptext-6
+{
+display:inline;
+font-family: verdana;
+font-size:14px;
+}
+
+.steptext-2
+{
+	display:inline;
+	font-family: verdana;
+	font-size:14px;
+
+}
+
+.circlebg
+{
+border-radius:100%;
+font-size:25px;
+color:#fff;
+text-align:center;
+background:#000
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hammerturn-1 {/*hammer rotation*/
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(100deg);}
+}
+
+/* Standard syntax */
+@keyframes hammerturn-1 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(100deg);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hammerturn-2 {/*needle rotation*/
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(180deg);}
+}
+
+/* Standard syntax */
+@keyframes hammerturn-2 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(180deg);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hammerturn-3 {/*needle rotation*/
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(49deg);}
+}
+
+/* Standard syntax */
+@keyframes hammerturn-3 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(49deg);}
+}
+
+
+
+
+
+@-webkit-keyframes mymove1 {
+    from   {left: 350px; top:100px;}
+    to  {left:212; top:222px;}
+    }
+
+@keyframes mymove1 {
+   from   {left: 350px; top:100px;}
+    to  {left:212; top:222px;}
+     
+}
+
+
+@-webkit-keyframes mymove2 {
+    from   {left:210px; top:400px;}
+    to  {left:-290px; top:340px;}
+    }
+
+@keyframes mymove2 {
+   from   {left:210px; top:400px;}
+    to  {left:-290px; top:340px;}
+     
+}
+
+@-webkit-keyframes mymove3 {
+    from   {left:25px; top:330px;}
+    to  {left:18px; top:328px;}
+}
+
+@keyframes mymove3 {
+   from   {left:25px; top:330px;}
+    to  {left:18px; top:328px;}
+ }
+
+ 
+@-webkit-keyframes mymove4 {
+    from   {left:25px; top:400px;}
+    to  {left:13px; top:395px;}
+}
+ 
+@keyframes mymove4 {
+   from   {left:25px; top:400px;}
+    to  {left:13px; top:395px;}
+ }
+
+
+
+
+@keyframes drod-rot{
+0%  { transform: rotate(0deg);}
+10% { transform: rotate(185deg);}  
+20% { transform: rotate(60deg);}
+30% {transform: rotate(175deg);}  
+40% {transform: rotate(70deg);}  
+50% { transform: rotate(165deg);}  
+60% { transform: rotate(85deg);}
+70% {transform: rotate(155deg);}  
+80% {transform: rotate(100deg);}
+90% {transform: rotate(140deg);}  
+100% {transform: rotate(120deg);}  
+
+}
+@-webkit-keyframes drod-rot{
+	0%  { transform: rotate(0deg);}
+10% { transform: rotate(185deg);}  
+20% { transform: rotate(60deg);}
+30% {transform: rotate(175deg);}  
+40% {transform: rotate(70deg);}  
+50% { transform: rotate(165deg);}  
+60% { transform: rotate(85deg);}
+70% {transform: rotate(155deg);}  
+80% {transform: rotate(100deg);}
+90% {transform: rotate(140deg);}  
+100% {transform: rotate(120deg);}
+/* 0%  { -webkit-transform: rotate(0deg);} */
+/* 5% { -webkit-transform: rotate(80deg);}   */
+/* 10% {-webkit-transform: rotate(-80deg);}   */
+/* 15% {-webkit- transform: rotate(70deg);}   */
+/* 20% { -webkit-transform: rotate(-70deg);}   */
+/* 25% { -webkit-transform: rotate(60deg);}   */
+/* 30% { -webkit-transform: rotate(-60deg);}   */
+/* 35% { -webkit-transform: rotate(50deg);}   */
+/* 40% { -webkit-transform: rotate(-50deg);}   */
+/* 45% { -webkit-transform: rotate(40deg);}   */
+/* 50% { -webkit-transform: rotate(-40deg);}   */
+/* 55% { -webkit-transform: rotate(30deg);}   */
+/* 60% { -webkit-transform: rotate(-30deg);}   */
+/* 65% { -webkit-transform: rotate(20deg);}   */
+/* 70% {-webkit- transform: rotate(-20deg);}   */
+/* 80% { -webkit-transform: rotate(10deg);}   */
+/* 90% { -webkit-transform: rotate(-10deg);}   */
+/* 100% { -webkit-transform: rotate(0deg);}   */
+}
+
+/* CSS to swing hammer */
+@-moz-keyframes swing{
+0%  { transform: rotate(0deg);}
+10% { transform: rotate(185deg);}  
+20% { transform: rotate(60deg);}
+30% {transform: rotate(175deg);}  
+40% {transform: rotate(70deg);}  
+50% { transform: rotate(165deg);}  
+60% { transform: rotate(85deg);}
+70% {transform: rotate(155deg);}  
+80% {transform: rotate(100deg);}
+90% {transform: rotate(140deg);}  
+100% {transform: rotate(120deg);}  
+}
+
+@-webkit-keyframes swing{
+0%  { transform: rotate(0deg);}
+10% { transform: rotate(185deg);}  
+20% { transform: rotate(60deg);}
+30% {transform: rotate(175deg);}  
+40% {transform: rotate(70deg);}  
+50% { transform: rotate(165deg);}  
+60% { transform: rotate(85deg);}
+70% {transform: rotate(155deg);}  
+80% {transform: rotate(100deg);}
+90% {transform: rotate(140deg);}  
+100% {transform: rotate(120deg);}  
+}
+
+
+@keyframes swing{
+0%  { transform: rotate(0deg);}
+10% { transform: rotate(185deg);}  
+20% { transform: rotate(60deg);}
+30% {transform: rotate(175deg);}  
+40% {transform: rotate(70deg);}  
+50% { transform: rotate(165deg);}  
+60% { transform: rotate(85deg);}
+70% {transform: rotate(155deg);}  
+80% {transform: rotate(100deg);}
+90% {transform: rotate(140deg);}  
+100% {transform: rotate(120deg);}  
+}

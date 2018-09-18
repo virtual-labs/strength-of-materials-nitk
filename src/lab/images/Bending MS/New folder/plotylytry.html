@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>SOLVE</title>
+<link rel="stylesheet" href="ttci.css" />
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  -->
+<script type="text/javascript" src= "jquery-2.1.4.js"></script>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src= "plotly-latest.min.js"></script>
+<script type="text/javascript" src= "ttci.js"></script>
+<script type="text/javascript" src= "ej.web.all.min.js"></script>
+<!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+
+
+<script>
+    var simsubscreennum=0;
+	var temp=0;
+	var lnt=0;
+	var values=[];
+	var vals0=[];
+	var vals=[];
+	var data=[]; 
+	var tbdata=[]; 
+	var x1=0;
+	var y1=0;
+	var slopeyx=0
+	var gr=0;
+	var vf=0,vf1=0,vf2=0;
+	var grp;
+<!-- Experimental Results -->
+
+var trace1 = {
+				y: [0,51,104,157,210,266,318,373,426,480,532,585,638,693,745,799,852,906,975,1036,1108], 
+				x: [0,	40,	80,	120,	160,	200,	240,	280,	320,	360,	400,	440,	480,	520,	560,	600,	640,	680,	720,	760,	800], 
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+
+var trace2 = {
+				y: [0.0,2.5,5.0,7.5,10.0,12.5,15.0,17.5,20.0,22.5,25.0,27.5,30.0,32.5,35.0,37.5,40.0,42.5,45.0,47.5,50.0,52.5,55.0,57.5,60.0,62.5,65.0,67.5,70.0,72.5,75.0],
+				x: [0.0,2.0,9.0,15.0,21.0,26.0,32.0,36.0,43.0,48.0,54.0,61.0,67.0,72.0,80.0,86.0,94.0,101.0,109.0,117.0,125.0,136.0,145.0,156.0,167.0,180.0,192.0,205.0,225.0,255.0,260.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+			
+
+
+var trace3 = {
+				y:[0.0,2.5,5.0,7.5,10.0,12.5,15.0,17.5,20.0,22.5,25.0,27.5,30.0,32.5,35.0,37.5,40.0,42.5,45.0,47.5,50.0,52.5,55.0,57.5,60.0,62.5,65.0,67.5,70.0,72.5],
+				x:[0.0,7.0,13.0,19.0,26.0,32.0,39.0,47.0,53.0,59.0,65.0,72.0,78.0,85.0,92.0,99.0,106.0,114.0,123.0,131.0,139.0,146.0,156.0,166.0,177.0,188.0,202.0,226.0,249.0,273.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace4 = {
+				y:[0.0,2.5,5.0,7.5,10.0,12.5,15.0,17.5,20.0,22.5,25.0,27.5,30.0,32.5,35.0,37.5,40.0,42.5,45.0,47.5,50.0,52.5,55.0,57.5,60.0,62.5,65.0,67.5,70.0,72.5],
+				x:[0.0,4.0,9.0,15.0,21.0,25.0,32.0,38.0,43.0,50.0,56.0,61.0,68.0,75.0,81.0,87.0,93.0,100.0,108.0,117.0,125.0,134.0,145.0,157.0,168.0,182.0,196.0,208.0,226.0,257.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace5 = {
+				y:[0.0,2.5,5.0,7.5,10.0,12.5,15.0,17.5,20.0,22.5,25.0,27.5,30.0,32.5,35.0,37.5,40.0,42.5,45.0,47.5,50.0,52.5,55.0,57.5,60.0,62.5,65.0,67.5,70.0],
+				x:[0.0,5.0,11.0,16.0,22.0,27.0,33.0,38.0,44.0,49.0,55.0,62.0,68.0,74.0,80.0,88.0,95.0,102.0,110.0,118.5,127.0,137.0,146.0,156.0,168.0,180.0,194.0,209.0,229.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace6 = {
+				y:[0.0,2.5,5.0,7.5,10.0,12.5,15.0,17.5,20.0,22.5,25.0,27.5,30.0,32.5,35.0,37.5,40.0,42.5,45.0,47.5,50.0,52.5,55.0,57.5,60.0,62.5,65.0,67.5,70.0,72.5,75.0,77.5],
+				x:[0.0,6.0,12.0,16.0,22.0,28.0,34.0,40.0,47.0,52.0,58.0,65.0,73.0,80.0,87.0,94.0,102.0,110.0,118.0,126.0,135.0,144.0,155.0,165.0,176.0,189.0,201.0,216.0,232.0,248.0,268.0,284.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+  
+var trace7 = {
+				y:[0.0,2.0,4.0,6.0,8.0,10.0,12.0,14.0,16.0,18.0,20.0,22.0,24.0,26.0,28.0,30.0,32.0,34.0,36.0,38.0,40.0,42.0,44.0,46.0,48.0,50.0,52.0,54.0,56.0,58.0,60.0,62.0,64.0,66.0,68.0,70.0,72.0,74.0],
+				x:[0.0,8.0,13.0,19.0,24.0,29.0,33.0,40.0,45.0,50.0,56.0,60.0,66.0,72.0,78.0,83.0,88.0,95.0,100.0,107.0,113.0,119.0,125.0,132.0,139.0,147.0,152.5,162.0,169.0,178.0,186.0,194.0,204.0,216.0,227.0,240.0,251.0,264.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace8 = {
+				y:[0.0,2.5,5.0,7.5,10.0,12.5,15.0,17.5,20.0,22.5,25.0,27.5,30.0,32.5,35.0,37.5,40.0,42.5,45.0,47.5,50.0,52.5,55.0,57.5,60.0,62.5],
+				x:[0.0,5.0,11.0,15.0,21.0,25.0,33.0,38.0,44.0,49.0,55.0,62.0,68.0,78.0,85.0,94.0,102.0,110.0,119.0,129.0,140.0,155.0,172.0,194.0,212.0,239.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+			
+var trace9 = {
+				y:[0.0,2.5,5.0,7.5,10.0,12.5,15.0,17.5,20.0,22.5,25.0,27.5,30.0,32.5,35.0,37.5,40.0,42.5,45.0,47.5,50.0,52.5,55.0,57.5,60.0,62.5,65.0],
+				x:[0.0,5.0,12.0,18.0,25.0,32.0,39.0,44.0,51.0,58.0,65.0,72.0,81.0,88.0,95.0,106.0,113.0,121.0,132.0,141.0,152.0,166.0,180.0,195.0,217.0,238.0,259.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace10 = {
+				y:[0.0,2.0,4.0,6.0,8.0,10.0,12.0,14.0,16.0,18.0,20.0,22.0,24.0,26.0,28.0,30.0,32.0,34.0,36.0,38.0,40.0,42.0,44.0,46.0,48.0,50.0,52.0,54.0,56.0,58.0,60.0,62.0,64.0,66.0],
+				x:[0.0,6.0,12.0,17.0,21.0,28.0,33.0,39.0,44.0,50.0,56.0,61.0,67.0,75.0,82.0,88.0,94.0,103.0,109.0,118.0,128.0,136.0,142.0,152.0,160.0,171.0,182.0,194.0,204.0,217.0,230.0,247.0,266.0,282.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+min=1;
+max=10;
+<!-- p=Math.floor(Math.random() * (max - min + 1) ) + min; -->
+p=1;
+if(p==1)
+{
+	data=[trace1];
+}
+else if(p==2)
+{
+	data=[trace2];
+}
+else if(p==3)
+{
+	data=[trace3];
+	
+}
+else if(p==4)
+{
+	data=[trace4];
+
+}
+else if(p==5)
+{
+	data=[trace5];
+	
+
+}
+else if(p==6)
+{
+	data=[trace6];
+}
+else if(p==7)
+{
+	data=[trace7];
+}
+else if(p==8)
+{
+	data=[trace8];
+}
+else if(p==9)
+{
+	data=[trace9];
+}
+else if(p==10)
+{
+	data=[trace10];
+}
+	
+var layout = {
+    title:'Load Vs Ivary Scale Reading',
+	showlegend: false,
+	xaxis: {
+    title:'Ivary Scale Reading in mm',
+    fixedrange: true
+  },
+  yaxis: {
+    title:'Load in KN',
+    fixedrange: true
+  }
+};    
+
+var options = {
+	scrollZoom: false, // lets us scroll to zoom in and out - works
+	showLink: false, // removes the link to edit on plotly - works
+	modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan', 'pan2d', 'autoScale2d'],
+	//modeBarButtonsToAdd: ['lasso2d'],
+	displayLogo: false, // this one also seems to not work
+	displayModeBar: false, //this one does work
+	isResponsive:true,
+	animationEnabled:true,
+};
+</script>
+<body>
+<div id="mydiv" style="position:absolute;width:800px;height:600px;"></div>
+<script>
+Plotly.newPlot('mydiv', data, layout,options);
+</script>
+</body>
+</html>

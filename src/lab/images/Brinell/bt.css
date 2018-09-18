@@ -1,0 +1,451 @@
+/* #tab{ 
+     padding: 10px; 
+     margin: 8px 0; 
+}	 */
+html
+{
+    -moz-user-select     : none;
+    -khtml-user-select   : none;
+    -webkit-user-select  : none;
+    -o-user-select       : none;
+    user-select          : none;
+}
+
+
+input[type=text]:focus {
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align:center;
+    background-color:#D3D3D3
+}
+
+#simscreen
+{
+position: relative;
+left:0px;
+top:0px;
+height: 600px; 
+width:800px;
+border:solid 1px;
+}
+
+#copyright{
+position: absolute;
+left:50px;
+top: 580px;
+font-family: verdana; 
+font-size:12px
+}
+
+#title{
+position:relative;
+left: 0px;
+top: 0px;
+height:40px;
+font-size: 24px;
+text-align:center;
+background-color: black;
+font-family: verdana;
+color: White;
+text-transform: uppercase; 
+}
+
+#title h3{
+padding-top:2px;
+margin:0px;}
+
+
+.stepfont
+{
+	font-family: verdana;
+	font-size: 14px;
+}
+
+
+.simsubscreen
+{
+position:absolute;
+left: 50px;
+top: 50px;
+height:530px;
+width:745px;
+
+}
+
+.incanvas
+{
+margin:5px 0 0 5px;
+padding:0;
+}
+#nextButton{
+    position: absolute;
+    left: 750px;
+    top: 530px;
+cursor:pointer;
+}
+#nextButton1{
+    position: absolute;
+    left: 750px;
+    top: 530px;
+cursor:pointer;
+}
+
+#prevButton{
+    position: absolute;
+    left: 0px;
+    top: 532px;
+cursor:pointer;
+}
+
+
+.steptext
+{
+display:inline;
+font-size:14px;
+font-family: verdana;
+}
+
+.steptext-6
+{
+display:inline;
+font-family: verdana;
+font-size:14px;
+}
+
+.steptext-2
+{
+	display:inline;
+	font-family: verdana;
+	font-size:14px;
+}
+
+.circlebg
+{
+border-radius:100%;
+font-size:25px;
+color:#fff;
+text-align:center;
+background:#000
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hammerturn-1 {/*hammer rotation*/
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(100deg);}
+}
+
+/* Standard syntax */
+@keyframes hammerturn-1 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(100deg);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hammerturn-2 {/*needle rotation*/
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(69deg);}
+}
+
+/* Standard syntax */
+@keyframes hammerturn-2 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(69deg);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hammerturn-3 {/*needle rotation*/
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(49deg);}
+}
+
+/* Standard syntax */
+@keyframes hammerturn-3 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(49deg);}
+}
+
+
+
+
+/* CSS to swing hammer not used in javascript instead rotation() is used */
+@-moz-keyframes swing{
+0%  { transform: rotate(0deg);}
+1% { transform: rotate(1deg);}
+2% {transform: rotate(2deg);}  
+3% { transform: rotate(3deg);}
+4% {transform: rotate(4deg);}
+5% {transform: rotate(5deg);} 
+6% {transform: rotate(6deg);} 
+7% {transform: rotate(7deg);} 
+8% {transform: rotate(8deg);} 
+9% {transform: rotate(9deg);} 
+10% {transform: rotate(10deg);} 
+11% {transform: rotate(11deg);} 
+12% {transform: rotate(12deg);} 
+13% {transform: rotate(13deg);} 
+14% {transform: rotate(14deg);} 
+15% {transform: rotate(15deg);} 
+16% {transform: rotate(16deg);} 
+17% {transform: rotate(17deg);} 
+18% {transform: rotate(18deg);} 
+19% {transform: rotate(19deg);} 
+20% {transform: rotate(20deg);} 
+21% {transform: rotate(21deg);} 
+22% {transform: rotate(22deg);} 
+23% {transform: rotate(23deg);} 
+24% {transform: rotate(24deg);} 
+25% {transform: rotate(25deg);} 
+}
+
+@-webkit-keyframes swing{
+0%  { transform: rotate(0deg);}
+1% { transform: rotate(1deg);}
+2% {transform: rotate(2deg);}  
+3% { transform: rotate(3deg);}
+4% {transform: rotate(4deg);}
+5% {transform: rotate(5deg);} 
+6% {transform: rotate(6deg);} 
+7% {transform: rotate(7deg);} 
+8% {transform: rotate(8deg);} 
+9% {transform: rotate(9deg);} 
+10% {transform: rotate(10deg);}
+11% {transform: rotate(11deg);} 
+12% {transform: rotate(12deg);} 
+13% {transform: rotate(13deg);} 
+14% {transform: rotate(14deg);} 
+15% {transform: rotate(15deg);} 
+16% {transform: rotate(16deg);} 
+17% {transform: rotate(17deg);} 
+18% {transform: rotate(18deg);} 
+19% {transform: rotate(19deg);} 
+20% {transform: rotate(20deg);} 
+21% {transform: rotate(21deg);} 
+22% {transform: rotate(22deg);} 
+23% {transform: rotate(23deg);} 
+24% {transform: rotate(24deg);} 
+25% {transform: rotate(25deg);}    
+}
+
+
+@keyframes swing{
+0%  { transform: rotate(0deg);}
+1% { transform: rotate(1deg);}
+2% {transform: rotate(2deg);}  
+3% { transform: rotate(3deg);}
+4% {transform: rotate(4deg);}
+5% {transform: rotate(5deg);} 
+6% {transform: rotate(6deg);} 
+7% {transform: rotate(7deg);} 
+8% {transform: rotate(8deg);} 
+9% {transform: rotate(9deg);} 
+10% {transform: rotate(10deg);}
+11% {transform: rotate(11deg);} 
+12% {transform: rotate(12deg);} 
+13% {transform: rotate(13deg);} 
+14% {transform: rotate(14deg);} 
+15% {transform: rotate(15deg);} 
+16% {transform: rotate(16deg);} 
+17% {transform: rotate(17deg);} 
+18% {transform: rotate(18deg);} 
+19% {transform: rotate(19deg);} 
+20% {transform: rotate(20deg);} 
+21% {transform: rotate(21deg);} 
+22% {transform: rotate(22deg);} 
+23% {transform: rotate(23deg);} 
+24% {transform: rotate(24deg);} 
+25% {transform: rotate(25deg);}    
+}
+
+
+
+
+@-webkit-keyframes mymove2 {
+    from   {left: 200px; top: 290px;}
+    to  {left:-290px; top:290px;}
+    }
+
+@keyframes mymove2 {
+   from   {left: 200px; top: 290px;}
+    to  {left:-290px; top:290px;}
+     
+}
+
+
+
+/* moving handler */
+/* Chrome, Safari, Opera */
+@-webkit-keyframes handler1 {
+0% {left:229.75px; top:305.25px;}
+10%{left:230px; top:306px;}
+20% {left:231px; top:307px;}
+30% {left:232px; top:308px;}
+40% {left:233px; top:308px;}
+50% {left:234px; top:308px;}
+60% {left:235px; top:308px;}
+70% {left:236px; top:308px;}
+80% {left:237px; top:308.75px;}
+85% {left:238px; top:308.75px;}
+90% {left:239px; top:309px;}
+100% {left:230px; top:309px;}
+}
+
+/* Standard syntax */
+@keyframes handler1 {
+0% {left:229.75px; top:305.25px;}
+10%{left:230px; top:306px;}
+20% {left:231px; top:307px;}
+30% {left:232px; top:308px;}
+40% {left:233px; top:308px;}
+50% {left:234px; top:308px;}
+60% {left:235px; top:308px;}
+70% {left:236px; top:308px;}
+80% {left:237px; top:308.75px;}
+85% {left:238px; top:308.75px;}
+90% {left:239px; top:309px;}
+100% {left:230px; top:309px;}
+}
+
+
+@-webkit-keyframes handler2 {
+0% {left:220px; top:382.20px;}
+10%{left:222px; top:382.20px;}
+20% {left:224px; top:381.80px;}
+30% {left:226px; top:381.80px;}
+40% {left:228px; top:381.40px;}
+50% {left:230px; top:381.40px;}
+60% {left:232px; top:381.30px;}
+70% {left:234px; top:381.30px;}
+80% {left:236px; top:381.20px;}
+85% {left:238px; top:381.20px;}
+90% {left:240px; top:381.10px;}
+100% {left:242px; top:381.10px;}
+}
+
+/* Standard syntax */
+@keyframes handler2 {
+0% {left:220px; top:382.20px;}
+10%{left:222px; top:382.20px;}
+20% {left:224px; top:381.80px;}
+30% {left:226px; top:381.80px;}
+40% {left:228px; top:381.40px;}
+50% {left:230px; top:381.40px;}
+60% {left:232px; top:381.30px;}
+70% {left:234px; top:381.30px;}
+80% {left:236px; top:381.20px;}
+85% {left:238px; top:381.20px;}
+90% {left:240px; top:381.10px;}
+100% {left:242px; top:381.10px;}
+}
+
+/* move image 71 upwards */
+@-webkit-keyframes move1 {
+    from   {left:25px; top:270px;}
+    to  {left:25px; top:265px;}
+    }
+
+@keyframes move1 {
+   from   {left:25px; top:270px;}
+    to  {left:25px; top:265px;}
+ }
+ 
+ @-webkit-keyframes move2 {
+    from   {left:25px; top:265px;}
+    to  {left:25px; top:255px;}
+    }
+
+@keyframes move2 {
+   from   {left:25px; top:265px;}
+    to  {left:25px; top:255px;}
+ }
+ 
+ 
+@-webkit-keyframes move3 {
+    from   {left:25px; top:255px;}
+    to  {left:25px; top:245px;}
+    }
+
+@keyframes move3 {
+   from   {left:25px; top:255px;}
+    to  {left:25px; top:245px;}
+ }
+ 
+ 
+ 
+ @-webkit-keyframes move4 {
+    from   { left:50px; top:250px;}
+    to  {left:50px; top:245px;}
+    }
+
+@keyframes move4 {
+   from   {left:50px; top:250px;}
+    to  {left:50px; top:245px;}
+ }
+ 
+ @-webkit-keyframes move5 {
+    from   {left:50px; top:245px;}
+    to  {left:50px; top:235px;}
+    }
+
+@keyframes move5 {
+    from   {left:50px; top:245px;}
+    to  {left:50px; top:235px;}
+    }
+ }
+ 
+ 
+  @-webkit-keyframes move6 {
+    from   {left:50px; top:235px;}
+    to  {left:50px; top:224.5px;}
+    }
+
+@keyframes move6 {
+   from   {left:50px; top:235px;}
+    to  {left:50px; top:224.5px;}
+ }
+ 
+ @-webkit-keyframes moveArrow {
+0% {left:392px; top:380.90px;}
+10%{left:397px; top:380.90px;}
+20% {left:402px; top:381.30px;}
+30% {left:407px; top:381.90px;}
+40% {left:412px; top:381.90px;}
+50% {left:417px; top:381.90px;}
+60% {left:422px; top:381.90px;}
+70% {left:427px; top:381.90px;}
+80% {left:432px; top:381.90px;}
+85% {left:437px; top:381.90px;}
+90% {left:444px; top:381.90px;}
+100% {left:452px; top:377.90px;}
+}
+
+/* Standard syntax */
+@keyframes moveArrow {
+0% {left:392px; top:380.90px;}
+10%{left:397px; top:380.90px;}
+20% {left:402px; top:381.30px;}
+30% {left:407px; top:381.90px;}
+40% {left:412px; top:381.90px;}
+50% {left:417px; top:381.90px;}
+60% {left:422px; top:381.90px;}
+70% {left:427px; top:381.90px;}
+80% {left:432px; top:381.90px;}
+85% {left:437px; top:381.90px;}
+90% {left:444px; top:381.90px;}
+100% {left:452px; top:377.90px;}
+}
+
+
+
+@-webkit-keyframes movem2 {
+    from   {left:82px; top:208px;}
+    to  {left:82px; top:204px; }
+    }
+
+@keyframes movem2 {
+  from   {left:82px; top:208px;}
+    to  {left:82px; top:204px; }
+    }

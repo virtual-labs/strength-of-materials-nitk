@@ -27,7 +27,7 @@ var quizJSON = {
 			"incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: Record value of deflection</p>" // no comma here
         },
          { // Question 2 - Multiple Choice, Multiple True Answers, Select Any
-            "q": "Type of support used to fix the specimen in bending test of mild steel is ",
+            "q": "Type of support used to fix the specimen in bending test on mild steel is ",
             "a": [
                 {"option": "Hinge",               "correct": false},
                 {"option": "Roller",  			 "correct": true},
@@ -66,7 +66,7 @@ var quizJSON = {
 		{ // Question 5 - Multiple Choice, Multiple True Answers, Select Any
             "q": "Pick up correct assumption of theory of simple bending",
             "a": [
-                {"option": "Resultant pull or thrust on transverse section of beam is 0",               "correct": false},
+                {"option": "Resultant pull or thrust on transverse section of beam is zero",               "correct": false},
 				{"option": "Material of beam is homogenous and isotropic",               "correct": false},
 				{"option": "Transverse section of the beam remain plain before and after bending",               "correct": false},
 				{"option": "All the above are correct", "correct": true} // no comma here
@@ -100,14 +100,7 @@ var quizJSON = {
             "correct": "<p><span>Right answer</span> </p>",
             "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: False</p>" // no comma here
         }
-		
-		
-		
-		
-		
-         	
-		
-        
+  
       // no comma here
     ]
 };

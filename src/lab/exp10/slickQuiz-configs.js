@@ -38,7 +38,7 @@ var quizJSON = {
             "incorrect": "<p><span>wrong</span> It's wrong,<br>Ans: All of the above</p>" // no comma here
         },
         { // Question 3 - Multiple Choice, Multiple True Answers, Select All
-            "q": "For hardness test of copper in Brinell hardness tester, the diameter of ball is",
+            "q": "In Brinell hardness test,the diameter of ball used to test copper specimen is",
             "a": [
                 {"option": "1 mm",           "correct": false},
                 {"option": "3 mm",                  "correct": false},
@@ -98,7 +98,7 @@ var quizJSON = {
         },
 		
 		{ // Question 8 - Multiple Choice, Multiple True Answers, Select Any
-            "q": "Pick up correct statement",
+            "q": "Select the correct statement from following",
             "a": [
                 {"option": "A brittle materials has no plastic zone",               "correct": false},
                 {"option": "A ductile material has large plastic zone",   "correct": false},

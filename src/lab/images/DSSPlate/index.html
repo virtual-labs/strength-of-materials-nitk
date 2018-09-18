@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>SOLVE</title>
+<link rel="stylesheet" href="dstp.css" />
+<link rel="stylesheet" type="text/css" href="csshake.min.css">
+<link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+<link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake-vertical.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+<script type="text/javascript" src= "jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src= "dstp.js"></script>
+<!-- <script type="text/javascript" src= "jquery-2.1.4.js"></script> -->
+<script type="text/javascript" src= "ej.web.all.js"></script>
+<script type="text/javascript" src="canvasjs.min.js"></script>
+
+<script>
+    var simsubscreennum=0;
+	var temp=0;
+	var lnt=0;
+	var values1=[];
+	var values2=[];
+	var values3=[];
+	var avg=0;
+<!-- Experimental Results -->
+	var vals=[[21.2,2.6,55.12,4800.00,427.14],
+				[21.00,2.7,56.7,5000.00,432.54],
+				[20.7,2.5,51.75,4300.00,407.57],
+				[21.4,2.4,51.36,3300.00,315.16],
+				[20.7,3.6,74.52,5500.00,362.02],
+				[21.16,2.56,54.17,3200.00,289.75],
+				[21.00,2.6,54.6,4300.00,386.29],
+				[20.8,2.56,53.25,4200.00,386.87],
+				[21.62,2.66,57.51,5100.00,434.98],
+				[21.76,2.7,58.75,5200.00,434.14]];
+</script>
+</head>
+
+
+
+<body style="margin:0">
+<!--Simulation Screen start		-->
+<div id="simscreen">
+
+<!--Title of Simulation		-->
+<div id="title"><h3>DIRECT SHEAR TEST ON MILD STEEL PLATE</h3></div>
+
+<!--SubScreen Home	-->	
+<div class="simsubscreen" id="canvas0">
+	<h4 class="incanvas" style="font-family:verdana;" >Objective</h4>
+	<p class="incanvas" style="font-family:verdana; font-size:14px;">To determine experimentally, the ultimate shear strength in double shear of mild steel plate.</p>
+	<h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
+	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Universal testing machine, Shear attachments,Vernier calipers.</p>
+	<img id="" style="position: absolute; left: 55px; top: 100px;" src="images/main.png"/>
+</div>
+
+<!--Step1	-->	
+<div class="simsubscreen" id="canvas1" style="visibility:hidden">
+<strong id="titlestep" class="incanvas">STEP </strong>
+<span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
+<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Take the mild steel plate specimen and determine the width 'w' & thickness 'd'  of the mild steel plate using vernier calipers.</p>
+<img id="can11" style="position: absolute; left:30px; top: 80px;width:20%" src="images/can11.png"/>
+<p id="v1-0" style="position:absolute; left:30px; top: 100px;font-family:verdana; font-size:14px;">Mild Steel Plate</p>
+<!-- width of the mild steel plate-->
+<img id="can12" style="position: absolute; left:130px; top: 480px;cursor:grab;" src="images/can12.png"/>
+<img id="cal1" style="position: absolute; left:2px; top: 280px;" src="images/cal1.png"/>
+<img id="mov" style="position: absolute; left:225px; top: 282px;" src="images/mov.png"/>
+<!-- thickness of the mild steel plate  -->
+<img id="can13" style="position: absolute; left:300px; top:208px;cursor:grab;visibility:hidden" src="images/can13.png"/> 
+<img id="vcal" style="position: absolute; left:360px; top: 80px;visibility:hidden" src="images/vcal.png"/>
+<img id="vmov" style="position: absolute;left:450px; top:260px;visibility:hidden" src="images/vmov.png"/>
+<p id="v1-1" style="position:absolute;left:240px; top: 100px;font-family:verdana; font-size:14px;"></p>
+<p id="v1-2" style="position:absolute;left:240px; top:150px;font-family:verdana; font-size:14px;"></p>
+</div>
+
+
+<!--Step2	-->	
+<div class="simsubscreen" id="canvas2" style="visibility:hidden"> 
+<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
+<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;The mild steel plate is placed in the shear attachment and placed into the Universal Testing machine. 
+</p>  
+<img id="mac1" style="position: absolute; left:2px; top: 100px;" src="images/can24.png"/>
+<img id="zoom" style="position: absolute; left:52px; top: 285px;cursor:pointer;" src="images/zoom.png"/>
+<img id="can26" style="position: absolute; left:345px; top: 180px;visibility:hidden;" src="images/can26a.png"/>
+<img id="can28" style="position: absolute; left:330px; top: 175px;visibility:hidden;" src="images/can28.png"/> 
+<img id="can27" style="position: absolute; left:350px; top: 100px;visibility:hidden;" src="images/can27.png"/>
+<img id="hand" style="position: absolute; visibility:hidden;left:560px; top: 150px;cursor:grab" src="images/can22.png"/> 
+<img id="can25" style="position: absolute; visibility:hidden;width:40%" src="images/can25.png"/> 
+</div>
+
+ <!--left:108px; top: 143px;-->
+<!-- step3 -->
+<div class="simsubscreen" id="canvas3" style="visibility:hidden"> 
+<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+<span class="circlebg" id="stepnumber">&nbsp;3&nbsp;</span>
+<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;The machine is switched ON & the load is gradually increased until the specimen is fractured and the required load is noted down.</p>  
+<img id="mot1" style="position: absolute; left:0px; top: 80px;" src="images/mot1.png"/>
+<img id="mot2" style="position: absolute; left:107px; top: 104px;" src="images/mot22.png"/> 
+<img id="red" style="position: absolute; left:37px; top: 240px;cursor:pointer" src="images/red.png"/>
+<img id="green" style="position: absolute; left:37px; top: 249px;cursor:pointer" src="images/green.png"/>
+<img id="can31" style="position: absolute; left:420px; top: 125px;width:40%" src="images/can31.png"/>
+<img id="can32" style="position: absolute; left:420px; top: 125px;visibility:hidden;width:40%" src="images/can32.png"/>
+<img id="can33" style="position: absolute; left:245px; top: 130px;" src="images/can33.png"/>
+<img id="can34" style="position: absolute; left:245px; top: 130px;visibility:hidden" src="images/can34.png"/>
+<img id="can35" style="position: absolute; left:240px; top: 125px;" src="images/can36.png"/>
+<!-- <img id="swatch" style="position: absolute; left:30px; top: 200px;" src="images/sw.png"/> -->
+<!-- <img id="needle" style="position: absolute; left:105px; top: 267px;" src="images/needle.png"/> -->
+<p id="v3-1" style="position:absolute;left: 250px; top:380px;font-family:verdana; font-size:14px;"></p>
+</div>	
+
+	
+<!--Step4	-->	
+<div class="simsubscreen" id="canvas4" style="visibility:hidden">
+<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
+<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Calculate the double shear strength of mild steel plate.</p>
+<table border="border" id="obs" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellspacing:10px">
+<tr>
+	<th>Width of the failure plane 'w' (mm)</th>
+	<th>Thickness of the failure plane 'd'(mm)</th>
+	<th>Area of cross-section (A=w*d) mm<sup>2</sup></th>
+	<th>Failure Load P (Kg)</th>
+	<th>Single Shear Strength = (P * 9.81)/2 A (N/mm<sup>2</sup>)</th>
+</tr>
+<tr>
+	<td id="r0" style="text-align:center"></td>
+	<td id="r1" style="text-align:center"></td>
+	<td id="r2" style="text-align:center"></td>
+	<td id="r3" style="text-align:center"></td>
+	<td id="r4" style="text-align:center"></td>
+</tr>
+</table> 
+</div>
+ 
+ 
+ <!--Step5	-->	
+<div class="simsubscreen" id="canvas5" style="visibility:hidden">
+<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;5&nbsp;</span>
+<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Observation and Result</p>
+<form id="lastform">
+<table border="border" id="last1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellspacing:10px;">
+<tr>
+	<th>Width of the failure plane 'w' (mm)</th>
+	<th>Thickness of the failure plane 'd'(mm)</th>
+	<th>Area of cross-section (A=w*d) mm<sup>2</sup></th>
+	<th>Failure Load P (Kg)</th>
+	<th>Single Shear Strength =<br>(P * 9.81)/2 A (N/mm<sup>2</sup>)</th>
+</tr>
+<tr>
+	<td id="r10" style="text-align:center"></td>
+	<td id="r11" style="text-align:center"></td>
+	<td id="r12" style="text-align:center"></td>
+	<td id="r13" style="text-align:center"></td>
+	<td id="r14" style="text-align:center"><input type="text" id="i31" autocomplete="off"></td>
+</tr>
+<tr>
+	<td id="r20" style="text-align:center"></td>
+	<td id="r21" style="text-align:center"></td>
+	<td id="r22" style="text-align:center"></td>
+	<td id="r23" style="text-align:center"></td>
+	<td id="r24" style="text-align:center"><input type="text" id="i32" autocomplete="off"></td>
+</tr>
+<tr>
+	 <td id="r30" style="text-align:center"></td>
+	<td id="r31" style="text-align:center"></td>
+	<td id="r32" style="text-align:center"></td>
+	<td id="r33" style="text-align:center"></td>
+	<td id="r34" style="text-align:center"><input type="text" id="i33" autocomplete="off"></td>
+</tr>
+</table>
+<input type="button" id="check" value="Check" style="position:absolute;left:570px;top:290px;width:20%">
+</form>
+<table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellspacing:10px;visibility:hidden">
+<tr>
+	<th rowspan="2">Width of the failure plane 'w' (mm)</th>
+	<th rowspan="2">Thickness of the failure plane 'd'(mm)</th>
+	<th rowspan="2">Area of cross-section (A=w*d) mm<sup>2</sup></th>
+	<th rowspan="2">Failure<br>Load P (Kg)</th>
+	<th colspan="2">Single Shear Strength = (P * 9.81)/2 A (N/mm<sup>2</sup>)</th>
+	<th rowspan="2">Percentage<br>Error</th>
+</tr>
+<tr>
+	<th>Actual<br>Value</th>
+	<th>Entered<br>Value</th>
+</tr>
+<tr>
+	<td id="r1a" style="text-align:center"></td>
+	<td id="r1b" style="text-align:center"></td>
+	<td id="r1c" style="text-align:center"></td>
+	<td id="r1d" style="text-align:center"></td>
+	<td id="ra1" style="text-align:center"></td>
+	<td id="re1" style="text-align:center"></td>
+	<td id="rp1" style="text-align:center"></td>
+</tr>
+<tr>
+	<td id="r2a" style="text-align:center"></td>
+	<td id="r2b" style="text-align:center"></td>
+	<td id="r2c" style="text-align:center"></td>
+	<td id="r2d" style="text-align:center"></td>
+	<td id="ra2" style="text-align:center"></td>
+	<td id="re2" style="text-align:center"></td>
+	<td id="rp2" style="text-align:center"></td>
+</tr>
+<tr>
+    <td id="r3a" style="text-align:center"></td>
+	<td id="r3b" style="text-align:center"></td>
+	<td id="r3c" style="text-align:center"></td>
+	<td id="r3d" style="text-align:center"></td>
+	<td id="ra3" style="text-align:center"></td>
+	<td id="re3" style="text-align:center"></td>
+	<td id="rp3" style="text-align:center"></td>
+</tr>
+<tr>
+<td colspan="8" id="avg" style="text-align:right"></td>
+</tr>
+</table>
+</div>
+	
+<div id="">	
+<p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;"><strong>Trial = </strong></p>
+</div>	
+	
+<!--next  Arrow	-->	
+<div id="nav">
+	<img id="nextButton" onclick="navNext(); " src="images/Next.png" />
+</div>
+
+
+
+
+<!--Blinking Arrow	-->	
+<img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
+
+<div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+</body>
+</html>

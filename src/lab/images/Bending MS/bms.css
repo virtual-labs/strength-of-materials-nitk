@@ -1,0 +1,237 @@
+html
+{
+    -moz-user-select     : none;
+    -khtml-user-select   : none;
+    -webkit-user-select  : none;
+    -o-user-select       : none;
+    user-select          : none;
+}
+
+
+#simscreen
+{
+	position:absolute;
+	left:0px;
+	top:0px;
+    width:800px;
+    height:600px;	
+	border:solid 1px;
+}
+
+#title
+{
+	position:relative;
+	left:0px;
+	top:0px;
+	height:40px;
+	width:100%;
+	background-color:black;
+	font-size:24px;
+	text-align:center;
+	color:white;
+	text-transform:uppercase;
+}
+
+#title h3
+{
+	padding-top:2px;
+	margin:0;
+}
+
+.simsubscreen
+{
+	position:absolute;
+	left:50px;
+	top:50px;
+	height:530px;
+	width:745px;
+}
+
+.incanvas
+{
+	margin:5px 0 0 5px;
+	padding:0;
+}
+
+.circlebg
+{
+border-radius:100%;
+font-size:25px;
+color:#fff;
+text-align:center;
+background:#000
+}
+
+.steptext
+{
+	display:inline;
+	font-size:14px;
+}
+
+#copyright
+{
+	position:absolute;
+	left:70px;
+	top:580px;
+	font-size:12px;
+}
+
+/* Move rod */
+@-webkit-keyframes moveRod
+{
+	from {left:450px; top:200px;}
+	to {left:69px; top:60px;}
+}
+
+@keyframes moveRod
+{
+	from {left:450px; top:200px;}
+	to {left:69px; top:60px;}
+}
+
+@-webkit-keyframes moveRod2
+{
+	from {left:69px; top:60px;}
+	to {left:69px; top:100px;}
+}
+
+@keyframes moveRod2
+{
+	from {left:69px; top:60px;}
+	to {left:69px; top:100px;}
+}
+
+/* Move Caliper */
+@-webkit-keyframes moveCal
+{
+	from {left:100px; top:100px;}
+	to {left:82.25px; top:100px;}
+}
+
+@keyframes moveCal
+{
+	from {left:100px; top:100px;}
+	to {left:82.25px; top:100px;}
+}
+
+@-webkit-keyframes moveCal2
+{
+	from {left:82.25px; top:100px;}
+	to {left:100px; top:100px;}
+}
+
+@keyframes moveCal2
+{
+	from {left:82.25px; top:100px;}
+	to {left:100px; top:100px;}
+}
+
+
+/* marking chalk on rod */
+@-webkit-keyframes markChalk
+{
+	0% { left:380px; top:170px;}
+	100% { left:190px; top:185px;}
+}
+
+@keyframes markChalk
+{
+	0% { left:380px; top:170px;}
+	100% { left:190px; top:185px;}
+}
+
+@-webkit-keyframes markChalk1
+{
+	0% { left:190px; top:187px;}
+	100% { left:171px; top:187px;}
+}
+
+@keyframes markChalk1
+{
+0% { left:190px; top:187px;}
+	100% { left:171px; top:187px;}
+}	
+
+@-webkit-keyframes markChalk2
+{
+	0% { left:228px; top:139px;}
+	100% { left:212px; top:139px;}
+}
+
+@keyframes markChalk2
+{
+	0% { left:228px; top:139px;}
+	100% { left:212px; top:139px;}
+}
+
+@-webkit-keyframes markChalk3
+{
+	0% { left:274px; top:95px;}
+	100% { left:255px; top:95px;}
+}
+
+@keyframes markChalk3
+{
+	0% { left:274px; top:95px;}
+	100% { left:255px; top:95px;}
+}
+
+@-webkit-keyframes markChalk4
+{
+	0% { left:318px; top:64px;}
+	100% { left:300px; top:64px;}
+}
+
+@keyframes markChalk4 
+{
+	0% { left:318px; top:64px;}
+	100% { left:300px; top:64px;}
+}
+
+@-webkit-keyframes markChalk5
+{
+	0% { left:117px; top:240px;}
+	100% { left:97px; top:240px;}
+}
+
+@keyframes markChalk5 
+{
+	0% { left:117px; top:240px;}
+	100% { left:97px; top:240px;}
+}	
+
+@-webkit-keyframes scaleMove
+{
+	from{left:120px; top:100px;}
+	to{left:89px; top:272.5px;}
+}
+
+@keyframes scaleMove
+{
+	from{left:120px; top:100px;}
+	to{left:89px; top:272.5px;}
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    /* width: 250px; */
+    text-align: center;
+    padding: 5px 0;
+    background-color:black;
+	color:white;
+
+    /* Position the tooltip  */
+    position: absolute;
+    z-index: 1;
+	border:1px solid black;
+	    border-radius: 6px;
+}

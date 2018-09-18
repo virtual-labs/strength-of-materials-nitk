@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>SOLVE</title>
+<link rel="stylesheet" href="ctci.css" />
+<link rel="stylesheet" type="text/css" href="tipped.css" />
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  -->
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+<script type="text/javascript" src= "jquery-2.1.4.js"></script>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="jquery.ui.touch-punch.js"></script>
+<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src= "plotly-latest.min.js"></script>
+<script type="text/javascript" src= "ctci.js"></script>
+<script type="text/javascript" src= "ej.web.all.min.js"></script>
+<script type="text/javascript" src= "tipped.js"></script>
+
+<!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+
+
+<script>
+    var simsubscreennum=0;
+	var temp=0;
+	var lnt=0;
+	var values=[];
+	var vals0=[];
+	var vals=[];
+	var data=[]; 
+	var tbdata=[]; 
+	var x1=0;
+	var y1=0;
+	var slopeyx=0
+	var gr=0;
+	var vf=0,vf1=0,vf2=0;
+	var zm=0;
+	var grp;
+	
+<!-- Experimental Results -->
+
+var slope=[[2.41,1.07,2.38],
+			[1.21,0.64,1.42],
+			[1.82,0.95,2.29],
+			[1.16,0.85,1.37],
+			[1.5,0.96,1.67],
+			[1.16,0.48,1.35],
+			[1.23,0.57,1.37],
+			[0.67,1.64,0.73],
+			[1.45,0.68,1.65],
+			[1.31,0.45,1.53]];	
+				
+												
+var vals=[[22.51,40.0,397.76,460.08,616.58,21.52,10.72,23.93],
+         [20.04,45.0,315.26,399.67,777.93,17.27,9.18,20.27],
+         [22.0,41.06,379.94,244.78,710.05,19.67,10.48,24.75],
+		 [20.0,45.0,314.0,261.15,812.29,16.6,12.18,19.65],
+		 [20.4,41.2,326.69,434.66,780.74,18.92,12.12,21.02],
+		 [20.0,44.8,314.0,382.17,812.29,16.52,6.85,19.29],
+		 [20.02,45.0,314.63,254.27,826.26,17.59,8.17,20.02],
+		 [21.0,45.0,346.19,277.3,750.93,20.04,11.33,21.27],
+		 [20.3,42.5,323.49,275.12,803.63,19.05,8.92,21.68],
+		 [20.07,45.0,316.2,249.84,806.64,18.64,6.4,21.82]];
+	
+<!---Graph Data---------->	
+var data1 =[[ 0.0 , 0.0 ],
+			[ 5.0 , 1.0 ],
+			[ 10.0 , 3.0 ],
+			[ 15.0 , 5.0 ],
+			[ 20.0 , 7.0 ],
+			[ 25.0 , 9.0 ],
+			[ 30.0 , 11.0 ],
+			[ 35.0 , 13.0 ],
+			[ 40.0 , 15.0 ],
+			[ 45.0 , 17.0 ],
+			[ 50.0 , 19.0 ],
+			[ 55.0 , 21.0 ],
+			[ 60.0 , 23.0 ],
+			[ 65.0 , 25.0 ],
+			[ 70.0 , 29.0 ],
+			[ 75.0 , 34.0 ],
+			[ 80.0 , 38.0 ],
+			[ 85.0 , 44.0 ],
+			[ 90.0 , 51.0 ],
+			[ 95.0 , 58.0 ],
+			[ 100.0 , 69.0 ],
+			[ 105.0 , 76.0 ],
+			[ 110.0 , 83.0 ],
+			[ 115.0 , 94.0 ],
+			[ 120.0 , 107.0 ],
+			[ 125.0 , 119.0 ],
+			[ 130.0 , 128.0 ],
+			[ 135.0 , 146.0 ],
+			[ 140.0 , 154.0 ],
+			[ 145.0 , 168.0 ],
+			[ 150.0 , 179.0 ],
+			[ 155.0 , 186.0 ],
+			[ 160.0 , 198.0 ],
+			[ 165.0 , 207.0 ],
+			[ 170.0 , 215.0 ],
+			[ 175.0 , 226.0 ],
+			[ 180.0 , 238.0 ],
+			[ 185.0 , 256.0 ],
+			[ 190.0 , 271.0 ],
+			[ 195.0 , 295.0 ],
+			[ 200.0 , 314.0 ],
+			[ 205.0 , 326.0 ],
+			[ 210.0 , 344.0 ],
+			[ 215.0 , 358.0 ],
+			[ 220.0 , 373.0 ],
+			[ 225.0 , 389.0 ],
+			[ 230.0 , 401.0 ],
+			[ 235.0 , 414.0 ],
+			[ 240.0 , 423.0 ],
+			[ 245.0 , 435.0 ],
+			[ 250.0 , 456.0 ]
+			];
+			
+var data2 = [[ 0.0 , 0.0 ],
+			[ 5.0 , 3.0 ],
+			[ 10.0 , 7.5 ],
+			[ 15.0 , 11.0 ],
+			[ 20.0 , 15.0 ],
+			[ 25.0 , 19.0 ],
+			[ 30.0 , 23.0 ],
+			[ 35.0 , 26.0 ],
+			[ 40.0 , 30.0 ],
+			[ 45.0 , 33.0 ],
+			[ 50.0 , 37.0 ],
+			[ 55.0 , 41.0 ],
+			[ 60.0 , 44.0 ],
+			[ 65.0 , 47.0 ],
+			[ 70.0 , 51.0 ],
+			[ 75.0 , 55.0 ],
+			[ 80.0 , 59.0 ],
+			[ 85.0 , 62.0 ],
+			[ 90.0 , 66.0 ],
+			[ 95.0 , 70.0 ],
+			[ 100.0 , 74.0 ],
+			[ 105.0 , 79.0 ],
+			[ 110.0 , 83.0 ],
+			[ 115.0 , 88.0 ],
+			[ 120.0 , 92.0 ],
+			[ 125.0 , 97.0 ],
+			[ 130.0 , 104.0 ],
+			[ 135.0 , 112.0 ],
+			[ 140.0 , 119.0 ],
+			[ 145.0 , 123.0 ],
+			[ 150.0 , 130.0 ],
+			[ 155.0 , 138.0 ],
+			[ 160.0 , 145.0 ],
+			[ 165.0 , 150.0 ],
+			[ 170.0 , 155.0 ],
+			[ 175.0 , 162.0 ],
+			[ 180.0 , 168.0 ],
+			[ 185.0 , 177.0 ],
+			[ 190.0 , 187.0 ],
+			[ 195.0 , 197.0 ],
+			[ 200.0 , 206.0 ],
+			[ 205.0 , 212.0 ],
+			[ 210.0 , 223.0 ],
+			[ 215.0 , 234.0 ],
+			[ 220.0 , 248.0 ],
+			[ 225.0 , 259.0 ],
+			[ 230.0 , 267.0 ],
+			[ 235.0 , 282.0 ],
+			[ 240.0 , 298.0 ],
+			[ 245.0 , 316.0 ],
+			[ 250.0 , 328.0 ]
+			];
+var data3 = [[ 0.0 , 0.0 ],
+			[ 5.0 , 2.0 ],
+			[ 10.0 , 5.0 ],
+			[ 15.0 , 6.0 ],
+			[ 20.0 , 9.0 ],
+			[ 25.0 , 10.0 ],
+			[ 30.0 , 12.0 ],
+			[ 35.0 , 15.0 ],
+			[ 40.0 , 16.0 ],
+			[ 45.0 , 18.0 ],
+			[ 50.0 , 21.0 ],
+			[ 55.0 , 23.0 ],
+			[ 60.0 , 26.0 ],
+			[ 65.0 , 29.0 ],
+			[ 70.0 , 32.0 ],
+			[ 75.0 , 35.0 ],
+			[ 80.0 , 38.0 ],
+			[ 85.0 , 41.0 ],
+			[ 90.0 , 46.0 ],
+			[ 95.0 , 51.0 ],
+			[ 100.0 , 56.0 ],
+			[ 105.0 , 61.0 ],
+			[ 110.0 , 66.0 ],
+			[ 115.0 , 75.0 ],
+			[ 120.0 , 84.0 ],
+			[ 125.0 , 93.0 ],
+			[ 130.0 , 104.0 ],
+			[ 135.0 , 111.0 ],
+			[ 140.0 , 119.0 ],
+			[ 145.0 , 124.0 ],
+			[ 150.0 , 133.0 ],
+			[ 155.0 , 145.0 ],
+			[ 160.0 , 156.0 ],
+			[ 165.0 , 168.0 ],
+			[ 170.0 , 176.0 ],
+			[ 175.0 , 182.0 ],
+			[ 180.0 , 196.0 ],
+			[ 185.0 , 204.0 ],
+			[ 190.0 , 210.0 ],
+			[ 195.0 , 222.0 ],
+			[ 200.0 , 230.0 ],
+			[ 205.0 , 241.0 ],
+			[ 210.0 , 250.0 ],
+			[ 215.0 , 263.0 ],
+			[ 220.0 , 272.0 ],
+			[ 225.0 , 281.0 ],
+			[ 230.0 , 296.0 ],
+			[ 235.0 , 314.0 ],
+			[ 240.0 , 327.0 ],
+			[ 245.0 , 348.0 ],
+			[ 250.0 , 356.0 ],
+			[ 255.0 , 373.0 ],
+			[ 260.0 , 384.0 ],
+			[ 265.0 , 396.0 ],
+			[ 270.0 , 406.0 ],
+			[ 275.0 , 413.0 ]
+
+			];
+var data4 = [[ 0.0 , 0.0 ],
+			[ 5.0 , 5.0 ],
+			[ 10.0 , 9.0 ],
+			[ 15.0 , 13.0 ],
+			[ 20.0 , 17.0 ],
+			[ 25.0 , 21.0 ],
+			[ 30.0 , 25.0 ],
+			[ 35.0 , 29.0 ],
+			[ 40.0 , 32.0 ],
+			[ 45.0 , 36.0 ],
+			[ 50.0 , 40.0 ],
+			[ 55.0 , 44.0 ],
+			[ 60.0 , 48.0 ],
+			[ 65.0 , 52.0 ],
+			[ 70.0 , 57.0 ],
+			[ 75.0 , 63.0 ],
+			[ 80.0 , 69.0 ],
+			[ 85.0 , 75.0 ],
+			[ 90.0 , 81.0 ],
+			[ 95.0 , 86.0 ],
+			[ 100.0 , 92.0 ],
+			[ 105.0 , 98.0 ],
+			[ 110.0 , 105.0 ],
+			[ 115.0 , 111.0 ],
+			[ 120.0 , 120.0 ],
+			[ 125.0 , 124.0 ],
+			[ 130.0 , 129.0 ],
+			[ 135.0 , 135.0 ],
+			[ 140.0 , 140.0 ],
+			[ 145.0 , 145.0 ],
+			[ 150.0 , 148.0 ],
+			[ 155.0 , 152.0 ],
+			[ 160.0 , 156.0 ],
+			[ 165.0 , 161.0 ],
+			[ 170.0 , 167.0 ],
+			[ 175.0 , 174.0 ],
+			[ 180.0 , 179.0 ],
+			[ 185.0 , 188.0 ],
+			[ 190.0 , 192.0 ],
+			[ 195.0 , 200.0 ],
+			[ 200.0 , 209.0 ],
+			[ 205.0 , 220.0 ],
+			[ 210.0 , 230.0 ],
+			[ 215.0 , 240.0 ],
+			[ 220.0 , 251.0 ],
+			[ 225.0 , 265.0 ],
+			[ 230.0 , 285.0 ],
+			[ 235.0 , 295.0 ],
+			[ 240.0 , 309.0 ],
+			[ 245.0 , 320.0 ],
+			[ 250.0 , 345.0 ],
+			[ 255.0 , 370.0 ],
+			[ 260.0 , 410.0 ]
+
+			];
+var data5 = [[ 0.0 , 0.0 ],
+			[ 5.0 , 2.0 ],
+			[ 10.0 , 5.0 ],
+			[ 15.0 , 8.0 ],
+			[ 20.0 , 11.0 ],
+			[ 25.0 , 13.0 ],
+			[ 30.0 , 16.0 ],
+			[ 35.0 , 19.0 ],
+			[ 40.0 , 22.0 ],
+			[ 45.0 , 24.0 ],
+			[ 50.0 , 27.0 ],
+			[ 55.0 , 30.0 ],
+			[ 60.0 , 34.0 ],
+			[ 65.0 , 37.0 ],
+			[ 70.0 , 39.0 ],
+			[ 75.0 , 42.0 ],
+			[ 80.0 , 46.0 ],
+			[ 85.0 , 50.0 ],
+			[ 90.0 , 53.0 ],
+			[ 95.0 , 56.0 ],
+			[ 100.0 , 59.0 ],
+			[ 105.0 , 62.0 ],
+			[ 110.0 , 67.0 ],
+			[ 115.0 , 70.0 ],
+			[ 120.0 , 74.0 ],
+			[ 125.0 , 77.0 ],
+			[ 130.0 , 82.0 ],
+			[ 135.0 , 86.0 ],
+			[ 140.0 , 91.0 ],
+			[ 145.0 , 96.0 ],
+			[ 150.0 , 101.0 ],
+			[ 155.0 , 109.0 ],
+			[ 160.0 , 119.0 ],
+			[ 165.0 , 128.0 ],
+			[ 170.0 , 140.0 ],
+			[ 175.0 , 150.0 ],
+			[ 180.0 , 163.0 ],
+			[ 185.0 , 171.0 ],
+			[ 190.0 , 187.0 ],
+			[ 195.0 , 193.0 ],
+			[ 200.0 , 203.0 ],
+			[ 205.0 , 213.0 ],
+			[ 210.0 , 224.0 ],
+			[ 215.0 , 232.0 ],
+			[ 220.0 , 245.0 ],
+			[ 225.0 , 253.0 ],
+			[ 230.0 , 264.0 ],
+			[ 235.0 , 279.0 ],
+			[ 240.0 , 288.0 ],
+			[ 245.0 , 311.0 ],
+			[ 250.0 , 325.0 ],
+			[ 255.0 , 344.0 ],
+			[ 260.0 , 355.0 ]
+
+			];
+var data6 = [[ 0.0 , 0.0 ],
+			[ 5.0 , 5.0 ],
+			[ 10.0 , 9.0 ],
+			[ 15.0 , 13.0 ],
+			[ 20.0 , 17.0 ],
+			[ 25.0 , 21.0 ],
+			[ 30.0 , 25.0 ],
+			[ 35.0 , 29.0 ],
+			[ 40.0 , 33.0 ],
+			[ 45.0 , 38.0 ],
+			[ 50.0 , 42.0 ],
+			[ 55.0 , 46.0 ],
+			[ 60.0 , 50.0 ],
+			[ 65.0 , 54.0 ],
+			[ 70.0 , 57.0 ],
+			[ 75.0 , 61.0 ],
+			[ 80.0 , 65.0 ],
+			[ 85.0 , 70.0 ],
+			[ 90.0 , 74.0 ],
+			[ 95.0 , 78.0 ],
+			[ 100.0 , 82.0 ],
+			[ 105.0 , 86.0 ],
+			[ 110.0 , 91.0 ],
+			[ 115.0 , 96.0 ],
+			[ 120.0 , 101.0 ],
+			[ 125.0 , 109.0 ],
+			[ 130.0 , 119.0 ],
+			[ 135.0 , 126.0 ],
+			[ 140.0 , 141.0 ],
+			[ 145.0 , 150.0 ],
+			[ 150.0 , 160.0 ],
+			[ 155.0 , 172.0 ],
+			[ 160.0 , 187.0 ],
+			[ 165.0 , 196.0 ],
+			[ 170.0 , 205.0 ],
+			[ 175.0 , 215.0 ],
+			[ 180.0 , 229.0 ],
+			[ 185.0 , 248.0 ],
+			[ 190.0 , 264.0 ],
+			[ 195.0 , 284.0 ],
+			[ 200.0 , 296.0 ],
+			[ 205.0 , 313.0 ],
+			[ 210.0 , 323.0 ],
+			[ 215.0 , 336.0 ],
+			[ 220.0 , 346.0 ],
+			[ 225.0 , 360.0 ],
+			[ 230.0 , 369.0 ],
+			[ 235.0 , 378.0 ],
+			[ 240.0 , 384.0 ],
+			[ 245.0 , 396.0 ],
+			[ 250.0 , 410.0 ],
+			[ 255.0 , 419.0 ],
+			[ 260.0 , 431.0 ]
+
+			];
+var data7 = [[ 0.0 , 0.0 ],
+			[ 5.0 , 4.0 ],
+			[ 10.0 , 8.0 ],
+			[ 15.0 , 12.0 ],
+			[ 20.0 , 16.0 ],
+			[ 25.0 , 19.0 ],
+			[ 30.0 , 22.0 ],
+			[ 35.0 , 26.0 ],
+			[ 40.0 , 29.0 ],
+			[ 45.0 , 33.0 ],
+			[ 50.0 , 36.0 ],
+			[ 55.0 , 39.0 ],
+			[ 60.0 , 42.0 ],
+			[ 65.0 , 46.0 ],
+			[ 70.0 , 51.0 ],
+			[ 75.0 , 57.0 ],
+			[ 80.0 , 63.0 ],
+			[ 85.0 , 71.0 ],
+			[ 90.0 , 85.0 ],
+			[ 95.0 , 96.0 ],
+			[ 100.0 , 105.0 ],
+			[ 105.0 , 116.0 ],
+			[ 110.0 , 128.0 ],
+			[ 115.0 , 137.0 ],
+			[ 120.0 , 146.0 ],
+			[ 125.0 , 159.0 ],
+			[ 130.0 , 174.0 ],
+			[ 135.0 , 186.0 ],
+			[ 140.0 , 194.0 ],
+			[ 145.0 , 205.0 ],
+			[ 150.0 , 222.0 ],
+			[ 155.0 , 240.0 ],
+			[ 160.0 , 255.0 ],
+			[ 165.0 , 270.0 ],
+			[ 170.0 , 278.0 ],
+			[ 175.0 , 292.0 ],
+			[ 180.0 , 310.0 ],
+			[ 185.0 , 322.0 ],
+			[ 190.0 , 336.0 ],
+			[ 195.0 , 349.0 ],
+			[ 200.0 , 364.0 ],
+			[ 205.0 , 378.0 ],
+			[ 210.0 , 385.0 ],
+			[ 215.0 , 397.0 ],
+			[ 220.0 , 406.0 ],
+			[ 225.0 , 419.0 ],
+			[ 230.0 , 427.0 ],
+			[ 235.0 , 440.0 ],
+			[ 240.0 , 449.0 ],
+			[ 245.0 , 458.0 ],
+			[ 250.0 , 463.0 ],
+			[ 255.0 , 470.0 ],
+			[ 260.0 , 481.0 ],
+			[ 265.0 , 488.0 ]
+
+			];
+var data8 = [[ 0.0 , 0.0 ],
+			[ 5.0 , 5.0 ],
+			[ 10.0 , 12.0 ],
+			[ 15.0 , 18.0 ],
+			[ 20.0 , 25.0 ],
+			[ 25.0 , 32.0 ],
+			[ 30.0 , 39.0 ],
+			[ 35.0 , 44.0 ],
+			[ 40.0 , 51.0 ],
+			[ 45.0 , 58.0 ],
+			[ 50.0 , 65.0 ],
+			[ 55.0 , 72.0 ],
+			[ 60.0 , 81.0 ],
+			[ 65.0 , 88.0 ],
+			[ 70.0 , 95.0 ],
+			[ 75.0 , 106.0 ],
+			[ 80.0 , 113.0 ],
+			[ 85.0 , 121.0 ],
+			[ 90.0 , 132.0 ],
+			[ 95.0 , 141.0 ],
+			[ 100.0 , 150.0 ],
+			[ 105.0 , 162.0 ],
+			[ 110.0 , 174.0 ],
+			[ 115.0 , 183.0 ],
+			[ 120.0 , 195.0 ],
+			[ 125.0 , 206.0 ],
+			[ 130.0 , 213.0 ],
+			[ 135.0 , 225.0 ],
+			[ 140.0 , 233.0 ],
+			[ 145.0 , 240.0 ],
+			[ 150.0 , 249.0 ],
+			[ 155.0 , 258.0 ],
+			[ 160.0 , 267.0 ],
+			[ 165.0 , 275.0 ],
+			[ 170.0 , 284.0 ],
+			[ 175.0 , 295.0 ],
+			[ 180.0 , 310.0 ],
+			[ 185.0 , 319.0 ],
+			[ 190.0 , 335.0 ],
+			[ 195.0 , 344.0 ],
+			[ 200.0 , 360.0 ],
+			[ 205.0 , 373.0 ],
+			[ 210.0 , 385.0 ],
+			[ 215.0 , 397.0 ],
+			[ 220.0 , 406.0 ],
+			[ 225.0 , 419.0 ],
+			[ 230.0 , 427.0 ],
+			[ 235.0 , 440.0 ],
+			[ 240.0 , 449.0 ],
+			[ 245.0 , 458.0 ],
+			[ 250.0 , 465.0 ],
+			[ 255.0 , 473.0 ],
+			[ 260.0 , 484.0 ],
+			[ 265.0 , 490.0 ]
+
+
+			];
+var data9 = [[ 0.0 , 0.0 ],
+			[ 5.0 , 4.0 ],
+			[ 10.0 , 7.0 ],
+			[ 15.0 , 10.0 ],
+			[ 20.0 , 13.0 ],
+			[ 25.0 , 16.0 ],
+			[ 30.0 , 18.0 ],
+			[ 35.0 , 21.0 ],
+			[ 40.0 , 25.0 ],
+			[ 45.0 , 28.0 ],
+			[ 50.0 , 31.0 ],
+			[ 55.0 , 35.0 ],
+			[ 60.0 , 38.0 ],
+			[ 65.0 , 41.0 ],
+			[ 70.0 , 45.0 ],
+			[ 75.0 , 49.0 ],
+			[ 80.0 , 53.0 ],
+			[ 85.0 , 57.0 ],
+			[ 90.0 , 62.0 ],
+			[ 95.0 , 69.0 ],
+			[ 100.0 , 78.0 ],
+			[ 105.0 , 89.0 ],
+			[ 110.0 , 98.0 ],
+			[ 115.0 , 110.0 ],
+			[ 120.0 , 125.0 ],
+			[ 125.0 , 136.0 ],
+			[ 130.0 , 154.0 ],
+			[ 135.0 , 172.0 ],
+			[ 140.0 , 185.0 ],
+			[ 145.0 , 196.0 ],
+			[ 150.0 , 208.0 ],
+			[ 155.0 , 225.0 ],
+			[ 160.0 , 243.0 ],
+			[ 165.0 , 256.0 ],
+			[ 170.0 , 268.0 ],
+			[ 175.0 , 280.0 ],
+			[ 180.0 , 296.0 ],
+			[ 185.0 , 313.0 ],
+			[ 190.0 , 327.0 ],
+			[ 195.0 , 339.0 ],
+			[ 200.0 , 356.0 ],
+			[ 205.0 , 371.0 ],
+			[ 210.0 , 382.0 ],
+			[ 215.0 , 393.0 ],
+			[ 220.0 , 406.0 ],
+			[ 225.0 , 419.0 ],
+			[ 230.0 , 427.0 ],
+			[ 235.0 , 440.0 ],
+			[ 240.0 , 449.0 ],
+			[ 245.0 , 458.0 ],
+			[ 250.0 , 463.0 ],
+			[ 255.0 , 470.0 ],
+			[ 260.0 , 481.0 ],
+			[ 265.0 , 488.0 ]
+
+
+			];
+var data10 = [[ 0.0 , 0.0 ],
+			[ 5.0 , 5.0 ],
+			[ 10.0 , 9.0 ],
+			[ 15.0 , 13.0 ],
+			[ 20.0 , 17.0 ],
+			[ 25.0 , 20.0 ],
+			[ 30.0 , 23.0 ],
+			[ 35.0 , 27.0 ],
+			[ 40.0 , 30.0 ],
+			[ 45.0 , 34.0 ],
+			[ 50.0 , 37.0 ],
+			[ 55.0 , 40.0 ],
+			[ 60.0 , 43.0 ],
+			[ 65.0 , 47.0 ],
+			[ 70.0 , 52.0 ],
+			[ 75.0 , 58.0 ],
+			[ 80.0 , 66.0 ],
+			[ 85.0 , 79.0 ],
+			[ 90.0 , 94.0 ],
+			[ 95.0 , 109.0 ],
+			[ 100.0 , 120.0 ],
+			[ 105.0 , 134.0 ],
+			[ 110.0 , 145.0 ],
+			[ 115.0 , 158.0 ],
+			[ 120.0 , 172.0 ],
+			[ 125.0 , 184.0 ],
+			[ 130.0 , 198.0 ],
+			[ 135.0 , 205.0 ],
+			[ 140.0 , 217.0 ],
+			[ 145.0 , 226.0 ],
+			[ 150.0 , 242.0 ],
+			[ 155.0 , 254.0 ],
+			[ 160.0 , 263.0 ],
+			[ 165.0 , 275.0 ],
+			[ 170.0 , 283.0 ],
+			[ 175.0 , 295.0 ],
+			[ 180.0 , 310.0 ],
+			[ 185.0 , 322.0 ],
+			[ 190.0 , 336.0 ],
+			[ 195.0 , 349.0 ],
+			[ 200.0 , 364.0 ],
+			[ 205.0 , 378.0 ],
+			[ 210.0 , 385.0 ],
+			[ 215.0 , 397.0 ],
+			[ 220.0 , 406.0 ],
+			[ 225.0 , 419.0 ],
+			[ 230.0 , 427.0 ],
+			[ 235.0 , 440.0 ],
+			[ 240.0 , 449.0 ],
+			[ 245.0 , 458.0 ],
+			[ 250.0 , 463.0 ],
+			[ 255.0 , 470.0 ],
+			[ 260.0 , 481.0 ]
+			];
+			
+<!--Plotly graph---->
+var trace1 = {
+				y: [0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.0,130.0,135.0,140.0,145.0,150.0,155.0,160.0,165.0,170.0,175.0,180.0,185.0,190.0,195.0,200.0,205.0,210.0,215.0,220.0,225.0,230.0,235.0,240.0,245.0,250.0], 
+				x: [0.0,1.0,3.0,5.0,7.0,9.0,11.0,13.0,15.0,17.0,19.0,21.0,23.0,25.0,29.0,34.0,38.0,44.0,51.0,58.0,69.0,76.0,83.0,94.0,107.0,119.0,128.0,146.0,154.0,168.0,179.0,186.0,198.0,207.0,215.0,226.0,238.0,256.0,271.0,295.0,314.0,326.0,344.0,358.0,373.0,389.0,401.0,414.0,423.0,435.0,456.0], 
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+
+var trace2 = {
+				y: [0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.0,130.0,135.0,140.0,145.0,150.0,155.0,160.0,165.0,170.0,175.0,180.0,185.0,190.0,195.0,200.0,205.0,210.0,215.0,220.0,225.0,230.0,235.0,240.0,245.0,250.0],
+				x: [0.0,3.0,7.5,11.0,15.0,19.0,23.0,26.0,30.0,33.0,37.0,41.0,44.0,47.0,51.0,55.0,59.0,62.0,66.0,70.0,74.0,79.0,83.0,88.0,92.0,97.0,104.0,112.0,119.0,123.0,130.0,138.0,145.0,150.0,155.0,162.0,168.0,177.0,187.0,197.0,206.0,212.0,223.0,234.0,248.0,259.0,267.0,282.0,298.0,316.0,328.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+			
+
+
+var trace3 = {
+				y:[0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.0,130.0,135.0,140.0,145.0,150.0,155.0,160.0,165.0,170.0,175.0,180.0,185.0,190.0,195.0,200.0,205.0,210.0,215.0,220.0,225.0,230.0,235.0,240.0,245.0,250.0,255.0,260.0,265.0,270.0,275.0],
+				x:[0.0,2.0,5.0,6.0,9.0,10.0,12.0,15.0,16.0,18.0,21.0,23.0,26.0,29.0,32.0,35.0,38.0,41.0,46.0,51.0,56.0,61.0,66.0,75.0,84.0,93.0,104.0,111.0,119.0,124.0,133.0,145.0,156.0,168.0,176.0,182.0,196.0,204.0,210.0,222.0,230.0,241.0,250.0,263.0,272.0,281.0,296.0,314.0,327.0,348.0,356.0,373.0,384.0,396.0,406.0,413.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace4 = {
+				y:[0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.0,130.0,135.0,140.0,145.0,150.0,155.0,160.0,165.0,170.0,175.0,180.0,185.0,190.0,195.0,200.0,205.0,210.0,215.0,220.0,225.0,230.0,235.0,240.0,245.0,250.0,255.0,260.0],
+				x:[0.0,5.0,9.0,13.0,17.0,21.0,25.0,29.0,32.0,36.0,40.0,44.0,48.0,52.0,57.0,63.0,69.0,75.0,81.0,86.0,92.0,98.0,105.0,111.0,120.0,124.0,129.0,135.0,140.0,145.0,148.0,152.0,156.0,161.0,167.0,174.0,179.0,188.0,192.0,200.0,209.0,220.0,230.0,240.0,251.0,265.0,285.0,295.0,309.0,320.0,345.0,370.0,410.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace5 = {
+				y:[0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.0,130.0,135.0,140.0,145.0,150.0,155.0,160.0,165.0,170.0,175.0,180.0,185.0,190.0,195.0,200.0,205.0,210.0,215.0,220.0,225.0,230.0,235.0,240.0,245.0,250.0,255.0,260.0],
+				x:[0.0,2.0,5.0,8.0,11.0,13.0,16.0,19.0,22.0,24.0,27.0,30.0,34.0,37.0,39.0,42.0,46.0,50.0,53.0,56.0,59.0,62.0,67.0,70.0,74.0,77.0,82.0,86.0,91.0,96.0,101.0,109.0,119.0,128.0,140.0,150.0,163.0,171.0,187.0,193.0,203.0,213.0,224.0,232.0,245.0,253.0,264.0,279.0,288.0,311.0,325.0,344.0,355.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace6 = {
+				y:[0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.0,130.0,135.0,140.0,145.0,150.0,155.0,160.0,165.0,170.0,175.0,180.0,185.0,190.0,195.0,200.0,205.0,210.0,215.0,220.0,225.0,230.0,235.0,240.0,245.0,250.0,255.0,260.0],
+				x:[0.0,5.0,9.0,13.0,17.0,21.0,25.0,29.0,33.0,38.0,42.0,46.0,50.0,54.0,57.0,61.0,65.0,70.0,74.0,78.0,82.0,86.0,91.0,96.0,101.0,109.0,119.0,126.0,141.0,150.0,160.0,172.0,187.0,196.0,205.0,215.0,229.0,248.0,264.0,284.0,296.0,313.0,323.0,336.0,346.0,360.0,369.0,378.0,384.0,396.0,410.0,419.0,431.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+  
+var trace7 = {
+				y:[0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.0,130.0,135.0,140.0,145.0,150.0,155.0,160.0,165.0,170.0,175.0,180.0,185.0,190.0,195.0,200.0,205.0,210.0,215.0,220.0,225.0,230.0,235.0,240.0,245.0,250.0,255.0,260.0,265.0],
+				x:[0.0,4.0,8.0,12.0,16.0,19.0,22.0,26.0,29.0,33.0,36.0,39.0,42.0,46.0,51.0,57.0,63.0,71.0,85.0,96.0,105.0,116.0,128.0,137.0,146.0,159.0,174.0,186.0,194.0,205.0,222.0,240.0,255.0,270.0,278.0,292.0,310.0,322.0,336.0,349.0,364.0,378.0,385.0,397.0,406.0,419.0,427.0,440.0,449.0,458.0,463.0,470.0,481.0,488.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace8 = {
+				y:[0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.0,130.0,135.0,140.0,145.0,150.0,155.0,160.0,165.0,170.0,175.0,180.0,185.0,190.0,195.0,200.0,205.0,210.0,215.0,220.0,225.0,230.0,235.0,240.0,245.0,250.0,255.0,260.0,265.0],
+				x:[0.0,5.0,12.0,18.0,25.0,32.0,39.0,44.0,51.0,58.0,65.0,72.0,81.0,88.0,95.0,106.0,113.0,121.0,132.0,141.0,150.0,162.0,174.0,183.0,195.0,206.0,213.0,225.0,233.0,240.0,249.0,258.0,267.0,275.0,284.0,295.0,310.0,319.0,335.0,344.0,360.0,373.0,385.0,397.0,406.0,419.0,427.0,440.0,449.0,458.0,465.0,473.0,484.0,490.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+			
+var trace9 = {
+				y:[0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.0,130.0,135.0,140.0,145.0,150.0,155.0,160.0,165.0,170.0,175.0,180.0,185.0,190.0,195.0,200.0,205.0,210.0,215.0,220.0,225.0,230.0,235.0,240.0,245.0,250.0,255.0,260.0,265.0],
+				x:[0.0,4.0,7.0,10.0,13.0,16.0,18.0,21.0,25.0,28.0,31.0,35.0,38.0,41.0,45.0,49.0,53.0,57.0,62.0,69.0,78.0,89.0,98.0,110.0,125.0,136.0,154.0,172.0,185.0,196.0,208.0,225.0,243.0,256.0,268.0,280.0,296.0,313.0,327.0,339.0,356.0,371.0,382.0,393.0,406.0,419.0,427.0,440.0,449.0,458.0,463.0,470.0,481.0,488.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+var trace10 = {
+				y:[0.0,5.0,10.0,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0,90.0,95.0,100.0,105.0,110.0,115.0,120.0,125.0,130.0,135.0,140.0,145.0,150.0,155.0,160.0,165.0,170.0,175.0,180.0,185.0,190.0,195.0,200.0,205.0,210.0,215.0,220.0,225.0,230.0,235.0,240.0,245.0,250.0,255.0,260.0],
+				x:[0.0,5.0,9.0,13.0,17.0,20.0,23.0,27.0,30.0,34.0,37.0,40.0,43.0,47.0,52.0,58.0,66.0,79.0,94.0,109.0,120.0,134.0,145.0,158.0,172.0,184.0,198.0,205.0,217.0,226.0,242.0,254.0,263.0,275.0,283.0,295.0,310.0,322.0,336.0,349.0,364.0,378.0,385.0,397.0,406.0,419.0,427.0,440.0,449.0,458.0,463.0,470.0,481.0],
+				type: 'line',
+				mode:'lines+markers',
+				enableAnimation: true
+			};
+
+min=1;
+max=10;
+p=Math.floor(Math.random() * (max - min + 1) ) + min;
+if(p==1)
+{
+	data=[trace1];
+	gr=1;
+	vals0=vals[0];
+	tbdata=data1;
+}
+else if(p==2)
+{
+	data=[trace2];
+	gr=2;
+	vals0=vals[1];
+	tbdata=data2;
+}
+else if(p==3)
+{
+	data=[trace3];
+	gr=3;
+	vals0=vals[2];
+	tbdata=data3;
+}
+else if(p==4)
+{
+	data=[trace4];
+	gr=4;
+	vals0=vals[3];
+	tbdata=data4;
+
+}
+else if(p==5)
+{
+	data=[trace5];
+	gr=5;
+	vals0=vals[4];
+	tbdata=data5;
+
+}
+else if(p==6)
+{
+	data=[trace6];
+	gr=6;
+	vals0=vals[5];
+	tbdata=data6;
+}
+else if(p==7)
+{
+	data=[trace7];
+	gr=7;
+	vals0=vals[6];
+	tbdata=data7;
+}
+else if(p==8)
+{
+	data=[trace8];
+	gr=8;
+	vals0=vals[7];
+	tbdata=data8;
+}
+else if(p==9)
+{
+	data=[trace9];
+	gr=8;
+	vals0=vals[8];
+	tbdata=data9;
+}
+else if(p==10)
+{
+	data=[trace10];
+	gr=10;
+	vals0=vals[9];
+	tbdata=data10;
+}
+	
+var layout = {
+    title:'Load Vs Dial Reading',
+	showlegend: false,
+	xaxis: {
+    title:'Dial Reading in div',
+    fixedrange: true
+  },
+  yaxis: {
+    title:'Load in KN',
+    fixedrange: true
+  }
+};    
+                   
+
+var options = {
+	scrollZoom: false, // lets us scroll to zoom in and out - works
+	showLink: false, // removes the link to edit on plotly - works
+	modeBarButtonsToRemove: ['toImage', 'zoom2d', 'pan', 'pan2d', 'autoScale2d'],
+	//modeBarButtonsToAdd: ['lasso2d'],
+	displayLogo: false, // this one also seems to not work
+	displayModeBar: false, //this one does work
+	isResponsive:true,
+	animationEnabled:true,
+};
+
+function ToTable(tbdata)
+{
+    html = '<table id="Table" border="1" style="font-size:14px;font-family:verdana">'; 
+	html += '<tr ><th style="text-align:center;">Load in KN</th>';
+	html += '<th  style="text-align:center">Dial Gauge Reading in div</th></tr>';
+    var len = tbdata.length;
+    for(var i = 0; i < len; i++){
+        html += '<tr>'; 
+		
+        for(var key in tbdata[i]){
+            html += '<td  style="text-align:center">' + tbdata[i][key] + '</td>'; 
+        }
+		
+        html += '</tr>';
+
+    }
+    html += '</table>'; 
+    return html;
+
+}
+function RefTable(tbdata)
+{
+    html = '<table id="Table2" border="border" style="font-size:14px;font-family:verdana">'; 
+	html += '<tr ><th text-align:center">Load in KN</th>';
+	html += '<th>Dial Gauge Reading in div</th></tr>';
+    var len = tbdata.length;
+    for(var i = 0; i < len; i++){
+        html += '<tr>'; 
+		
+        for(var key in tbdata[i]){
+            html += '<td>' + tbdata[i][key] + '</td>'; 
+        }
+		
+        html += '</tr>';
+
+    }
+    html += '</table>'; 
+    return html;
+}
+
+$(function()
+{
+	Tipped.create('#i33');
+	Tipped.create('#i44');
+	Tipped.create('#i55');
+	Tipped.create('#i66');
+	Tipped.create('#i77');
+	document.getElementById('content').innerHTML = ToTable(tbdata);
+	document.getElementById('tablediv1').innerHTML = RefTable(tbdata);
+    $('#vslope').mouseover(function()
+	{
+		if(zm==0)
+			$('#zoom').css('visibility','visible');
+		else
+			$('#zoom').css('visibility','hidden');
+	});
+	$('#vslope').mouseout(function()
+	{
+		$('#zoom').css('visibility','hidden');
+	});
+	$('#vslope').click(function()
+	{
+		$('#zoom').css('visibility','hidden');
+	});
+	$('#vdata1').click(function()
+	{
+	    zm=1;
+		document.getElementById('slopefm').style.visibility="hidden";
+		$('#g'+gr).css('visibility','hidden');
+		if(vf==0)
+		{
+			vf=1;
+			$('#vdata1').val("View Graph");
+			$('#mydiv1').hide();
+			$('#tablediv1').css('visibility','visible');
+		}
+		else if(vf==1)
+		{
+			vf=0;
+			$('#mydiv1').show();
+			$('#vdata1').val("View Data");
+			$('#tablediv1').css('visibility','hidden');
+			$('#g'+gr).css('visibility','hidden');
+		}
+	});	
+	
+	$('#vslope').click(function()
+	{
+	
+		$('#tablediv1').css('visibility','hidden');
+		if(vf2==0)
+		{
+			vf2=1;
+			zm=1;
+			$('#vslope').val("View Graph");
+			$('#mydiv1').hide();
+			$('#g'+gr).css('visibility','visible');
+			document.getElementById('slopefm').style.visibility="visible";
+			document.getElementById('slope1').innerHTML="Slope1= "+slope[p][0];
+			document.getElementById('slope2').innerHTML="Slope2= "+slope[p][1];
+			document.getElementById('slope3').innerHTML="Slope3= "+slope[p][2];
+		}
+		else if(vf2==1)
+		{
+			vf2=0;
+			zm=0;
+			$('#mydiv1').show();
+			$('#vslope').val("View Slope");
+			$('#g'+gr).css('visibility','hidden');
+			document.getElementById('slopefm').style.visibility="hidden";
+		}
+	});
+});
+
+
+</script>
+</head>
+
+
+
+<body style="margin:0">
+<!--Simulation Screen start		-->
+<div id="simscreen">
+
+<!--Title of Simulation		-->
+<div id="title"><h3>COMPRESSION TEST ON CAST IRON</h3></div>
+
+<img id="white1" style="position:absolute;left:5px; top:100px;height: 500px;width:700px;visibility:hidden;" src="images/white1.png"/>
+<!--SubScreen Home	-->	
+<div class="simsubscreen" id="canvas0">
+	<h4 class="incanvas" style="font-family:verdana;" >Objective</h4>
+	<p class="incanvas" style="font-family:verdana; font-size:14px;">To study the mechanical properties of cast iron specimen under compression.</p>
+	<h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
+	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Universal Testing Machine,Dial Indicators,Scale & Vernier calipers.</p>
+	<img id="can00" style="position: absolute; left: 50px; top: 100px;" src="images/main.png"/>
+	<img id="can01" style="position: absolute; left: 400px; top: 120px;" src="images/dialind.png"/>
+</div>
+
+<!--Step1	-->	
+<div class="simsubscreen" id="canvas1" style="visibility:hidden">
+	<strong id="titlestep" class="incanvas">STEP </strong>
+	<span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
+	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Measure the Diameter of the test sample using vernier caliper and calculate the Moment of Inertia.</p>	
+	<img id="can11" style="position: absolute; left:126px; top: 100px;" src="images/can11d.png"/>
+	<table border="border" id="diameter" style="position:absolute;font-family:verdana; font-size:14px;left:100px;top:300px;cellpadding:10px;cellspacing:10px;width:350px;height:150px">
+	<tr>
+		<td  id="1" colspan="2">Initial Diameter in two perpendicular directions</td>
+		<td style="border-bottom:none">Average initial diameter d<sub>i</sub> (mm)</td>
+	</tr>
+	<tr>
+		<td  id="1">d<sub>ix</sub>(mm)</td>
+		<td  id="1">d<sub>iy</sub>(mm)</td>
+		<td style="border-top:none"></td>
+	</tr>
+	<tr>
+		<td id="1a">d<sub>1x</sub>=</td>
+		<td id="1b">d<sub>1y</sub>=</td>
+		<td id="1c"></td>
+	</tr>
+	<!-- <tr> -->
+		<!-- <td id="2a">d<sub>2x</sub>=</td> -->
+		<!-- <td id="2b">d<sub>2y</sub>=</td> -->
+		<!-- <td id="2c">d<sub>2</sub>=</td> -->
+	<!-- </tr> -->
+	</table>
+	<p id="v1-0" style="position:absolute; left:100px; top: 450px;font-family:verdana; font-size:14px;"></p>
+	<p id="v2-0" style="position:absolute; left:100px; top: 480px;font-family:verdana; font-size:14px;"></p>
+	<p id="v3-0" style="position:absolute; left:580px; top: 480px;font-family:verdana; font-size:14px;"></p>
+	<!-- Initial diameter-->
+	<img id="mf" style="position: absolute;left:480px; top: 480px;visibility:hidden;" src="images/mf.png"/>
+	<img id="cal1" style="position: absolute; left:0px; top: 100px;" src="images/cal1.png"/>
+	<img id="mov" style="position: absolute; left:200px; top: 100px;cursor:pointer;" src="images/movv.png"/>
+</div>
+
+<!--Step2	-->	
+<div class="simsubscreen" id="canvas2" style="visibility:hidden"> 
+	<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+	<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
+	<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Measure the length of the specimen.
+	</p>  
+	<img id="can23" style="position: absolute; left:100px; top: 150px;" src="images/can11e.png"/> 
+	<img id="cal22" style="position: absolute; left:0px; top: 100px;" src="images/cal1.png"/>
+	<img id="mov22" style="position: absolute; left:230px; top: 100px;cursor:pointer;" src="images/movv.png"/>	
+	<p id="v2-1" style="position:absolute; left:250px; top: 250px;font-family:verdana; font-size:14px;"></p>
+</div>
+
+
+<!-- step3 -->
+
+	
+<div class="simsubscreen" id="canvas3" style="visibility:hidden;">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Sample is placed in the UTM.</p>
+	<img id="can46" style="position: absolute; left:198px; top: 209px;display:none" src="images/dg.PNG"/>  	
+	<img id="can46a" style="position: absolute; left:198px; top: 209px;display:none" src="images/dg1.PNG"/>
+	<img id="can45a" style="position: absolute; left:226px; top: 278px;visibility:hidden" src="images/can45a.PNG"/>  
+	<img id="can41" style="position: absolute; left:100px; top: 50px;" src="images/can42a.PNG"/>
+	<img id="can43" style="position: absolute; left:88px; top: 287px;" src="images/can43.PNG"/>
+	<img id="can47" style="position: absolute; left:200px; top: 218px;width:12px;height:5px;cursor:pointer;display:none" src="images/bl.png"/>  	  	
+	<img id="can45" style="position: absolute; left:435px; top: 215px;visibility:hidden" src="images/can45.png"/>
+	<p id="can45t" style="position: absolute; left:475px; top: 235px;font-family:verdana; font-size:14px;"> <p> 
+	<img id="can45d" style="position: absolute; left:230px; top: 280px;z-index:10;height:30px;visibility:hidden" src="images/arrow1.png"/> 
+	<img id="can44" style="position: absolute; left:182px; top: 354px;cursor:pointer "  src="images/can44.png" onClick="rotateImage(360);"/>
+	<p id="v4-0" style="position:absolute; left:150px; top: 380px;font-family:verdana; font-size:14px;"></p>
+</div>
+	
+ <!--Step4	-->	
+<div class="simsubscreen" id="canvas4"   style="visibility:hidden;">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Start the loading process, note down the deflections using dial gauge for corresponding load intervals.The shape of fracture for brittle material is studied. </p>
+	<img id="can61" style="position: absolute; left:0px; top: 60px;" src="images/cmain3.png"/>
+	<img id="can62" style="position: absolute; left:0px; top: 60px;visibility:hidden;" src="images/cmain4.png"/>
+	<img id="can621" style="position: absolute; left:0px; top: 60px;visibility:hidden;" src="images/cmain4a.png"/>
+	<img id="can622" style="position: absolute; left:0px; top: 60px;visibility:hidden;" src="images/cmain4b.png"/>
+	<img id="can62b" style="position: absolute; left:0px; top: 60px;visibility:hidden;" src="images/cmain5.png"/>
+	<img id="can63" style="position: absolute; left:300px; top: 80px;" src="images/czoom1.png"/>
+	<img id="can65a" style="position: absolute; left:300px; top: 80px;visibility:hidden" src="images/czoom2a.png"/>
+	<img id="can65b" style="position: absolute; left:300px; top: 80px;visibility:hidden" src="images/czoom2b.png"/>
+	<img id="can65" style="position: absolute; left:300px; top: 80px;visibility:hidden" src="images/czoom2.png"/>
+	<img id="can66" style="position: absolute; left:300px; top: 80px;visibility:hidden" src="images/czoom3.png"/>
+	<img id="can64" style="position: absolute; left:300px; top: 55px;" src="images/czoom.png"/>
+	<img id="can63a" style="position: absolute; left:338px; top: 145px;" src="images/ndl3.png"/>
+	<img id="red" style="position: absolute; left:263px; top: 311px;cursor:pointer" src="images/red.png"/>
+	<img id="green" style="position: absolute; left:273px; top: 319px;cursor:pointer" src="images/green.png"/>
+	<img id="can61a" style="position: absolute;left:257px; top: 242.5px;" src="images/ndl2.png"/>
+	<div id="content" style="position:absolute;left:450px;overflow-y:auto;height:400px;width:200px;top:70px;"></div>
+	<button id="dwn" style="position:absolute;left:500px;top:480px;visibility:hidden;" onClick="download()">Download Data</button>
+	<p id="v6-0" style="position:absolute; left:300px; top: 260px;font-family:verdana; font-size:10px;"></p>
+</div>
+
+
+<div class="simsubscreen" id="canvas5"  style="visibility:hidden">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;5&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Graph. </p>
+	<img id="g1" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g11.png"/>
+	<img id="g2" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g22.png"/>
+	<img id="g3" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g33.png"/>
+	<img id="g4" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g44.png"/>
+	<img id="g5" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g55.png"/>
+	<img id="g6" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g66.png"/>
+	<img id="g7" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g77.png"/>
+	<img id="g8" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g88.png"/>
+	<img id="g9" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g99.png"/>
+	<img id="g10" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g100.png"/>
+	<div id="mydiv1" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;"></div>
+	<div id="tablediv1" style="position:absolute;left:255px; top:30px;height: 500px;width:200px;overflow-y:auto;visibility:hidden;"></div>
+	<input type="button" id="vdata1" style="position:absolute;left:0px;top:450px;cursor:pointer" value="View Data" />
+	<input type="button" id="vslope" style="position:absolute;left:640px;top:450px;cursor:pointer" value="View Slope" />
+	<img id="zoom" style="position:absolute;left:145px; top:330px;visibility:hidden;" src="images/zoom.png"/>
+	<form id="slopefm" style="visibility:hidden">	
+		<p id="slope1" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 160px;"></td>
+		<p id="slope2" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 200px;"></td>
+		<p id="slope3" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 240px;"></td>
+	</form>
+</div>		
+
+
+<div class="simsubscreen" id="canvas6"  style="visibility:hidden" >
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;6&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Observations and Calculations.</p>
+	<div id="obs" style="visibility:hidden">
+	<table border="border" id="last" style="position:absolute;font-family:verdana;font-size:14px;left:100px;top:50px;cellpadding:10px;cellspacing:10px">
+	<tr>
+		<th>Initial diameter in mm</th>
+		<td id="ta33"></td>
+	</tr>
+	<tr>
+		<th >Length of the specimen between the grips in mm</th>
+		<td id="ta44"></td>
+	</tr>
+	<tr>
+		<th >Original c/s area(A<sub>0</sub>)in mm<sup>2</sup> </th>
+		<td id="ta55"></td>
+	</tr>
+	<tr>
+		<th >Slope1 in KN/div</th>
+		<td id="ta66"></td>
+	</tr>
+	<tr>
+		<th >Slope2 in KN/div</th>
+		<td id="ta77"></td>
+	</tr>
+	<tr>
+		<th >Slope3 in KN/div</th>
+		<td id="ta88"></td>
+	</tr>
+	<tr>
+		<th >Least Count(LC) in mm</th>
+		<td>0.01</td>
+	</tr>
+	</table>
+	</div>
+	<div id="mydiv3" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;"></div>
+	<input type="button" id="obs1" value="Observation" style="position:absolute;font-family:verdana; font-size:14px;left:315px;top:450px;cursor:pointer;">
+	<input type="button" id="gr1" value="Graph" style="position:absolute;font-family:verdana; font-size:14px;left:415px;top:450px;cursor:pointer;">
+	<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:515px;top:450px;cursor:pointer;">
+	<form id="calc" class="cc">
+		<table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:100px;top:150px;cellpadding:10px;cellspacing:10px">
+		<tr>
+			<th>Proof  Stress(N/mm<sup>2</sup>)</th>
+			<td id="t33"><input type="text" id="i33" style="font-family:verdana;font-size:14px;" autocomplete="off" title="(Proof Load *9.81)/Ao " /></td>
+		</tr>
+		<tr>
+			<th >Compressive  Strength(N/mm<sup>2</sup>)</th>
+			<td id="t44"><input type="text" id="i44" style="font-family:verdana;font-size:14px;" autocomplete="off" title="Fracture  Load /Ao" /></td>
+		</tr>
+		<tr>
+			<th >Secant Modulus(GPa)</th>
+			<td id="t55"><input type="text" id="i55" style="font-family:verdana;font-size:14px;" autocomplete="off" title=" slope1*(1/LC)*(L/Ao)" /></td>
+		</tr>
+		<tr>
+			<th >Tangent Modulus(GPa)</th>
+			<td id="t66"><input type="text" id="i66" style="font-family:verdana;font-size:14px;" autocomplete="off" title="slope2*(1/LC)*(L/Ao)" /></td>
+		</tr>
+		<tr>
+			<th >Modulus of Elasticity(GPa)</th>
+			<td id="t77"><input type="text" id="i77" style="font-family:verdana;font-size:14px;" autocomplete="off" title="slope3*(1/LC)*(L/Ao)" /></td>
+		</tr>
+		</table>
+	</form>
+	<form id="final" style="visibility:hidden">
+		<table border="border" id="last1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellpadding:10px;cellspacing:10px">
+		<tr>
+			<th>Result</th>
+			<th>Actual Value</th>
+			<th>Entered Value</th>
+			<th>Percentage Error</th>
+		</tr>
+			<th>Proof  Stress(N/mm<sup>2</sup>)</th>
+			<td id="t3" style="text-align:center"></td>
+			<td id="e3" style="text-align:center"></td>
+			<td id="p3"style="text-align:center"></td>
+		</tr>
+			<th >Compressive  Strength(N/mm<sup>2</sup>)</th>
+			<td id="t4" style="text-align:center"></td>
+			<td id="e4" style="text-align:center"></td>
+			<td id="p4" style="text-align:center"></td>
+		</tr>
+			<th >Secant Modulus(GPa)</th>
+			<td id="t5" style="text-align:center"></td>
+			<td id="e5" style="text-align:center"></td>
+			<td id="p5" style="text-align:center"></td>
+		</tr>
+			<th >Tangent Modulus(GPa)</th>
+			<td id="t6" style="text-align:center"></td>
+			<td id="e6" style="text-align:center"></td>
+			<td id="p6" style="text-align:center"></td>
+		</tr>
+			<th >Modulus of Elasticity(GPa)</th>
+			<td id="t7" style="text-align:center"></td>
+			<td id="e7" style="text-align:center"></td>
+			<td id="p7" style="text-align:center"></td>
+		</tr>
+		</table>
+	</form>
+</div>
+
+<!--next  Arrow	-->	
+<div id="nav">
+	<img id="nextButton" onclick="navNext();" src="images/Next.png" />
+	<img id="prevButton" onclick="navNext();" style="visibility:hidden;"src="images/prev.png" />
+</div>
+ 
+<!--Blinking Arrow	-->	
+<img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
+<img class ="" id="arrow2" style="visibility:hidden;" src="images/arrow1.png"/>
+
+<div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+
+</body>
+</html>
