@@ -448,7 +448,7 @@ $( function()
 								document.getElementById('can36').style.visibility="hidden";
 								document.getElementById('v3-0').style.visibility="hidden";
 								document.getElementById('nextButton').style.visibility="visible";
-							},1500);
+							},1700);
 						});
 					});
 		},1000);
