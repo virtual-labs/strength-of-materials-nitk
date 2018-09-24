@@ -6,9 +6,11 @@ html
 	-o-user-select       : none;
 	user-select          : none;
 }
+
 #can45d{
 	transform:rotate(-90deg);
 }
+
 input[type=text]:focus 
 {
 	outline:none;
