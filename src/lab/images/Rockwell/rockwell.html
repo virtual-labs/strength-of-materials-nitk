@@ -4,19 +4,18 @@
 <meta charset="UTF-8">
 
 <title>SOLVE</title>
-<link rel="stylesheet" href="rw.css" />
-<link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
-<link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake-vertical.min.css">
-<script type="text/javascript" src= "rw.js"></script>
+<link rel="stylesheet" href="css/rw.css" />
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="jquery-rotate.min.js"></script>
-<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="jquery-1.12.4.js"></script>
-<script type="text/javascript" src="jquery-ui.js"></script>
+<!-- <script type="text/javascript" src="js/jquery-rotate.min.js"></script> -->
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
 <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
-<script type="text/javascript" src="jquery-1.10.2.js"></script> <!--is available in <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script> <!--is available in <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+<script type="text/javascript" src= "js/rw.js"></script>
+
 <script>
 		   
 var simsubscreennum=0;
@@ -38,9 +37,8 @@ var lnt=0;
 <p class="incanvas" style="font-family:verdana; font-size:14px;">To find the Rockwell hardness number of mild steel, cast iron, brass, aluminium and spring steel etc.</p><br/>
 <h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
 <p class="incanvas" style="font-family:verdana; font-size:14px;">Rockwell hardness testing machine</p>
-<img id="" style="position: absolute; width:30%; left: 250px; top: 100px;" src="Images/1.png"/>
+<img id="" style="position: absolute; width:30%; left: 250px; top: 100px;" title="Rockwell hardness testing machine" src="Images/1.png"/>
 </div>
-
 
 <!--Step1	-->	
 <div class="simsubscreen" id="canvas1" style="visibility:hidden">
@@ -48,9 +46,9 @@ var lnt=0;
 <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
 
 <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Select a specimen of your choice (spring steel, cast iron, mild steel, brass, aluminium). <!--  Clean the surface of the specimens from dirt, oil and scale and rub with sand paper. Place it on the work table. --></p>
-<p id="p1" style="position:absolute; left: 0px; top:70px; font-family:verdana; font-size:14px;">Select material </p>
+<p id="p1" style="position:absolute; left: 10px; top:70px; font-family:verdana; font-size:14px;">Select material </p>
 <p id="p1-1" style="position:absolute; left: 10px; top:70px;  font-family:verdana; font-size:14px; visibility:hidden;">Selected material :</p>
-<p id="p1-2" style="position:absolute; left: 140px; top:70px; color:#FC0D05;  font-family:verdana; font-size:14px; visibility:hidden;"></p>
+<p id="p1-2" style="position:absolute; left: 145.5px; top:70px; color:#FC0D05;  font-family:verdana; font-size:14px; visibility:hidden;"></p>
 
 <img id="ci" style="position:absolute; left:20px; top:140px; cursor:pointer;" src="Images/ci.png" />
 <p id="p2" style="position:absolute; left:25.5px; top:160px; font-family:verdana; cursor:pointer; font-size:14px; ">Cast Iron</p>
@@ -97,7 +95,7 @@ var lnt=0;
 <img id="2al" style="position:absolute; left:408px; top:256.5px; visibility:hidden;" src="Images/al2.png" />
 <img id="2ms" style="position:absolute; left:408px; top:256.50px; visibility:hidden;" src="Images/ms2.png" />
 
-<p id="p2-1" style="position:absolute; left:230px; top:370px; font-family:verdana; font-size:10px; ">Move the mouse on the<br/> wheel to adjust <br/>specimen height</p> 
+<p id="p2-1" style="position:absolute; left:230px; top:370px; font-family:verdana; font-size:10px; "></p> 
 <p id="2-4" style="position:absolute; left:320px; top:233px; font-family:verdana; visibility:hidden; font-size:9px; ">Minor load of 10kg </br>is applied</p> 
 <p id="2-5" style="position:absolute; left:15px; top:445px; font-family:verdana; font-size:14px;"> </p> 
 </div>
@@ -147,7 +145,7 @@ var lnt=0;
 <table id="tab" border size=1 style="position:absolute; left:60px; top:120px;  font-family:verdana; font-size:14px; ">
 <tr>
     <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; ">Material</td>
-    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Total Load P ( Kg )</td>
+    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Total Load P ( kg )</td>
     <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Scale Used</td>
     <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Rockwell Hardness <br/> number ( RHN )</td>
 </tr>	
@@ -164,7 +162,7 @@ var lnt=0;
 <tr>
     <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; ">Trial</td>
     <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; ">Material</td>
-    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Total Load P ( Kg )</td>
+    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Total Load P ( kg )</td>
     <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Scale Used</td>
     <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Rockwell Hardness <br/> number ( RHN )</td>
 </tr>	
@@ -199,7 +197,7 @@ var lnt=0;
 <!--Blinking Arrow	-->	
 <img class ="" id="arrow1" style="visibility:hidden;" src="Images/arrow1.png"/>
 
-<div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
 
 
 

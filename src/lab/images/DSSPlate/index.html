@@ -3,16 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>SOLVE</title>
-<link rel="stylesheet" href="dstp.css" />
-<link rel="stylesheet" type="text/css" href="csshake.min.css">
-<link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
-<link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake-vertical.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
-<script type="text/javascript" src= "jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src= "dstp.js"></script>
+<link rel="stylesheet" href="css/dstp.css" />
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  -->
+<script type="text/javascript" src= "js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src= "js/dstp.js"></script>
 <!-- <script type="text/javascript" src= "jquery-2.1.4.js"></script> -->
-<script type="text/javascript" src= "ej.web.all.js"></script>
-<script type="text/javascript" src="canvasjs.min.js"></script>
+<script type="text/javascript" src= "js/ej.web.all.js"></script>
 
 <script>
     var simsubscreennum=0;
@@ -119,8 +115,8 @@
 	<th>Width of the failure plane 'w' (mm)</th>
 	<th>Thickness of the failure plane 'd'(mm)</th>
 	<th>Area of cross-section (A=w*d) mm<sup>2</sup></th>
-	<th>Failure Load P (Kg)</th>
-	<th>Single Shear Strength = (P * 9.81)/2 A (N/mm<sup>2</sup>)</th>
+	<th>Failure Load P (kg)</th>
+	<th>Double Shear Strength<br>(P * 9.81)/2 A (N/mm<sup>2</sup>)</th>
 </tr>
 <tr>
 	<td id="r0" style="text-align:center"></td>
@@ -143,40 +139,43 @@
 	<th>Width of the failure plane 'w' (mm)</th>
 	<th>Thickness of the failure plane 'd'(mm)</th>
 	<th>Area of cross-section (A=w*d) mm<sup>2</sup></th>
-	<th>Failure Load P (Kg)</th>
-	<th>Single Shear Strength =<br>(P * 9.81)/2 A (N/mm<sup>2</sup>)</th>
+	<th>Failure Load P (kg)</th>
+	<th>Double Shear Strength<br>(P * 9.81)/2 A (N/mm<sup>2</sup>)</th>
 </tr>
 <tr>
 	<td id="r10" style="text-align:center"></td>
 	<td id="r11" style="text-align:center"></td>
 	<td id="r12" style="text-align:center"></td>
 	<td id="r13" style="text-align:center"></td>
-	<td id="r14" style="text-align:center"><input type="text" id="i31" autocomplete="off"></td>
+	<td id="r14" style="text-align:center"><input type="text" id="i31" autocomplete="off"oninput="checkInputValid(this);"></td>
 </tr>
 <tr>
 	<td id="r20" style="text-align:center"></td>
 	<td id="r21" style="text-align:center"></td>
 	<td id="r22" style="text-align:center"></td>
 	<td id="r23" style="text-align:center"></td>
-	<td id="r24" style="text-align:center"><input type="text" id="i32" autocomplete="off"></td>
+	<td id="r24" style="text-align:center"><input type="text" id="i32" autocomplete="off" oninput="checkInputValid(this);"></td>
 </tr>
 <tr>
 	 <td id="r30" style="text-align:center"></td>
 	<td id="r31" style="text-align:center"></td>
 	<td id="r32" style="text-align:center"></td>
 	<td id="r33" style="text-align:center"></td>
-	<td id="r34" style="text-align:center"><input type="text" id="i33" autocomplete="off"></td>
+	<td id="r34" style="text-align:center"><input type="text" id="i33" autocomplete="off" oninput="checkInputValid(this);"></td>
+</tr>
+<td colspan="8" style="text-align:right"><input type="button" id="check" value="Check" style="width:20%" onclick="checkValue();">
+</td>
 </tr>
 </table>
-<input type="button" id="check" value="Check" style="position:absolute;left:570px;top:290px;width:20%">
+<!-- <input type="button" id="check" value="Check" style="position:absolute;left:570px;top:290px;width:20%"> -->
 </form>
 <table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellspacing:10px;visibility:hidden">
 <tr>
 	<th rowspan="2">Width of the failure plane 'w' (mm)</th>
 	<th rowspan="2">Thickness of the failure plane 'd'(mm)</th>
 	<th rowspan="2">Area of cross-section (A=w*d) mm<sup>2</sup></th>
-	<th rowspan="2">Failure<br>Load P (Kg)</th>
-	<th colspan="2">Single Shear Strength = (P * 9.81)/2 A (N/mm<sup>2</sup>)</th>
+	<th rowspan="2">Failure<br>Load P (kg)</th>
+	<th colspan="2">Double Shear Strength <br>(P * 9.81)/2 A (N/mm<sup>2</sup>)</th>
 	<th rowspan="2">Percentage<br>Error</th>
 </tr>
 <tr>
@@ -231,6 +230,6 @@
 <!--Blinking Arrow	-->	
 <img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
 
-<div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
 </body>
 </html>

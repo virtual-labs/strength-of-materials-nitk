@@ -3,19 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <title>SOLVE</title>
-<link rel="stylesheet" href="ttms.css" />
-<link rel="stylesheet" type="text/css" href="tipped.css" />
+<link rel="stylesheet" href="css/ttms.css" />
+<link rel="stylesheet" type="text/css" href="css/tipped.css" />
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  -->
-<script type="text/javascript" src= "jquery-2.1.4.js"></script>
-<script type="text/javascript" src="jquery-1.12.4.js"></script>
-<script type="text/javascript" src="jquery-ui.js"></script>
-<script type="text/javascript" src="jquery.ui.touch-punch.js"></script>
-<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
-<script type="text/javascript" src= "plotly-latest.min.js"></script>
-<script type="text/javascript" src= "ttms.js"></script>
-<script type="text/javascript" src= "tipped.js"></script>
-<script type="text/javascript" src= "ej.web.all.min.js"></script>
+<script type="text/javascript" src= "js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="js/plotly-latest.min.js"></script>
+<script type="text/javascript" src="js/tipped.js"></script>
+<script type="text/javascript" src="js/ej.web.all.min.js"></script>
 
+
+</head>
+
+
+
+<body style="margin:0" onload="calc.reset();slopefm.reset();">
+<!--Simulation Screen start		-->
+<div id="simscreen">
+
+<!--Title of Simulation		-->
+<div id="title"><h3>TORSION TEST ON MILD STEEL</h3></div>
+
+<img id="white1" style="position:absolute;left:5px; top:100px;height: 500px;width:700px;visibility:hidden;" src="images/white1.png"/>
+<!--SubScreen Home	-->	
+<div class="simsubscreen" id="canvas0"; >
+	<h4 class="incanvas" style="font-family:verdana;" >Objective</h4>
+	<p class="incanvas" style="font-family:verdana; font-size:14px;">To study the mechanical properties of mild steel under torsion.</p>
+	<h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
+	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Torsion testing machine,Troptometer,Micrometer,Scale.
+</p>
+	<img id="" style="position: absolute; left: 200px; top: 100px;width:30%" src="images/maina.png"/>
+</div>
+
+<!--Step1	-->	
+<div class="simsubscreen" id="canvas1" style="visibility:hidden">
+	<strong id="titlestep" class="incanvas">STEP </strong>
+	<span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
+	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Measure the Initial Diameter of the torsion test sample at two or three places and the average value is obtained.</p>
+	<img id="can11" style="position: absolute; left:145px; top: 86px;cursor:pointer;" src="images/can11b.png"/>
+	<p id="v1-0" style="position:absolute; left:20px; top: 136px;font-family:verdana; font-size:14px;">Torsion Test Sample</p>
+	<!-- Initial diameter-->
+	<img id="cal1" style="position: absolute; left:52px; top: 290px;" src="images/cal1.png"/>
+	<img id="mov" style="position: absolute; left:240px; top: 290px;" src="images/mov.png"/>
+
+</div>
+
+
+<!--Step2	-->	
+<div class="simsubscreen" id="canvas2" style="visibility:hidden"> 
+	<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+	<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
+	<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;The gauge length of the beam is restricted at 180mm. 
+	</p>  
+
+	<!-- <img id="can22" style="position: absolute; left:258px; top: 245px;" src="images/scale.png"/>  -->
+	<!-- <img id="can21" style="position: absolute; left:520px; top: 180px;" src="images/can22.png"/> -->
+	<img id="can23" style="position: absolute; left:150px; top: 328px;" src="images/can23.png"/> 
+	<img id="can24" style="position: absolute; left:250px; top: 128px;cursor:pointer;" src="images/can24.png"/> 
+	<p id="v2-0" style="position:absolute; left:250px; top: 380px;font-family:verdana; font-size:14px;"></p>
+
+</div>
+
+
+<!-- step3 -->
+<div class="simsubscreen" id="canvas3" style="visibility:hidden"> 
+	<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+	<span class="circlebg" id="stepnumber">&nbsp;3&nbsp;</span>
+	<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Now the specimen is chalked out on the gauge length for understanding the effect of torsion.</p>  
+	<img id="can31" style="position: absolute; left:150px; top: 328px;" src="images/can23.png"/> 
+	<img id="can32" style="position: absolute; left:249.75px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32a" style="position: absolute; left:280px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32b" style="position: absolute; left:310px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32c" style="position: absolute; left:340px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32d" style="position: absolute; left:370px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32e" style="position: absolute; left:400px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32f" style="position: absolute; left:430px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32g" style="position: absolute; left:460px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32h" style="position: absolute; left:490px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can32i" style="position: absolute; left:510px; top: 345px;visibility:hidden" src="images/can32.png"/> 
+	<img id="can33" style="position: absolute; left:224px; top: 200px;cursor:pointer;" src="images/can33.png"/> 
+</div>	
+
+	
+<!--Step4	-->	
+<div class="simsubscreen" id="canvas4" style="visibility:hidden">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Insert the specimen into its position within the torsional experimental setup. </p>
+	<img id="can4n3" style="position: absolute; left:260px; top: 240px;" src="images/can4n3.png"/>
+	<img id="can4n3a" style="position: absolute; left:256px; top: 125px;visibility:hidden" src="images/can4n3a.png"/>
+	<img id="can4n3b" style="position: absolute; left:256px; top: 100px;visibility:hidden" src="images/can4n3a.png"/>
+	<img id="can4n2" style="position: absolute; left:200px; top: 50px;" src="images/can4n2.png"/>
+	<img id="can4n4" style="position: absolute; left:235px; top: 438px;cursor:pointer;" src="images/can4n4.png"/>
+	<img id="can4n5" style="position: absolute; left:285px; top: 430px;" src="images/can4n5.png"/>
+	<img id="can45d" style="position: absolute; left:295px; top: 240px;z-index:10;height:30px;visibility:hidden" src="images/arrow1.png"/> 
+	<img id="can45" style="position: absolute; left: 550px; top: 120px;cursor:drag;visibility:hidden;" src="images/can45.png"/>
+	<p id="drg" style="position: absolute; left: 580px; top: 130px;font-family:verdana; font-size:14px;visibility:hidden;">Drag the Specimen</p>
+</div>
+ 
+ 
+ <!--Step5	-->	
+<div class="simsubscreen" id="canvas5" style="visibility:hidden">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;5&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Start the motor and slowly apply the twisting load on the specimen. </p>
+	<img id="mac1" style="position: absolute; left: 0px; top: 40px;" src="images/mac1.png"/>
+	<img id="mac2" style="position: absolute; left: 0px; top: 40px;visibility:hidden" src="images/mac2.png"/>
+	<img id="red" style="position: absolute; left: 75px; top: 210px;cursor:pointer;" src="images/red.png"/>
+	<img id="green" style="position: absolute; left: 75px; top: 230px;cursor:pointer;" src="images/green.png"/>
+	<img id="can50" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn50.png"/>
+	<img id="can51" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn51.png"/>
+	<img id="can52" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn52.png"/>
+	<img id="can53" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn53.png"/>
+	<img id="can54" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn54.png"/>
+	<img id="can55" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn55.png"/>
+	<img id="can56" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn56.png"/>
+	<img id="can57" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn57.png"/>
+	<div id="chartContainer" style="position:absolute;left:257.20px; top:30px;height: 500px;width:500px;"></div>
+</div>
+	
+	
+ <!--Step6	-->	
+<div class="simsubscreen" id="canvas6" style="visibility:hidden">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;6&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Graph. </p>
+	<div id="mydiv" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;visibility:hidden;"></div>
+	<img id="can61" style="position: absolute; left: 90px; top: 295px;cursor:zoom-in;visibility:hidden;" src="images/zm.png"/>
+	<img id="gz1" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g1zoom.png"/>
+	<img id="gz2" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g2zoom.png"/>
+	<img id="gz3" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g3zoom.png"/>
+	<img id="gz4" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g4zoom.png"/>
+	<img id="gz5" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g5zoom.png"/>
+	<img id="gz6" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g6zoom.png"/>
+	<img id="gz7" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g7zoom.png"/>
+	<img id="gz8" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g8zoom.png"/>
+	<img id="gz9" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g9zoom.png"/>
+	<img id="gz10" style="position:absolute;left:5px;top:40px;visibility:hidden;" src="images/g10zoom.png"/>
+	<form id="slopefm" style="visibility:hidden">	
+	<p id="x" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 80px;">&Delta;X</td>
+	<p id="y" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 120px;">&Delta;Y</td>
+	<p id="slp" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 160px;">Slope:</td>
+	</form>
+</div>
+
+<!--back graph step-->
+<div class="simsubscreen" id="canvas8" style="visibility:hidden">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;6&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Graph. </p>
+	<div id="mydiv1" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;visibility:hidden;"></div>
+</div>	
+	
+
+
+<!--Step7-->	
+<div class="simsubscreen" id="canvas7" style="visibility:hidden">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;7&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Calculations. </p>
+	<form id="calc" >
+	<table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:50px;top:50px;cellpadding:10px;cellspacing:10px;text-align:center;">
+	<tr>
+	<th>Initial Diameter(mm)</th>
+	<td id="t1"></td>
+	</tr>
+	<tr>
+	<th>Gauge Length(mm)</th>
+	<td id="t2"></td>
+	</tr>
+	<tr>
+	<th>Polar Moment of Inertia(mm<sup>4</sup>)</th>
+	<td id="t33" style="padding: 5px"><input type="text" id="i33"  style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Polar moment of Inertia J=(∏*d4)/32" /></td>
+	</tr>
+	<tr>
+	<th >Yield Stress(N/mm<sup>2</sup>)</th>
+	<td id="t44" style="padding: 5px"><input type="text" id="i44"  style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Yield stress=(((yield point torque*9.81*(d/2))/J)" /></td>
+	</tr>
+	<tr>
+	<th >Modulus of Rupture(N/mm<sup>2</sup>)</th>
+	<td id="t55" style="padding: 5px"><input type="text" id="i55"   style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Modulus of Rupture (torsion)=(((Failure torque*9.81*(d/2))/J) " /></td>
+	</tr>
+	<tr>
+	<th >Modulus of Rigidity(GPa)</th>
+	<td id="t66" style="padding: 5px"><input type="text" id="i66"   style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Modulus of Rigidity C= (T/ϴ)*(l/J) " /></td>
+	</tr>
+	</table>
+	<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:495px;top:460px;cursor:pointer;">
+	</form>
+	<form id="final" style="visibility:hidden">
+	<p id="l1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:50px;"></td>
+	<p id="l2" style="position:absolute;font-family:verdana; font-size:14px;left:380px;top:50px;"></td>
+	<table border="border" id="last1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellpadding:10px;cellspacing:10px;text-align:center">
+	<tr>
+	<th>Result</th>
+	<th>Actual Value</th>
+	<th>Entered Value</th>
+	<th>Percentage Error</th>
+	</tr>
+	<th>Polar Moment of Inertia(mm<sup>4</sup>)</th>
+	<td id="t3" style="text-align:center"></td>
+	<td id="e3" style="text-align:center"></td>
+	<td id="p3"style="text-align:center"></td>
+	</tr>
+	<th>Yield Stress(N/mm<sup>2</sup>)</th>
+	<td id="t4" style="text-align:center"></td>
+	<td id="e4" style="text-align:center"></td>
+	<td id="p4" style="text-align:center"></td>
+	</tr>
+	<th>Modulus of Rupture(N/mm<sup>2</sup>)</th>
+	<td id="t5" style="text-align:center"></td>
+	<td id="e5" style="text-align:center"></td>
+	<td id="p5" style="text-align:center"></td>
+	</tr>
+	<th>Modulus of Rigidity(GPa)</th>
+	<td id="t6" style="text-align:center"></td>
+	<td id="e6" style="text-align:center"></td>
+	<td id="p6" style="text-align:center"></td>
+	</tr>
+	</table>
+	</form>
+</div>	
+<!--next  Arrow	-->	
+<div id="nav">
+	<img id="nextButton" onclick="navNext(); " src="images/Next.png" />
+	<img id="prevButton" onclick="navNext();" style="visibility:hidden;"src="images/Prev.png" />
+</div>
+
+
+
+
+<!--Blinking Arrow	-->	
+<img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
+<img class ="" id="arrow2" style="visibility:hidden;" src="images/arrow1.png"/>
+
+<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
 
 <script>
     var simsubscreennum=0;
@@ -238,7 +458,7 @@ var layout1 = {
     fixedrange: false
   },
   yaxis: {
-    title:'Torque in Kg.m',
+    title:'Torque in kg.m',
     fixedrange: false
   }
 };                     
@@ -267,225 +487,7 @@ var op = {
 
 
 </script>
-</head>
+<script type="text/javascript" src="js/ttms.js"></script>
 
-
-
-<body style="margin:0" onload="calc.reset();slopefm.reset();">
-<!--Simulation Screen start		-->
-<div id="simscreen">
-
-<!--Title of Simulation		-->
-<div id="title"><h3>TORSION TEST ON MILD STEEL</h3></div>
-
-<img id="white1" style="position:absolute;left:5px; top:100px;height: 500px;width:700px;visibility:hidden;" src="images/white1.png"/>
-<!--SubScreen Home	-->	
-<div class="simsubscreen" id="canvas0"; >
-	<h4 class="incanvas" style="font-family:verdana;" >Objective</h4>
-	<p class="incanvas" style="font-family:verdana; font-size:14px;">To study the mechanical properties of mild steel under torsion.</p>
-	<h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
-	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Torsion testing machine,Troptometer,Micrometer,Scale.
-</p>
-	<img id="" style="position: absolute; left: 200px; top: 100px;width:30%" src="images/maina.png"/>
-</div>
-
-<!--Step1	-->	
-<div class="simsubscreen" id="canvas1" style="visibility:hidden">
-	<strong id="titlestep" class="incanvas">STEP </strong>
-	<span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
-	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Measure the Initial Diameter of the torsion test sample at two or three places and the average value is obtained.</p>
-	<img id="can11" style="position: absolute; left:145px; top: 86px;cursor:pointer;" src="images/can11b.png"/>
-	<p id="v1-0" style="position:absolute; left:20px; top: 136px;font-family:verdana; font-size:14px;">Torsion Test Sample</p>
-	<!-- Initial diameter-->
-	<img id="cal1" style="position: absolute; left:52px; top: 290px;" src="images/cal1.png"/>
-	<img id="mov" style="position: absolute; left:240px; top: 290px;" src="images/mov.png"/>
-
-</div>
-
-
-<!--Step2	-->	
-<div class="simsubscreen" id="canvas2" style="visibility:hidden"> 
-	<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
-	<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
-	<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;The gauge length of the beam is restricted at 180mm. 
-	</p>  
-
-	<!-- <img id="can22" style="position: absolute; left:258px; top: 245px;" src="images/scale.png"/>  -->
-	<!-- <img id="can21" style="position: absolute; left:520px; top: 180px;" src="images/can22.png"/> -->
-	<img id="can23" style="position: absolute; left:150px; top: 328px;" src="images/can23.png"/> 
-	<img id="can24" style="position: absolute; left:250px; top: 128px;cursor:pointer;" src="images/can24.png"/> 
-	<p id="v2-0" style="position:absolute; left:250px; top: 380px;font-family:verdana; font-size:14px;"></p>
-
-</div>
-
-
-<!-- step3 -->
-<div class="simsubscreen" id="canvas3" style="visibility:hidden"> 
-	<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
-	<span class="circlebg" id="stepnumber">&nbsp;3&nbsp;</span>
-	<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Now the specimen is chalked out on the gauge length for understanding the effect of torsion.</p>  
-	<img id="can31" style="position: absolute; left:150px; top: 328px;" src="images/can23.png"/> 
-	<img id="can32" style="position: absolute; left:249.75px; top: 345px;visibility:hidden" src="images/can32.png"/> 
-	<img id="can32a" style="position: absolute; left:280px; top: 345px;visibility:hidden" src="images/can32.png"/> 
-	<img id="can32b" style="position: absolute; left:310px; top: 345px;visibility:hidden" src="images/can32.png"/> 
-	<img id="can32c" style="position: absolute; left:340px; top: 345px;visibility:hidden" src="images/can32.png"/> 
-	<img id="can32d" style="position: absolute; left:370px; top: 345px;visibility:hidden" src="images/can32.png"/> 
-	<img id="can32e" style="position: absolute; left:400px; top: 345px;visibility:hidden" src="images/can32.png"/> 
-	<img id="can32f" style="position: absolute; left:430px; top: 345px;visibility:hidden" src="images/can32.png"/> 
-	<img id="can32g" style="position: absolute; left:460px; top: 345px;visibility:hidden" src="images/can32.png"/> 
-	<img id="can32h" style="position: absolute; left:490px; top: 345px;visibility:hidden" src="images/can32.png"/> 
-	<img id="can32i" style="position: absolute; left:510px; top: 345px;visibility:hidden" src="images/can32.png"/> 
-	<img id="can33" style="position: absolute; left:224px; top: 200px;cursor:pointer;" src="images/can33.png"/> 
-</div>	
-
-	
-<!--Step4	-->	
-<div class="simsubscreen" id="canvas4" style="visibility:hidden">
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Insert the specimen into its position within the torsional experimental setup. </p>
-	<img id="can4n3" style="position: absolute; left:260px; top: 240px;" src="images/can4n3.png"/>
-	<img id="can4n3a" style="position: absolute; left:256px; top: 125px;visibility:hidden" src="images/can4n3a.png"/>
-	<img id="can4n3b" style="position: absolute; left:256px; top: 100px;visibility:hidden" src="images/can4n3a.png"/>
-	<img id="can4n2" style="position: absolute; left:200px; top: 50px;" src="images/can4n2.png"/>
-	<img id="can4n4" style="position: absolute; left:235px; top: 438px;cursor:pointer;" src="images/can4n4.png"/>
-	<img id="can4n5" style="position: absolute; left:285px; top: 430px;" src="images/can4n5.png"/>
-	<img id="can45d" style="position: absolute; left:295px; top: 240px;z-index:10;height:30px;visibility:hidden" src="images/arrow1.png"/> 
-	<img id="can45" style="position: absolute; left: 550px; top: 120px;cursor:drag;visibility:hidden;" src="images/can45.png"/>
-	<p id="drg" style="position: absolute; left: 580px; top: 130px;font-family:verdana; font-size:14px;visibility:hidden;">Drag the Specimen</p>
-</div>
- 
- 
- <!--Step5	-->	
-<div class="simsubscreen" id="canvas5" style="visibility:hidden">
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;5&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Start the motor and slowly apply the twisting load on the specimen. </p>
-	<img id="mac1" style="position: absolute; left: 0px; top: 40px;" src="images/mac1.png"/>
-	<img id="mac2" style="position: absolute; left: 0px; top: 40px;visibility:hidden" src="images/mac2.png"/>
-	<img id="red" style="position: absolute; left: 75px; top: 210px;cursor:pointer;" src="images/red.png"/>
-	<img id="green" style="position: absolute; left: 75px; top: 230px;cursor:pointer;" src="images/green.png"/>
-	<img id="can50" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn50.png"/>
-	<img id="can51" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn51.png"/>
-	<img id="can52" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn52.png"/>
-	<img id="can53" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn53.png"/>
-	<img id="can54" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn54.png"/>
-	<img id="can55" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn55.png"/>
-	<img id="can56" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn56.png"/>
-	<img id="can57" style="position: absolute; left: 0px; top: 40px;visibility:hidden;" src="images/cn57.png"/>
-	<div id="chartContainer" style="position:absolute;left:257.20px; top:30px;height: 500px;width:500px;"></div>
-</div>
-	
-	
- <!--Step6	-->	
-<div class="simsubscreen" id="canvas6" style="visibility:hidden">
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;6&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Graph. </p>
-	<div id="mydiv" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;visibility:hidden;"></div>
-	<img id="can61" style="position: absolute; left: 90px; top: 295px;cursor:zoom-in;visibility:hidden;" src="images/zm.png"/>
-	<img id="gz1" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g1zoom.png"/>
-	<img id="gz2" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g2zoom.png"/>
-	<img id="gz3" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g3zoom.png"/>
-	<img id="gz4" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g4zoom.png"/>
-	<img id="gz5" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g5zoom.png"/>
-	<img id="gz6" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g6zoom.png"/>
-	<img id="gz7" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g7zoom.png"/>
-	<img id="gz8" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g8zoom.png"/>
-	<img id="gz9" style="position:absolute;left:5px; top:40px;visibility:hidden;" src="images/g9zoom.png"/>
-	<img id="gz10" style="position:absolute;left:5px;top:40px;visibility:hidden;" src="images/g10zoom.png"/>
-	<form id="slopefm" style="visibility:hidden">	
-	<p id="x" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 80px;">&Delta;X</td>
-	<p id="y" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 120px;">&Delta;Y</td>
-	<p id="slp" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 160px;">Slope:</td>
-	</form>
-</div>
-
-<!--back graph step-->
-<div class="simsubscreen" id="canvas8" style="visibility:hidden">
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;6&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Graph. </p>
-	<div id="mydiv1" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;visibility:hidden;"></div>
-</div>	
-	
-
-
-<!--Step7-->	
-<div class="simsubscreen" id="canvas7" style="visibility:hidden">
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;7&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Calculations. </p>
-	<form id="calc" >
-	<table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:50px;top:50px;cellpadding:10px;cellspacing:10px">
-	<tr>
-	<th>Initial Diameter(mm)</th>
-	<td id="t1"></td>
-	</tr>
-	<tr>
-	<th>Gauge Length(mm)</th>
-	<td id="t2"></td>
-	</tr>
-	<tr>
-	<th>Polar Moment of Inertia(mm<sup>4</sup>)</th>
-	<td id="t33"><input type="text" id="i33"  style="font-family:verdana; font-size:14px;" autocomplete="off" title="Polar moment of Inertia J=(∏*d4)/32" /></td>
-	</tr>
-	<tr>
-	<th >Yield Stress(N/mm<sup>2</sup>)</th>
-	<td id="t44"><input type="text" id="i44"  style="font-family:verdana; font-size:14px;" autocomplete="off" title="Yield stress=(((yield point torque*9.81*(d/2))/J)" /></td>
-	</tr>
-	<tr>
-	<th >Modulus of Rupture(N/mm<sup>2</sup>)</th>
-	<td id="t55"><input type="text" id="i55"   style="font-family:verdana; font-size:14px;" autocomplete="off" title="Modulus of Rupture (torsion)=(((Failure torque*9.81*(d/2))/J) " /></td>
-	</tr>
-	<tr>
-	<th >Modulus of Rigidity(GPa)</th>
-	<td id="t66"><input type="text" id="i66"   style="font-family:verdana; font-size:14px;" autocomplete="off" title="Modulus of Rigidity C= (T/ϴ)*(l/J) " /></td>
-	</tr>
-	</table>
-	<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:475px;top:430px;cursor:pointer;">
-	</form>
-	<form id="final" style="visibility:hidden">
-	<p id="l1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:50px;"></td>
-	<p id="l2" style="position:absolute;font-family:verdana; font-size:14px;left:380px;top:50px;"></td>
-	<table border="border" id="last1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellpadding:10px;cellspacing:10px">
-	<tr>
-	<th>Result</th>
-	<th>Actual Value</th>
-	<th>Entered Value</th>
-	<th>Percentage Error</th>
-	</tr>
-	<th>Polar Moment of Inertia(mm<sup>4</sup>)</th>
-	<td id="t3" style="text-align:center"></td>
-	<td id="e3" style="text-align:center"></td>
-	<td id="p3"style="text-align:center"></td>
-	</tr>
-	<th>Yield Stress(N/mm<sup>2</sup>)</th>
-	<td id="t4" style="text-align:center"></td>
-	<td id="e4" style="text-align:center"></td>
-	<td id="p4" style="text-align:center"></td>
-	</tr>
-	<th>Modulus of Rupture(N/mm<sup>2</sup>)</th>
-	<td id="t5" style="text-align:center"></td>
-	<td id="e5" style="text-align:center"></td>
-	<td id="p5" style="text-align:center"></td>
-	</tr>
-	<th>Modulus of Rigidity(GPa)</th>
-	<td id="t6" style="text-align:center"></td>
-	<td id="e6" style="text-align:center"></td>
-	<td id="p6" style="text-align:center"></td>
-	</tr>
-	</table>
-	</form>
-</div>	
-<!--next  Arrow	-->	
-<div id="nav">
-	<img id="nextButton" onclick="navNext(); " src="images/Next.png" />
-	<img id="prevButton" onclick="navNext();" style="visibility:hidden;"src="images/Prev.png" />
-</div>
-
-
-
-
-<!--Blinking Arrow	-->	
-<img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
-<img class ="" id="arrow2" style="visibility:hidden;" src="images/arrow1.png"/>
-
-<div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
 </body>
 </html>

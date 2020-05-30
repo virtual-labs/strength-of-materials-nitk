@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>SOLVE</title>
-<link rel="stylesheet" href="vt.css" />
-<script type="text/javascript" src="vt.js"></script>
+<link rel="stylesheet" href="css/vt.css" />
+<script type="text/javascript" src="js/vt.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -24,7 +24,7 @@ var load;
 <p class="incanvas" style="font-family:verdana; font-size:14px;">To determine the indentation hardness of mild steel, brass, aluminium etc. using Vickers hardness testing machine.</p></br>
 <h4 class="incanvas" style="font-family:verdana;">Apparatus used :</h4> 
 <p class="incanvas" style="font-family:verdana; font-size:14px;">Vickers hardness testing machine. </p>
-<img style="position:absolute; left:250px; top:120px; width:30%" src="images/1.png" />
+<img style="position:absolute; left:250px; top:120px; width:30%;" title="Vickers hardness testing machine" src="images/1.png" />
 </div>
 
 <div class="simsubscreen" id="canvas1" style="visibility:hidden;">
@@ -57,7 +57,7 @@ var load;
 <img id="2-1" style="position:absolute; left:150px; top:30px;" src="images/2.png" /> 
 <img id="2-3" style="position:absolute; left:301px; top:377px; cursor:pointer;" src="images/3.png" />
 <p id="p2-1" style="position:absolute; left:180px; top:240px; font-size:11px; visibility:hidden;" >Specimen is in position</p>
-<p id="p2-2" style="position:absolute; left:100px; top:340px; font-size:11px; visibility:hidden;">Move the mouse on the<br/> wheel to adjust <br/>specimen height</p>
+<p id="p2-2" style="position:absolute; left:85px; top:340px; font-size:11px; visibility:hidden;">Move the mouse on the<br/> wheel to adjust <br/>specimen height</p>
 </div>
 
 <div class="simsubscreen" id="canvas3" style="visibility:hidden;">
@@ -92,22 +92,22 @@ var load;
     myStopFunction();
 	if(flag==1)
 	{
-		document.getElementById("loadtext").innerHTML="Load applied : 10Kg";
+		document.getElementById("loadtext").innerHTML="Load applied : 10kg";
 		document.getElementById("3-10").style.visibility="visible";
 	}
 	if(flag==2)
 	{
-		document.getElementById("loadtext").innerHTML="Load applied : 20Kg";
+		document.getElementById("loadtext").innerHTML="Load applied : 20kg";
 		document.getElementById("3-20").style.visibility="visible";
 	}
 	if(flag==3)
 	{
-		document.getElementById("loadtext").innerHTML="Load applied : 30Kg";
+		document.getElementById("loadtext").innerHTML="Load applied : 30kg";
 		document.getElementById("3-30").style.visibility="visible";
 	}
 //}
 		//load();
-        //document.getElementById("loadtext").innerHTML="Load applied : "+load+"Kg";
+        //document.getElementById("loadtext").innerHTML="Load applied : "+load+"kg";
 		<!-- if(load>0) -->
 		<!-- { -->
 		    <!-- myStopFunction(); -->
@@ -240,28 +240,28 @@ animate1();
 <!-- <img id="6-6w2" style="position:absolute; left:390px; top:243.5px; " src="images/white.png" /> -->
 <img id="6-4" style="position:absolute; left:52px; top:392.25px; " src="images/red1.png" />
 <p id="p6-1" style="position:absolute; left:10px; top:470px; font-size:14px;">Indentation diagonal length in X-direction = _________</p>
-<p id="p6-2" style="position:absolute; left:380px; top:236px; font-size:11px;">Move the mouse on the <br/>wheel to measure </br>Indentation diagonal length</p>
+<p id="p6-2" style="position:absolute; left:370px; top:236px; font-size:11px;">Move the mouse on the <br/>wheel to measure </br>Indentation diagonal length</p>
 </div>
 
 <div class="simsubscreen" id="canvas7" style="visibility:hidden;">
 <strong class="incanvas">STEP</strong>
 <span class="circlebg">&nbsp;7&nbsp;</span>
 <p class="steptext">Measure the diagonal length in Y-direction.</p>
-<img id="7-8g" style="position:absolute; left:105px; top:177.5px; visibility:hidden;" src="images/grey_2.png" />
-<img id="7-8y" style="position:absolute; left:105px; top:177.5px; visibility:hidden;" src="images/yellow_2.png" />
-<img id="7-7g" style="position:absolute; left:103px; top:258.5px; visibility:hidden;" src="images/grey3.png" />
-<img id="7-7y" style="position:absolute; left:103px; top:257px; visibility:hidden;" src="images/yellow3.png" />
-<img id="7-5" style="position:absolute; left:102.5px; top:135px; " src="images/sq2.png" />
+<img id="7-8g" style="position:absolute; left:142px; top:177.5px; visibility:hidden;" src="images/grey_2.png" />
+<img id="7-8y" style="position:absolute; left:142px; top:177.5px; visibility:hidden;" src="images/yellow_2.png" />
+<img id="7-7g" style="position:absolute; left:140px; top:258.5px; visibility:hidden;" src="images/grey3.png" />
+<img id="7-7y" style="position:absolute; left:140px; top:257px; visibility:hidden;" src="images/yellow3.png" />
+<img id="7-5" style="position:absolute; left:139.5px; top:135px; " src="images/sq2.png" />
 <img id="7-6w1" style="position:absolute; left:35px; top:470px; " src="images/white1.png" />
 <img id="7-2" style="position:absolute; left:20px; top:70px;" src="images/6_2.png" />
-<img id="7-6" style="position:absolute; left:101px; top:50px; cursor:pointer;" src="images/scroll2.png" />
-<img id="7-61" style="position:absolute; left:101px; top:50px; visibility:hidden;" src="images/scroll2.png" />
-<img id="7-4" style="position:absolute; left:287.5px; top:394px; " src="images/red1.png" />
+<img id="7-6" style="position:absolute; left:138px; top:50px; cursor:pointer;" src="images/scroll2.png" />
+<img id="7-61" style="position:absolute; left:138px; top:50px; visibility:hidden;" src="images/scroll2.png" />
+<!-- <img id="7-4" style="position:absolute; left:287.5px; top:394px; " src="images/red1.png" /> -->
 <img id="7-1al" style="position:absolute; left:250px;top:45px; visibility:hidden;" src="images/8al.png" />
 <img id="7-1br" style="position:absolute; left:250px;top:45px; visibility:hidden;" src="images/8br.png" />
 <img id="7-1ms" style="position:absolute; left:250px;top:45px; visibility:hidden;" src="images/8ms.png" />
-<p id="p7-1" style="position:absolute; left:10px; top:480px; font-size:14px;">Indentation diagonal length in Y-direction = _________</p>
-<p id="p7-2" style="position:absolute; left:-40px; top:30px; font-size:11px;">Move the mouse on the <br/>wheel to measure </br>Indentation diagonal</br>length</p>
+<p id="p7-1" style="position:absolute; left:10px; top:490px; font-size:14px;">Indentation diagonal length in Y-direction = _________</p>
+<p id="p7-2" style="position:absolute; left:-35px; top:40px; font-size:11px;">Move the mouse on the <br/>wheel to measure </br>Indentation diagonal</br>length</p>
 </div>
 
 <div class="simsubscreen" id="canvas8" style="visibility:hidden;">
@@ -271,7 +271,7 @@ animate1();
 <table id="tab1" border size=1 style="position:absolute; left:-40px; top:120px; font-size:14px;">
 <tr>
 <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; border-bottom:none;">Specimen</td>
-<td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; border-bottom:none;">Load Applied in Kg</td>
+<td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; border-bottom:none;">Load Applied in kg</td>
 <td colspan=2 style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Diagonal of indentation in  mm</td>
 <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;border-bottom:none;">Average Diagonal Length d in mm</td>
 <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; border-bottom:none;">Vickers Hardness Number, </br>hv=0.8191F/d<sup>2</sup></td>
@@ -298,7 +298,7 @@ animate1();
 <tr>
 <td style="text-align:center; padding:10px;">Trial</td>
 <td style="text-align:center; padding:10px;">Specimen</td>
-<td style="text-align:center; padding:10px;">Load Applied </br>( Kg )</td>
+<td style="text-align:center; padding:10px;">Load Applied </br>( kg )</td>
 <td style="text-align:center; padding:10px;">Average Diagonal Length ( mm )</td>
 <td style="text-align:center; padding:10px;">Vickers Hardness Number, </br>hv=0.8191F/d<sup>2</sup></td>
 <td style="text-align:center; padding:10px;">Average Vickers Hardness Number</td>
@@ -332,7 +332,7 @@ animate1();
 <img id="arrow1" style="visibility:hidden;" src="images/arrow1.png" />
 
 <!-- copyright -->
-<div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
 
 </div>
 </body>

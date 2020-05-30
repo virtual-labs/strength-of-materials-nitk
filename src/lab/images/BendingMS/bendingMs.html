@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>SOLVE</title>
-<link rel="stylesheet" href="bms.css"/>
+<link href="css/mathstyle.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/bms.css"/>
 <!-- <script type="text/javascript" src="jquery-2.1.4.js"></script> -->
-<script type="text/javascript" src="jquery-1.12.4.js"></script>
-<script type="text/javascript" src= "plotly-latest.min.js"></script>
-<script type="text/javascript" src="bms.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src= "js/plotly-latest.min.js"></script>
+<script type="text/javascript" src="js/bms.js"></script>
 <!-- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> <!-- for $ undefined error --> 
+
 <script>
 function isNumberKey(el)
       {
@@ -24,7 +26,7 @@ function isNumberKey(el)
       }
 	  </script>
 </head>
-<body id="simscreen" style="margin:0;font-family:verdana">
+<body id="simscreen" style="margin:0; font-family:verdana">
 <div id="title">
 <h3>BENDING TEST ON MILD STEEL ROD</h3>
 </div>
@@ -32,7 +34,7 @@ function isNumberKey(el)
 <h4 class="incanvas" >Objective :</h4>
 <p class="incanvas" style="font-size:13px;"> To study the behavior of the mild steel rod subjected to a gradual increasing equal loads at 1/3rd span and to determine mechanical properties.</p></br>
 <h4 class="incanvas">Apparatus used:</h4>
-<p class="incanvas" style="font-size:13px;">Universal Testing Machine,Dial Indicators,Scale & Vernier calipers</p>
+<p class="incanvas" style="font-size:13px;">Universal Testing Machine, Dial Indicators, Scale and Vernier calipers.</p>
 <img style="position:absolute; left:60px; top:140px; width:35% " src="images/1.png" />
 <img style="position:absolute; left:420px; top:220px; width:10%; " src="images/2.png" />
 <!-- <img style="position:absolute; left:220px; top:140px; width:15%; " src="images/vc.png" /> -->
@@ -271,21 +273,20 @@ function downloadData()
 <strong class="incanvas" style="font-size:20px;" >Observations :</strong> 
 <div id="graph3" style="position:absolute; left:0px; top:100px; width:550px;; height:400px; visibility:hidden;"></div>
 
-
-
 <!-- <input id="9-0" style="position:absolute;  cursor:pointer; border:1px solid double; background:#cbc8c7; " type="button" value = "View Graph" />  -->
 <!-- <input id="9-1" style="position:absolute; cursor:pointer; border:1px solid double; background:#cbc8c7; " type="button" value = "Observation" />  -->
 <!-- <input id="9-2" style="position:absolute;  cursor:pointer; border:1px solid double; background:#cbc8c7; " type="button" value = "View Data" /> -->
 <!-- <input id="9-3" style="position:absolute;  cursor:pointer; border:1px solid double; background:#cbc8c7; " type="button" value = "View Slope" />  -->
+
 <input id="9-4" style="position:absolute;left:420px;top:410px; cursor:pointer; border:1px solid double; background:#cbc8c7; width:15%; height:6%;" type="button" value = "Check" /> 
   
  <table id="9-1ob" border size=1 style="position:absolute; left:70px; top:120px; font-size:14px; text-align:center; ">
 <tr>
-<td  style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Diameter of the Specimen,D ( mm )</td>
+<td  style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Diameter of the Specimen, D ( mm )</td>
 <td id="9-01" style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; "></td>
 </tr>
 <tr>
-<td  style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Span of the Beam,L ( mm )</td>
+<td  style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Span of the Beam, L ( mm )</td>
 <td style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">690</td>
 </tr>
 <tr>
@@ -293,20 +294,31 @@ function downloadData()
 <td id="9-02" style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; "></td>
 </tr>
 <tr>
-<td style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Moment of Inertia about</br> the neutral axis,I ( mm<sup>4</sup> )</td>
+<td style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Moment of Inertia about</br> the neutral axis, I ( mm<sup>4</sup> )</td>
 <td  style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">
-<input id="9-03"  class="tooltip" type="text" style="text-align:center;" onkeypress="isNumberKey(event)" autocomplete="off" ><span class="tooltiptext" style="width:150px;">  &nbsp;I = (&pi;&times;d<sup>4</sup>&div;64)</span>
+	<div class="tooltip" style="width:150px;">
+		<input id="9-03"  class="tooltip" type="text" style="text-align:center;" onkeypress="isNumberKey(event)" autocomplete="off" >
+		<span class="tooltiptext" style="width:150px;"> I = <span class="frac"><sup> &pi; &times; d<sup><sup>4</sup></sup></sup><span>&frasl;</span><sub>64</sub></span></span>
+	</div>
 </td>
 </tr>
 <tr>
 <td style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Stress at yield point ( MPa )</td>
-<td  style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; "><div class="tooltip" style="width:150px;">
-<input id="9-04" type="text" style="text-align:center;" autocomplete="off" onkeypress="return isNumberKey(event)"><span class="tooltiptext" style="width:150px;">  &nbsp;Stress = ( M&times;y )&div;I</div></td>
+<td  style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">
+	<div class="tooltip" style="width:150px;">
+		<input id="9-04" type="text" style="text-align:center;" autocomplete="off" onkeypress="return isNumberKey(event)">
+		<span class="tooltiptext" style="width:150px;">  &nbsp; Stress = <span class="frac"><sup> M &times; Y</sup><span>&frasl;</span><sub>I</sub></span> </span>
+	</div>
+</td>
 </tr>
 <tr>
-<td style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Modulus of elasticity,E ( GPa )</td>
-<td  style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; "><div class="tooltip" style="width:230px;">
-<input id="9-05" type="text" style="text-align:center;" autocomplete="off" onkeypress="return isNumberKey(event)"><span class="tooltiptext" style="width:230px;">  &nbsp;E = (23&times;L<sup>3</sup>&times;slope&times;9.81)&div;(1296&times;I)</div></td>
+<td style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Modulus of elasticity, E ( GPa )</td>
+<td  style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">
+	<div class="tooltip" style="width:220px;">
+		<input id="9-05" type="text" style="text-align:center;" autocomplete="off" onkeypress="return isNumberKey(event)">
+		<span class="tooltiptext" style="width:225px;">  &nbsp; E = <span class="frac"><sup> 23 &times; L<sup><sup>3</sup></sup> &times; slope &times; 9.81 </sup><span>&frasl;</span><sub>1296 &times; I</sub></span></span>
+	</div>
+</td>
 </tr>
 </table>
 
@@ -317,7 +329,7 @@ function downloadData()
 <td style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Correct Values</td>
 </tr>
 <tr>
-<td style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Moment of Inertia about</br> the neutral axis,I ( mm<sup>4</sup> )</td>
+<td style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Moment of Inertia about</br> the neutral axis, I ( mm<sup>4</sup> )</td>
 <td id="9-11" style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; "></td>
 <td id="9-21" style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; "></td>
 
@@ -328,7 +340,7 @@ function downloadData()
 <td id="9-22" style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; "></td>
 </tr>
 <tr>
-<td style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Modulus of elasticity,E ( GPa )</td>
+<td style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; ">Modulus of elasticity, E ( GPa )</td>
 <td id="9-13" style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; "></td>
 <td id="9-23" style="text-align:center; font-family:verdana; font-size:12px; padding: 10px; "></td>
 </tr>
@@ -343,7 +355,7 @@ function downloadData()
 
 <img id="arrow1" style="visibility:hidden" src="images/arrow1.png" />
 
-<div id="copyright" >&copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+<div id="copyright" >&copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
 
 
 </body>

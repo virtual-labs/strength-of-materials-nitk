@@ -3,18 +3,322 @@
 <head>
 <meta charset="UTF-8">
 <title>SOLVE</title>
-<link rel="stylesheet" href="ttms.css" />
-<link rel="stylesheet" type="text/css" href="tipped.css" />
-<script type="text/javascript" src= "jquery-2.1.4.js"></script>
-<script type="text/javascript" src="jquery-1.12.4.js"></script>
-<script type="text/javascript" src="jquery-ui.js"></script>
-<script type="text/javascript" src="jquery.ui.touch-punch.js"></script>
-<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
-<script type="text/javascript" src= "plotly-latest.min.js"></script>
-<script type="text/javascript" src= "ttms.js"></script>
-<script type="text/javascript" src= "ej.web.all.min.js"></script>
-<script type="text/javascript" src= "tipped.js"></script>
+<link rel="stylesheet" href="css/ttms.css" />
+<link rel="stylesheet" type="text/css" href="css/tipped.css" />
+<script type="text/javascript" src= "js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src= "js/plotly-latest.min.js"></script>
+<script type="text/javascript" src= "js/ej.web.all.min.js"></script>
+<script type="text/javascript" src= "js/tipped.js"></script>
 
+
+</head>
+
+
+
+<body style="margin:0">
+<!--Simulation Screen start		-->
+<div id="simscreen">
+
+<!--Title of Simulation		-->
+<div id="title"><h3>TENSILE TEST ON MILD STEEL</h3></div>
+
+<img id="white1" style="position:absolute;left:5px; top:100px;height: 500px;width:700px;visibility:hidden;" src="images/white1.PNG"/>
+<!--SubScreen Home	-->	
+<div class="simsubscreen" id="canvas0">
+	<h4 class="incanvas" style="font-family:verdana;" >Objective</h4>
+	<p class="incanvas" style="font-family:verdana; font-size:14px;">To study the mechanical properties of mild steel specimen under tension load.</p>
+	<h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
+	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Universal Testing Machine,Dial Indicators,Scale & Vernier calipers.</p>
+	<img id="can00" style="position: absolute; left: 50px; top: 100px;width:50%" src="images/main.png"/>
+	<img id="can01" style="position: absolute; left: 380px; top: 100px;" src="images/dialind.png"/>
+</div>
+
+<!--Step1	-->	
+<div class="simsubscreen" id="canvas1" style="visibility:hidden">
+	<strong id="titlestep" class="incanvas">STEP </strong>
+	<span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
+	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Measure the Initial Diameter of the tension test sample in two perpendicular directions using vernier caliper.</p>
+	<img id="can12" style="position: absolute; left:200px; top: 230px;visibility:hidden;" src="images/can11d.png"/>
+	<img id="cal2" style="position: absolute; left:250px; top: 90px;visibility:hidden;" src="images/cal3.png"/>
+	<img id="mov2" style="position: absolute; left:250px; top: 260px;cursor:pointer;visibility:hidden;" src="images/mov3.png"/>
+	<img id="can11" style="position: absolute; left:367px; top: 80px;" src="images/can11c.png"/>
+	<p id="v1-1" style="position:absolute; left:20px; top: 100px;font-family:verdana; font-size:14px;"></p>
+	<p id="v1-2" style="position:absolute; left:20px; top: 150px;font-family:verdana; font-size:14px;"></p>
+	<p id="v1-0" style="position:absolute; left:20px; top: 200px;font-family:verdana; font-size:14px;"></p>
+	<!-- Initial diameter-->
+	<img id="cal1" style="position: absolute; left:0px; top: 100px;" src="images/cal1.png"/>
+	<img id="mov" style="position: absolute; left:130px; top: 100px;cursor:pointer;" src="images/movv.png"/>
+</div>
+
+
+<!--Step2	-->	
+<div class="simsubscreen" id="canvas2" style="visibility:hidden"> 
+	<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+	<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
+	<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Measure the Length of the specimen between the grips using a scale.</p>  
+	<img id="can23" style="position: absolute; left:150px; top: 328px;" src="images/can23.png"/> 
+	<img id="can24" style="position: absolute; left:250px; top: 128px;cursor:pointer;" src="images/can24.png"/> 
+	<p id="v2-0" style="position:absolute; left:250px; top: 380px;font-family:verdana; font-size:14px;"></p>
+</div>
+
+
+<!-- step3 -->
+<div class="simsubscreen" id="canvas3" style="visibility:hidden;" > 
+	<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+	<span class="circlebg" id="stepnumber">&nbsp;3&nbsp;</span>
+	<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Punch marks are made at a distance of 2.5d.</p>
+	<img id="can33" style="position: absolute; left:300px; top: 240px;" src="images/can23a.png"/> 
+	<img id="can35" style="position: absolute; left:360px; top:280px;visibility:hidden;" src="images/dot.png"/> 
+	<img id="can35a" style="position: absolute; left:380px; top: 300px;visibility:hidden;" src="images/dot.png"/> 
+	<img id="can35b" style="position: absolute; left:400px; top: 322px;visibility:hidden;" src="images/dot.png"/> 
+	<img id="can35c" style="position: absolute; left:427px; top: 346px;visibility:hidden;" src="images/dot.png"/> 
+	<img id="can36" style="position: absolute; left:184px; top: 160px;" src="images/tool.png"/> 
+	<img id="can34" style="position: absolute; left:175px; top: 70px;cursor:pointer;" src="images/hammer.png"/> 
+	<p id="v3-0" style="position:absolute; left:100px; top: 380px;font-family:verdana; font-size:14px;"></p>
+</div>	
+
+	
+<!--Step4	-->	
+<div class="simsubscreen" id="canvas4" style="visibility:hidden;">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Insert the specimen into its position and mount extensometer on the specimen. </p>
+	<img id="can46" style="position: absolute; left:185px; top: 200px;display:none" src="images/d4.png"/>  
+	<img id="can45a" style="position: absolute; left:234px; top: 210px;visibility:hidden" src="images/can45a.PNG"/>  
+	<img id="can41" style="position: absolute; left:100px; top: 50px;" src="images/can42a.PNG"/>
+	<img id="can43" style="position: absolute; left:88px; top: 287px;" src="images/can43.PNG"/>
+	<img id="can45" style="position: absolute; left:435px; top: 215px;visibility:hidden" src="images/can45a.PNG"/>  
+	<p id="can45t" style="position: absolute; left:460px; top: 235px;font-family:verdana; font-size:14px;"> </p> 
+	<img id="can45d" style="position: absolute; left:230px; top: 280px;z-index:10;height:30px;visibility:hidden" src="images/arrow1.png"/> 
+	<img id="can44" style="position: absolute; left:182px; top: 354px;cursor:pointer "  src="images/can44.png" onClick="rotateImage(360);"/>
+	<p id="v4-0" style="position:absolute; left:150px; top: 380px;font-family:verdana; font-size:14px;"></p>
+</div>
+ 
+ 
+ <!--Step5	-->	
+<div class="simsubscreen" id="canvas5" style="visibility:hidden" >
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;5&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp; Readings on the dials A and B of extensometer are adjusted to zero.</p>
+	<img id="can51" style="position: absolute; left:50px; top: 150px;" src="images/ext1.PNG"/>
+	<img id="can51a" style="position: absolute; left:50px; top: 150px;visibility:hidden" src="images/ext2.png"/>
+	<img id="can51b" style="position: absolute; left:50px; top: 150px;visibility:hidden" src="images/ext3.png"/>
+	<img id="can52" style="position: absolute; left:289px; top: 285px;cursor:pointer" src="images/bl.png"/>
+	<img id="can53" style="position: absolute; left:173px; top: 287px;cursor:pointer" src="images/br.png"/>
+	<img id="can54l" style="position: absolute; left:286px; top: 292px;visibility:hidden;" src="images/ndl2.png"/>
+	<img id="can54r" style="position: absolute; left:170px; top: 305px;visibility:hidden" src="images/ndl.png"/>	
+</div> 
+	
+	
+ <!--Step6	-->	
+<div class="simsubscreen" id="canvas6"   style="visibility:hidden" >
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;6&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Experiment is conducted. Load, extensometer readings are read at regular intervals of load upto the yield point. Ivory scale readings are noted till the specimen failure.  </p>
+	<img id="can61" style="position: absolute; left:0px; top: 50px;" src="images/mn.png"/>
+	<img id="can61a" style="position: absolute; left:0px; top: 50px;visibility:hidden;" src="images/mn1.png"/>
+	<img id="can61b" style="position: absolute; left:0px; top: 50px;visibility:hidden;" src="images/mn2.png"/>
+	<img id="can61c" style="position: absolute; left:0px; top: 50px;visibility:hidden;" src="images/mn3.png"/>
+	<img id="can61d" style="position: absolute; left:0px; top: 50px;visibility:hidden;" src="images/mn4.png"/>
+	<img id="can62" style="position: absolute; left:238px; top: 264px;" src="images/mndl.png"/> 
+	<img id="can63" style="position: absolute; left:245px; top: 50px;" src="images/ez2.png"/> 
+	<img id="can63a" style="position: absolute; left:245px; top: 50px;visibility:hidden;" src="images/ez3.png"/> 
+	<img id="can63b" style="position: absolute; left:245px; top: 50px;visibility:hidden;" src="images/ez4.png"/> 
+	<img id="can63c" style="position: absolute; left:245px; top: 50px;visibility:hidden;" src="images/ez5.png"/> 
+	<img id="can63d" style="position: absolute; left:245px; top: 50px;visibility:hidden;" src="images/ez6.png"/> 
+	<img id="can66l" style="position: absolute; left:351px; top: 165px;" src="images/nb.png"/>
+	<img id="can66r" style="position: absolute; left:279px; top: 167px;" src="images/nb.png"/>
+	<img id="can65" style="position: absolute; left:240px; top: 50px;" src="images/czoom1.png"/> 	
+	<img id="red" style="position: absolute; left:242.1px; top:324.8px;cursor:pointer" src="images/red.png"/>
+	<img id="green" style="position: absolute; left:249.1px; top:333.2px;cursor:pointer" src="images/green.png"/>
+	<img id="can63d" style="position: absolute;left:0px; top: 70px;visibility:hidden;" src="images/ext65.png"/>
+	<img id="can64l" style="position: absolute; left:131px; top: 243px;" src="images/nb.png"/>
+	<img id="can64r" style="position: absolute; left:93px; top: 250px;" src="images/ns.png"/>
+	<div id="content" style="position:absolute;left:420px;overflow-y:auto;height:400px;width:300px;top:70px;"></div>
+	<button id="dwn" style="position:absolute;left:520px;top:480px;visibility:hidden;" onClick="download()">Download Data</button>
+	<p id="v6-0" style="position:absolute; left:275px; top: 280px;font-family:verdana; font-size:10px;"></p>
+</div>
+
+<!--Step7-->
+
+<div class="simsubscreen" id="canvas7" style="visibility:hidden" >
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;7&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Graph. </p>
+	<div id="mydiv1" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;"></div>
+	<div id="tablediv1" style="position:absolute;left:155px; top:30px;height: 500px;width:400px;overflow-y:auto;visibility:hidden;"></div>
+	<input type="button" id="vdata1" style="position:absolute;left:0px;top:450px;cursor:pointer" value="View Data" />
+</div>	
+	
+
+
+<!--Step8-->	
+<div class="simsubscreen" id="canvas8"  style="visibility:hidden">
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;8&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Graph.</p>
+	<img id="g1" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g1.PNG"/>
+	<img id="g2" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g2.PNG"/>
+	<img id="g3" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g3.PNG"/>
+	<img id="g4" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g4.PNG"/>
+	<img id="g5" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g5.PNG"/>
+	<img id="g6" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g6.PNG"/>
+	<img id="g7" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g7.PNG"/>
+	<img id="g8" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g8.PNG"/>
+	<img id="g9" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g9.PNG"/>
+	<img id="g10" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g10.PNG"/>
+	<div id="mydiv2" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;"></div>
+	<div id="tablediv2" style="position:absolute;left:155px; top:30px;height: 500px;width:400px;overflow-y:auto;visibility:hidden;"></div>
+	<input type="button" id="vdata2" style="position:absolute;left:0px;top:450px;cursor:pointer" value="View Data" />
+	<input type="button" id="vslope" style="position:absolute;left:640px;top:450px;cursor:pointer" value="View Slope" />
+	<form id="slopefm" style="visibility:hidden">	
+		<p id="x11" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 80px;"></td>
+		<p id="y11" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 120px;"></td>
+		<p id="slp" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 160px;"></td>
+	</form>
+
+</div>	
+
+
+
+<!--Step9-->
+	
+<div class="simsubscreen" id="canvas9" style="visibility:hidden" >
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;9&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Join two pieces of the test sample and measure the diameter at the neck of the specimen.</p>
+	<img id="can91" style="position: absolute; left:107px; top: 204px;" src="images/cane1.PNG"/> 
+	<img id="can92" style="position: absolute; left:407px; top: 213px;cursor:pointer;" src="images/cane2.PNG"/> 
+	<img id="cal9" style="position: absolute; left:170px; top: 94px;visibility:hidden" src="images/cal3.png"/>
+	<img id="mov9" style="position: absolute; left:175px; top: 250px;cursor:pointer;visibility:hidden" src="images/mov3.png"/>
+	<p id="v9-0" style="position:absolute; left:380px; top: 380px;font-family:verdana; font-size:14px;"></p>
+</div>	
+
+<!--Siep10-->	
+<div class="simsubscreen" id="canvas10" style="visibility:hidden" >
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;10&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Measure the final length between three punch marks.</p>
+	<img id="can10" style="position: absolute; left:107px; top: 254px;" src="images/can90.png"/> 
+	<img id="can101" style="position: absolute; left:200px; top: 92px;" src="images/cal4.png"/> 
+	<img id="can102" style="position: absolute; left:38px; top: 127px;cursor:pointer;" src="images/movv3.png"/> 
+	<p id="v10-0" style="position:absolute; left:250px; top: 350px;font-family:verdana; font-size:14px;"></p>
+</div>	
+
+<!--Step11-->
+<div class="simsubscreen" id="canvas11"  style="visibility:hidden" >
+	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;11&nbsp;</span>
+	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Observations and Calculations.</p>
+	<div id="obs" style="visibility:hidden">
+	<table border="border" id="last" style="position:absolute;font-family:verdana;font-size:14px;left:100px;top:50px;cellpadding:10px;cellspacing:10px;text-align: center">
+		<tr>
+			<th>Initial diameter in mm</th>
+			<td id="ta33"></td>
+		</tr>
+		<tr>
+			<th >Length of the specimen between the grips in mm</th>
+			<td id="ta44"></td>
+		</tr>
+		<tr>
+			<th>Punch mark at a interval of 2.5d in mm</th>
+			<td id="ta55"></td>
+		</tr>
+		<tr>
+			<th >Final Length between the 3 punch mark in mm</th>
+			<td id="ta66"></td>
+		</tr>
+		<tr>
+			<th >Final Diameter in mm</th>
+			<td id="ta77"></td>
+		</tr>
+		<tr>
+			<th >Original c/s area(A<sub>0</sub>)in mm<sup>2</sup></th>
+			<td id="ta88"></td>
+		</tr>
+		<tr>
+			<th >Final area of c/s at neckin mm<sup>2</sup></th>
+			<td id="ta99"></td>
+		</tr>
+	</table>
+	</div>
+	<div id="mydiv3" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;"></div>
+	<input type="button" id="obs1" value="Observation" style="position:absolute;font-family:verdana; font-size:14px;left:315px;top:450px;cursor:pointer;">
+	<input type="button" id="gr1" value="Graph" style="position:absolute;font-family:verdana; font-size:14px;left:415px;top:450px;cursor:pointer;">
+	<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:515px;top:450px;cursor:pointer;">
+	<form id="calc">
+		<table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:100px;top:150px;cellpadding:10px;cellspacing:10px;text-align: center">
+			<tr>
+				<th>Yield Stress(N/mm<sup>2</sup>)</th>
+				<td id="t33"><input type="text" id="i33" style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" title="Load at yield point/Ao" /></td>
+			</tr>
+			<tr>
+				<th >Tensile Strength(N/mm<sup>2</sup>)</th>
+				<td id="t44"><input type="text" id="i44" style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" title="Ultimate Load/Ao" /></td>
+			</tr>
+			<tr>
+				<th >Modulus of Elasticity(GPa)</th>
+				<td id="t55"><input type="text" id="i55" style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" title="Slope x (Gauge Length/Ao)" /></td>
+			</tr> 
+			<tr>
+				<th >Percentage Elongation(%)</th>
+				<td id="t66"><input type="text" id="i66"  style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" /></td>
+			</tr>
+			<tr>
+				<th >Percentage reduction in area(%)</th>
+				<td id="t77"><input type="text" id="i77"  style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" /></td>
+			</tr>
+		</table>
+	</form>
+	<form id="final" style="visibility:hidden">
+		<table border="border" id="last1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellpadding:10px;cellspacing:10px;text-align: center">
+			<tr>
+				<th>Result</th>
+				<th>Actual Value</th>
+				<th>Entered Value</th>
+				<th>Percentage Error</th>
+			</tr>
+			<tr>
+				<th>Yield Stress(N/mm<sup>2</sup>)</th>
+				<td id="t3" style="text-align:center"></td>
+				<td id="e3" style="text-align:center"></td>
+				<td id="p3"style="text-align:center"></td>
+			</tr>
+			<tr>
+				<th >Tensile Strength(N/mm<sup>2</sup>)</th>
+				<td id="t4" style="text-align:center"></td>
+				<td id="e4" style="text-align:center"></td>
+				<td id="p4" style="text-align:center"></td>
+			</tr>
+			<tr>
+				<th >Modulus of Elasticity(GPa)</th>
+				<td id="t5" style="text-align:center"></td>
+				<td id="e5" style="text-align:center"></td>
+				<td id="p5" style="text-align:center"></td>
+			</tr>
+			<tr>
+				<th >Percentage Elongation(%)</th>
+				<td id="t6" style="text-align:center"></td>
+				<td id="e6" style="text-align:center"></td>
+				<td id="p6" style="text-align:center"></td>
+			</tr>
+			<tr>
+				<th>Percentage reduction in area(%)</th>
+				<td id="t7" style="text-align:center"></td>
+				<td id="e7" style="text-align:center"></td>
+				<td id="p7" style="text-align:center"></td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+<!--next  Arrow	-->	
+<div id="nav">
+	<img id="nextButton" onclick="navNext();" src="images/Next.png" />
+	<img id="prevButton" onclick="navNext();" style="visibility:hidden;"src="images/prev.png" />
+</div>
+ 
+<!--Blinking Arrow	-->	
+<img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
+<img class ="" id="arrow2" style="visibility:hidden;" src="images/arrow1.png"/>
+
+<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
 <script>
     var simsubscreennum=0;
 	var temp=0;
@@ -658,7 +962,7 @@
 		fixedrange: true
 	  },
 	  yaxis: {
-		title:'Load in KN',
+		title:'Load in kN',
 		fixedrange: true
 	  }
 	};    
@@ -670,7 +974,7 @@
 		fixedrange: true
 	  },
 	  yaxis: {
-		title:'Load in KN',
+		title:'Load in kN',
 		fixedrange: true
 	  }
 	};                     
@@ -697,8 +1001,8 @@
 	};
 	 function ToTable(tbdata)
 	{
-		html = '<table id="Table" border="border" style="font-size:14px;font-family:verdana">'; 
-		html += '<tr ><th style="text-align:center">Load in Kn</th>';
+		html = '<table id="Table" border="border" style="font-size:14px;font-family:verdana;text-align: center">'; 
+		html += '<tr ><th style="text-align:center">Load in kN</th>';
 		html += '<th colspan=3>Extensometer Reading</th>';
 		html += '<th style="text-align:center">Ivory Scale Reading</th></tr>';
 		html += '<tr ><th style="border-top:none"></th>';
@@ -723,8 +1027,8 @@
 	}
 	function RefTable(tbdata)
 	{
-		html = '<table id="Table2" border="border" style="font-size:14px;font-family:verdana">'; 
-		html += '<tr ><th style="text-align:center">Load in Kn</th>';
+		html = '<table id="Table2" border="border" style="font-size:14px;font-family:verdana;text-align: center">'; 
+		html += '<tr ><th style="text-align:center">Load in kN</th>';
 		html += '<th colspan=3>Extensometer Reading</th>';
 		html += '<th style="text-align:center">Ivory Scale Reading</th></tr>';
 		html += '<tr ><th style="border-top:none"></th>';
@@ -815,309 +1119,6 @@
 		});
 	});
 </script>
-</head>
-
-
-
-<body style="margin:0">
-<!--Simulation Screen start		-->
-<div id="simscreen">
-
-<!--Title of Simulation		-->
-<div id="title"><h3>TENSILE TEST ON MILD STEEL</h3></div>
-
-<img id="white1" style="position:absolute;left:5px; top:100px;height: 500px;width:700px;visibility:hidden;" src="images/white1.PNG"/>
-<!--SubScreen Home	-->	
-<div class="simsubscreen" id="canvas0">
-	<h4 class="incanvas" style="font-family:verdana;" >Objective</h4>
-	<p class="incanvas" style="font-family:verdana; font-size:14px;">To study the mechanical properties of mild steel specimen under tension load.</p>
-	<h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
-	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Universal Testing Machine,Dial Indicators,Scale & Vernier calipers.</p>
-	<img id="can00" style="position: absolute; left: 50px; top: 100px;width:50%" src="images/main.png"/>
-	<img id="can01" style="position: absolute; left: 380px; top: 100px;" src="images/dialind.png"/>
-</div>
-
-<!--Step1	-->	
-<div class="simsubscreen" id="canvas1" style="visibility:hidden">
-	<strong id="titlestep" class="incanvas">STEP </strong>
-	<span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
-	<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Measure the Initial Diameter of the tension test sample in two perpendicular directions using vernier caliper.</p>
-	<img id="can12" style="position: absolute; left:200px; top: 230px;visibility:hidden;" src="images/can11d.png"/>
-	<img id="cal2" style="position: absolute; left:250px; top: 90px;visibility:hidden;" src="images/cal3.png"/>
-	<img id="mov2" style="position: absolute; left:250px; top: 260px;cursor:pointer;visibility:hidden;" src="images/mov3.png"/>
-	<img id="can11" style="position: absolute; left:367px; top: 80px;" src="images/can11c.png"/>
-	<p id="v1-1" style="position:absolute; left:20px; top: 100px;font-family:verdana; font-size:14px;"></p>
-	<p id="v1-2" style="position:absolute; left:20px; top: 150px;font-family:verdana; font-size:14px;"></p>
-	<p id="v1-0" style="position:absolute; left:20px; top: 200px;font-family:verdana; font-size:14px;"></p>
-	<!-- Initial diameter-->
-	<img id="cal1" style="position: absolute; left:0px; top: 100px;" src="images/cal1.png"/>
-	<img id="mov" style="position: absolute; left:130px; top: 100px;cursor:pointer;" src="images/movv.png"/>
-</div>
-
-
-<!--Step2	-->	
-<div class="simsubscreen" id="canvas2" style="visibility:hidden"> 
-	<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
-	<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
-	<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Measure the Length of the specimen between the grips using a scale.</p>  
-	<img id="can23" style="position: absolute; left:150px; top: 328px;" src="images/can23.png"/> 
-	<img id="can24" style="position: absolute; left:250px; top: 128px;cursor:pointer;" src="images/can24.png"/> 
-	<p id="v2-0" style="position:absolute; left:250px; top: 380px;font-family:verdana; font-size:14px;"></p>
-</div>
-
-
-<!-- step3 -->
-<div class="simsubscreen" id="canvas3" style="visibility:hidden;" > 
-	<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
-	<span class="circlebg" id="stepnumber">&nbsp;3&nbsp;</span>
-	<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Punch marks are made at a distance of 2.5d.</p>
-	<img id="can33" style="position: absolute; left:300px; top: 240px;" src="images/can23a.png"/> 
-	<img id="can35" style="position: absolute; left:360px; top:280px;visibility:hidden;" src="images/dot.png"/> 
-	<img id="can35a" style="position: absolute; left:380px; top: 300px;visibility:hidden;" src="images/dot.png"/> 
-	<img id="can35b" style="position: absolute; left:400px; top: 322px;visibility:hidden;" src="images/dot.png"/> 
-	<img id="can35c" style="position: absolute; left:427px; top: 346px;visibility:hidden;" src="images/dot.png"/> 
-	<img id="can36" style="position: absolute; left:184px; top: 160px;" src="images/tool.png"/> 
-	<img id="can34" style="position: absolute; left:175px; top: 70px;cursor:pointer;" src="images/hammer.png"/> 
-	<p id="v3-0" style="position:absolute; left:100px; top: 380px;font-family:verdana; font-size:14px;"></p>
-</div>	
-
-	
-<!--Step4	-->	
-<div class="simsubscreen" id="canvas4" style="visibility:hidden;">
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Insert the specimen into its position and mount extensometer on the specimen. </p>
-	<img id="can46" style="position: absolute; left:185px; top: 200px;display:none" src="images/d4.png"/>  
-	<img id="can45a" style="position: absolute; left:234px; top: 210px;visibility:hidden" src="images/can45a.PNG"/>  
-	<img id="can41" style="position: absolute; left:100px; top: 50px;" src="images/can42a.PNG"/>
-	<img id="can43" style="position: absolute; left:88px; top: 287px;" src="images/can43.PNG"/>
-	<img id="can45" style="position: absolute; left:435px; top: 215px;visibility:hidden" src="images/can45a.PNG"/>  
-	<p id="can45t" style="position: absolute; left:460px; top: 235px;font-family:verdana; font-size:14px;"> </p> 
-	<img id="can45d" style="position: absolute; left:230px; top: 280px;z-index:10;height:30px;visibility:hidden" src="images/arrow1.png"/> 
-	<img id="can44" style="position: absolute; left:182px; top: 354px;cursor:pointer "  src="images/can44.png" onClick="rotateImage(360);"/>
-	<p id="v4-0" style="position:absolute; left:150px; top: 380px;font-family:verdana; font-size:14px;"></p>
-</div>
- 
- 
- <!--Step5	-->	
-<div class="simsubscreen" id="canvas5" style="visibility:hidden" >
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;5&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp; Readings on the dials A and B of extensometer are adjusted to zero.</p>
-	<img id="can51" style="position: absolute; left:50px; top: 150px;" src="images/ext1.PNG"/>
-	<img id="can51a" style="position: absolute; left:50px; top: 150px;visibility:hidden" src="images/ext2.png"/>
-	<img id="can51b" style="position: absolute; left:50px; top: 150px;visibility:hidden" src="images/ext3.png"/>
-	<img id="can52" style="position: absolute; left:289px; top: 285px;cursor:pointer" src="images/bl.png"/>
-	<img id="can53" style="position: absolute; left:173px; top: 287px;cursor:pointer" src="images/br.png"/>
-	<img id="can54l" style="position: absolute; left:286px; top: 292px;visibility:hidden;" src="images/ndl2.png"/>
-	<img id="can54r" style="position: absolute; left:170px; top: 305px;visibility:hidden" src="images/ndl.png"/>	
-</div> 
-	
-	
- <!--Step6	-->	
-<div class="simsubscreen" id="canvas6"   style="visibility:hidden" >
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;6&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Experiment is conducted. Load, extensometer readings are read at regular intervals of load upto the yield point. Ivory scale readings are noted till the specimen failure.  </p>
-	<img id="can61" style="position: absolute; left:0px; top: 50px;" src="images/mn.png"/>
-	<img id="can61a" style="position: absolute; left:0px; top: 50px;visibility:hidden;" src="images/mn1.png"/>
-	<img id="can61b" style="position: absolute; left:0px; top: 50px;visibility:hidden;" src="images/mn2.png"/>
-	<img id="can61c" style="position: absolute; left:0px; top: 50px;visibility:hidden;" src="images/mn3.png"/>
-	<img id="can61d" style="position: absolute; left:0px; top: 50px;visibility:hidden;" src="images/mn4.png"/>
-	<img id="can62" style="position: absolute; left:238px; top: 264px;" src="images/mndl.png"/> 
-	<img id="can63" style="position: absolute; left:245px; top: 50px;" src="images/ez2.png"/> 
-	<img id="can63a" style="position: absolute; left:245px; top: 50px;visibility:hidden;" src="images/ez3.png"/> 
-	<img id="can63b" style="position: absolute; left:245px; top: 50px;visibility:hidden;" src="images/ez4.png"/> 
-	<img id="can63c" style="position: absolute; left:245px; top: 50px;visibility:hidden;" src="images/ez5.png"/> 
-	<img id="can63d" style="position: absolute; left:245px; top: 50px;visibility:hidden;" src="images/ez6.png"/> 
-	<img id="can66l" style="position: absolute; left:351px; top: 165px;" src="images/nb.png"/>
-	<img id="can66r" style="position: absolute; left:279px; top: 167px;" src="images/nb.png"/>
-	<img id="can65" style="position: absolute; left:240px; top: 50px;" src="images/czoom1.png"/> 	
-	<img id="red" style="position: absolute; left:242.1px; top:324.8px;cursor:pointer" src="images/red.png"/>
-	<img id="green" style="position: absolute; left:249.1px; top:333.2px;cursor:pointer" src="images/green.png"/>
-	<img id="can63d" style="position: absolute;left:0px; top: 70px;visibility:hidden;" src="images/ext65.png"/>
-	<img id="can64l" style="position: absolute; left:131px; top: 243px;" src="images/nb.png"/>
-	<img id="can64r" style="position: absolute; left:93px; top: 250px;" src="images/ns.png"/>
-	<div id="content" style="position:absolute;left:420px;overflow-y:auto;height:400px;width:300px;top:70px;"></div>
-	<button id="dwn" style="position:absolute;left:520px;top:480px;visibility:hidden;" onClick="download()">Download Data</button>
-	<p id="v6-0" style="position:absolute; left:275px; top: 280px;font-family:verdana; font-size:10px;"></p>
-</div>
-
-<!--Step7-->
-
-<div class="simsubscreen" id="canvas7" style="visibility:hidden" >
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;7&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Graph. </p>
-	<div id="mydiv1" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;"></div>
-	<div id="tablediv1" style="position:absolute;left:155px; top:30px;height: 500px;width:400px;overflow-y:auto;visibility:hidden;"></div>
-	<input type="button" id="vdata1" style="position:absolute;left:0px;top:450px;cursor:pointer" value="View Data" />
-</div>	
-	
-
-
-<!--Step8-->	
-<div class="simsubscreen" id="canvas8"  style="visibility:hidden">
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;8&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Graph.</p>
-	<img id="g1" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g1.PNG"/>
-	<img id="g2" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g2.PNG"/>
-	<img id="g3" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g3.PNG"/>
-	<img id="g4" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g4.PNG"/>
-	<img id="g5" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g5.PNG"/>
-	<img id="g6" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g6.PNG"/>
-	<img id="g7" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g7.PNG"/>
-	<img id="g8" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g8.PNG"/>
-	<img id="g9" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g9.PNG"/>
-	<img id="g10" style="position:absolute;left:5px; top:30px;visibility:hidden;" src="images/g10.PNG"/>
-	<div id="mydiv2" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;"></div>
-	<div id="tablediv2" style="position:absolute;left:155px; top:30px;height: 500px;width:400px;overflow-y:auto;visibility:hidden;"></div>
-	<input type="button" id="vdata2" style="position:absolute;left:0px;top:450px;cursor:pointer" value="View Data" />
-	<input type="button" id="vslope" style="position:absolute;left:640px;top:450px;cursor:pointer" value="View Slope" />
-	<form id="slopefm" style="visibility:hidden">	
-		<p id="x11" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 80px;"></td>
-		<p id="y11" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 120px;"></td>
-		<p id="slp" style="position:absolute;font-family:verdana; font-size:14px;left:620px; top: 160px;"></td>
-	</form>
-
-</div>	
-
-
-
-<!--Step9-->
-	
-<div class="simsubscreen" id="canvas9" style="visibility:hidden" >
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;9&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Join two pieces of the test sample and measure the diameter at the neck of the specimen.</p>
-	<img id="can91" style="position: absolute; left:107px; top: 204px;" src="images/cane1.PNG"/> 
-	<img id="can92" style="position: absolute; left:407px; top: 213px;cursor:pointer;" src="images/cane2.PNG"/> 
-	<img id="cal9" style="position: absolute; left:170px; top: 94px;visibility:hidden" src="images/cal3.png"/>
-	<img id="mov9" style="position: absolute; left:175px; top: 250px;cursor:pointer;visibility:hidden" src="images/mov3.png"/>
-	<p id="v9-0" style="position:absolute; left:380px; top: 380px;font-family:verdana; font-size:14px;"></p>
-</div>	
-
-<!--Siep10-->	
-<div class="simsubscreen" id="canvas10" style="visibility:hidden" >
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;10&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Measure the final length between three punch marks.</p>
-	<img id="can10" style="position: absolute; left:107px; top: 254px;" src="images/can90.png"/> 
-	<img id="can101" style="position: absolute; left:200px; top: 92px;" src="images/cal4.png"/> 
-	<img id="can102" style="position: absolute; left:38px; top: 127px;cursor:pointer;" src="images/movv3.png"/> 
-	<p id="v10-0" style="position:absolute; left:250px; top: 350px;font-family:verdana; font-size:14px;"></p>
-</div>	
-
-<!--Step11-->
-<div class="simsubscreen" id="canvas11"  style="visibility:hidden" >
-	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;11&nbsp;</span>
-	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Observations and Calculations.</p>
-	<div id="obs" style="visibility:hidden">
-	<table border="border" id="last" style="position:absolute;font-family:verdana;font-size:14px;left:100px;top:50px;cellpadding:10px;cellspacing:10px">
-		<tr>
-			<th>Initial diameter in mm</th>
-			<td id="ta33"></td>
-		</tr>
-		<tr>
-			<th >Length of the specimen between the grips in mm</th>
-			<td id="ta44"></td>
-		</tr>
-		<tr>
-			<th>Punch mark at a interval of 2.5d in mm</th>
-			<td id="ta55"></td>
-		</tr>
-		<tr>
-			<th >Final Length between the 3 punch mark in mm</th>
-			<td id="ta66"></td>
-		</tr>
-		<tr>
-			<th >Final Diameter in mm</th>
-			<td id="ta77"></td>
-		</tr>
-		<tr>
-			<th >Original c/s area(A<sub>0</sub>)in mm<sup>2</sup></th>
-			<td id="ta88"></td>
-		</tr>
-		<tr>
-			<th >Final area of c/s at neckin mm<sup>2</sup></th>
-			<td id="ta99"></td>
-		</tr>
-	</table>
-	</div>
-	<div id="mydiv3" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;"></div>
-	<input type="button" id="obs1" value="Observation" style="position:absolute;font-family:verdana; font-size:14px;left:315px;top:450px;cursor:pointer;">
-	<input type="button" id="gr1" value="Graph" style="position:absolute;font-family:verdana; font-size:14px;left:415px;top:450px;cursor:pointer;">
-	<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:515px;top:450px;cursor:pointer;">
-	<form id="calc">
-		<table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:100px;top:150px;cellpadding:10px;cellspacing:10px">
-			<tr>
-				<th>Yield Stress(N/mm<sup>2</sup>)</th>
-				<td id="t33"><input type="text" id="i33" style="font-family:verdana;font-size:14px;" autocomplete="off" title="Load at yield point/Ao" /></td>
-			</tr>
-			<tr>
-				<th >Tensile Strength(N/mm<sup>2</sup>)</th>
-				<td id="t44"><input type="text" id="i44" style="font-family:verdana;font-size:14px;" autocomplete="off" title="Ultimate Load/Ao" /></td>
-			</tr>
-			<tr>
-				<th >Modulus of Elasticity(GPa)</th>
-				<td id="t55"><input type="text" id="i55" style="font-family:verdana;font-size:14px;" autocomplete="off" title="Slope x (Gauge Length/Ao)" /></td>
-			</tr> 
-			<tr>
-				<th >Percentage Elongation(%)</th>
-				<td id="t66"><input type="text" id="i66"  style="font-family:verdana;font-size:14px;" autocomplete="off" /></td>
-			</tr>
-			<tr>
-				<th >Percentage reduction in area(%)</th>
-				<td id="t77"><input type="text" id="i77"  style="font-family:verdana;font-size:14px;" autocomplete="off" /></td>
-			</tr>
-		</table>
-	</form>
-	<form id="final" style="visibility:hidden">
-		<table border="border" id="last1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellpadding:10px;cellspacing:10px">
-			<tr>
-				<th>Result</th>
-				<th>Actual Value</th>
-				<th>Entered Value</th>
-				<th>Percentage Error</th>
-			</tr>
-			<tr>
-				<th>Yield Stress(N/mm<sup>2</sup>)</th>
-				<td id="t3" style="text-align:center"></td>
-				<td id="e3" style="text-align:center"></td>
-				<td id="p3"style="text-align:center"></td>
-			</tr>
-			<tr>
-				<th >Tensile Strength(N/mm<sup>2</sup>)</th>
-				<td id="t4" style="text-align:center"></td>
-				<td id="e4" style="text-align:center"></td>
-				<td id="p4" style="text-align:center"></td>
-			</tr>
-			<tr>
-				<th >Modulus of Elasticity(GPa)</th>
-				<td id="t5" style="text-align:center"></td>
-				<td id="e5" style="text-align:center"></td>
-				<td id="p5" style="text-align:center"></td>
-			</tr>
-			<tr>
-				<th >Percentage Elongation(%)</th>
-				<td id="t6" style="text-align:center"></td>
-				<td id="e6" style="text-align:center"></td>
-				<td id="p6" style="text-align:center"></td>
-			</tr>
-			<tr>
-				<th>Percentage reduction in area(%)</th>
-				<td id="t7" style="text-align:center"></td>
-				<td id="e7" style="text-align:center"></td>
-				<td id="p7" style="text-align:center"></td>
-			</tr>
-		</table>
-	</form>
-</div>
-
-<!--next  Arrow	-->	
-<div id="nav">
-	<img id="nextButton" onclick="navNext();" src="images/Next.png" />
-	<img id="prevButton" onclick="navNext();" style="visibility:hidden;"src="images/prev.png" />
-</div>
- 
-<!--Blinking Arrow	-->	
-<img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
-<img class ="" id="arrow2" style="visibility:hidden;" src="images/arrow1.png"/>
-
-<div id="copyright"> &copy; 2016 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+<script type="text/javascript" src= "js/ttms.js"></script>
 </body>
 </html>
