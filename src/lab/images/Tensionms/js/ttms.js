@@ -493,112 +493,122 @@ function dzoom()
 								document.getElementById('nextButton').style.visibility="visible";
 							});						
 	});
-	$('#obs1').click(function()
-	{
-		if(ob1==0)
-		{
-			ob1=1;
-			$('#gr1').hide();
-			$('#mydiv3').hide();
-			$('#check').hide();
-			$('#calc').hide();
-			$('#obs1').val("Calculation");
-			document.getElementById('obs').style.visibility="visible";
-			$('#ta33').text(vals0[0]);
-			$('#ta44').text(vals0[1]);
-			$('#ta55').text(vals0[2]);
-			$('#ta66').text(vals0[3]);
-			$('#ta77').text(vals0[4]);
-			$('#ta88').text(vals0[5]);
-			$('#ta99').text(vals0[6]);
-			
-		}
-		else if(ob1==1)
-		{
-			ob1=0;
-			$('#obs1').val("Observation");
-			$('#calc').show();
-			$('#obs1').show();
-			$('#gr1').show();
-			$('#check').show();
-			$('#mydiv3').hide();
-			document.getElementById('obs').style.visibility="hidden";
-		}		
-	});
-	$('#gr1').click(function()
-	{  
-		if(ob2==0)
-		{
-			ob2=1;
-			$('#gr1').val("Calculation");
-			$('#obs1').hide();
-			$('#check').hide();
-			$('#calc').hide();
-			$('#mydiv3').show();
-			Plotly.newPlot('mydiv3', data, layout,options);
-		}
-		else if(ob2==1)
-		{
-			ob2=0;
-			$('#obs1').val("Observation");
-			$('#gr1').val("Graph");
-			$('#calc').show();
-			$('#obs1').show();
-			$('#mydiv3').hide();
-			$('#check').show();
-			document.getElementById('obs').style.visibility="hidden";
-		}
- });
- $("#check").on('mouseover',function()
-	{
-		if(!$('#i33').val() || !$('#i44').val() || !$('#i55').val() || !$('#i66').val() ||!$('#i77').val())
-		{
-			$('#check').off('click');
-			Tipped.create('#check',"Fill all the values");
-		}
-		else
-		{
-			Tipped.create('#check',"Done!!Click here to view the result.");
-			$("#check").click(function()
-			{
-				en3=$('#i33').val(); 
-				en4=$('#i44').val();
-				en5=$('#i55').val(); 
-				en6=$('#i66').val(); 
-				en7=$('#i77').val(); 
-				pe3=((vals0[7]-en3)*100)/vals0[7];
-				pe4=((vals0[8]-en4)*100)/vals0[8];
-				pe5=((vals0[9]-en5)*100)/vals0[9];
-				pe6=((vals0[10]-en6)*100)/vals0[10];
-				pe7=((vals0[11]-en7)*100)/vals0[11];
-				$('#obs1').hide();
-				$('#gr1').hide();
-				$('#calc').hide();
-				$('#check').hide();
-				document.getElementById('final').style.visibility="visible";
-				$('#l1').text("Initial Diameter(mm): "+vals0[0]+"mm");
-				$('#l2').text("Gauge Length(mm): "+vals0[1]+"mm");
-				$('#t3').text(vals0[7]);
-				$('#t4').text(vals0[8]);
-				$('#t5').text(vals0[9]);
-				$('#t6').text(vals0[10]);
-				$('#t7').text(vals0[11]);
-				$('#e3').text(en3);
-				$('#e4').text(en4);
-				$('#e5').text(en5);
-				$('#e6').text(en6); 
-				$('#e7').text(en7);
-				$('#p3').text(pe3.toFixed(2));
-				$('#p4').text(pe4.toFixed(2));
-				$('#p5').text(pe5.toFixed(2));
-				$('#p6').text(pe6.toFixed(2));
-				$('#p7').text(pe7.toFixed(2));
-				
-			});
-		}
-	});
+	
  });
  
+function viewObservation() {
+	if(ob1==0)
+	{
+		ob1=1;
+		$('#gr1').hide();
+		$('#mydiv3').hide();
+		$('#check').hide();
+		$('#calc').hide();
+		$('#obs1').val("Calculation");
+		document.getElementById('obs').style.visibility="visible";
+		$('#ta33').text(vals0[0]);
+		$('#ta44').text(vals0[1]);
+		$('#ta55').text(vals0[2]);
+		$('#ta66').text(vals0[3]);
+		$('#ta77').text(vals0[4]);
+		$('#ta88').text(vals0[5]);
+		$('#ta99').text(vals0[6]);
+		
+	}
+	else if(ob1==1)
+	{
+		ob1=0;
+		$('#obs1').val("Observation");
+		$('#calc').show();
+		$('#obs1').show();
+		$('#gr1').show();
+		$('#check').show();
+		$('#mydiv3').hide();
+		document.getElementById('obs').style.visibility="hidden";
+	}
+}
+
+function viewGraph() {
+	if(ob2==0)
+	{
+		ob2=1;
+		$('#gr1').val("Calculation");
+		$('#obs1').hide();
+		$('#check').hide();
+		$('#calc').hide();
+		$('#mydiv3').show();
+		Plotly.newPlot('mydiv3', data, layout,options);
+	}
+	else if(ob2==1)
+	{
+		ob2=0;
+		$('#obs1').val("Observation");
+		$('#gr1').val("Graph");
+		$('#calc').show();
+		$('#obs1').show();
+		$('#mydiv3').hide();
+		$('#check').show();
+		document.getElementById('obs').style.visibility="hidden";
+	}
+}
+
+function viewTooltip() {
+	if(!$('#i33').val() || !$('#i44').val() || !$('#i55').val() || !$('#i66').val() ||!$('#i77').val())
+	{
+		$('#check').off('click');
+		Tipped.create('#check',"Fill all the values");
+	}
+	else
+	{
+		Tipped.create('#check',"Done!!Click here to view the result.");
+	}
+}
+
+
+function checkResult() {
+	if(!$('#i33').val() || !$('#i44').val() || !$('#i55').val() || !$('#i66').val() ||!$('#i77').val())
+	{
+		$('#check').off('click');
+		Tipped.create('#check',"Fill all the values");
+	}
+	else
+	{
+		en3=$('#i33').val(); 
+		en4=$('#i44').val();
+		en5=$('#i55').val(); 
+		en6=$('#i66').val(); 
+		en7=$('#i77').val(); 
+		pe3=((vals0[7]-en3)*100)/vals0[7];
+		pe4=((vals0[8]-en4)*100)/vals0[8];
+		pe5=((vals0[9]-en5)*100)/vals0[9];
+		pe6=((vals0[10]-en6)*100)/vals0[10];
+		pe7=((vals0[11]-en7)*100)/vals0[11];
+		$('#obs1').hide();
+		$('#gr1').hide();
+		$('#calc').hide();
+		$('#check').hide();
+		document.getElementById('final').style.visibility="visible";
+		$('#l1').text("Initial Diameter(mm): "+vals0[0]+"mm");
+		$('#l2').text("Gauge Length(mm): "+vals0[1]+"mm");
+		$('#t3').text(vals0[7]);
+		$('#t4').text(vals0[8]);
+		$('#t5').text(vals0[9]);
+		$('#t6').text(vals0[10]);
+		$('#t7').text(vals0[11]);
+		$('#e3').text(en3);
+		$('#e4').text(en4);
+		$('#e5').text(en5);
+		$('#e6').text(en6); 
+		$('#e7').text(en7);
+		$('#p3').text(pe3.toFixed(2));
+		$('#p4').text(pe4.toFixed(2));
+		$('#p5').text(pe5.toFixed(2));
+		$('#p6').text(pe6.toFixed(2));
+		$('#p7').text(pe7.toFixed(2));
+	}
+}
+
+
  //--------------table draw function--------------
  function tabledraw6()
  {
@@ -721,6 +731,7 @@ function magic()
     }
 	else if (simsubscreennum==3)
 	{
+		document.getElementById('nextButton').style.visibility="hidden";
 		myInt = setInterval(function(){ animatearrow(); }, 500);
 		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:365px; top: 100px; height: 30px; z-index: 10;";
 		document.getElementById("arrow1").style.WebkitTransform = "rotate(-90deg)"; 

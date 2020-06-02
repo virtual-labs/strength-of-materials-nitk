@@ -238,23 +238,23 @@
 		</tr>
 	</table>
 	</div>
-	<div id="mydiv3" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;"></div>
-	<input type="button" id="obs1" value="Observation" style="position:absolute;font-family:verdana; font-size:14px;left:315px;top:450px;cursor:pointer;">
-	<input type="button" id="gr1" value="Graph" style="position:absolute;font-family:verdana; font-size:14px;left:415px;top:450px;cursor:pointer;">
-	<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:515px;top:450px;cursor:pointer;">
+	<div id="mydiv3" style="position:absolute;left:5px; top:30px;height: 500px;width:700px;display:none"></div>
+	<input type="button" id="obs1" value="Observation" style="position:absolute;font-family:verdana; font-size:14px;left:315px;top:450px;cursor:pointer;" onclick="viewObservation()">
+	<input type="button" id="gr1" value="Graph" style="position:absolute;font-family:verdana; font-size:14px;left:415px;top:450px;cursor:pointer;" onclick="viewGraph()">
+	<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:515px;top:450px;cursor:pointer;"  onmouseover="viewTooltip()" onclick="checkResult()">
 	<form id="calc">
 		<table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:100px;top:150px;cellpadding:10px;cellspacing:10px;text-align: center">
 			<tr>
 				<th>Yield Stress(N/mm<sup>2</sup>)</th>
-				<td id="t33"><input type="text" id="i33" style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" title="Load at yield point/Ao" /></td>
+				<td id="t33"><input type="text" id="i33" style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" title="Load at yield point/A<sub>o</sub>" /></td>
 			</tr>
 			<tr>
 				<th >Tensile Strength(N/mm<sup>2</sup>)</th>
-				<td id="t44"><input type="text" id="i44" style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" title="Ultimate Load/Ao" /></td>
+				<td id="t44"><input type="text" id="i44" style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" title="Ultimate Load/A<sub>o</sub>" /></td>
 			</tr>
 			<tr>
 				<th >Modulus of Elasticity(GPa)</th>
-				<td id="t55"><input type="text" id="i55" style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" title="Slope x (Gauge Length/Ao)" /></td>
+				<td id="t55"><input type="text" id="i55" style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" title="Slope x (Gauge Length/A<sub>o</sub>)" /></td>
 			</tr> 
 			<tr>
 				<th >Percentage Elongation(%)</th>

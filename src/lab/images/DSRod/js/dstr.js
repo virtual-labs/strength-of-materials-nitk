@@ -44,7 +44,7 @@ function checkValue()
 	p1=((values1[3]-en1)/values1[3])*100;
 	p2=((values2[3]-en2)/values2[3])*100;
 	p3=((values3[3]-en3)/values3[3])*100;
-	$('#lastform').hide();
+	document.getElementById('lastform').style.visibility="hidden";
 	document.getElementById('last').style.visibility="visible";
 	document.getElementById('r1a').innerHTML=values1[0];
 	document.getElementById('r1b').innerHTML=values1[1];

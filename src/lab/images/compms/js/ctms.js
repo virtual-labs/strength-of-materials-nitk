@@ -396,110 +396,121 @@ function dzoom()
 							
 							
 	// });
-	$('#obs1').click(function()
+ });
+ 
+function viewObservation() {
+	if(ob1==0)
 	{
-		if(ob1==0)
-		{
-			ob1=1;
-			$('#gr1').hide();
-			$('#mydiv3').hide();
-			$('#check').hide();
-			$('#calc').hide();
-			$('#obs1').val("Calculation");
-			document.getElementById('obs').style.visibility="visible";
-			$('#ta33').text(vals0[0]);
-			$('#ta44').text(vals0[1]);
-			$('#ta55').text(vals0[2]);
-			$('#ta66').text(slope[p][0]);
-			$('#ta77').text(slope[p][1]);
-			$('#ta88').text(slope[p][2]);
-			
-		}
-		else if(ob1==1)
-		{
-			ob1=0;
-			$('#obs1').val("Observation");
-			$('#calc').show();
-			$('#obs1').show();
-			$('#gr1').show();
-			$('#check').show();
-			$('#mydiv3').hide();
-			document.getElementById('obs').style.visibility="hidden";
-		}
+		ob1=1;
+		$('#gr1').hide();
+		$('#mydiv3').hide();
+		$('#check').hide();
+		$('#calc').hide();
+		$('#obs1').val("Calculation");
+		document.getElementById('obs').style.visibility="visible";
+		$('#ta33').text(vals0[0]);
+		$('#ta44').text(vals0[1]);
+		$('#ta55').text(vals0[2]);
+		$('#ta66').text(slope[p][0]);
+		$('#ta77').text(slope[p][1]);
+		$('#ta88').text(slope[p][2]);
 		
-	});
-	$('#gr1').click(function()
-	{  
-		if(ob2==0)
-		{
-			ob2=1;
-			$('#gr1').val("Calculation");
-			$('#obs1').hide();
-			$('#check').hide();
-			$('#calc').hide();
-			$('#mydiv3').show();
-			Plotly.newPlot('mydiv3', data, layout,options);
-		}
-		else if(ob2==1)
-		{
-			ob2=0;
-			$('#obs1').val("Observation");
-			$('#gr1').val("Graph");
-			$('#calc').show();
-			$('#obs1').show();
-			$('#mydiv3').hide();
-			$('#check').show();
-			document.getElementById('obs').style.visibility="hidden";
-		}
- });
- $("#check").on('mouseover',function()
+	}
+	else if(ob1==1)
 	{
-		if(!$('#i33').val() || !$('#i44').val() || !$('#i55').val() || !$('#i66').val() ||!$('#i77').val())
-		{
-			$('#check').off('click');
-			Tipped.create('#check',"Fill all the values");
-		}
-		else
-		{
-			Tipped.create('#check',"Done!!Click now to view the result.");
-			$("#check").click(function()
-			{
-				en3=$('#i33').val(); 
-				en4=$('#i44').val();
-				en5=$('#i55').val(); 
-				en6=$('#i66').val(); 
-				en7=$('#i77').val(); 
-				pe3=((vals0[3]-en3)/vals0[3])*100;
-				pe4=((vals0[4]-en4)/vals0[4])*100;
-				pe5=((vals0[5]-en5)/vals0[5])*100;
-				pe6=((vals0[6]-en6)/vals0[6])*100;
-				pe7=((vals0[7]-en7)/vals0[7])*100;
-				$('#obs1').hide();
-				$('#gr1').hide();
-				$('#calc').hide();
-				$('#check').hide();
-				document.getElementById('final').style.visibility="visible";
-				$('#l1').text("Initial Diameter(mm): "+vals0[0]+"mm");
-				$('#l2').text("Gauge Length(mm): "+vals0[1]+"mm");
-				$('#t3').text(vals0[3]);
-				$('#t4').text(vals0[4]);
-				 $('#t5').text(vals0[5]);
-				 $('#t6').text(vals0[6]);
-				 $('#t7').text(vals0[7]);
-				 $('#e3').text(en3);
-				 $('#e4').text(en4);
-				 $('#e5').text(en5);
-				 $('#e6').text(en6); 
-				 $('#e7').text(en7); 
-				 $('#p3').text(pe3.toFixed(2));
-				 $('#p4').text(pe4.toFixed(2));
-				 $('#p5').text(pe5.toFixed(2));
-				 $('#p6').text(pe6.toFixed(2));
-				 $('#p7').text(pe7.toFixed(2));
-			});
-		}
- });
- });
+		ob1=0;
+		$('#obs1').val("Observation");
+		$('#calc').show();
+		$('#obs1').show();
+		$('#gr1').show();
+		$('#check').show();
+		$('#mydiv3').hide();
+		document.getElementById('obs').style.visibility="hidden";
+	}
+}
+ 
+function viewGraph() {
+	if(ob2==0)
+	{
+		ob2=1;
+		$('#gr1').val("Calculation");
+		$('#obs1').hide();
+		$('#check').hide();
+		$('#calc').hide();
+		$('#mydiv3').show();
+		Plotly.newPlot('mydiv3', data, layout,options);
+	}
+	else if(ob2==1)
+	{
+		ob2=0;
+		$('#obs1').val("Observation");
+		$('#gr1').val("Graph");
+		$('#calc').show();
+		$('#obs1').show();
+		$('#mydiv3').hide();
+		$('#check').show();
+		document.getElementById('obs').style.visibility="hidden";
+	}
+}
+
+function viewTooltip() {
+	
+	if(!$('#i33').val() || !$('#i44').val() || !$('#i55').val() || !$('#i66').val() ||!$('#i77').val())
+	{
+		$('#check').off('click');
+		Tipped.create('#check',"Fill all the values");
+	}
+	else
+	{
+		Tipped.create('#check',"Done!!Click now to view the result.");
+	}
+	
+}
+
+function checkResult() {
+	if(!$('#i33').val() || !$('#i44').val() || !$('#i55').val() || !$('#i66').val() ||!$('#i77').val())
+	{
+		$('#check').off('click');
+		Tipped.create('#check',"Fill all the values");
+	}
+	else
+	{
+		en3=$('#i33').val(); 
+		en4=$('#i44').val();
+		en5=$('#i55').val(); 
+		en6=$('#i66').val(); 
+		en7=$('#i77').val(); 
+		pe3=((vals0[3]-en3)/vals0[3])*100;
+		pe4=((vals0[4]-en4)/vals0[4])*100;
+		pe5=((vals0[5]-en5)/vals0[5])*100;
+		pe6=((vals0[6]-en6)/vals0[6])*100;
+		pe7=((vals0[7]-en7)/vals0[7])*100;
+		$('#obs1').hide();
+		$('#gr1').hide();
+		$('#calc').hide();
+		$('#check').hide();
+		document.getElementById('final').style.visibility="visible";
+		$('#l1').text("Initial Diameter(mm): "+vals0[0]+"mm");
+		$('#l2').text("Gauge Length(mm): "+vals0[1]+"mm");
+		$('#t3').text(vals0[3]);
+		$('#t4').text(vals0[4]);
+		 $('#t5').text(vals0[5]);
+		 $('#t6').text(vals0[6]);
+		 $('#t7').text(vals0[7]);
+		 $('#e3').text(en3);
+		 $('#e4').text(en4);
+		 $('#e5').text(en5);
+		 $('#e6').text(en6); 
+		 $('#e7').text(en7); 
+		 $('#p3').text(pe3.toFixed(2));
+		 $('#p4').text(pe4.toFixed(2));
+		 $('#p5').text(pe5.toFixed(2));
+		 $('#p6').text(pe6.toFixed(2));
+		 $('#p7').text(pe7.toFixed(2));
+	}
+}
+
+
  //--------------table draw function--------------
  function tabledraw6()
  {

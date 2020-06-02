@@ -187,7 +187,7 @@
 	<td id="t66" style="padding: 5px"><input type="text" id="i66"   style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Modulus of Rigidity C= (T/ϴ)*(l/J) " /></td>
 	</tr>
 	</table>
-	<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:495px;top:460px;cursor:pointer;">
+	<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:495px;top:460px;cursor:pointer;" onmouseover="viewTooltip()" onclick="checkResult()">
 	</form>
 	<form id="final" style="visibility:hidden">
 	<p id="l1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:50px;"></td>
@@ -446,7 +446,7 @@ var layout = {
     fixedrange: true
   },
   yaxis: {
-    title:'Torque in Kg.m',
+    title:'Torque in kg.m',
     fixedrange: true
   }
 };    

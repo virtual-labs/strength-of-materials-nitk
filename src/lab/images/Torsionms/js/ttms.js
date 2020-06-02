@@ -103,50 +103,57 @@ function myStopFunction()
 		$('#t1').text(vals0[0]);
 		$('#t2').text(vals0[1]);
 	 }
-	 $("#check").on('mouseover',function()
-	{
-		if(!$('#i33').val() || !$('#i44').val() || !$('#i55').val() || !$('#i66').val())
-		{
-			$('#check').off('click');
-			Tipped.create('#check',"Fill all the values");
-		}
-		else
-		{
-			Tipped.create('#check',"Done!!Click here to view the result.");
-			if($("#check").click(function()
-			{
-				en3=$('#i33').val(); 
-				en4=$('#i44').val();
-				en5=$('#i55').val(); 
-				en6=$('#i66').val(); 
-				pe3=((vals0[2]-en3)*100)/vals0[2];
-				pe4=((vals0[3]-en4)*100)/vals0[3];
-				pe5=((vals0[4]-en5)*100)/vals0[4];
-				pe6=((vals0[6]-en6)*100)/vals0[6];
-				$('#prevButton').hide();
-				$('#last').hide();
-				$('#check').hide();
-				document.getElementById('final').style.visibility="visible";
-				$('#l1').text("Initial Diameter(mm): "+vals0[0]+"mm");
-				$('#l2').text("Gauge Length(mm): "+vals0[1]+"mm");
-				$('#t3').text(vals0[2]);
-				$('#t4').text(vals0[3]);
-				$('#t5').text(vals0[4]);
-				$('#t6').text(vals0[6]);
-				$('#e3').text(en3);
-				$('#e4').text(en4);
-				$('#e5').text(en5);
-				$('#e6').text(en6);
-				$('#p3').text(pe3.toFixed(2));
-				$('#p4').text(pe4.toFixed(2));
-				$('#p5').text(pe5.toFixed(2));
-				$('#p6').text(pe6.toFixed(2));	
-			})); 
-		}
-	});
  });
 
+function viewTooltip() {
+	if(!$('#i33').val() || !$('#i44').val() || !$('#i55').val() || !$('#i66').val())
+	{
+		$('#check').off('click');
+		Tipped.create('#check',"Fill all the values");
+	}
+	else
+	{
+		Tipped.create('#check',"Done!!Click here to view the result.");
+	}
+}
 
+
+function checkResult() {
+	if(!$('#i33').val() || !$('#i44').val() || !$('#i55').val() || !$('#i66').val())
+	{
+		$('#check').off('click');
+		Tipped.create('#check',"Fill all the values");
+	}
+	else
+	{
+		en3=$('#i33').val(); 
+		en4=$('#i44').val();
+		en5=$('#i55').val(); 
+		en6=$('#i66').val(); 
+		pe3=((vals0[2]-en3)*100)/vals0[2];
+		pe4=((vals0[3]-en4)*100)/vals0[3];
+		pe5=((vals0[4]-en5)*100)/vals0[4];
+		pe6=((vals0[6]-en6)*100)/vals0[6];
+		document.getElementById('prevButton').style.visibility="hidden";
+		document.getElementById('last').style.visibility="hidden";
+		document.getElementById('check').style.visibility="hidden";
+		document.getElementById('final').style.visibility="visible";
+		$('#l1').text("Initial Diameter(mm): "+vals0[0]+"mm");
+		$('#l2').text("Gauge Length(mm): "+vals0[1]+"mm");
+		$('#t3').text(vals0[2]);
+		$('#t4').text(vals0[3]);
+		$('#t5').text(vals0[4]);
+		$('#t6').text(vals0[6]);
+		$('#e3').text(en3);
+		$('#e4').text(en4);
+		$('#e5').text(en5);
+		$('#e6').text(en6);
+		$('#p3').text(pe3.toFixed(2));
+		$('#p4').text(pe4.toFixed(2));
+		$('#p5').text(pe5.toFixed(2));
+		$('#p6').text(pe6.toFixed(2));	
+	}
+}
 //-------------------------------------function to clear the fields--------------------------------------------------
 function clearfield()
 {
