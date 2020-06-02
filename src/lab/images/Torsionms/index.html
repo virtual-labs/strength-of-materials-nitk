@@ -160,67 +160,67 @@
 <div class="simsubscreen" id="canvas7" style="visibility:hidden">
 	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;7&nbsp;</span>
 	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Calculations. </p>
-	<form id="calc" >
-	<table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:50px;top:50px;cellpadding:10px;cellspacing:10px;text-align:center;">
-	<tr>
-	<th>Initial Diameter(mm)</th>
-	<td id="t1"></td>
-	</tr>
-	<tr>
-	<th>Gauge Length(mm)</th>
-	<td id="t2"></td>
-	</tr>
-	<tr>
-	<th>Polar Moment of Inertia(mm<sup>4</sup>)</th>
-	<td id="t33" style="padding: 5px"><input type="text" id="i33"  style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Polar moment of Inertia J=(∏*d4)/32" /></td>
-	</tr>
-	<tr>
-	<th >Yield Stress(N/mm<sup>2</sup>)</th>
-	<td id="t44" style="padding: 5px"><input type="text" id="i44"  style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Yield stress=(((yield point torque*9.81*(d/2))/J)" /></td>
-	</tr>
-	<tr>
-	<th >Modulus of Rupture(N/mm<sup>2</sup>)</th>
-	<td id="t55" style="padding: 5px"><input type="text" id="i55"   style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Modulus of Rupture (torsion)=(((Failure torque*9.81*(d/2))/J) " /></td>
-	</tr>
-	<tr>
-	<th >Modulus of Rigidity(GPa)</th>
-	<td id="t66" style="padding: 5px"><input type="text" id="i66"   style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Modulus of Rigidity C= (T/ϴ)*(l/J) " /></td>
-	</tr>
-	</table>
-	<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:495px;top:460px;cursor:pointer;" onmouseover="viewTooltip()" onclick="checkResult()">
-	</form>
-	<form id="final" style="visibility:hidden">
-	<p id="l1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:50px;"></td>
-	<p id="l2" style="position:absolute;font-family:verdana; font-size:14px;left:380px;top:50px;"></td>
-	<table border="border" id="last1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellpadding:10px;cellspacing:10px;text-align:center">
-	<tr>
-	<th>Result</th>
-	<th>Actual Value</th>
-	<th>Entered Value</th>
-	<th>Percentage Error</th>
-	</tr>
-	<th>Polar Moment of Inertia(mm<sup>4</sup>)</th>
-	<td id="t3" style="text-align:center"></td>
-	<td id="e3" style="text-align:center"></td>
-	<td id="p3"style="text-align:center"></td>
-	</tr>
-	<th>Yield Stress(N/mm<sup>2</sup>)</th>
-	<td id="t4" style="text-align:center"></td>
-	<td id="e4" style="text-align:center"></td>
-	<td id="p4" style="text-align:center"></td>
-	</tr>
-	<th>Modulus of Rupture(N/mm<sup>2</sup>)</th>
-	<td id="t5" style="text-align:center"></td>
-	<td id="e5" style="text-align:center"></td>
-	<td id="p5" style="text-align:center"></td>
-	</tr>
-	<th>Modulus of Rigidity(GPa)</th>
-	<td id="t6" style="text-align:center"></td>
-	<td id="e6" style="text-align:center"></td>
-	<td id="p6" style="text-align:center"></td>
-	</tr>
-	</table>
-	</form>
+	<div id="calc" >
+		<table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:50px;top:50px;cellpadding:10px;cellspacing:10px;text-align:center;">
+		<tr>
+		<th>Initial Diameter(mm)</th>
+		<td id="t1"></td>
+		</tr>
+		<tr>
+		<th>Gauge Length(mm)</th>
+		<td id="t2"></td>
+		</tr>
+		<tr>
+		<th>Polar Moment of Inertia(mm<sup>4</sup>)</th>
+		<td id="t33" style="padding: 5px"><input type="text" id="i33"  style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Polar moment of Inertia J=(∏*d4)/32" /></td>
+		</tr>
+		<tr>
+		<th >Yield Stress(N/mm<sup>2</sup>)</th>
+		<td id="t44" style="padding: 5px"><input type="text" id="i44"  style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Yield stress=(((yield point torque*9.81*(d/2))/J)" /></td>
+		</tr>
+		<tr>
+		<th >Modulus of Rupture(N/mm<sup>2</sup>)</th>
+		<td id="t55" style="padding: 5px"><input type="text" id="i55"   style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Modulus of Rupture (torsion)=(((Failure torque*9.81*(d/2))/J) " /></td>
+		</tr>
+		<tr>
+		<th >Modulus of Rigidity(GPa)</th>
+		<td id="t66" style="padding: 5px"><input type="text" id="i66"   style="font-family:verdana; font-size:14px;text-align:center;padding: 5px" autocomplete="off" title="Modulus of Rigidity C= (T/ϴ)*(l/J) " /></td>
+		</tr>
+		</table>
+		<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:495px;top:460px;cursor:pointer;" onmouseover="viewTooltip()" onclick="checkResult()">
+	</div>
+	<div id="final" style="visibility:hidden">
+		<p id="l1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:50px;"></td>
+		<p id="l2" style="position:absolute;font-family:verdana; font-size:14px;left:380px;top:50px;"></td>
+		<table border="border" id="last1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellpadding:10px;cellspacing:10px;text-align:center">
+		<tr>
+		<th>Result</th>
+		<th>Actual Value</th>
+		<th>Entered Value</th>
+		<th>Percentage Error</th>
+		</tr>
+		<th>Polar Moment of Inertia(mm<sup>4</sup>)</th>
+		<td id="t3" style="text-align:center"></td>
+		<td id="e3" style="text-align:center"></td>
+		<td id="p3"style="text-align:center"></td>
+		</tr>
+		<th>Yield Stress(N/mm<sup>2</sup>)</th>
+		<td id="t4" style="text-align:center"></td>
+		<td id="e4" style="text-align:center"></td>
+		<td id="p4" style="text-align:center"></td>
+		</tr>
+		<th>Modulus of Rupture(N/mm<sup>2</sup>)</th>
+		<td id="t5" style="text-align:center"></td>
+		<td id="e5" style="text-align:center"></td>
+		<td id="p5" style="text-align:center"></td>
+		</tr>
+		<th>Modulus of Rigidity(GPa)</th>
+		<td id="t6" style="text-align:center"></td>
+		<td id="e6" style="text-align:center"></td>
+		<td id="p6" style="text-align:center"></td>
+		</tr>
+		</table>
+	</div>
 </div>	
 <!--next  Arrow	-->	
 <div id="nav">

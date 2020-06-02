@@ -219,7 +219,7 @@
 	<input type="button" id="obs1" value="Observation" style="position:absolute;font-family:verdana; font-size:14px;left:315px;top:450px;cursor:pointer;" onclick="viewObservation()">
 	<input type="button" id="gr1" value="Graph" style="position:absolute;font-family:verdana; font-size:14px;left:415px;top:450px;cursor:pointer;" onclick="viewGraph()">
 	<input type="button" id="check" value="Check" style="position:absolute;font-family:verdana; font-size:14px;left:515px;top:450px;cursor:pointer;" onmouseover="viewTooltip()" onclick="checkResult()">
-	<form id="calc">
+	<div id="calc">
 		<table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:100px;top:150px;cellpadding:10px;cellspacing:10px;text-align: center">
 			<tr>
 				<th>Proof  Stress(N/mm<sup>2</sup>)</th>
@@ -242,8 +242,8 @@
 				<td id="t77"><input type="text" id="i77" style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" title="slope3*(1/LC)*(L/A<sub>o</sub>)" /></td>
 			</tr>
 		</table>
-	</form>
-	<form id="final" style="visibility:hidden">
+	</div>
+	<div id="final" style="visibility:hidden">
 		<table border="border" id="last1" style="position:absolute;font-family:verdana; font-size:14px;left:0px;top:100px;cellpadding:10px;cellspacing:10px">
 			<tr>
 				<th>Result</th>
@@ -282,7 +282,7 @@
 				<td id="p7" style="text-align:center"></td>
 			</tr>
 		</table>
-	</form>
+	</div>
 </div>
 
 <!--next  Arrow	-->	
