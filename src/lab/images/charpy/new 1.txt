@@ -1,2 +1,0 @@
-Deploying and maintaining the labs developed on Vlabs(https://vlabs.ac.in
-•	Primary responsibilities include design,development,testing and maintenance of server code.

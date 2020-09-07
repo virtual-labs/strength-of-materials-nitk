@@ -850,7 +850,6 @@ function magic()
 		document.getElementById('can10').style.visibility="hidden";
 		document.getElementById('nextButton').style.visibility="hidden";
 		document.getElementById('can101').style.visibility="hidden";
-		document.getElementById('can02').style.visibility="hidden";
 		document.getElementById('v10-0').style.visibility="hidden";
 		
 	}

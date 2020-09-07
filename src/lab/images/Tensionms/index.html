@@ -4,22 +4,22 @@
 <meta charset="UTF-8">
 <title>SOLVE</title>
 <link rel="stylesheet" href="css/ttms.css" />
-<link rel="stylesheet" type="text/css" href="css/tipped.css" />
-<script type="text/javascript" src= "js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-<script type="text/javascript" src="js/jquery-ui.js"></script>
-<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
-<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
-<script type="text/javascript" src= "js/plotly-latest.min.js"></script>
-<script type="text/javascript" src= "js/ej.web.all.min.js"></script>
-<script type="text/javascript" src= "js/tipped.js"></script>
+<link rel="stylesheet" type="text/css" href="../../css/tipped.css" />
+<script type="text/javascript" src= "../../js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.ui.touch-punch.js"></script>
+<script type="text/javascript" src="../../js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src= "../../js/plotly-latest.min.js"></script>
+<script type="text/javascript" src= "../../js/ej.web.all.min.js"></script>
+<script type="text/javascript" src= "../../js/tipped.js"></script>
 
 
 </head>
 
 
 
-<body style="margin:0">
+<body style="margin:0">  
 <!--Simulation Screen start		-->
 <div id="simscreen">
 
@@ -33,8 +33,8 @@
 	<p class="incanvas" style="font-family:verdana; font-size:14px;">To study the mechanical properties of mild steel specimen under tension load.</p>
 	<h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
 	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Universal Testing Machine,Dial Indicators,Scale & Vernier calipers.</p>
-	<img id="can00" style="position: absolute; left: 50px; top: 100px;width:50%" src="images/main.png"/>
-	<img id="can01" style="position: absolute; left: 380px; top: 100px;" src="images/dialind.png"/>
+	<img id="can00" style="position: absolute; left: 150px; top: 120px;width:50%" src="images/main.png"/>
+	<!-- <img id="can01" style="position: absolute; left: 380px; top: 100px;" src="images/dialind.png"/> -->
 </div>
 
 <!--Step1	-->	
@@ -311,14 +311,13 @@
 <!--next  Arrow	-->	
 <div id="nav">
 	<img id="nextButton" onclick="navNext();" src="images/Next.png" />
-	<img id="prevButton" onclick="navNext();" style="visibility:hidden;"src="images/prev.png" />
 </div>
  
 <!--Blinking Arrow	-->	
 <img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
 <img class ="" id="arrow2" style="visibility:hidden;" src="images/arrow1.png"/>
 
-<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
 <script>
     var simsubscreennum=0;
 	var temp=0;
@@ -333,7 +332,6 @@
 	var slopeyx=0
 	var gr=0;
 	var vf=0,vf1=0,vf2=0;
-<!-- Experimental Results -->
 	var slope=[[8,3.45,2.32],
 				[8.78,4,2.2],
 				[10,4.8,2.08],

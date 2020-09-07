@@ -1,13 +1,4 @@
-// modified 
-var simsubscreennum=0;
-var temp=0;
-var lnt=0;
-var f=0;
-var flag=0;
-var count=0;
-var count1=0;
-var repeat=0;
-var st,br,al,r1,r2,avg=0;
+var simsubscreennum=0; var temp=0; var lnt=0; var f=0; var flag=0; var count=0; var count1=0; var repeat=0; var st,br,al,r1,r2,avg=0;
 
 var steel=[[0.275,	0.276,	0.2755,	732.8039104],
            [0.269,	0.269,	0.269,	768.6460939],
@@ -282,7 +273,7 @@ function magic()
 			} 
 			else 
 			{
-				elmt.innerHTML = "Hover the mouse on the wheel <br/>to adjust specimen height";
+				elmt.innerHTML = "Hover the mouse cursor on the <br/>wheel to adjust specimen height";
 				moveWheelonHover();
 			}
 			document.getElementById('p2-2').style.visibility="visible";
@@ -606,8 +597,9 @@ function magic()
 				r2=br;
 		    if(flag==3)
 				r2=st;
-	    }
-	    avg=((r1[3]+r2[3])/2).toFixed(2);
+		}
+		var sumVal = (r1[3]+r2[3])/2;
+	    avg=(sumVal).toFixed(2);
 		if(repeat==2)
 		{
 			setTimeout(function(){
@@ -628,80 +620,87 @@ function magic()
 
 function moveWheelonHover()
 {
-	count4=0;
+	//count4=0;
 	$('#2-3').mousemove(function()
 	{
-		count4++;
+		//count4++;
 		myStopFunction();
-		var element=document.getElementById('2-4');
-		element.style.left=parseFloat(element.style.left)+0.10+'px';
-		//var position = $(element).offset();  //builtin function to find the HTML element's position 
-		// document.getElementById('p2-2').innerHTML=+position.left;
-		if(flag==1)
-			var image=document.getElementById('2-2a');
-		if(flag==2)
-			var image=document.getElementById('2-2b');
-		if(flag==3)
-			var image=document.getElementById('2-2m');
-		image.style.top=parseFloat(image.style.top)+-0.05+'px';
-		
-		//console.log(document.getElementById('2-4').style.left+", "+count1);
-		if(document.getElementById('2-4').style.left=="311px" || count4==120)
-		{
-			document.getElementById('p2-2').style.visibility="hidden";
-			document.getElementById('p2-1').style.visibility="visible";
-			document.getElementById('2-3').style.visibility="hidden";
-			document.getElementById('nextButton').style.visibility="visible";
-		}
+		$('#2-3').off("mousemove");
+		//var element=document.getElementById('2-4');
+		//element.style.left=parseFloat(element.style.left)+0.10+'px';
+		document.getElementById('2-4').style.animation="moveWheel 1s forwards";
+		setTimeout(function(){		
+			if(flag==1)
+				var specimen=document.getElementById('2-2a');
+			if(flag==2)
+				var specimen=document.getElementById('2-2b');
+			if(flag==3)
+				var specimen=document.getElementById('2-2m');
+			specimen.style.animation="moveST 1s forwards";
+
+			//image.style.top=parseFloat(image.style.top)+-0.05+'px';
+			// if(document.getElementById('2-4').style.left=="311px" || count4==120)
+			// {
+			setTimeout(function(){
+				document.getElementById('p2-2').style.visibility="hidden";
+				document.getElementById('p2-1').style.visibility="visible";
+				document.getElementById('2-3').style.visibility="hidden";
+				setTimeout(function(){
+					document.getElementById('nextButton').style.visibility="visible";
+				},200);
+			},1000);
+		},200);
 	});
 }
 function moveWheelonClick()
 {
-	count4=0;
+	//count4=0;
 	$('#2-3').click(function()
 	{
-		count4++;
+		//count4++;
 		myStopFunction();
-		var element=document.getElementById('2-4');
-		element.style.left=parseFloat(element.style.left)+4.0+'px';
-		var position = $(element).offset();  //builtin function to find the HTML element's position 
-		//document.getElementById('p2-2').innerHTML=document.getElementById('2-4').style.left;
-		if(flag==1)
-			var image=document.getElementById('2-2a');
-		if(flag==2)
-			var image=document.getElementById('2-2b');
-		if(flag==3)
-			var image=document.getElementById('2-2m');
-		image.style.top=parseFloat(image.style.top)+-1.8+'px';
-		
-		//document.getElementById('p2-2').innerHTML=document.getElementById('2-4').style.left;
-		if(document.getElementById('2-4').style.left=="311px" || count4==3)
-		{
-			//alert(document.getElementById('2-4').style.left);
-			document.getElementById('p2-2').style.visibility="hidden";
-			document.getElementById('p2-1').style.visibility="visible";
-			document.getElementById('2-3').style.visibility="hidden";
-			document.getElementById('nextButton').style.visibility="visible";
-		}
+		$('#2-3').off('click');
+		document.getElementById('2-4').style.animation="moveWheel 1s forwards";
+		// var element=document.getElementById('2-4');
+		// element.style.left=parseFloat(element.style.left)+4.0+'px';
+		// var position = $(element).offset();  //builtin function to find the HTML element's position 
+		setTimeout(function(){
+			if(flag==1)
+				var specimen=document.getElementById('2-2a');
+			if(flag==2)
+				var specimen=document.getElementById('2-2b');
+			if(flag==3)
+				var specimen=document.getElementById('2-2m');
+			specimen.style.animation="moveST 1s forwards";
+			//image.style.top=parseFloat(image.style.top)+-1.8+'px';
+			// if(document.getElementById('2-4').style.left=="311px" || count4==3)
+			// {
+			setTimeout(function(){
+				document.getElementById('p2-2').style.visibility="hidden";
+				document.getElementById('p2-1').style.visibility="visible";
+				document.getElementById('2-3').style.visibility="hidden";
+				setTimeout(function(){
+					document.getElementById('nextButton').style.visibility="visible";
+				},200);
+			},1000);
+		},200);
 	});
 }
 
 function moveKnobinXHover()
 {
-	count2=0;
+	//count2=0;
 	$('#6-6').mousemove(function()
 	{
-		count2++;
-		// myStopFunction();
-		// document.getElementById('p6-2').style.visibility="hidden";
-		var elem=document.getElementById('6-5');
-		elem.style.left=parseFloat(elem.style.left)+0.5+'px';
-		//var pos=$(elem).offset();
-		
-		//console.log(document.getElementById('6-5').style.left+", "+count2);
-		if(document.getElementById('6-5').style.left=="5px" || count2==50)
-		{
-			myStopFunction();
+		//count2++;
+		//var elem=document.getElementById('6-5');
+		//elem.style.left=parseFloat(elem.style.left)+0.5+'px';
+		myStopFunction();
+		$('#6-6').off('mousemove');  
+		document.getElementById('6-5').style.animation="moveKnobX 1.5s forwards";
+		// if(document.getElementById('6-5').style.left=="5px" || count2==50)
+		// {
+		setTimeout(function(){
 			document.getElementById('p6-2').style.visibility="hidden";
 			document.getElementById('6-6').style.visibility="hidden";
 			document.getElementById('6-61').style.visibility="visible";
@@ -717,27 +716,27 @@ function moveKnobinXHover()
 			{
 				document.getElementById('p6-1').innerHTML="Indentation diagonal length in X-direction = "+st[0]+"mm";
 			}
-			document.getElementById('nextButton').style.visibility="visible";
-		}
+			setTimeout(function(){
+				document.getElementById('nextButton').style.visibility="visible";
+			},200);
+		},1500);
 	});
 }
 
 function moveKnobinXonClick()
 {
-	count2=0;
+	//count2=0;
 	$('#6-6').click(function()
 	{
-		count2++;
-		// myStopFunction();
-		// document.getElementById('p6-2').style.visibility="hidden";
-		var elem=document.getElementById('6-5');
-		elem.style.left=parseFloat(elem.style.left)+8.33+'px';
-		//var pos=$(elem).offset();
-		
-		//document.getElementById('p6-2').innerHTML=document.getElementById('6-5').style.left+", "+count2;
-		if(document.getElementById('6-5').style.left=="5px" || count2==3)
-		{
-			myStopFunction();
+		//count2++;
+		myStopFunction();
+		$('#6-6').off('click');
+		document.getElementById('6-5').style.animation="moveKnobX 1.5s forwards";
+		// var elem=document.getElementById('6-5');
+		// elem.style.left=parseFloat(elem.style.left)+8.33+'px';
+		// if(document.getElementById('6-5').style.left=="5px" || count2==3)
+		// {
+		setTimeout(function(){
 			document.getElementById('p6-2').style.visibility="hidden";
 			document.getElementById('6-6').style.visibility="hidden";
 			document.getElementById('6-61').style.visibility="visible";
@@ -754,24 +753,26 @@ function moveKnobinXonClick()
 				document.getElementById('p6-1').innerHTML="Indentation diagonal length in X-direction = "+st[0]+"mm";
 			}
 			document.getElementById('nextButton').style.visibility="visible";
-		}
+		},1500);
 	});
 }
 
 function moveKnobinYHover()
 {
-	count3=0;
+	//count3=0;
 	$('#7-6').mousemove(function()
 	{
-		count3++;
-		var elem1=document.getElementById('7-5');
-		elem1.style.top=parseFloat(elem1.style.top)+-2.25+'px';
-		var pos1=$(elem1).offset();
-		// document.getElementById('p7-1').innerHTML="y="+pos1.top;
-		//document.getElementById('p7-2').innerHTML=document.getElementById('7-5').style.top+","+ count3;
-		if(document.getElementById('7-5').style.top=="105.75px" || count3==15)
-		{
-			myStopFunction();
+		myStopFunction();
+		//count3++;
+		// var elem1=document.getElementById('7-5');
+		// elem1.style.top=parseFloat(elem1.style.top)+-2.25+'px';
+		// var pos1=$(elem1).offset();
+
+		// if(document.getElementById('7-5').style.top=="105.75px" || count3==15)
+		// {
+		$('#7-6').off('mousemove');
+		document.getElementById('7-5').style.animation="moveKnobY 1.5s forwards";
+		setTimeout(function(){
 			document.getElementById('p7-2').style.visibility="hidden";
 			document.getElementById('7-6').style.visibility="hidden";
 			document.getElementById('7-61').style.visibility="visible";
@@ -788,24 +789,25 @@ function moveKnobinYHover()
 				document.getElementById('p7-1').innerHTML="Indentation diagonal length in Y-direction = "+st[1]+"mm";
 			}				
 			document.getElementById('nextButton').style.visibility="visible";
-		}
+		},1500);
 	});
 }
 
 function moveKnobinYonClick()
 {
-	count3=0;
-	$('#7-6').mousemove(function()
+	// count3=0;
+	$('#7-6').click(function()
 	{
-		count3++;
-		var elem1=document.getElementById('7-5');
-		elem1.style.top=parseFloat(elem1.style.top)+-10+'px';
-		var pos1=$(elem1).offset();
-		// document.getElementById('p7-1').innerHTML="y="+pos1.top;
-		//document.getElementById('p7-2').innerHTML=document.getElementById('7-5').style.top+","+ count3;
-		if(document.getElementById('7-5').style.top=="105.75px" || count3==3)
-		{
-			myStopFunction();
+		myStopFunction();
+		document.getElementById('7-5').style.animation="moveKnobY 1.5s forwards";
+		// count3++;
+		// var elem1=document.getElementById('7-5');
+		// elem1.style.top=parseFloat(elem1.style.top)+-10+'px';
+		// var pos1=$(elem1).offset();
+		// if(document.getElementById('7-5').style.top=="105.75px" || count3==3)
+		// {
+		$('#7-6').off('click');
+		setTimeout(function(){
 			document.getElementById('p7-2').style.visibility="hidden";
 			document.getElementById('7-6').style.visibility="hidden";
 			document.getElementById('7-61').style.visibility="visible";
@@ -822,6 +824,15 @@ function moveKnobinYonClick()
 				document.getElementById('p7-1').innerHTML="Indentation diagonal length in Y-direction = "+st[1]+"mm";
 			}				
 			document.getElementById('nextButton').style.visibility="visible";
-		}
+		},1500);
 	});
+}
+
+function refresh(){
+	document.getElementById('2-4').style.animation="";
+	document.getElementById('2-2a').style.animation="";
+	document.getElementById('2-2b').style.animation="";
+	document.getElementById('2-2m').style.animation="";
+	document.getElementById('7-5').style.animation="";
+	document.getElementById('6-5').style.animation="";
 }

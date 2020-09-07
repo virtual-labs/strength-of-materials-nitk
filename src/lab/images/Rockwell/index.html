@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+
+<title>SOLVE</title>
+<link rel="stylesheet" href="./css/rw.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="./js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="./js/jquery-ui.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="./js/jquery-1.10.2.js"></script> <!--is available in <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+<script type="text/javascript" src= "./js/rw.js"></script>
+
+<script>
+		   
+var simsubscreennum=0;
+var temp=0;
+var lnt=0;
+</script>
+</head>
+
+<body style="margin:0">
+<div id="simscreen">
+<div id="title"><h3>ROCKWELL  HARDNESS  TEST</h3></div>
+
+<div class="simsubscreen" id="canvas0">
+<h4 class="incanvas" style="font-family:verdana;" >Objective:</h4>
+<p class="incanvas" style="font-family:verdana; font-size:14px;">To find the Rockwell hardness number of mild steel, cast iron, brass, aluminium and spring steel etc.</p><br/>
+<h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
+<p class="incanvas" style="font-family:verdana; font-size:14px;">Rockwell hardness testing machine</p>
+<img id="" style="position: absolute; left: 250px; top: 120px;" title="" src="Images/human.png"/>
+</div>
+
+<div class="simsubscreen" id="canvas1" style="visibility:hidden">
+<strong id="titlestep" class="incanvas">STEP </strong>
+<span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
+
+<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Select a specimen of your choice (spring steel, cast iron, mild steel, brass, aluminium). <!--  Clean the surface of the specimens from dirt, oil and scale and rub with sand paper. Place it on the work table. --></p>
+<p id="p1" style="position:absolute; left: 10px; top:70px; font-family:verdana; font-size:14px;">Select material </p>
+<p id="p1-1" style="position:absolute; left: 10px; top:70px;  font-family:verdana; font-size:14px; visibility:hidden;">Selected material :</p>
+<p id="p1-2" style="position:absolute; left: 145.5px; top:70px; color:#FC0D05;  font-family:verdana; font-size:14px; visibility:hidden;"></p>
+
+<img id="ci" style="position:absolute; left:20px; top:140px; cursor:pointer;" src="Images/ci.png" />
+<p id="p2" style="position:absolute; left:25.5px; top:160px; font-family:verdana; cursor:pointer; font-size:14px; ">Cast Iron</p>
+
+<img id="ms" style="position:absolute; left:160px; top:140px; cursor:pointer;" src="Images/ms.png" />
+<p id="p3" style="position:absolute; left:167px; top:160px; font-family:verdana; font-size:14px; cursor:pointer;">Mild Steel</p>
+
+<img id="ss" style="position:absolute; left:300px; top:140px; cursor:pointer;" src="Images/ss.png" />
+<p id="p6" style="position:absolute; left:315px; top:155px; font-family:verdana; font-size:14px; cursor:pointer;">Spring<br/>&nbsp;Steel</p>
+
+<img id="br" style="position:absolute; left:435px; top:140px; cursor:pointer;" src="Images/br.png" />
+<p id="p4" style="position:absolute; left:452px; top:160px; font-family:verdana; font-size:14px; cursor:pointer;">Brass</p>
+
+<img id="al" style="position:absolute; left:570px; top:140px; cursor:pointer;" src="Images/Al.png" />
+<p id="p5" style="position:absolute; left:575px; top:160px; font-family:verdana; font-size:14px; cursor:pointer;">Aluminium</p>
+
+<p id="p7" style="position:absolute; left: 10px; top:250px; font-family:verdana; font-size:14px; cursor:pointer; visibility:hidden;">Type of indentor to be used : </p>
+<p id="p8" style="position:absolute; color:#FC0D05; left: 220px; top:250px; font-family:verdana; font-size:14px; cursor:pointer; visibility:hidden;"></p>
+<img id="ball" style="position:absolute; width:15%; left:100px; top:300px; visibility:hidden; " src="Images/ball.png" />
+<img id="cone" style="position:absolute;  left:100px; top:310px; visibility:hidden; " src="Images/cone.png" />
+</div> 
+
+<div class="simsubscreen" id="canvas2" style="visibility:hidden"> 
+<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
+<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px; ">&nbsp;The hand wheel is turned until the specimen is in contact with the indenter and the pointer of the smaller dial gauge reaches the RED DOT so that minor load of 10kg is applied.</p> 
+<img id="2-0" style="position: absolute; left: 370px; top: 100px;" src="Images/2.png"/>
+<img id="2-3" style="position:absolute; left:554px; top:343px; " src="Images/unload.png" />
+<img id="2-10" style="position:absolute; left:398px; top:406px;  " src="Images/a12.png" /> 
+<img id="2-101" style="position:absolute; left:401px; top:406px;  visibility:hidden;" src="Images/a12.png" /> 
+<img id="2-102" style="position:absolute; left:401px; top:406px;  visibility:hidden;" src="Images/a12.png" /> 
+<img id="w" style="position:absolute; left:392px; top:406px;  " src="Images/w.png" /> 
+<img id="2-01" style="position: absolute; left: 402px; top: 398px;" src="Images/12.png"/>
+<img id="2-6" style="position:absolute; left:567px; top:256px; " src="Images/3.png" />
+<img id="2-1" style="position: absolute; width:40%; left: 0px; top: 110px;" src="Images/clock3.png"/>
+<img id="2-1n" style="position: absolute; left: 52.5px; top: 262px; visibility:hidden;" src="Images/needle2.png"/>
+<img id="2-1n2" style="position: absolute; left: 139px; top: 170px; visibility:hidden;" src="Images/needle3.png"/>
+<img id="2-2" style="position: absolute; left: 132.5px; top: 220px;" src="Images/needle1.png"/>
+<img id="2-21" style="position: absolute; left: 132.5px; top: 220px; visibility:hidden;" src="Images/needle1.png"/>
+<img id="2ci" style="position:absolute; left:408px; top:256.5px; visibility:hidden;" src="Images/ci2.png" />
+<img id="2br" style="position:absolute; left:408px; top:256.5px; visibility:hidden;" src="Images/br2.png" />
+<img id="2al" style="position:absolute; left:408px; top:256.5px; visibility:hidden;" src="Images/al2.png" />
+<img id="2ms" style="position:absolute; left:408px; top:256.50px; visibility:hidden;" src="Images/ms2.png" />
+<p id="p2-1" style="position:absolute; left:230px; top:370px; font-family:verdana; font-size:10px; "></p> 
+<p id="2-4" style="position:absolute; left:320px; top:233px; font-family:verdana; visibility:hidden; font-size:9px; ">Minor load of 10kg </br>is applied</p> 
+<p id="2-5" style="position:absolute; left:15px; top:445px; font-family:verdana; font-size:14px;"> </p> 
+</div>
+
+<div class="simsubscreen" id="canvas3" style="visibility:hidden"> 
+<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+<span class="circlebg" id="stepnumber">&nbsp;3&nbsp;</span>
+<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px; ">&nbsp;Based on the material the major load is set & the motor is switched ON. The hand lever is kept in load position. The reading is noted down using B-scale or C-scale based on indentor used.</p>  
+<img id="3-0" style="position: absolute; left: 370px; top: 100px;" src="Images/2.png"/>
+<img id="3-1" style="position: absolute; width:40%; left: 0px; top: 110px;" src="Images/clock3.png"/>
+<img id="3-2" style="position: absolute; left: 132.5px; top: 220.5px;" src="Images/needle1.png"/>
+<img id="3-3" style="position:absolute; left:567px; top:256px; cursor:pointer; " src="Images/3.png" />
+<img id="3-31" style="position:absolute; left:115px; top:219.75px; " src="Images/clock1.png" />
+<img id="3-1n" style="position: absolute; left: 52.5px; top: 262px; visibility:hidden;" src="Images/needle2.png"/>
+<img id="3-1n1" style="position: absolute; left: 52.5px; top: 262px; visibility:hidden;" src="Images/needle2.png"/>
+<img id="3-1n2" style="position: absolute; left: 139px; top: 170px; visibility:hidden;" src="Images/needle3.png"/>
+<img id="3-1n21" style="position: absolute; left: 139px; top: 170px; visibility:hidden;" src="Images/needle3.png"/>
+<img id="3-4" style="position:absolute; left:570px; top:227px; visibility:hidden;" src="Images/hand.png" />
+<img id="3-41" style="position:absolute; left:570px; top:227px; visibility:hidden;" src="Images/hand.png" />
+<img id="3-5" style="position:absolute; left:554px; top:343px; cursor:pointer; visibility:hidden;" src="Images/unload.png" />
+<img id="3-6" style="position:absolute; left:554.25px; top:340px; cursor:pointer; visibility:hidden;" src="Images/load.png" />
+<img id="3-7" style="position:absolute; width:20%; left:600px; top:100px; visibility:hidden;" src="Images/clock2.png" />
+<img id="3-8" style="position:absolute;  left:668.5px; top:122px; visibility:hidden;" src="Images/needle.png" />
+<img id="3ci" style="position:absolute; left:408px; top:256.5px; visibility:hidden;" src="Images/ci2.png" />
+<img id="3br" style="position:absolute; left:408px; top:256.5px; visibility:hidden;" src="Images/br2.png" />
+<img id="3al" style="position:absolute; left:408px; top:256.5px; visibility:hidden;" src="Images/al2.png" />
+<img id="3ms" style="position:absolute; left:408px; top:256.50px; visibility:hidden;" src="Images/ms2.png" />
+
+<img id="3-12" style="position:absolute; left:551.5px; top:119.5px;" src="Images/35.png"/> 
+<img id="3-121" style="position:absolute; left:551.5px; top:119.5px;" src="Images/35.png"/> 
+<img id="3-10" style="position:absolute; left:551.5px; top:119.5px;" src="Images/33.png"/> 
+<img id="3-101" style="position:absolute; left:551.5px; top:119.5px;" src="Images/33.png"/> 
+<img id="3-11" style="position:absolute; left:551.5px; top:119px;" src="Images/34.png"/> 
+<img id="3-9" style="position:absolute; left:580px; top:100px;" src="Images/31.png"/> 
+
+<p id="status" style="position:absolute; left: 10px; top:450px; font-family:verdana; font-size:14px;  visibility:hidden;">Rockwell Hardness number = </p>
+<p id="status2" style="position:absolute; left: 10px; top:450px; font-family:verdana; font-size:14px; visibility:hidden;">Rockwell Hardness number = </p>
+<p id="status5" style="position:absolute; left: 595px; top:340px; font-family:verdana; font-size:12px; visibility:hidden;">Click on the hand lever</br> to unload</p>
+</div>
+	
+<div class="simsubscreen" id="canvas4" style="visibility:hidden">
+<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
+<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp; Two trials is noted for all the four specimens and the average of the two trials gives the final Rockwell Hardness number. </p>
+<table id="tab" border size=1 style="position:absolute; left:60px; top:120px;  font-family:verdana; font-size:14px; ">
+<tr>
+    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; ">Material</td>
+    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Total Load P ( kg )</td>
+    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Scale Used</td>
+    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Rockwell Hardness <br/> number ( RHN )</td>
+</tr>	
+<tr>
+    <td id="1" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;"></td>
+    <td id="2" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;"></td>
+    <td id="3" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;"></td>
+    <td id="4" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;"></td>
+</tr>
+</table>
+<table id="tab2" border size=1 style="position:absolute; left:60px; top:120px;  font-family:verdana; font-size:14px; visibility:hidden">
+<tr>
+    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; ">Trial</td>
+    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; ">Material</td>
+    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Total Load P ( kg )</td>
+    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Scale Used</td>
+    <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">Rockwell Hardness <br/> number ( RHN )</td>
+</tr>	
+<tr>
+    <td id="00" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">1</td>
+    <td id="11" rowspan="2" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;"></td>
+    <td id="22" rowspan="2" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;"></td>
+    <td id="33" rowspan="2" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;"></td>
+    <td id="44" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;"></td>
+</tr>
+<tr>
+    <td id="00" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;">2</td>
+     <td id="55" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px;"></td>
+</tr>
+</table>
+<p id="status3" style="position:absolute; left:60px; top:300px; font-family:verdana; font-size:14px; visibility:hidden;">Average Rockwell Hardness number = </p>
+<p id="status4" style="position:absolute; left:340px; top:300px;text-decoration:underline; border-bottom:1px solid black; font-family:verdana; font-size:14px; visibility:hidden;"></p>
+<img id="66" style="position:absolute; left:554px; top:343px; visibility:hidden;" src="Images/white.png" />
+</div>
+
+<div id="">	
+<p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;font-family:verdana; font-size:14px;"><strong>Trial = </strong></p>
+</div>
+
+<div id="nav">
+	<img id="nextButton" onclick="navNext(); " src="Images/Next.png" />
+</div>
+
+<img class ="" id="arrow1" style="visibility:hidden;" src="Images/arrow1.png"/>
+
+<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+
+</body>
+</html>

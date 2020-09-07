@@ -1,7 +1,3 @@
-/* #tab{ 
-     padding: 10px; 
-     margin: 8px 0; 
-}	 */
 html
 {
     -moz-user-select     : none;
@@ -34,7 +30,7 @@ border:solid 1px;
 
 #copyright{
 position: absolute;
-left:50px;
+left:45px;
 top: 580px;
 font-family: verdana; 
 font-size:12px
@@ -57,13 +53,11 @@ text-transform: uppercase;
 padding-top:2px;
 margin:0px;}
 
-
 .stepfont
 {
 	font-family: verdana;
 	font-size: 14px;
 }
-
 
 .simsubscreen
 {
@@ -99,7 +93,6 @@ cursor:pointer;
     top: 532px;
 cursor:pointer;
 }
-
 
 .steptext
 {
@@ -167,9 +160,6 @@ background:#000
     0% {transform: rotate(0deg);}
     100% {transform: rotate(49deg);}
 }
-
-
-
 
 /* CSS to swing hammer not used in javascript instead rotation() is used */
 @-moz-keyframes swing{
@@ -260,9 +250,6 @@ background:#000
 25% {transform: rotate(25deg);}    
 }
 
-
-
-
 @-webkit-keyframes mymove2 {
     from   {left: 200px; top: 290px;}
     to  {left:-290px; top:290px;}
@@ -273,8 +260,6 @@ background:#000
     to  {left:-290px; top:290px;}
      
 }
-
-
 
 /* moving handler */
 /* Chrome, Safari, Opera */
@@ -373,79 +358,77 @@ background:#000
     to  {left:25px; top:245px;}
  }
  
- 
- 
  @-webkit-keyframes move4 {
     from   { left:50px; top:250px;}
     to  {left:50px; top:245px;}
-    }
+}
 
 @keyframes move4 {
    from   {left:50px; top:250px;}
     to  {left:50px; top:245px;}
- }
+}
  
- @-webkit-keyframes move5 {
+@-webkit-keyframes move5 {
     from   {left:50px; top:245px;}
     to  {left:50px; top:235px;}
-    }
+}
 
 @keyframes move5 {
     from   {left:50px; top:245px;}
     to  {left:50px; top:235px;}
-    }
- }
+}
  
- 
-  @-webkit-keyframes move6 {
+@-webkit-keyframes move6 {
     from   {left:50px; top:235px;}
     to  {left:50px; top:224.5px;}
-    }
+}
 
 @keyframes move6 {
    from   {left:50px; top:235px;}
     to  {left:50px; top:224.5px;}
- }
- 
- @-webkit-keyframes moveArrow {
-0% {left:392px; top:380.90px;}
-10%{left:397px; top:380.90px;}
-20% {left:402px; top:381.30px;}
-30% {left:407px; top:381.90px;}
-40% {left:412px; top:381.90px;}
-50% {left:417px; top:381.90px;}
-60% {left:422px; top:381.90px;}
-70% {left:427px; top:381.90px;}
-80% {left:432px; top:381.90px;}
-85% {left:437px; top:381.90px;}
-90% {left:444px; top:381.90px;}
-100% {left:452px; top:377.90px;}
 }
-
-/* Standard syntax */
-@keyframes moveArrow {
-0% {left:392px; top:380.90px;}
-10%{left:397px; top:380.90px;}
-20% {left:402px; top:381.30px;}
-30% {left:407px; top:381.90px;}
-40% {left:412px; top:381.90px;}
-50% {left:417px; top:381.90px;}
-60% {left:422px; top:381.90px;}
-70% {left:427px; top:381.90px;}
-80% {left:432px; top:381.90px;}
-85% {left:437px; top:381.90px;}
-90% {left:444px; top:381.90px;}
-100% {left:452px; top:377.90px;}
-}
-
-
 
 @-webkit-keyframes movem2 {
     from   {left:82px; top:208px;}
     to  {left:82px; top:204px; }
-    }
+}
 
 @keyframes movem2 {
   from   {left:82px; top:208px;}
     to  {left:82px; top:204px; }
-    }
+}
+
+/* To move supporting table */
+/* Chrome, Safari, Opera */
+@-webkit-keyframes moveST {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0, -11.75px );}
+}
+
+/* Standard syntax */
+@keyframes moveST {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, -11.75px);}
+}
+
+@-webkit-keyframes moveWheel {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(8.5px, 0 );}
+}
+
+/* Standard syntax */
+@keyframes moveWheel {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(8.5px, 0);}
+}
+
+@-webkit-keyframes moveKnob {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(23px, 0 );}
+}
+
+/* Standard syntax */
+@keyframes moveKnob {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(23px, 0);}
+}

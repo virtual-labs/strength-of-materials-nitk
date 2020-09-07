@@ -2,19 +2,9 @@
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
-
 <title>SOLVE</title>
-<link rel="stylesheet" href="it.css" />
-<!-- <link rel="stylesheet" type="text/css" href="csshake.min.css"> -->
-<!-- <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css"> -->
-<!-- <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake-vertical.min.css"> -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  -->
-<!-- <script type="text/javascript" src= "jquery-1.7.1.min.js"></script> -->
-<script type="text/javascript" src= "it.js"></script>
-<!-- <script type="text/javascript" src= "jquery-2.1.4.js"></script> -->
-<!-- <script type="text/javascript" src= "ej.web.all.js"></script> -->
-<!-- <script type="text/javascript" src="/assets/script/canvasjs.min.js"></script> -->
-
+<link rel="stylesheet" href="./css/it.css" />
+<script type="text/javascript" src= "./js/it.js"></script>
 <script>
 var simsubscreennum=0;
 var temp=0;
@@ -23,47 +13,23 @@ var lnt=0;
 </head>
 
 <body style="margin:0">
-<!--Simulation Screen start-->
+
 <div id="simscreen">
 
-<!--Title of Simulation		-->
 <div id="title"><h3>Izod Impact Test </h3></div>
 
-<!--SubScreen Home	-->	
 <div class="simsubscreen" id="canvas0">
-<h4 class="incanvas" style="font-family:verdana;" >Objective</h4>
+<h4 class="incanvas" style="font-family:verdana;" >Objective:</h4>
 <p class="incanvas" style="font-family:verdana; font-size:14px;">To find the impact resistance of mild steel and cast iron.</p><br/>
 <h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
 <p class="incanvas" style="font-family:verdana; font-size:14px;">Impact Testing Machine</p>
-<img id="" style="position: absolute; left: 200px; top: 150px;" src="images/i2.png"/>
+<img id="" style="position: absolute; left: 200px; top: 150px;" src="images/human.png"/>
 </div>
 
-
-<!--Step1	-->	
 <div class="simsubscreen" id="canvas1" style="visibility:hidden">
 <strong id="titlestep" class="incanvas">STEP </strong>
 <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
-
-<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Test for friction loss is conducted by adjusting the pointer to 164 Joules, then the pendulum is released by operating the lever without keeping the specimen. </p>
-<img id="i1-1" style="position: absolute; left: 320px; top: 185px;" src="images/hammer2.png"/>
-<img id="i1-2" style="position: absolute; left: 303px; top: 162px; visibility:hidden;" src="images/hammer.png"/>
-<img id="i1" style="position: absolute; left: 200px; top: 125px;" src="images/i3.png"/>
-<img id="i1-3" style="position: absolute; left: 416.70px; top: 155.45px; cursor:pointer;" src="images/key_off.png"/>
-<img id="i1-4" style="position: absolute; left: 410.50px; top: 155.45px; cursor:pointer; visibility:hidden;" src="images/key_on.png"/>
-<img id="i1-5" style="position: absolute; left: 325px; top: 191px;" src="images/needle.png"/>
-<img id="i1-51" style="position: absolute; left: 290px; top: 191.5px; visibility:hidden;" src="images/needle1.png"/>
-<img id="i1-52" style="position: absolute; left: 333px; top: 193.5px; visibility:hidden;" src="images/needle2.png"/>
-<img id="i1-53" style="position: absolute; left: 330px; top: 193px; visibility:hidden;" src="images/needle3.png"/>
-<img id="i1-54" style="position: absolute; left: 289px; top: 191.5px; visibility:hidden;" src="images/needle4.png"/>
-<p id="1-1" style="position:absolute;left: 50px; top:470px;  font-family:verdana; font-size:16px;">Loss of energy due to friction E<sub>f</sub>=_____J</p>
-</div>
-
-
-<!--Step2 -->	
-<div class="simsubscreen" id="canvas2" style="visibility:hidden"> 
-<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
-<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
-<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px; ">&nbsp;Select the Izod test specimen:</p> 
+<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px; ">&nbsp;Select the Izod test specimen.</p> 
 <p id="2-1" style="position:absolute;left: 70px; top:220px; font-family:verdana; font-size:16px;">Selected specimen :</p>
 <p id="2-2" style="position:absolute; left: 240px; top:220px; font-family:verdana; font-size:16px; color:#FC0D05; visibility:hidden;">Cast Iron</p>
 <p id="2-3" style="position:absolute; left: 240px; top:220px; font-family:verdana; font-size:16px; color:#FC0D05; visibility:hidden;">Mild Steel</p>
@@ -110,9 +76,23 @@ var lnt=0;
 </tr>
 </table>
 </div>
-
-
-<!--Step3-->	
+	
+<div class="simsubscreen" id="canvas2" style="visibility:hidden"> 
+<strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
+<span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
+<p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Test for friction loss is conducted by adjusting the pointer to 164 Joules, then the pendulum is released by operating the lever without keeping the specimen. </p>
+<img id="i1-1" style="position: absolute; left: 320px; top: 185px;" src="images/hammer2.png"/>
+<img id="i1-2" style="position: absolute; left: 303px; top: 162px; visibility:hidden;" src="images/hammer.png"/>
+<img id="i1" style="position: absolute; left: 200px; top: 125px;" src="images/i3.png"/>
+<img id="i1-3" style="position: absolute; left: 416.70px; top: 155.45px; cursor:pointer;" src="images/key_off.png"/>
+<img id="i1-4" style="position: absolute; left: 410.50px; top: 155.45px; cursor:pointer; visibility:hidden;" src="images/key_on.png"/>
+<img id="i1-5" style="position: absolute; left: 325px; top: 191px;" src="images/needle.png"/>
+<img id="i1-51" style="position: absolute; left: 290px; top: 191.5px; visibility:hidden;" src="images/needle1.png"/>
+<img id="i1-52" style="position: absolute; left: 333px; top: 193.5px; visibility:hidden;" src="images/needle2.png"/>
+<img id="i1-54" style="position: absolute; left: 289px; top: 191.5px; visibility:hidden;" src="images/needle4.png"/>
+<p id="1-1" style="position:absolute;left: 50px; top:470px;  font-family:verdana; font-size:16px;">Loss of energy due to friction E<sub>f</sub>=_____J</p>
+</div>
+	
 <div class="simsubscreen" id="canvas3" style="visibility:hidden"> 
 <strong id="titlestep" class="incanvas">STEP &nbsp;</strong> 
 <span class="circlebg" id="stepnumber">&nbsp;3&nbsp;</span>
@@ -123,7 +103,6 @@ var lnt=0;
 <p id="3-1" style="position:absolute; left: 320px; top:100px; font-family:verdana; font-size:16px; visibility:hidden;">Selected specimen :</p>
 <p id="3-2" style="position:absolute; left: 490px; top:100px; font-family:verdana; font-size:16px; color:#FC0D05; visibility:hidden;">Cast Iron</p>
 <p id="3-3" style="position:absolute; left: 490px; top:100px; font-family:verdana; font-size:16px; color:#FC0D05; visibility:hidden;">Mild Steel</p>
-
 
 <table id="tabci2" border size=1 style="position:absolute; left: 320px; top:150px; visibility:hidden; font-family:verdana; font-size:14px;">
 <tr>
@@ -144,7 +123,6 @@ var lnt=0;
 </tr>
 </table>
 
-
 <table id="tabms2" border size=1 style="position:absolute; left: 320px; top:150px; visibility:hidden; font-family:verdana; font-size:14px;">
 <tr>
     <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; margin: 8px 0;">Length L (mm)</th>
@@ -164,9 +142,7 @@ var lnt=0;
 </tr>
 </table>
 </div>
-
-
-<!--Step4-->	
+	
 <div class="simsubscreen" id="canvas4" style="visibility:hidden">
 <strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span>
 <p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;The pendulum is released. The hammer strikes against the specimen, breaks it and swings further then the observation is noted down.</p>
@@ -191,11 +167,8 @@ var lnt=0;
 <p id="4-2" style="position:absolute;left: 50px; top:480px;  font-family:verdana; font-size:16px;">Energy for failure of specimen = E<sub>t</sub> - E<sub>f</sub>=_____J</p>
 </div>
 
- 
- 
-<!--Step5	-->	
 <div class="simsubscreen" id="canvas5" style="visibility:hidden">
-<h2 id="step5-1" style="font-family:verdana;">Observations:</h2>
+<h2 id="step5-1" style="font-family:verdana; position: absolute; left:-10px; ">Observations:</h2>
 <p id="5-1i" style="position: absolute; left:50px; top:100px;font-family:verdana; font-size:16px; visibility:hidden;">Initial energy of the hammer = 164 Joules</p>
 <p id="5-2i" style="position: absolute; left:50px; top:175px;font-family:verdana; font-size:16px; visibility:hidden;">Loss of energy due to friction, E<sub>f</sub> = </p>
 <p id="5-3i" style="position: absolute; left:50px; top:250px;font-family:verdana; font-size:16px; visibility:hidden;">Total Loss of energy E<sub>t</sub> during transit of hammer = </p>
@@ -206,12 +179,12 @@ var lnt=0;
 <p id="5-3s" style="position: absolute; left:50px; top:250px;font-family:verdana; font-size:16px; visibility:hidden;">Total Loss of energy E<sub>t</sub> during transit of hammer = </p>
 <p id="5-4s" style="position: absolute; left:50px; top:325px;font-family:verdana; font-size:16px; visibility:hidden;">Energy for failure of specimen= KU / Impact Value = E<sub>t</sub> - E<sub>f</sub> = </p>
 
-<table id="tab5" border size=1 style="position:absolute; left:-0px; top:100px; visibility:hidden; font-family:verdana; font-size:14px; ">
+<table id="tab5" border size=1 style="position:absolute; left:-5px; top:100px; visibility:hidden; font-family:verdana; font-size:14px; ">
 <tr>
     <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; ">Trial</th>
 	<td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; ">Loss of energy due to friction, E<sub>f</sub> (J)</td>
 	<td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; ">Total Loss of energy E<sub>t</sub> during transit of hammer (J)</td>
-	<td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; ">Energy for failure of specimen = KU / Impact Value = E<sub>t</sub> - E<sub>f</sub> in J</td>
+	<td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; ">Energy for failure of specimen = KU / Impact Value = E<sub>t</sub> - E<sub>f</sub> (J)</td>
 </tr>
 <tr>
     <td style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; ">1</th>
@@ -232,29 +205,20 @@ var lnt=0;
 	<td id="5-33" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; "></td>
 </tr>
 </table>
-<p id="5-5" style="position: absolute; left:150px; top:325px;font-family:verdana; font-size:16px; visibility:hidden;">Average energy for failure of specimen = </p>
+<p id="5-5" style="position: absolute; left:10px; top:325px;font-family:verdana; font-size:16px; visibility:hidden;">Average energy for failure of specimen = </p>
 </div>
-
-
-
 
 <div id="">	
 <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;font-family:verdana; font-size:14px;"><strong>Trial = </strong></p>
 </div>
-
-
-<!--next  Arrow	-->	
+	
 <div id="nav">
 	<img id="nextButton" onclick="navNext(); " src="images/Next.png" />
 </div>
 
-
-<!--Blinking Arrow	-->	
 <img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
 
-<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
-
-
+<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
 
 </body>
 </html>

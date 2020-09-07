@@ -27,19 +27,6 @@ function navNext()
 }
 
 
-// function setVisibility(id) {
-// if(document.getElementById('bt1').value=='Hide Layer'){
-// document.getElementById('bt1').value = 'Show Layer';
-// document.getElementById(id).style.display = 'none';
-// }else{
-// document.getElementById('bt1').value = 'Hide Layer';
-// document.getElementById(id).style.display = 'inline';
-// }
-// }
-// function sleep(n) {
-  // for (var i = 0; i < n; i++) {
-    // }
-  // }
 
 //-----------------------------------------blink arrow on the next step---------------------------------------------
 //blink arrow on the next step

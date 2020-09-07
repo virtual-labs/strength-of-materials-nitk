@@ -1,7 +1,3 @@
-/* #tab{ 
-     padding: 10px; 
-     margin: 8px 0; 
-}	 */
 html
 {
     -moz-user-select     : none;
@@ -33,7 +29,7 @@ border:solid 1px;
 
 #copyright{
 position: absolute;
-left:50px;
+left:45px;
 top: 580px;
 font-family: verdana; 
 font-size:12px
@@ -63,11 +59,10 @@ margin:0px;}
 	font-size: 14px;
 }
 
-
 .simsubscreen
 {
 position:absolute;
-left: 50px;
+left: 40px;
 top: 50px;
 height:530px;
 width:745px;
@@ -475,10 +470,6 @@ background:#000
     transition: all 0.5s ease-in-out;
 }
 
-
-
-
-
 @-moz-keyframes rotNeedle{
 0%  { transform: rotate(100deg);}
 100% { transform: rotate(0deg);}
@@ -486,4 +477,15 @@ background:#000
 @keyframes rotNeedle{
 0%  { transform: rotate(100deg);}
 100% { transform: rotate(0deg);}
+}
+
+@-webkit-keyframes moveWheel {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(8px, 0 );}
+}
+
+/* Standard syntax */
+@keyframes moveWheel {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(8px, 0);}
 }

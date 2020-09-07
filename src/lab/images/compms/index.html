@@ -3,23 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <title>SOLVE</title>
-<link rel="stylesheet" href="css/ctms.css" />
-<link rel="stylesheet" type="text/css" href="css/tipped.css" />
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  -->
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script> -->
-<script type="text/javascript" src= "js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-<script type="text/javascript" src="js/jquery-ui.js"></script>
-<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
-<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
-<script type="text/javascript" src= "js/plotly-latest.min.js"></script>
-<script type="text/javascript" src= "js/ej.web.all.min.js"></script>
-<script type="text/javascript" src= "js/tipped.js"></script>
-
-<!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
-
-
-
+<link rel="stylesheet" href="./css/ctms.css" />
+<link rel="stylesheet" type="text/css" href="../../css/tipped.css" />
+<script type="text/javascript" src= "../../js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../../js/jquery.ui.touch-punch.js"></script>
+<script type="text/javascript" src="../../js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src= "../../js/plotly-latest.min.js"></script>
+<script type="text/javascript" src= "../../js/ej.web.all.min.js"></script>
+<script type="text/javascript" src= "../../js/tipped.js"></script>
 </head>
 
 
@@ -38,8 +31,8 @@
 	<p class="incanvas" style="font-family:verdana; font-size:14px;">To study the mechanical properties of mild steel specimen under compression.</p>
 	<h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
 	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Universal Testing Machine,Dial Indicators,Scale & Vernier calipers.</p>
-	<img id="can00" style="position: absolute; left: 50px; top: 100px;" src="images/main.png"/>
-	<img id="can01" style="position: absolute; left: 400px; top: 120px;" src="images/dialind.png"/>
+	<img id="can00" style="position: absolute; left: 150px; top: 100px;" src="images/main.png"/>
+	<!-- <img id="can01" style="position: absolute; left: 400px; top: 120px;" src="images/dialind.png"/> -->
 </div>
 
 <!--Step1	-->	
@@ -271,14 +264,13 @@
 <!--next  Arrow	-->	
 <div id="nav">
 	<img id="nextButton" onclick="navNext();" src="images/Next.png" />
-	<img id="prevButton" onclick="navNext();" style="visibility:hidden;"src="images/prev.png" />
 </div>
  
 <!--Blinking Arrow	-->	
 <img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
 <img class ="" id="arrow2" style="visibility:hidden;" src="images/arrow1.png"/>
 
-<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Applied Mechanics & Hydraulics</div>
+<div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
 <script>
 var simsubscreennum=0;
 var temp=0;
@@ -296,7 +288,6 @@ var vf=0,vf1=0,vf2=0;
 var grp;
 var zm=0;
 	
-<!-- Experimental Results -->
 var slope=[[160.0,85.0,189.66],
 			[157.14,71.43, 208.0],
 			[126.32,54.72,155.56],
@@ -1061,6 +1052,6 @@ $(function()
 	});
 });
 </script>
-<script type="text/javascript" src= "js/ctms.js"></script>
+<script type="text/javascript" src= "./js/ctms.js"></script>
 </body>
 </html>
