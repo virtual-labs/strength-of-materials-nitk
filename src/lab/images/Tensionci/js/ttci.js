@@ -331,8 +331,8 @@ $( function()
 			);
 			$('#can36').animate(
 			{
-				left:'203px',
-				top: '180px'
+				left:'201px',
+				top: '177px'
 			},
 			1500,
 			function()
@@ -374,8 +374,8 @@ $( function()
 					);
 			$('#can36').animate(
 						{
-						left:'224px' ,
-						top: '202px'
+							left:'218px' ,
+							top: '195px'
 					},
 					1500,
 			function()
@@ -410,15 +410,15 @@ $( function()
 		{
 			$('#can34').animate(
 						{
-							left:'240px',
-							top: '130px'
+							left:'230px',
+							top: '120px'
 						},
 						1500
 					);
 			$('#can36').animate(
 						{
-						left:'251px',
-						top: '225px'
+							left:'234px' ,
+							top: '212px'
 					},
 					1500,
 					function()
@@ -435,12 +435,55 @@ $( function()
 							myStopFunction();
 							$("#can34").off('click');
 							$('#can34').animate({
-									left:'240px',
-									top: '150px' 
+									left:'230px', 
+									top:'140px' 
 								});
 							setTimeout(function()
 							{
 								document.getElementById('can35c').style.visibility="visible";
+								move4();
+							},500);
+						});
+					});
+		},1000);
+	}
+
+	function move4() {
+		setTimeout(function()
+		{
+			$('#can34').animate(
+						{
+							left:'242px',
+							top: '135px'
+						},
+						1500
+					);
+			$('#can36').animate(
+						{
+						left:'252px',
+						top: '230px'
+					},
+					1500,
+					function()
+					{
+						myInt = setInterval(function(){ animatearrow(); }, 500);
+						document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:365px; top: 140px; height: 30px; z-index: 10;";
+						document.getElementById("arrow1").style.WebkitTransform = "rotate(-90deg)"; 
+						 // Code for IE9
+						document.getElementById("arrow1").style.msTransform = "rotate(-90deg)"; 
+						 // Standard syntax
+						document.getElementById("arrow1").style.transform = "rotate(-90deg)";
+						$('#can34').one('click',function()
+						{
+							myStopFunction();
+							$("#can34").off('click');
+							$('#can34').animate({
+									left:'240px',
+									top: '157px' 
+								});
+							setTimeout(function()
+							{
+								document.getElementById('can35d').style.visibility="visible";
 							},500);
 							setTimeout(function()
 							{
@@ -448,7 +491,7 @@ $( function()
 								document.getElementById('can36').style.visibility="hidden";
 								document.getElementById('v3-0').style.visibility="hidden";
 								document.getElementById('nextButton').style.visibility="visible";
-							},1700);
+							},1500);
 						});
 					});
 		},1000);
@@ -482,7 +525,7 @@ $( function()
 														1500,
 														function()
 														{
-															$('#v9-0').text("Reduction in area is negligible");
+															$('#v9-0').text("Change in diameter is negligible");
 															document.getElementById('nextButton').style.visibility="visible";
 
 														});
@@ -674,7 +717,7 @@ function checkResult() {
  
 function rodstatus()
 {
-	$('#v10-0').text("Elongation is negligible");
+	$('#v10-0').text("Change in length is negligible");
 	document.getElementById('nextButton').style.visibility="visible";
 }
 
@@ -743,6 +786,7 @@ function magic()
 		document.getElementById('can35a').style.visibility="hidden";
 		document.getElementById('can35b').style.visibility="hidden";
 		document.getElementById('can35c').style.visibility="hidden";
+		document.getElementById('can35d').style.visibility="hidden";
 		document.getElementById('can34').style.visibility="hidden";
 		myInt = setInterval(function(){ animatearrow(); }, 500);
 		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:260px; top: 500px; height: 30px; z-index: 10;";

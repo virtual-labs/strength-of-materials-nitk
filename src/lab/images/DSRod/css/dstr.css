@@ -158,6 +158,10 @@ th,td
 	background:#000
 }
 
+th {
+	padding: 10px;
+}
+
 /* -------------------------------------- water ---------------------------------------- */
 /* Chrome, Safari, Opera */
 @-webkit-keyframes water-4 {
@@ -561,6 +565,49 @@ to {left:400px; top: 135px;}
 	100% { left:598px; top: 287px;}  
 }
 
+
+@keyframes drodLeft-move{
+	0%  { left:560px; top: 255px;}
+	5% { left:560px; top: 258px;}   
+	10% { left:560px; top: 260px;}   
+	15% { left:560px; top: 262px;}   
+	20% { left:560px; top: 264px;}   
+	25% { left:558px; top: 266px;}   
+	30% { left:557px; top: 268px;}   
+	35% { left:556px; top: 268px;}   
+	40% { left:555px; top: 268px;}   
+	45% { left:554px; top: 268px;}   
+	50% { left:553px; top: 270px;}   
+	55% { left:551px; top: 270px;}   
+	60% { left:549px; top: 270px;}   
+	65% { left:549px; top: 270px;}   
+	70% { left:549px; top: 270px;}   
+	80% { left:548px; top: 270x;}   
+	90% { left:547px; top: 270px;}   
+	100% { left:547px; top: 275px;transform: rotate(-185deg);}   
+}
+
+@-webkit-keyframes drodLeft-move{
+	0%  { left:560px; top: 255px;}
+	5% { left:560px; top: 258px;}   
+	10% { left:560px; top: 260px;}   
+	15% { left:560px; top: 262px;}   
+	20% { left:560px; top: 264px;}   
+	25% { left:558px; top: 266px;}   
+	30% { left:557px; top: 268px;}   
+	35% { left:556px; top: 268px;}   
+	40% { left:555px; top: 268px;}   
+	45% { left:554px; top: 268px;}   
+	50% { left:553px; top: 270px;}   
+	55% { left:551px; top: 270px;}   
+	60% { left:549px; top: 270px;}   
+	65% { left:549px; top: 270px;}   
+	70% { left:549px; top: 270px;}   
+	80% { left:548px; top: 270x;}   
+	90% { left:547px; top: 270px;}   
+	100% { left:547px; top: 277px;transform: rotate(-185deg);}   
+}
+
 /* Drod-2 move */
 @keyframes drod2-move{
 	0% { left:330px; top: 225px;}
@@ -605,6 +652,52 @@ to {left:400px; top: 135px;}
 	90% { left:339px; top: 258px;}   
 	95% { left:340px; top: 260px;}   
 	100% { left:347px; top: 274px;}     
+}
+
+/* Drod-2 move */
+@keyframes drod2Left-move{
+	0% { left:285px; top: 225px;}
+	5% { left:285px; top: 228px;}   
+	10%{ left:285px; top: 230px;}   
+	15% { left:285px; top: 232px;}   
+	20% { left:285px; top: 234px;}   
+	25% { left:285px; top: 236px;}   
+	30% { left:285px; top: 238px;}   
+	35% { left:285px; top: 240px;}   
+	40% { left:285px; top: 242px;}   
+	45% { left:285px; top: 244px;}   
+	50% { left:285px; top: 246px;}   
+	55% { left:285px; top: 248px;}   
+	60% { left:285px; top: 250px;}   
+	65% { left:283px; top: 250px;}   
+	70% { left:282px; top: 252px;}   
+	80% { left:281px; top: 252px;}   
+	85% { left:280px; top: 252px;}   
+	90% { left:276px; top: 258px;}   
+	95% { left:275px; top: 258px;}   
+	100% { left:268px; top: 263px;}   
+}
+@-webkit-keyframes drod2Left-move{
+	0% { left:285px; top: 225px;}
+	5% { left:285px; top: 228px;}   
+	10%{ left:285px; top: 230px;}   
+	15% { left:285px; top: 232px;}   
+	20% { left:285px; top: 234px;}   
+	25% { left:285px; top: 236px;}   
+	30% { left:285px; top: 238px;}   
+	35% { left:285px; top: 240px;}   
+	40% { left:285px; top: 242px;}   
+	45% { left:285px; top: 244px;}   
+	50% { left:285px; top: 246px;}   
+	55% { left:285px; top: 248px;}   
+	60% { left:285px; top: 250px;}   
+	65% { left:283px; top: 250px;}   
+	70% { left:282px; top: 252px;}   
+	80% { left:281px; top: 252px;}   
+	85% { left:280px; top: 252px;}   
+	90% { left:276px; top: 258px;}   
+	95% { left:275px; top: 258px;}   
+	100% { left:268px; top: 263px;}    
 }
 
 

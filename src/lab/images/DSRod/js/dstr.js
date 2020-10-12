@@ -183,7 +183,9 @@ function magic()
 		{ 
 			document.getElementById('zimg').style.visibility="visible";
 			document.getElementById('drod').style.visibility="visible";
+			document.getElementById('drodLeft').style.visibility="visible";
 			document.getElementById('drod2').style.visibility="visible";
+			document.getElementById('drod2Left').style.visibility="visible";
 			document.getElementById('v3-1').style.visibility="visible";
 			document.getElementById('mot2').style.visibility="visible";
 			document.getElementById('mot1').style.visibility="visible";
@@ -214,7 +216,9 @@ function magic()
 		document.getElementById('nextButton').style.visibility="hidden";
 		document.getElementById('zimg').style.visibility="hidden";
 		document.getElementById('drod').style.visibility="hidden";
+		document.getElementById('drodLeft').style.visibility="hidden";
 		document.getElementById('drod2').style.visibility="hidden";
+		document.getElementById('drod2Left').style.visibility="hidden";
 		document.getElementById('mot2').style.visibility="hidden";
 		document.getElementById('mot1').style.visibility="hidden";
 		document.getElementById('red').style.visibility="hidden";
@@ -338,7 +342,9 @@ function step3()
 	setTimeout(function()
 	{
 		document.getElementById('drod').style.animation = "drod-move 1.5s forwards ";
+		document.getElementById('drodLeft').style.animation = "drodLeft-move 1.5s forwards ";
 		document.getElementById('drod2').style.animation = "drod2-move 1.5s forwards ";
+		document.getElementById('drod2Left').style.animation = "drod2Left-move 1.5s forwards ";
 		setTimeout(function()
 		{
 			if(result==0)
@@ -395,8 +401,12 @@ function refresh()
 		document.getElementById('arrow1').style.animation = "";
 	    document.getElementById('drod').style.transformOrigin="";
 		document.getElementById('drod').style.animation = ""; 
+	    document.getElementById('drodLeft').style.transformOrigin="";
+		document.getElementById('drodLeft').style.animation = ""; 
 		document.getElementById('drod2').style.transformOrigin="";
 		document.getElementById('drod2').style.animation = "";
+		document.getElementById('drod2Left').style.transformOrigin="";
+		document.getElementById('drod2Left').style.animation = "";
 	    document.getElementById('mot2').style.transformOrigin="";
 		document.getElementById('mot2').style.animation = "";
 		document.getElementById('mld1').style.transformOrigin="";

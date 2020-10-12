@@ -158,8 +158,139 @@ th,td
 	background:#000
 }
 
+
+/* Arrow styles */
+/* #wL{
+	animation-name: wLMove;
+	animation-duration: 2s;
+} */
 /* -------------------------------------- water ---------------------------------------- */
 /* Chrome, Safari, Opera */
+
+/* Standard syntax */
+@keyframes wLMove {
+	from{left: 65px; top:458px;opacity: 0.5;}
+	to{left: 88px; top:458px;opacity: 1}
+}
+
+@-webkit-keyframes wLMove {
+	from{left: 65px; top:458px;opacity: 0.5}
+	to{left: 88px; top:458px;opacity: 1}
+}
+@keyframes wRMove {
+	from{left: 250px; top:458px;opacity: 0.5;}
+	to{left: 227px; top:458px;opacity: 1}
+}
+
+@-webkit-keyframes wRMove {
+	from{left: 250px; top:458px;opacity: 0.5;}
+	to{left: 227px; top:458px;opacity: 1;}
+}
+
+@keyframes tLMove {
+	from{left: 345px; top:138px; opacity: 0.5;}
+	to{left: 345px; top:158px; opacity: 1}
+}
+
+@-webkit-keyframes tLMove {
+	from{left: 345px; top:138px; opacity: 0.5;}
+	to{left: 345px; top:158px; opacity: 1}
+}
+@keyframes tRMove {
+	from{left: 345px; top:225px;opacity: 0.5;}
+	to{left: 345px; top:205px;opacity: 1}
+}
+
+@-webkit-keyframes tRMove {
+	from{left: 345px; top:225px;opacity: 0.5;}
+	to{left: 345px; top:205px;opacity: 1;}
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes specimenFallLeft {
+	0%{left:542px; top: 271px;}
+	50%{left:542px; top: 271px;}
+	80%{left:540px; top: 270px;}
+	90%{left:538px; top: 290px;transform:rotate(90deg)}
+	100%{left:525px; top: 300px;transform:rotate(180deg)}
+}
+
+@-webkit-keyframes specimenFallLeft {
+	0%{left:542px; top: 271px;}
+	50%{left:542px; top: 271px;}
+	80%{left:540px; top: 270px;}
+	90%{left:538px; top: 290px;transform:rotate(90deg)}
+	100%{left:525px; top: 300px;transform:rotate(180deg)}
+}
+@keyframes specimenFallRight{
+	0%{left:588px; top: 274px;}
+	50%{left:588px; top: 274px;}
+	80%{left:590px; top: 275px;}
+	90%{left:592px; top: 295px;transform:rotate(-90deg)}
+	100%{left:600px; top: 305px;transform:rotate(-180deg)}
+}
+
+@-webkit-keyframes specimenFallRight {
+	0%{left:588px; top: 274px;}
+	50%{left:588px; top: 274px;}
+	80%{left:590px; top: 275px;}
+	90%{left:592px; top: 295px;transform:rotate(-90deg)}
+	100%{left:600px; top: 305px;transform:rotate(-180deg)}
+}
+
+
+
+@keyframes specimenFallZoomLeft {
+	0%{left:274px; top: 200px;}
+	50%{left:270px; top: 200px;}
+	80%{left:268px; top: 199px;}
+	90%{left:268px; top: 209px;transform:rotate(90deg)}
+	100%{left:250px; top: 235px;transform:rotate(180deg)}
+}
+
+@-webkit-keyframes specimenFallZoomLeft {
+	0%{left:274px; top: 200px;}
+	50%{left:270px; top: 200px;}
+	80%{left:268px; top: 199px;}
+	90%{left:268px; top: 209px;transform:rotate(90deg)}
+	100%{left:250px; top: 235px;transform:rotate(180deg)}
+}
+@keyframes specimenFallZoomRight{
+	0%{left:334px; top: 203px;}
+	50%{left:334px; top: 203px;}
+	80%{left:340px; top: 204px;}
+	90%{left:342px; top: 211px;transform:rotate(-90deg)}
+	100%{left:355px; top: 245px;transform:rotate(-180deg)}
+}
+
+@-webkit-keyframes specimenFallZoomRight {
+	0%{left:334px; top: 203px;}
+	50%{left:334px; top: 203px;}
+	80%{left:340px; top: 204px;}
+	90%{left:342px; top: 211px;transform:rotate(-90deg)}
+	100%{left:355px; top: 245px;transform:rotate(-180deg)}
+}
+
+
+
+
 @-webkit-keyframes water-4 {
 	0% {-webkit-transform: translate(0, 0 );}
 	100% {-webkit-transform: translate(0, 40px );}
@@ -505,13 +636,24 @@ to {left:350px; top: 120.5px;}
 
 /* hand-move */
 @keyframes hand-move{
-from  {left:560px; top: 150px;}
-to {left:380px; top: 150px;}   
+from  {left:560px; top: 160px;}
+to {left:410px; top: 160px;}   
 }
 
 @-webkit-keyframes hand-move{
-from  {left:560px; top: 150px;}
-to {left:380px; top: 150px;}   
+from  {left:560px; top: 160px;}
+to {left:410px; top: 160px;}   
+} 
+
+/* plunger-move */
+@keyframes plunger-move{
+from  {left:367px; top: 100px;}
+to {left:367px; top: 135px}   
+}
+
+@-webkit-keyframes plunger-move{
+from  {left:560px; top: 100px;}
+to {left:367px; top: 135px}   
 }
 
 
@@ -538,46 +680,16 @@ from  {left:400px; top: 125px;}
 to {left:400px; top: 135px;}   
 }
 
-@keyframes drod-move{
-0%  { left:533px; top: 255px;}
-5% { left:533px; top: 258px;}   
-10% { left:533px; top: 260px;}   
-15% { left:533px; top: 262px;}   
-20% { left:533px; top: 264px;}   
-25% { left:535px; top: 266px;}   
-30% { left:536px; top: 268px;}   
-35% { left:537px; top: 268px;}   
-40% { left:538px; top: 268px;}   
-45% { left:539px; top: 268px;}   
-50% { left:540px; top: 270px;}   
-55% { left:542px; top: 270px;}   
-60% { left:544px; top: 270px;}   
-65% { left:544px; top: 280px;}   
-70% { left:544px; top: 282px;}   
-80% { left:545px; top: 284px;}   
-90% { left:546px; top: 286px;}   
-100% { left:548px; top: 287px;}   
+@keyframes mZoomLeftPlate-move{
+0%  { left:537px; top: 274px;} 
+50% { left:530px; top: 280px;}    
+100% { left:520px; top: 290px;}   
 }
 
-@-webkit-keyframes drod-move{
-0%  { left:533px; top: 255px;}
-5% { left:533px; top: 258px;}   
-10% { left:533px; top: 260px;}   
-15% { left:533px; top: 262px;}   
-20% { left:533px; top: 264px;}   
-25% { left:535px; top: 266px;}   
-30% { left:536px; top: 268px;}   
-35% { left:537px; top: 268px;}   
-40% { left:538px; top: 268px;}   
-45% { left:539px; top: 268px;}   
-50% { left:540px; top: 270px;}   
-55% { left:542px; top: 270px;}   
-60% { left:544px; top: 270px;}   
-65% { left:544px; top: 280px;}   
-70% { left:544px; top: 282px;}   
-80% { left:545px; top: 284px;}   
-90% { left:546px; top: 286px;}   
-100% { left:548px; top: 287px;}   
+@-webkit-keyframes mZoomLeftPlate-move{
+	0%  { left:537px; top: 274px;} 
+	50% { left:530px; top: 280px;}    
+	100% { left:520px; top: 290px;} 
 }
 
 /* Swing movement css */

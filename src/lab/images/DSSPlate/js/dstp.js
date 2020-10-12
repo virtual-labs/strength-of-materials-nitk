@@ -147,19 +147,31 @@ function magic()
 		    document.getElementById('cal1').style.visibility="visible";
 		    document.getElementById('mov').style.visibility="visible";
 		    document.getElementById('v1-1').style.visibility="visible";
-		    document.getElementById('v1-2').style.visibility="visible";
+		    document.getElementById('wL').style.visibility="visible";
+		    document.getElementById('wD').style.visibility="visible";
+		    document.getElementById('wR').style.visibility="visible";
+		    document.getElementById('tL').style.visibility="visible";
+		    document.getElementById('tD').style.visibility="visible";
+		    document.getElementById('tR').style.visibility="visible";
 	    }	
-	    setTimeout(function()
-	    {
-            myInt = setInterval(function(){ animatearrow(); }, 500);
-		    document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:135px; top: 518px; height: 30px; z-index: 10;";
-		    document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
-		     // Code for IE9
-		    document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
-		     // Standard syntax
-		    document.getElementById("arrow1").style.transform = "rotate(180deg)";
-	        document.getElementById('can12').onclick=function(){step1();}
-	    },700);
+	    // setTimeout(function()
+	    // {
+			// document.getElementById("wL").style.visibility="visible";
+			document.getElementById("wL").style.animation = "wLMove 1s forwards";
+			// document.getElementById("wR").style.visibility="visible";
+			document.getElementById("wR").style.animation = "wRMove 1s forwards";
+			setTimeout(function() {
+				document.getElementById("wD").style.animation = "fadeIn 1s forwards";
+				myInt = setInterval(function(){ animatearrow(); }, 500);
+				document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:215px; top: 548px; height: 30px; z-index: 10;";
+				document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)"; 
+				// Code for IE9
+				document.getElementById("arrow1").style.msTransform = "rotate(90deg)"; 
+				// Standard syntax
+				document.getElementById("arrow1").style.transform = "rotate(90deg)";
+				document.getElementById('can12').onclick=function(){step1();}
+			},1100);
+	    // },700);
     }
 	
 	
@@ -193,12 +205,13 @@ function magic()
     }
 	else if (simsubscreennum==3)
 	{
+		// document.getElementById('can31L').style.animation = "mZoomLeftPlate-move 2s forwards"
 		refresh();
 		if(repeat>1 && repeat<=3)
 		{
 			 
-			document.getElementById('can31').style.visibility="visible";
-			document.getElementById('can33').style.visibility="visible";
+			document.getElementById('can31a').style.visibility="visible";
+			document.getElementById('can33a').style.visibility="visible";
 			document.getElementById('can35').style.visibility="visible";
 			document.getElementById('mot2').style.visibility="visible";
 			document.getElementById('red').style.visibility="visible";
@@ -226,9 +239,13 @@ function magic()
 			document.getElementById('obs').style.visibility="visible";
 		}
 		    document.getElementById('nextButton').style.visibility="hidden";
-		    document.getElementById('can34').style.visibility="hidden";
-		    document.getElementById('can32').style.visibility="hidden";
-		    document.getElementById('can35').style.visibility="hidden";
+			document.getElementById('can31b').style.visibility="hidden";
+			document.getElementById('can31L').style.visibility="hidden";
+			document.getElementById('can31R').style.visibility="hidden";
+			document.getElementById('can33b').style.visibility="hidden";
+			document.getElementById('can33L').style.visibility="hidden";
+			document.getElementById('can33R').style.visibility="hidden";
+			document.getElementById('can35').style.visibility="hidden";
 		    document.getElementById('mot2').style.visibility="hidden";
 		    document.getElementById('red').style.visibility="hidden";
 		    document.getElementById('green').style.visibility="hidden";
@@ -298,6 +315,9 @@ function magic()
 function step1()
 {
 	myStopFunction();
+	document.getElementById('wR').style.visibility="hidden";
+	document.getElementById('wL').style.visibility="hidden";		
+	document.getElementById('wD').style.visibility="hidden";
 	document.getElementById('can12').style.animation = "rod-move 1.5s forwards ";
 	document.getElementById('mov').style.animation = "cali-move 1.5s forwards ";
 	setTimeout(function()
@@ -321,16 +341,21 @@ function step1()
 		    document.getElementById('cal1').style.visibility="hidden";
 		    document.getElementById('can13').style.visibility="visible";
 	        document.getElementById('vmov').style.visibility="visible";
-		    document.getElementById('vcal').style.visibility="visible";
-		    myInt = setInterval(function(){ animatearrow(); }, 500);
-		    document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:300px; top:248px; height: 30px; z-index: 10;";
-		    document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
-		     // Code for IE9
-		    document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
-		     // Standard syntax
-		    document.getElementById("arrow1").style.transform = "rotate(180deg)";
-	        document.getElementById('can13').onclick=function(){step13();}
-		},1000);
+			document.getElementById('vcal').style.visibility="visible";
+			document.getElementById("tL").style.animation = "tLMove 1s forwards";
+			document.getElementById("tR").style.animation = "tRMove 1s forwards";
+			setTimeout(function() {
+				document.getElementById("tD").style.animation = "fadeIn 1s forwards";
+				myInt = setInterval(function(){ animatearrow(); }, 500);
+				document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:300px; top:248px; height: 30px; z-index: 10;";
+				document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
+				// Code for IE9
+				document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
+				// Standard syntax
+				document.getElementById("arrow1").style.transform = "rotate(180deg)";
+				document.getElementById('can13').onclick=function(){step13();}
+			},1100);
+		},1100);
 
 	},1500);
 	
@@ -338,7 +363,10 @@ function step1()
 	
 function step13()
 {
-    myStopFunction();
+	myStopFunction();
+	document.getElementById('tL').style.visibility="hidden";
+	document.getElementById('tD').style.visibility="hidden";
+	document.getElementById('tR').style.visibility="hidden";
 	document.getElementById('can13').style.animation = "can13-move 1.5s forwards ";
 	document.getElementById('vmov').style.animation = "vmov-move 1.5s forwards ";
 	setTimeout(function()
@@ -347,11 +375,11 @@ function step13()
 		{
 	        document.getElementById('v1-2').innerHTML="Thickness="+values1[1]+"mm";
 		}
-	    if(result==1)
+	    else if(result==1)
 		{
 	        document.getElementById('v1-2').innerHTML="Thickness="+values2[1]+"mm";
 		}
-		if(result==2)
+		else if(result==2)
 		{
 	        document.getElementById('v1-2').innerHTML="Thickness="+values3[1]+"mm";
 		}
@@ -372,9 +400,9 @@ function step2()
 	myStopFunction();
 	document.getElementById('zoom').style.visibility="hidden";
 	document.getElementById('can26').style.visibility="visible";
-	document.getElementById('can27').style.visibility="visible";
-	setTimeout(function()
-	{
+	// document.getElementById('can27').style.visibility="visible";
+	// setTimeout(function()
+	// {
 		myInt = setInterval(function(){ animatearrow(); }, 500);
 		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:465px; top: 170px; height: 30px; z-index: 10;";
 		document.getElementById("arrow1").style.WebkitTransform = "rotate(-45deg)"; 
@@ -388,14 +416,18 @@ function step2()
 			
 		setTimeout(function()
 		{
-			document.getElementById('hand').style.visibility="hidden";
-		    document.getElementById('can28').style.visibility="visible";
 			myStopFunction();
-		    document.getElementById('can27').style.animation = "can27-move 1.0s forwards ";
+			document.getElementById('hand').style.visibility="hidden";
+			document.getElementById('can26a').style.visibility="visible";
+			document.getElementById('can26').style.visibility="hidden";
+		    document.getElementById('can28').style.visibility="visible";
+		    document.getElementById('plungerText').style.animation="fadeIn 1s forwards";
+			document.getElementById('can26a').style.animation = "plunger-move 2.0s forwards ";
+			document.getElementById('plungerText').style.animation="fadeIn 1s reverse";
 			setTimeout(function()
 			{
 			    document.getElementById('can26').style.visibility="hidden";
-			    document.getElementById('can27').style.visibility="hidden";
+			    document.getElementById('can26a').style.visibility="hidden";
 			    document.getElementById('can28').style.visibility="hidden";
 			    document.getElementById('can25').style.visibility="visible";
 	            document.getElementById('can25').style.animation = "zimg-move 1.0s forwards ";
@@ -403,23 +435,25 @@ function step2()
 				{
 					document.getElementById('nextButton').style.visibility="visible";			   
 				},1000);
-			},800);
-	    },1000);
-	},1200);
+			},2100);
+	    },2100);
+	// },1200);
 }
 
 function step3()
 {
 	myStopFunction();
 	document.getElementById('green').style.visibility="hidden";
+	// document.getElementById('can31L').style.animation="specimenFallLeft 0.8s  forwards";
+	// document.getElementById('can31L').style.transform="rotate(100deg)";
 	document.getElementById('mot2').style.transformOrigin="70% 94%";
 	document.getElementById('mot2').style.animation = "needle-move 3.5s forwards ";
 	setTimeout(function()
 	{
 		document.getElementById('can34').style.visibility="visible";
 		document.getElementById('can32').style.visibility="visible";
-		document.getElementById('can33').style.visibility="hidden";
-		document.getElementById('can31').style.visibility="hidden";
+		document.getElementById('can33a').style.visibility="hidden";
+		document.getElementById('can31a').style.visibility="hidden";
 		setTimeout(function()
 		{
 			if(result==0)
@@ -434,23 +468,37 @@ function step3()
 			{		
 				document.getElementById('v3-1').innerHTML="Failure Load P ="+values3[3]+"Kg";
 			}
-		myInt = setInterval(function(){ animatearrow(); }, 500);
-		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 45px; top:280px; height: 30px; z-index: 10;";
-		document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
-		// Code for IE9
-		document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
-		// Standard syntax
-		document.getElementById("arrow1").style.transform = "rotate(180deg)";
-		document.getElementById('red').onclick=function()
-		{
-			myStopFunction();
-			document.getElementById('mot2').style.animation = "needle-move 6.5s reverse ";
-			document.getElementById('red').onclick="";
-			document.getElementById('green').onclick="";
-			document.getElementById('red').style.visibility="visible";
-			document.getElementById('green').style.visibility="visible";
-			document.getElementById('nextButton').style.visibility="visible";
-		}
+			document.getElementById('can34').style.visibility="hidden";
+			document.getElementById('can32').style.visibility="hidden";
+			document.getElementById('can31b').style.visibility="visible";
+			document.getElementById('can31L').style.visibility="visible";
+			document.getElementById('can31R').style.visibility="visible";
+			document.getElementById('can33b').style.visibility="visible";
+			document.getElementById('can33L').style.visibility="visible";
+			document.getElementById('can33R').style.visibility="visible";
+			document.getElementById('can31L').style.animation="specimenFallLeft 1.5s  forwards";
+			document.getElementById('can33L').style.animation="specimenFallZoomLeft 1.5s  forwards";
+			document.getElementById('can31R').style.animation="specimenFallRight 1.5s  forwards";
+			document.getElementById('can33R').style.animation="specimenFallZoomRight 1.5s  forwards";
+			setTimeout(function() {
+				myInt = setInterval(function(){ animatearrow(); }, 500);
+				document.getElementById('arrow1').style="visibility:visible ;position:absolute; left: 45px; top:280px; height: 30px; z-index: 10;";
+				document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
+				// Code for IE9
+				document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
+				// Standard syntax
+				document.getElementById("arrow1").style.transform = "rotate(180deg)";
+				document.getElementById('red').onclick=function()
+				{
+					myStopFunction();
+					document.getElementById('mot2').style.animation = "needle-move 6.5s reverse ";
+					document.getElementById('red').onclick="";
+					document.getElementById('green').onclick="";
+					document.getElementById('red').style.visibility="visible";
+					document.getElementById('green').style.visibility="visible";
+					document.getElementById('nextButton').style.visibility="visible";
+				}
+			},1500);
 		},1500);
 	},3500);	
 }	
@@ -480,9 +528,24 @@ function step3()
 	document.getElementById('mot2').style.animation = "";
 	document.getElementById('can25').style.transformOrigin="";
 	document.getElementById('can25').style.animation = "";
-    document.getElementById('can27').style.transformOrigin="";
-	document.getElementById('can27').style.animation = "";
-       
+	document.getElementById('can26a').style.transformOrigin="";
+	document.getElementById('can26a').style.animation = "";
+	document.getElementById('plungerText').style.transformOrigin="";
+	document.getElementById('plungerText').style.animation = "";
+	document.getElementById('wL').style.animation = "";
+	document.getElementById('wD').style.animation = "";
+	document.getElementById('wR').style.animation = "";
+	document.getElementById('tL').style.animation = "";
+	document.getElementById('tD').style.animation = "";
+	document.getElementById('tR').style.animation = "";
+    document.getElementById('can31L').style.transformOrigin="";
+	document.getElementById('can31L').style.animation = "";
+    document.getElementById('can31R').style.transformOrigin="";
+	document.getElementById('can31R').style.animation = "";
+    document.getElementById('can33R').style.transformOrigin="";
+	document.getElementById('can33R').style.animation = "";
+    document.getElementById('can33L').style.transformOrigin="";
+	document.getElementById('can33L').style.animation = "";
 
 	
  }

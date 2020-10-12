@@ -15,7 +15,7 @@
 	var values2=[];
 	var values3=[];
 	var avg=0;
-<!-- Experimental Results -->
+// <!-- Experimental Results -->
 	var vals=[[21.2,2.6,55.12,4800.00,427.14],
 				[21.00,2.7,56.7,5000.00,432.54],
 				[20.7,2.5,51.75,4300.00,407.57],
@@ -64,6 +64,12 @@
 <img id="vmov" style="position: absolute;left:450px; top:260px;visibility:hidden" src="images/vmov.png"/>
 <p id="v1-1" style="position:absolute;left:240px; top: 100px;font-family:verdana; font-size:14px;"></p>
 <p id="v1-2" style="position:absolute;left:240px; top:150px;font-family:verdana; font-size:14px;"></p>
+<span id="wL"style="position: absolute; left: 88px; top:458px;font-size: 45px;opacity: 0;">&#8594;</span>
+<span id="wD"style="position: absolute; left: 160px; top:460px;font-family:verdana; font-size:14px;opacity: 0">Width</span>
+<span id="wR" style="position: absolute; left: 227px; top:458px;font-size: 45px;opacity: 0;">&#8592;</span>
+<span id="tL"style="position: absolute; left: 345px; top:158px; font-size: 45px;opacity: 0;">&#8595;</span>
+<span id="tD"style="position: absolute; left: 385px; top:215px; font-family:verdana; font-size:14px;opacity: 0;">Thickness</span>
+<span id="tR" style="position: absolute; left: 345px; top:205px; font-size: 45px;opacity: 0;">&#8593;</span>
 </div>
 
 
@@ -75,10 +81,12 @@
 </p>  
 <img id="mac1" style="position: absolute; left:2px; top: 100px;" src="images/can24.png"/>
 <img id="zoom" style="position: absolute; left:52px; top: 285px;cursor:pointer;" src="images/zoom.png"/>
-<img id="can26" style="position: absolute; left:345px; top: 180px;visibility:hidden;" src="images/can26a.png"/>
-<img id="can28" style="position: absolute; left:330px; top: 175px;visibility:hidden;" src="images/can28.png"/> 
-<img id="can27" style="position: absolute; left:350px; top: 100px;visibility:hidden;" src="images/can27.png"/>
-<img id="hand" style="position: absolute; visibility:hidden;left:560px; top: 150px;cursor:grab" src="images/can22.png"/> 
+<img id="can26a" style="position: absolute; left:367px; top: 100px;visibility: hidden;" src="images/plunger.png"/>
+<span id="plungerText" style="position: absolute; left:367px; top: 80px;font-family:verdana; font-size:14px;opacity: 0">Plunger</span>
+<img id="can26" style="position: absolute; left:345px; top: 150px;visibility: hidden;" src="images/upperBase.png"/>
+<img id="can28" style="position: absolute; left:345px; top: 150px;visibility:hidden;" src="images/baseWithPlate.png"/> 
+<!-- <img id="can27" style="position: absolute; left:350px; top: 100px;visibility:hidden;" src="images/can27.png"/> -->
+<img id="hand" style="position: absolute; left:420px; top: 160px;cursor:grab;visibility: hidden;" src="images/can22.png"/> 
 <img id="can25" style="position: absolute; visibility:hidden;width:40%" src="images/can25.png"/> 
 </div>
 
@@ -92,9 +100,16 @@
 <img id="mot2" style="position: absolute; left:107px; top: 104px;" src="images/mot22.png"/> 
 <img id="red" style="position: absolute; left:37px; top: 240px;cursor:pointer" src="images/red.png"/>
 <img id="green" style="position: absolute; left:37px; top: 249px;cursor:pointer" src="images/green.png"/>
-<img id="can31" style="position: absolute; left:420px; top: 125px;width:40%" src="images/can31.png"/>
+<img id="can31a" style="position: absolute; left:420px; top: 125px;width:40%" src="images/can31.png"/>
+<img id="can31L" style="position: absolute; left:542px; top: 271px;visibility: hidden;" src="images/lFall.png"/>
+<img id="can31R" style="position: absolute; left:588px; top: 274px;visibility: hidden;" src="images/rFall.png"/>
+<img id="can31b" style="position: absolute; left:420px; top: 125px;width:40%" src="images/can31a.png"/>
 <img id="can32" style="position: absolute; left:420px; top: 125px;visibility:hidden;width:40%" src="images/can32.png"/>
-<img id="can33" style="position: absolute; left:245px; top: 130px;" src="images/can33.png"/>
+<img id="can33a" style="position: absolute; left:245px; top: 130px;" src="images/can33.png"/>
+<img id="can33L" style="position: absolute; left:274px; top: 200px;visibility: hidden;" src="images/lPlate.png"/>
+<img id="can33R" style="position: absolute; left:334px; top: 203px;visibility: hidden;" src="images/rPlate.png"/>
+<img id="can33b" style="position: absolute; left:245px; top: 130px;visibility: hidden;" src="images/zoomWithoutPlate.png"/>
+<!-- <img id="can33L" style="position: absolute; left:265px; top: 200px;" src="images/lFall.png"/> -->
 <img id="can34" style="position: absolute; left:245px; top: 130px;visibility:hidden" src="images/can34.png"/>
 <img id="can35" style="position: absolute; left:240px; top: 125px;" src="images/can36.png"/>
 <!-- <img id="swatch" style="position: absolute; left:30px; top: 200px;" src="images/sw.png"/> -->
