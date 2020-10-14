@@ -42,7 +42,7 @@ input[type=button]
 #table
 {
 	padding:0px;
-	border-collapse: collapse;
+	/* border-collapse: collapse; */
     width: 20%;
 }
 #dia.th,td

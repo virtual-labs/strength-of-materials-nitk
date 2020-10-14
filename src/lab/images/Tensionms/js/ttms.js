@@ -81,6 +81,7 @@ function dzoom()
 					ckd=2;
 					myStopFunction();
 					document.getElementById('can51a').style.visibility="hidden";
+					document.getElementById('v5').style.visibility="visible";
 					document.getElementById('can51b').style.visibility="visible";
 					document.getElementById('can54l').style.visibility="visible";
 					document.getElementById('nextButton').style.visibility="visible";
@@ -823,6 +824,7 @@ function magic()
 		document.getElementById("can52").style.visibility="hidden";
 		document.getElementById("can53").style.visibility="hidden";
 		document.getElementById("can51b").style.visibility="hidden";
+		document.getElementById("v5").style.visibility="hidden";
 		document.getElementById("can54l").style.visibility="hidden";
 		document.getElementById('can54r').style.visibility="hidden";
 		myInt = setInterval(function(){ animatearrow(); }, 500);

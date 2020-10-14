@@ -32,7 +32,7 @@
 	<h4 class="incanvas" style="font-family:verdana;" >Objective</h4>
 	<p class="incanvas" style="font-family:verdana; font-size:14px;">To study the mechanical properties of mild steel specimen under tension load.</p>
 	<h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
-	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Universal Testing Machine,Dial Indicators,Scale & Vernier calipers.</p>
+	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Universal Testing Machine, Dial Indicators, Extensometer, Scale & Vernier calipers.</p>
 	<img id="can00" style="position: absolute; left: 150px; top: 120px;width:50%" src="images/main.png"/>
 	<!-- <img id="can01" style="position: absolute; left: 380px; top: 100px;" src="images/dialind.png"/> -->
 </div>
@@ -109,7 +109,8 @@
 	<img id="can52" style="position: absolute; left:289px; top: 285px;cursor:pointer" src="images/bl.png"/>
 	<img id="can53" style="position: absolute; left:173px; top: 287px;cursor:pointer" src="images/br.png"/>
 	<img id="can54l" style="position: absolute; left:286px; top: 292px;visibility:hidden;" src="images/ndl2.png"/>
-	<img id="can54r" style="position: absolute; left:170px; top: 305px;visibility:hidden" src="images/ndl.png"/>	
+	<img id="can54r" style="position: absolute; left:170px; top: 305px;visibility:hidden" src="images/ndl.png"/>
+	<p id="v5" style="position: absolute; left:386px; top: 292px;font-family:verdana; font-size:14px;visibility:hidden;">Least Count of Extensometer  = 0.01</p>	
 </div> 
 	
 	
@@ -137,7 +138,7 @@
 	<img id="can64l" style="position: absolute; left:131px; top: 243px;" src="images/nb.png"/>
 	<img id="can64r" style="position: absolute; left:93px; top: 250px;" src="images/ns.png"/>
 	<div id="content" style="position:absolute;left:420px;overflow-y:auto;height:400px;width:300px;top:70px;"></div>
-	<button id="dwn" style="position:absolute;left:520px;top:480px;visibility:hidden;" onClick="download()">Download Data</button>
+	<button id="dwn" style="position:absolute;left:520px;top:480px;visibility:hidden;" onclick="download()">Download Data</button>
 	<p id="v6-0" style="position:absolute; left:275px; top: 280px;font-family:verdana; font-size:10px;"></p>
 </div>
 
@@ -214,7 +215,7 @@
 			<td id="ta33"></td>
 		</tr>
 		<tr>
-			<th >Length of the specimen between the grips in mm</th>
+			<th>Length of the specimen between the grips in mm</th>
 			<td id="ta44"></td>
 		</tr>
 		<tr>
@@ -234,7 +235,7 @@
 			<td id="ta88"></td>
 		</tr>
 		<tr>
-			<th >Final area of c/s at neckin mm<sup>2</sup></th>
+			<th >Final area of c/s at neck in mm<sup>2</sup></th>
 			<td id="ta99"></td>
 		</tr>
 	</table>
@@ -1000,15 +1001,16 @@
 	};
 	 function ToTable(tbdata)
 	{
-		html = '<table id="Table" border="border" style="font-size:14px;font-family:verdana;text-align: center">'; 
-		html += '<tr ><th style="text-align:center">Load in kN</th>';
-		html += '<th colspan=3>Extensometer Reading</th>';
-		html += '<th style="text-align:center">Ivory Scale Reading</th></tr>';
-		html += '<tr ><th style="border-top:none"></th>';
-		html += '<th>A</th>';
-		html += '<th>B</th>';
-		html += '<th>Average</th>';
-		html += '<th style="border-top:none"></th></tr>';
+		html = '<table id="Table" border="border" style="font-size:14px;font-family:verdana;text-align: center; " cellspacing = 0>'; 
+		html += '<tr rowspan=3><th rowspan=3 style="text-align:center" >Load in kN</th>';
+		html += '<th colspan=3>Extensometer Reading in Division</th>';
+		html += '<th rowspan=3 style="text-align:center">Ivory Scale Reading(mm)</th></tr>';
+		html += '<tr><th colspan=3>Division x Least Count(0.01) = mm</th></tr>';
+		html += '<tr >';
+		html += '<th>A(mm)</th>';
+		html += '<th>B(mm)</th>';
+		html += '<th>Average(mm)</th>';
+		html += '</tr>';
 		var len = tbdata.length;
 		for(var i = 0; i < len; i++){
 			html += '<tr>'; 
@@ -1026,15 +1028,16 @@
 	}
 	function RefTable(tbdata)
 	{
-		html = '<table id="Table2" border="border" style="font-size:14px;font-family:verdana;text-align: center">'; 
-		html += '<tr ><th style="text-align:center">Load in kN</th>';
-		html += '<th colspan=3>Extensometer Reading</th>';
-		html += '<th style="text-align:center">Ivory Scale Reading</th></tr>';
-		html += '<tr ><th style="border-top:none"></th>';
-		html += '<th>A</th>';
-		html += '<th>B</th>';
-		html += '<th>Average</th>';
-		html += '<th style="border-top:none"></th></tr>';
+		html = '<table id="Table2" border="border" style="font-size:14px;font-family:verdana;text-align: center; " cellspacing = 0>>'; 
+		html += '<tr rowspan=3><th rowspan=3 style="text-align:center" >Load in kN</th>';
+		html += '<th colspan=3>Extensometer Reading in Division</th>';
+		html += '<th rowspan=3 style="text-align:center">Ivory Scale Reading(mm)</th></tr>';
+		html += '<tr><th colspan=3>Division x Least Count(0.01) = mm</th></tr>';
+		html += '<tr >';
+		html += '<th>A(mm)</th>';
+		html += '<th>B(mm)</th>';
+		html += '<th>Average(mm)</th>';
+		html += '</tr>';
 		var len = tbdata.length;
 		for(var i = 0; i < len; i++){
 			html += '<tr class="tr1">'; 
