@@ -928,7 +928,7 @@ function step31()
 		setTimeout(function()
 		{
 			myInt = setInterval(function(){ animatearrow(); }, 500);
-			document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:452px; top:197px; height: 20px; z-index: 10;";
+			document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:470px; top:195px; height: 20px; z-index: 10;";
 			document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)"; 
 			// Code for IE9
 			document.getElementById("arrow1").style.msTransform = "rotate(270deg)"; 
@@ -942,7 +942,7 @@ function step31()
 		setTimeout(function()
 		{
 			myInt = setInterval(function(){ animatearrow(); }, 500);
-			document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:452px; top:197px; height: 20px; z-index: 10;";
+			document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:470px; top:197px; height: 20px; z-index: 10;";
 			document.getElementById("arrow1").style.WebkitTransform = "rotate(270deg)"; 
 			// Code for IE9
 			document.getElementById("arrow1").style.msTransform = "rotate(270deg)"; 

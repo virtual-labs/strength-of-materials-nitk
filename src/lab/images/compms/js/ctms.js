@@ -96,49 +96,13 @@ function dzoom()
  function rotateImage(degree) 
 	{
 		myStopFunction();
-		if(rot==0)
-		{
-			rot=2;
-			$('#can44').animate({ 	
-									left:'182px',
-									top: '+=30px',
-									transform: degree
-								},
-								{
-									duration:2500,
-									step: function(now,fx) {
-									$(this).css({
-									'-webkit-transform':'rotate('+now+'deg)',
-									'-moz-transform':'rotate('+now+'deg)',
-									'transform':'rotate('+now+'deg)'
-									});
-									}}
-								);
-			$('#can43').animate(
-							{
-								left:'88px',
-								top: '+=30px'
-							},2500,
-							function()
-							{	
-								$("#can44").off('click');
-								document.getElementById('can45').style.visibility="visible";
-								$("#can45t").text("Drag the specimen").fadeOut(2000);
-								setTimeout(function()
-								{
-									document.getElementById('can45d').style.visibility="visible";
-									$("#can45d").fadeIn().fadeOut(1000);
-								},1500);
-							}
-							);
-		}
-		else if(rot==1)
+		if(rot==1)
 		{
 			rot=2;
 			myStopFunction();
 			$('#can44').animate({ 	
-									left:'182px',
-									top: '-=75px',
+									left:'162px',
+									top: '+=31px',
 									transform: degree
 								},
 								{
@@ -151,15 +115,10 @@ function dzoom()
 									});
 									}}
 								);
-			$('#can43').animate(
+			$('#can42').animate(
 							{
 								left:'88px',
-								top: '-=75px'
-							},2500);
-							$('#can45a').animate(
-							{
-								left:'226px',
-								top: '-=75px'
+								top: '+=31px'
 							},2500,
 							function()
 							{
@@ -172,7 +131,7 @@ function dzoom()
 								setTimeout(function()
 								{
 									myInt = setInterval(function(){ animatearrow(); }, 500);
-									document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:210px; top: 250px;height: 30px; z-index: 10;";
+									document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:215px; top: 320px;height: 30px; z-index: 10;";
 									document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
 									 // Code for IE9
 									document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
@@ -220,12 +179,12 @@ function dzoom()
 			rot=1;
 			document.getElementById('can45a').style.visibility="visible";	
 			myInt = setInterval(function(){ animatearrow(); }, 500);
-			document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:260px; top: 520px; height: 30px; z-index: 10;";
-			document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)"; 
+			document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:260px; top: 120px; height: 30px; z-index: 10;";
+			document.getElementById("arrow1").style.WebkitTransform = "rotate(-90deg)"; 
 			 // Code for IE9
-			document.getElementById("arrow1").style.msTransform = "rotate(90deg)"; 
+			document.getElementById("arrow1").style.msTransform = "rotate(-90deg)"; 
 			 // Standard syntax
-			document.getElementById("arrow1").style.transform = "rotate(90deg)";			
+			document.getElementById("arrow1").style.transform = "rotate(-90deg)";			
 		}
 		}
 	});	
@@ -240,8 +199,8 @@ function dzoom()
 							1500,
 							function()
 							{ 
-									v1a=vals0[0]-0.001;
-									v1b=vals0[0]-0.01;
+									v1a=vals0[0];
+									v1b=vals0[0];
 									$('#1a').html("d<sub>1x</sub> = "+v1a.toFixed(2));
 									// $('#1b').html("d<sub>1x</sub> = "+v1b.toFixed(2));
 									// $('#1c').html("d<sub>1</sub> = "+v1a.toFixed(2));
@@ -307,7 +266,7 @@ function dzoom()
 							1500,
 							function()
 							{ 
-								v2a=vals0[0]-0.02;
+								v2a=vals0[0];
 								//v2b=v2a-0.01;
 								mi=(3.14*Math.pow((vals0[0]),4))/64;
 								// $('#2a').html("d<sub>2x</sub> = "+v2a.toFixed(2));
@@ -624,13 +583,21 @@ function magic()
 		document.getElementById('cal22').style.visibility="hidden";
 		document.getElementById('can23').style.visibility="hidden";
 		document.getElementById('mov22').style.visibility="hidden";
-		myInt = setInterval(function(){ animatearrow(); }, 500);
-		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:260px; top: 500px; height: 30px; z-index: 10;";
-		document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)"; 
-		 // Code for IE9
-		document.getElementById("arrow1").style.msTransform = "rotate(90deg)"; 
-		 // Standard syntax
-		document.getElementById("arrow1").style.transform = "rotate(90deg)";
+		// myInt = setInterval(function(){ animatearrow(); }, 500);
+		// document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:260px; top: 500px; height: 30px; z-index: 10;";
+		// document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)"; 
+		//  // Code for IE9
+		// document.getElementById("arrow1").style.msTransform = "rotate(90deg)"; 
+		//  // Standard syntax
+		// document.getElementById("arrow1").style.transform = "rotate(90deg)";
+		document.getElementById('can45').style.visibility="visible";
+		$("#can45t").text("Drag the specimen").fadeOut(2000);
+		setTimeout(function()
+		{
+			document.getElementById('can45d').style.visibility="visible";
+			$("#can45d").fadeIn().fadeOut(800);
+		},1000);
+
 		
 	}
 	else if (simsubscreennum==4)

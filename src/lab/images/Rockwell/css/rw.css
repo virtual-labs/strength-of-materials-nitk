@@ -416,23 +416,23 @@ background:#000
 
 /* // */
 @-webkit-keyframes moveHand1{
-	from {left:551.5px; top:120px;}
-	to {left:575.47px; top:120px;}
+	from {left:551.5px; top:119.5px;}
+	to {left:565.5px; top:119.5px;}
 }
 
 @keyframes moveHand1{
-    from {left:551.5px; top:120px;}
-	to {left:575.47px; top:120px;}
+    from {left:551.5px; top:119.5px;}
+	to {left:565.5px; top:119.5px;}
 }
 
 @-webkit-keyframes moveHand2{
-	from {left:551.5px; top:120px;}
-	to {left:587px; top:120px;}
+	from {left:551.5px; top:119.5px;}
+	to {left:578px; top:119.5px;}
 }
 
 @keyframes moveHand2{
-    from {left:551.5px; top:120px;}
-	to {left:587px; top:120px;}
+    from {left:551.5px; top:119.5px;}
+	to {left:578px; top:119.5px;}
 }
 
 @-moz-keyframes rot1{

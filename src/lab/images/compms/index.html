@@ -95,17 +95,18 @@
 <div class="simsubscreen" id="canvas3" style="visibility:hidden;">
 	<strong class="incanvas">STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span>
 	<p class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Sample is placed in the UTM.</p>
-	<img id="can46" style="position: absolute; left:198px; top: 209px;display:none" src="images/dg.PNG"/>  	
-	<img id="can46a" style="position: absolute; left:198px; top: 209px;display:none" src="images/dg1.PNG"/>
-	<img id="can45a" style="position: absolute; left:226px; top: 278px;visibility:hidden" src="images/can45a.PNG"/>  
-	<img id="can41" style="position: absolute; left:100px; top: 50px;" src="images/can42a.PNG"/>
-	<img id="can43" style="position: absolute; left:88px; top: 287px;" src="images/can43.PNG"/>
-	<img id="can47" style="position: absolute; left:200px; top: 218px;width:12px;height:5px;cursor:pointer;display:none" src="images/bl.png"/>  	  	
+	<img id="can46" style="position: absolute; left:200px; top: 275px;display:none" src="images/dg.PNG"/>  	
+	<img id="can46a" style="position: absolute; left:200px; top: 275px;display:none" src="images/dg1.PNG"/>
+	<img id="can45a" style="position: absolute; left:226px; top:278px;visibility: hidden;" src="images/can45a.PNG"/>  
+	<img id="can41" style="position: absolute; left:88px; top: 30px;" src="images/can42a.PNG"/>
+	<img id="can42" style="position: absolute; left:88px; top: 110px;" src="images/can42b.png"/>
+	 <!-- <img id="can43" style="position: absolute; left:88px; top: 287px;" src="images/can43.PNG"/> -->
+	<img id="can47" style="position: absolute; left:202px; top: 283px;width:12px;height:5px;cursor:pointer;display:none" src="images/bl.png"/>  	  	
 	<img id="can45" style="position: absolute; left:435px; top: 215px;visibility:hidden" src="images/can45.png"/>
 	<p id="can45t" style="position: absolute; left:475px; top: 235px;font-family:verdana; font-size:14px;"> </p> 
 	<img id="can45d" style="position: absolute; left:230px; top: 280px;z-index:10;height:30px;visibility:hidden" src="images/arrow1.png"/> 
-	<img id="can44" style="position: absolute; left:182px; top: 354px;cursor:pointer "  src="images/can44.png" onClick="rotateImage(360);"/>
-	<p id="v4-0" style="position:absolute; left:150px; top: 380px;font-family:verdana; font-size:14px;"></p>
+	<img id="can44" style="position: absolute; left:162px; top: 114px;cursor:pointer "  src="images/can44.png" onclick="rotateImage(360);"/>
+	<!-- <p id="v4-0" style="position:absolute; left:150px; top: 380px;font-family:verdana; font-size:14px;"></p>  -->
 </div>
 	
  <!--Step4	-->	
@@ -119,10 +120,10 @@
 	<img id="can65" style="position: absolute; left:300px; top: 80px;visibility:hidden" src="images/czoom2.png"/>
 	<img id="can66" style="position: absolute; left:300px; top: 80px;visibility:hidden" src="images/czoom3.png"/>
 	<img id="can64" style="position: absolute; left:300px; top: 55px;" src="images/czoom.png"/>
-	<img id="can63a" style="position: absolute; left:338px; top: 145px;" src="images/ndl3.png"/>
+	<img id="can63a" style="position: absolute; left:337px; top: 139px;" src="images/ndl3.png"/>
 	<img id="red" style="position: absolute; left:263px; top: 311px;cursor:pointer" src="images/red.png"/>
 	<img id="green" style="position: absolute; left:273px; top: 319px;cursor:pointer" src="images/green.png"/>
-	<img id="can61a" style="position: absolute;left:257px; top: 242.5px;" src="images/ndl2.png"/>
+	<img id="can61a" style="position: absolute;left:257px; top: 242.5px;transform-origin: 50% 90%;transform: rotate(-20deg);" src="images/ndl2.png"/>
 	<div id="content" style="position:absolute;left:450px;overflow-y:auto;height:400px;width:200px;top:70px;"></div>
 	<button id="dwn" style="position:absolute;left:500px;top:480px;visibility:hidden;" onClick="download()">Download Data</button>
 	<p id="v6-0" style="position:absolute; left:300px; top: 260px;font-family:verdana; font-size:10px;"></p>
@@ -199,7 +200,7 @@
 		<table border="border" id="last" style="position:absolute;font-family:verdana; font-size:14px;left:100px;top:150px;cellpadding:10px;cellspacing:10px;text-align:center">
 		<tr>
 			<th>Proof  Stress(N/mm<sup>2</sup>)</th>
-			<td id="t33"><input type="text" id="i33" style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" title="(Proof Load *9.81)/Ao " /></td>
+			<td id="t33"><input type="text" id="i33" style="font-family:verdana;font-size:14px;text-align: center" autocomplete="off" title="(Proof Load)/Ao " /></td>
 		</tr>
 		<tr>
 			<th >Compressive  Strength(N/mm<sup>2</sup>)</th>
@@ -405,7 +406,7 @@ var data2 = [[ 0.0 , 0.0 ],
 var data3 = [[ 0.0 , 0.0 ],
 			[ 400.0 , 3.0 ],
 			[ 800.0 , 5.0 ],
-			[ 1200.0 , 7.5 ],
+			[ 1200.0 , 7 ],
 			[ 1600.0 , 10.0 ],
 			[ 2000.0 , 12.0 ],
 			[ 2400.0 , 15.0 ],
@@ -718,7 +719,7 @@ var data9 = [[ 0.0 , 0.0 ],
 var data10 = [[ 0.0 , 0.0 ],
 				[ 400.0 , 2.0 ],
 				[ 800.0 , 4.0 ],
-				[ 1200.0 , 6.5 ],
+				[ 1200.0 , 6.0 ],
 				[ 1600.0 , 9.0 ],
 				[ 2000.0 , 11.0 ],
 				[ 2400.0 , 14.0 ],
@@ -778,7 +779,7 @@ var trace2 = {
 
 var trace3 = {
 				y:[0.0,400.0,800.0,1200.0,1600.0,2000.0,2400.0,2800.0,3200.0,3600.0,4000.0,4400.0,4800.0,5200.0,5600.0,6000.0,6400.0,6800.0,7200.0,7600.0,8000.0,8400.0,8800.0,9200.0,9600.0,10000.0,11000.0,12000.0,13000.0,14000.0,15000.0,16000.0,17000.0,18000.0,19000.0,20000.0,21000.0,22000.0,23000.0,24000.0,25000.0,26000.0,27000.0],
-				x:[0.0,3.0,5.0,7.5,10.0,12.0,15.0,18.0,21.0,24.0,27.0,30.0,33.0,37.0,44.0,51.0,59.0,68.0,81.0,95.0,110.0,126.0,141.0,153.0,172.0,183.0,222.0,249.0,282.0,316.0,361.0,398.0,445.0,520.0,590.0,665.0,764.0,834.0,934.0,1040.0,1144.0,1251.0,1370.0],
+				x:[0.0,3.0,5.0,7.0,10.0,12.0,15.0,18.0,21.0,24.0,27.0,30.0,33.0,37.0,44.0,51.0,59.0,68.0,81.0,95.0,110.0,126.0,141.0,153.0,172.0,183.0,222.0,249.0,282.0,316.0,361.0,398.0,445.0,520.0,590.0,665.0,764.0,834.0,934.0,1040.0,1144.0,1251.0,1370.0],
 				type: 'line',
 				mode:'lines+markers',
 				enableAnimation: true
@@ -834,7 +835,7 @@ var trace9 = {
 
 var trace10 = {
 				y:[0.0,400.0,800.0,1200.0,1600.0,2000.0,2400.0,2800.0,3200.0,3600.0,4000.0,4400.0,4800.0,5200.0,5600.0,6000.0,6400.0,6800.0,7200.0,7600.0,8000.0,8400.0,8800.0,9200.0,9600.0,10000.0,11000.0,12000.0,13000.0,14000.0,15000.0,16000.0,17000.0,18000.0,19000.0,20000.0,21000.0,22000.0,23000.0,24000.0,25000.0,26000.0,27000.0,28000.0],
-				x:[0.0,2.0,4.0,6.5,9.0,11.0,14.0,17.0,20.0,23.0,26.0,29.0,32.0,36.0,43.0,50.0,58.0,67.0,80.0,94.0,109.0,125.0,140.0,152.0,171.0,182.0,221.0,248.0,281.0,315.0,360.0,397.0,444.0,519.0,589.0,663.0,762.0,844.0,932.0,1063.0,1186.0,1289.0,1376.0,1431.0],
+				x:[0.0,2.0,4.0,6.0,9.0,11.0,14.0,17.0,20.0,23.0,26.0,29.0,32.0,36.0,43.0,50.0,58.0,67.0,80.0,94.0,109.0,125.0,140.0,152.0,171.0,182.0,221.0,248.0,281.0,315.0,360.0,397.0,444.0,519.0,589.0,663.0,762.0,844.0,932.0,1063.0,1186.0,1289.0,1376.0,1431.0],
 				type: 'line',
 				mode:'lines+markers',
 				enableAnimation: true
@@ -923,7 +924,7 @@ var layout = {
     fixedrange: true
   },
   yaxis: {
-    title:'Load in kN',
+    title:'Load in kg',
     fixedrange: true
   }
 };    
@@ -940,8 +941,8 @@ var options = {
 
 function ToTable(tbdata)
 {
-    html = '<table id="Table" border="1" style="font-size:14px;font-family:verdana;text-align: center">'; 
-	html += '<tr ><th style="text-align:center;">Load in kN</th>';
+    html = '<table id="Table" border="1" style="font-size:14px;font-family:verdana;text-align: center" cellspacing=0>'; 
+	html += '<tr ><th style="text-align:center;">Load in kg</th>';
 	html += '<th  style="text-align:center">Dial Gauge Reading in div</th></tr>';
     var len = tbdata.length;
     for(var i = 0; i < len; i++){
@@ -960,8 +961,8 @@ function ToTable(tbdata)
 }
 function RefTable(tbdata)
 {
-    html = '<table id="Table2" border="border" style="font-size:14px;font-family:verdana;text-align: center">'; 
-	html += '<tr ><th text-align:center">Load in kN</th>';
+    html = '<table id="Table2" border="border" style="font-size:14px;font-family:verdana;text-align: center" cellspacing=0>'; 
+	html += '<tr ><th text-align:center">Load in kg</th>';
 	html += '<th>Dial Gauge Reading in div</th></tr>';
     var len = tbdata.length;
     for(var i = 0; i < len; i++){

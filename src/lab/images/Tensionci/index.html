@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>SOLVE</title>
-<link rel="stylesheet" href="./css/ttci.css" />
+<link rel="stylesheet" href="css/ttci.css" />
 <link rel="stylesheet" type="text/css" href="../../css/tipped.css" />
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  -->
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script> -->
 <script type="text/javascript" src= "../../js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="../../js/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="../../js/jquery-ui.js"></script>
@@ -36,8 +38,8 @@
 	<p class="incanvas" style="font-family:verdana; font-size:14px;">To study the mechanical properties of cast iron specimen under tension load.</p>
 	<h4 class="incanvas" style="font-family:verdana;">Apparatus used:</h4>
 	<p class="incanvas" style="font-family:verdana; font-size:14px;" >Universal Testing Machine, Dial Indicators, Extensometer, Scale & Vernier calipers.</p>
-	<img id="can00" style="position: absolute; left: 120px; top: 120px;width:50%" src="images/main.png"/>
-	<!-- <img id="can01" style="position: absolute; left: 400px; top: 100px;" src="images/dialind.png"/> -->
+	<img id="can00" style="position: absolute; left: 50px; top: 100px;width:50%" src="images/main.png"/>
+	<!-- <img id="can01" style="position: absolute; left: 380px; top: 100px;" src="images/dialind.png"/> -->
 </div>
 
 <!--Step1	-->	
@@ -81,11 +83,10 @@
 	<span class="circlebg" id="stepnumber">&nbsp;3&nbsp;</span>
 	<p id="pumptext-2" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Punch marks are made at a distance of 2.5d.</p>
 	<img id="can33" style="position: absolute; left:310px; top: 240px;" src="images/can23a.png"/> 
-	<img id="can35" style="position: absolute; left:361px; top:283px;visibility: hidden;" src="images/dot.png"/> 
-	<img id="can35a" style="position: absolute; left:378px; top: 298px;visibility: hidden;" src="images/dot.png"/> 
-	<img id="can35b" style="position: absolute; left:394px; top: 315px;visibility: hidden;" src="images/dot.png"/> 
-	<img id="can35c" style="position: absolute; left:410px; top: 332px;visibility: hidden;" src="images/dot.png"/> 
-	<img id="can35d" style="position: absolute; left:428px; top: 350px;visibility: hidden;" src="images/dot.png"/> 
+	<img id="can35" style="position: absolute; left:360px; top:280px;visibility:hidden;" src="images/dot.png"/> 
+	<img id="can35a" style="position: absolute; left:380px; top: 300px;visibility:hidden;" src="images/dot.png"/> 
+	<img id="can35b" style="position: absolute; left:400px; top: 322px;visibility:hidden;" src="images/dot.png"/> 
+	<img id="can35c" style="position: absolute; left:427px; top: 346px;visibility:hidden;" src="images/dot.png"/> 
 	<img id="can36" style="position: absolute; left:184px; top: 160px;" src="images/tool.png"/> 
 	<img id="can34" style="position: absolute; left:175px; top: 70px;cursor:pointer;" src="images/hammer.png"/> 
 	<p id="v3-0" style="position:absolute; left:100px; top: 380px;font-family:verdana; font-size:14px;"></p>
@@ -121,10 +122,10 @@
 	<img id="can63a" style="position: absolute; left:340px; top: 124px;" src="images/ndl.png"/>
 	<img id="red" style="position: absolute; left:263px; top: 311px;cursor:pointer" src="images/red.png"/>
 	<img id="green" style="position: absolute; left:273px; top: 319px;cursor:pointer" src="images/green.png"/>
-	<img id="can61a" style="position: absolute;left:257px; top: 242.5px;" src="images/ndl2.png"/>
-	<img id="can61b" style="position: absolute;left:97px; top: 212px;" src="images/ndl3.png"/>
+	<img id="can61a" style="position: absolute;left:257px; top: 242.5px;transform-origin: 50% 90%;transform: rotate(-20deg);" src="images/ndl2.png"/>
+	<img id="can61b" style="position: absolute;left:97px; top: 212px;transform-origin: 50% 90%;transform: rotate(-20deg);" src="images/ndl3.png"/>
 	<div id="content" style="position:absolute;left:450px;overflow-y:auto;height:400px;width:200px;top:70px;"></div>
-	<button id="dwn" style="position:absolute;left:500px;top:480px;visibility:hidden;" onClick="download()">Download Data</button>
+	<button id="dwn" style="position:absolute;left:500px;top:480px;visibility:hidden;" onclick="download()">Download Data</button>
 	<p id="v6-0" style="position:absolute; left:150px; top: 180px;font-family:verdana; font-size:14px;"></p>
 
 </div>
@@ -210,7 +211,7 @@
 		</tr>
 		<tr>
 			<th >Least Count(LC) in mm</th>
-			<td id="">0.01</td>
+			<td id="ta88">0.01</td>
 		</tr>
 	</table>
 	</div>
@@ -287,6 +288,7 @@
 <!--next  Arrow	-->	
 <div id="nav">
 	<img id="nextButton" onclick="navNext();" src="images/Next.png" />
+	<img id="prevButton" onclick="navNext();" style="visibility:hidden;"src="images/prev.png" />
 </div>
  
 <!--Blinking Arrow	-->	
@@ -295,7 +297,7 @@
 
 <div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
 <script>
-    var simsubscreennum=2;
+    var simsubscreennum=0;
 	var temp=0;
 	var lnt=0;
 	var values=[];
@@ -309,6 +311,7 @@
 	var gr=0;
 	var vf=0,vf1=0,vf2=0;
 	var grp;
+// <!-- Experimental Results -->
 	var slope=[[0.26,0.15,0.32],
 				[0.34,0.22,0.43],
 				[0.23,0.11,0.36],
@@ -797,13 +800,14 @@
 	else if(p==9)
 	{
 		data=[trace9];
-		gr=8;
+		gr=9;
 		vals0=vals[8];
 		tbdata=data9;
 	}
 	else if(p==10)
 	{
 		data=[trace10];
+		gr = 10;
 		vals0=vals[9];
 		tbdata=data10;
 	}
@@ -832,14 +836,14 @@
 	};
 	function ToTable(tbdata)
 	{
-		html = '<table id="Table" border="1" style="font-size:14px;font-family:verdana;text-align: center">'; 
+		html = '<table id="Table" border="1" style="font-size:14px;font-family:verdana;text-align: center" cellspacing=0>'; 
 		html += '<tr ><th style="text-align:center;">Load in kN</th>';
 		html += '<th  style="text-align:center">Dial Gauge Reading in div</th></tr>';
 		var len = tbdata.length;
 		for(var i = 0; i < len; i++){
 			html += '<tr>'; 	
 			for(var key in tbdata[i]){
-				html += tbdata[i][key] != 0 ? '<td  style="text-align:center">' + tbdata[i][key] + '</td>' : '<td  style="text-align:center">' +'-' + '</td>'; 
+				html += '<td  style="text-align:center">' + tbdata[i][key] + '</td>'; 
 			}
 			
 			html += '</tr>';
@@ -850,7 +854,7 @@
 	}
 	function RefTable(tbdata)
 	{
-		html = '<table id="Table2" border="border" style="font-size:14px;font-family:verdana;text-align: center">'; 
+		html = '<table id="Table2" border="border" style="font-size:14px;font-family:verdana;text-align: center" cellspacing=0>'; 
 		html += '<tr ><th text-align:center">Load in kN</th>';
 		html += '<th>Dial Gauge Reading in div</th></tr>';
 		var len = tbdata.length;
@@ -926,7 +930,7 @@
 
 	});
 </script>
-<script type="text/javascript" src= "./js/ttci.js"></script>
+<script type="text/javascript" src= "js/ttci.js"></script>
 
 </body>
 </html>

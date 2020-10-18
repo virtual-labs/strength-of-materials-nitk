@@ -233,7 +233,7 @@ function dzoom()
 			1500,
 			function()
 			{ 
-					v1=vals0[0]-0.001;
+					v1=vals0[0];
 					$('#v1-1').html("d<sub>ix</sub> = "+v1.toFixed(2)+'mm');
 					setTimeout(function()
 					{
@@ -276,7 +276,7 @@ function dzoom()
 			1500,
 			function()
 			{ 
-				v2=v1-0.01;
+				v2=v1;
 				$('#v1-2').html("d<sub>iy</sub> = "+v2.toFixed(2)+'mm');
 				$('#v1-0').html("Average Initial diameter d= "+vals0[0]+'mm');
 				document.getElementById('nextButton').style.visibility="visible";

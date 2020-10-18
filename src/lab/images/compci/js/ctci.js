@@ -100,106 +100,65 @@ function dzoom()
 
 
 //---------------to rotate an image---------------
- function rotateImage(degree) 
+function rotateImage(degree) 
+{
+	myStopFunction();
+	if(rot==1)
 	{
+		rot=2;
 		myStopFunction();
-		if(rot==0)
-		{
-			rot=2;
-			$('#can44').animate({ 	
-									left:'182px',
-									top: '+=30px',
-									transform: degree
-								},
-								{
-									duration:2500,
-									step: function(now,fx) {
-									$(this).css({
-									'-webkit-transform':'rotate('+now+'deg)',
-									'-moz-transform':'rotate('+now+'deg)',
-									'transform':'rotate('+now+'deg)'
-									});
-									}}
-								);
-			$('#can43').animate(
+		$('#can44').animate({ 	
+								left:'162px',
+								top: '+=31px',
+								transform: degree
+							},
 							{
-								left:'88px',
-								top: '+=30px'
-							},2500,
-							function()
-							{	
-								$("#can44").off('click');
-								document.getElementById('can45').style.visibility="visible";
-								$("#can45t").text("Drag the specimen").fadeOut(2000);
-								setTimeout(function()
-								{
-									document.getElementById('can45d').style.visibility="visible";
-									$("#can45d").fadeIn().fadeOut(1000);
-								},1500);
-							}
+								duration:2500,
+								step: function(now,fx) {
+								$(this).css({
+								'-webkit-transform':'rotate('+now+'deg)',
+								'-moz-transform':'rotate('+now+'deg)',
+								'transform':'rotate('+now+'deg)'
+								});
+								}}
 							);
-		}
-		else if(rot==1)
-		{
-			rot=2;
-			myStopFunction();
-			$('#can44').animate({ 	
-									left:'182px',
-									top: '-=75px',
-									transform: degree
-								},
-								{
-									duration:2500,
-									step: function(now,fx) {
-									$(this).css({
-									'-webkit-transform':'rotate('+now+'deg)',
-									'-moz-transform':'rotate('+now+'deg)',
-									'transform':'rotate('+now+'deg)'
-									});
-									}}
-								);
-			$('#can43').animate(
-							{
-								left:'88px',
-								top: '-=75px'
-							},2500);
-							$('#can45a').animate(
-							{
-								left:'226px',
-								top: '-=75px'
-							},2500,
-							function()
-							{
-								
-								setTimeout(function()
-								{
-									$('#can46').fadeIn(2500);
-									$('#can47').fadeIn(2500);
-								},200);
-								setTimeout(function()
-								{
-									myInt = setInterval(function(){ animatearrow(); }, 500);
-									document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:210px; top: 250px;height: 30px; z-index: 10;";
-									document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
-									 // Code for IE9
-									document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
-									 // Standard syntax
-									document.getElementById("arrow1").style.transform = "rotate(180deg)";
-									$('#can47').click(function()
-									{
-										myStopFunction();
-										$('#can46a').show();
-										document.getElementById('can47').style.visibility="hidden";
-										document.getElementById('can46').style.visibility="hidden";
-										document.getElementById('nextButton').style.visibility="visible";
-									});
-								},1500);
-							}
+		$('#can42').animate(
+						{
+							left:'88px',
+							top: '+=31px'
+						},2500,
+						function()
+						{
 							
-							);
-		}
-		
+							setTimeout(function()
+							{
+								$('#can46').fadeIn(2500);
+								$('#can47').fadeIn(2500);
+							},200);
+							setTimeout(function()
+							{
+								myInt = setInterval(function(){ animatearrow(); }, 500);
+								document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:215px; top: 320px;height: 30px; z-index: 10;";
+								document.getElementById("arrow1").style.WebkitTransform = "rotate(180deg)"; 
+								 // Code for IE9
+								document.getElementById("arrow1").style.msTransform = "rotate(180deg)"; 
+								 // Standard syntax
+								document.getElementById("arrow1").style.transform = "rotate(180deg)";
+								$('#can47').click(function()
+								{
+									myStopFunction();
+									$('#can46a').show();
+									document.getElementById('can47').style.visibility="hidden";
+									document.getElementById('can46').style.visibility="hidden";
+									document.getElementById('nextButton').style.visibility="visible";
+								});
+							},1500);
+						}
+						
+						);
 	}
+	
+}
 //----------------table view ------------------------
 
 	
@@ -227,12 +186,12 @@ function dzoom()
 			rot=1;
 			document.getElementById('can45a').style.visibility="visible";	
 			myInt = setInterval(function(){ animatearrow(); }, 500);
-			document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:260px; top: 520px; height: 30px; z-index: 10;";
-			document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)"; 
+			document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:260px; top: 120px; height: 30px; z-index: 10;";
+			document.getElementById("arrow1").style.WebkitTransform = "rotate(-90deg)"; 
 			 // Code for IE9
-			document.getElementById("arrow1").style.msTransform = "rotate(90deg)"; 
+			document.getElementById("arrow1").style.msTransform = "rotate(-90deg)"; 
 			 // Standard syntax
-			document.getElementById("arrow1").style.transform = "rotate(90deg)";			
+			document.getElementById("arrow1").style.transform = "rotate(-90deg)";				
 		}
 		}
 	});	
@@ -247,8 +206,8 @@ function dzoom()
 							1500,
 							function()
 							{ 
-									v1a=vals0[0]-0.001;
-									v1b=vals0[0]-0.01;
+									v1a=vals0[0];
+									v1b=vals0[0];
 									$('#1a').html("d<sub>1x</sub> = "+v1a.toFixed(2));
 									// $('#1b').html("d<sub>1x</sub> = "+v1b.toFixed(2));
 									// $('#1c').html("d<sub>1</sub> = "+v1a.toFixed(2));
@@ -314,7 +273,7 @@ function dzoom()
 							1500,
 							function()
 							{ 
-								v2a=vals0[0]-0.02;
+								v2a=vals0[0];
 								// v2b=v2a-0.01;
 								mi=(3.14*Math.pow((vals0[0]),4))/64;
 								// $('#2a').html("d<sub>2x</sub> = "+v2a.toFixed(2));
@@ -520,21 +479,21 @@ function tabledraw6()
 			document.getElementById('can61').style.visibility="hidden";
 			document.getElementById('can63').style.visibility="hidden";
 			document.getElementById('can63a').style.visibility="hidden";
-			document.getElementById('can621').style.visibility="visible";
-			document.getElementById('can65a').style.visibility="visible";
-			$('#can65a').delay(3500).hide(1).promise().done(function()
-			{
-				document.getElementById('can621').style.visibility="hidden";
-				document.getElementById('can62').style.visibility="visible";
-				document.getElementById('can65').style.visibility="visible";
-				$('#can65').delay(3500).hide(1).promise().done(function()
-				{
-					document.getElementById('can62').style.visibility="hidden";
-					document.getElementById('can622').style.visibility="visible";
-					document.getElementById('can65b').style.visibility="visible";
-					$('#can65b').delay(3500).hide(1).promise().done(function()
-					{
-						document.getElementById('can622').style.visibility="hidden";
+			// document.getElementById('can621').style.visibility="visible";
+			// document.getElementById('can65a').style.visibility="visible";
+			// $('#can65a').delay(3500).hide(1).promise().done(function()
+			// {
+			// 	document.getElementById('can621').style.visibility="hidden";
+			// 	document.getElementById('can62').style.visibility="visible";
+			// 	document.getElementById('can65').style.visibility="visible";
+			// 	$('#can65').delay(3500).hide(1).promise().done(function()
+			// 	{
+			// 		document.getElementById('can62').style.visibility="hidden";
+			// 		document.getElementById('can622').style.visibility="visible";
+			// 		document.getElementById('can65b').style.visibility="visible";
+			// 		$('#can65b').delay(3500).hide(1).promise().done(function()
+			// 		{
+			// 			document.getElementById('can62').style.visibility="hidden";
 						document.getElementById('can66').style.visibility="visible";
 						document.getElementById('can62b').style.visibility="visible";
 				
@@ -554,16 +513,16 @@ function tabledraw6()
 							$('#green').off('click');
 							document.getElementById('nextButton').style.visibility="visible";
 						});
-					});
-				});
-			});
+			// 		});
+			// 	});
+			// });
 		},7500);
 		document.getElementById('can61a').style.transformOrigin="50% 90%";
-		document.getElementById('can61a').style.animation = "needle-move 9.5s 2 forwards ";
+		document.getElementById('can61a').style.animation = "needle-move 9.5s 1 forwards ";
 		$('#Table').show().find('tr').each(function (i,item){           
 			var $row = $(item); 
             $row.hide();  
-			$row.delay(i*300).fadeIn(300);  
+			$row.delay(i*100).fadeIn(100);  
 		});    
 	});
 }
@@ -628,13 +587,20 @@ function magic()
 		document.getElementById('cal22').style.visibility="hidden";
 		document.getElementById('can23').style.visibility="hidden";
 		document.getElementById('mov22').style.visibility="hidden";
-		myInt = setInterval(function(){ animatearrow(); }, 500);
-		document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:260px; top: 500px; height: 30px; z-index: 10;";
-		document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)"; 
-		 // Code for IE9
-		document.getElementById("arrow1").style.msTransform = "rotate(90deg)"; 
-		 // Standard syntax
-		document.getElementById("arrow1").style.transform = "rotate(90deg)";
+		// myInt = setInterval(function(){ animatearrow(); }, 500);
+		// document.getElementById('arrow1').style="visibility:visible ;position:absolute; left:260px; top: 500px; height: 30px; z-index: 10;";
+		// document.getElementById("arrow1").style.WebkitTransform = "rotate(90deg)"; 
+		//  // Code for IE9
+		// document.getElementById("arrow1").style.msTransform = "rotate(90deg)"; 
+		//  // Standard syntax
+		// document.getElementById("arrow1").style.transform = "rotate(90deg)";
+		document.getElementById('can45').style.visibility="visible";
+		$("#can45t").text("Drag the specimen").fadeOut(2000);
+		setTimeout(function()
+		{
+			document.getElementById('can45d').style.visibility="visible";
+			$("#can45d").fadeIn().fadeOut(800);
+		},1000);
 		
 	}
 	else if (simsubscreennum==4)

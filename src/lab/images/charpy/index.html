@@ -2,30 +2,21 @@
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
-
 <title>SOLVE</title>
 <link rel="stylesheet" href="./css/ct.css" />
 <script type="text/javascript" src= "./js/ct.js"></script>
-
 <style>
-  #gate {
+#gate{
   cursor: pointer;
 }
-
-#ball {
+#ball{
   cursor: grab;
 }
 </style>
-
 <script>
-var Ef=1;
-var simsubscreennum=0;
-var temp=0;
-var lnt=0;
-         
+var Ef=1; var simsubscreennum=0; var temp=0; var lnt=0;
 </script>
 </head>
-
 <body style="margin:0">
 <div id="simscreen">
 <div id="title"><h3> CHARPY&nbsp; IMPACT&nbsp; TEST </h3></div>
@@ -40,7 +31,6 @@ var lnt=0;
 <div class="simsubscreen" id="canvas1" style="visibility:hidden">
 <strong id="titlestep" class="incanvas">STEP </strong>
 <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
-
 <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">&nbsp;Test for friction loss is conducted by adjusting the pointer to 300 Joules, then the pendulum is released by operating the lever without keeping the specimen.</p>
 <img id="i1" style="position: absolute; left: 380px; top: 105px;" src="images/2t.png"/>
 <img id="i1-1" style="position: absolute; left: 488.35px; top: 78.5px;" src="images/3t.png"/>
@@ -50,8 +40,8 @@ var lnt=0;
 <img id="i1-5" style="position:absolute; left:-15px; top:120px; " src="images/5t.png"/>
 <img id="i1-6" style="position:absolute; left:380px; top:334px; " src="images/2t2.png"/>
 <p id="1-1" style="position:absolute;left: 10px; top:478px;  font-family:verdana; font-size:16px;">Loss of energy due to friction E<sub>f</sub> = _____ J</p>
-<p id="1-2" style="position:absolute;left: 161px; top:197.5px;  font-family:verdana; font-size:24px;">000.0</p>
-<p id="1-3" style="position:absolute;left: 450px; top:135px;  font-family:verdana; font-size:5px;">000.0</p>
+<p id="1-2" style="position:absolute;left: 161px; top:197.5px;  font-family:verdana; font-size:24px;">0.000</p>
+<p id="1-3" style="position:absolute;left: 450px; top:135px;  font-family:verdana; font-size:5px;">0.000</p>
 </div>
 	
 <div class="simsubscreen" id="canvas2" style="visibility:hidden"> 
@@ -111,7 +101,6 @@ var lnt=0;
 	<td id="dn" style="text-align:center; font-family:verdana; font-size:14px; padding: 10px; margin: 8px 0;"></td>
 </tr>
 </table>
-
 </div>
 	
 <div class="simsubscreen" id="canvas4" style="visibility:hidden"> 
@@ -141,17 +130,31 @@ var lnt=0;
 <img id="i4-5" style="position:absolute; width:40%; left:120px; top:90px; " src="images/5t.png"/> 
 <img id="i4-8" style="position:absolute; left:45px; top:300px; visibility:hidden;" src="images/6t2.png"/>
 <img id="i4-9" style="position:absolute; width:11%; left:130px; top:350px; visibility:hidden;" src="images/sp4.png"/>
-<img id="i4-10" style="position:absolute; left:210px; top:400px; visibility:hidden; " src="images/10.png"/>
-<img id="i4-11" style="position:absolute; left:145px; top:355px; visibility:hidden;" src="images/b4.png"/>
-<img id="i4-6" style="position:absolute; left:389.5px; top:304px; " src="images/2t2.png"/>
+<img id="i4-10" style="position:absolute; left:210px; top:409.5px; visibility:hidden; " src="images/10.png"/>
+
+ <img id="i4-12" style="position:absolute; left:10px; top:298px; visibility:hidden;" src="images/zoom.png"/> 
+<!-- <img id="i4-11is" style="position:absolute; left:270px; top:422.5px; width:20px; visibility:hidden;" src="images/b4.png"/> -->
+<!-- <img id="i4-11ss" style="position:absolute; left:270px; top:422.5px; width:22.5px; visibility:hidden;" src="images/b4ms.png"/> -->
+<img id="i4-11is" style="position:absolute; left:486px; top:408.5px; width:20px; visibility:hidden;" src="images/b4.png"/> <!--small iron specimen -->
+<img id="i4-11ss" style="position:absolute; left:486px; top:408.5px; width:20px; visibility:hidden;" src="images/b4ms.png"/> <!--small mild steel specimen -->
+
+<img id="i4-11i" style="position:absolute; left:45px; top:340px; visibility:hidden;" src="images/b4.png"/>
+<img id="i4-11s" style="position:absolute; left:45px; top:335px; visibility:hidden;" src="images/b4ms.png"/>
+<img id="i4-11i2" style="position:absolute; left:145px; top:355px; visibility:hidden;" src="images/b4.png"/>
+<img id="i4-11s2" style="position:absolute; left:145px; top:355px; visibility:hidden;" src="images/b4ms.png"/>
+
+<img id="i4-6" style="position:absolute; left:390px; top:304px; " src="images/2t2.png"/>
 <div id="d4-4" style="position:absolute; left:486px; top:408.5px; width:4.5px; height:4.5px; border:1px solid black; visibility:hidden;"></div>
-<p id="4-1" style="position:absolute;left: 50px; top:450px;  font-family:verdana; font-size:16px; visibility:hidden;">Total loss of energy during transit of Hammer, E<sub>T</sub> = _____J</p>
-<p id="4-2" style="position:absolute;left: 50px; top:480px;  font-family:verdana; font-size:16px; visibility:hidden;">Energy for failure of specimen = E<sub>T</sub> - E<sub>f</sub> = _____J</p>
-<p id="4-3" style="position:absolute; left: 245px; top:146px;  font-family:verdana; font-size:16px;">000.0</p>
-<p id="4-4" style="position:absolute; left: 458px; top:103.75px;  font-family:verdana; font-size:6px;">000.0</p>
+<!-- <p id="4-1" style="position:absolute;left: 50px; top:454px;  font-family:verdana; font-size:15px; visibility:hidden;">Total loss of energy during transit of Hammer, E<sub>t</sub> = _____J</p> -->
+<!-- <p id="4-2" style="position:absolute;left: 50px; top:484px;  font-family:verdana; font-size:15px; visibility:hidden;">Energy for failure of specimen = E<sub>t</sub> - E<sub>f</sub> = _____J</p> -->
+<p id="4-1" style="position:absolute;left: 50px; top:454px;  font-family:verdana; font-size:15px; visibility:hidden;"></p>
+<p id="4-2" style="position:absolute;left: 50px; top:484px;  font-family:verdana; font-size:15px; visibility:hidden;"></p>
+<p id="4-3" style="position:absolute; left: 245px; top:146px;  font-family:verdana; font-size:16px;">0.000</p>
+<p id="4-4" style="position:absolute; left: 458px; top:103.75px;  font-family:verdana; font-size:6px;">0.000</p>
+<!-- <p id="4-5" style="position:absolute; left: 35px; top:280px; font-family:verdana; font-size:10px; visibility:hidden;">Topview of test support with specimen placed</p> -->
+<p id="4-5" style="position:absolute; left: 35px; top:280px; font-family:verdana; font-size:10px; visibility:hidden;">Topview of the anvil with specimen placed</p>
 </div>
- 
-<!--Step5	-->	
+
 <div class="simsubscreen" id="canvas6" style="visibility:hidden">
 <h2 id="step5-1" style="font-family:verdana;">Observations:</h2>
 <p id="5-1i" style="position: absolute; left:50px; top:100px;font-family:verdana; font-size:16px;"></p>
@@ -194,19 +197,13 @@ var lnt=0;
 <p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;font-family:verdana; font-size:14px;"><strong>Trial = </strong></p>
 </div>
 
-
-<!--next  Arrow	-->	
 <div id="nav">
 	<img id="nextButton" onclick="navNext(); " src="images/Next.png" />
 </div>
-
-
-<!--Blinking Arrow	-->	
+	
 <img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
 
 <div id="copyright"> &copy; 2016 - 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
-
-
 
 </body>
 </html>
